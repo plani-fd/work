@@ -1,0 +1,121 @@
+@import url("../../css/default.css");
+#styleguide header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 25rem;
+  height: 100%;
+  padding: 3rem 4rem 3rem 3rem;
+  -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #ddd;
+  background-color: #fcfcfc;
+}
+#styleguide h1 span {
+  font-size: 2.3rem;
+  display: block;
+  color: #000;
+}
+#styleguide main {
+  margin-left: 28rem;
+  padding: 0 3rem 3rem;
+}
+#styleguide main > section {
+  margin-top: 4rem;
+}
+#styleguide main > section > h2 {
+  font-size: 3rem;
+  display: block;
+  margin: 4rem 0 2rem;
+  color: #000;
+  position: relative;
+}
+#styleguide main > section > h2:first-child {
+  margin-top: 0;
+}
+#styleguide main > section > h2::before {
+  position: absolute;
+  top: 50%;
+  left: auto;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 100%;
+  width: 1000%;
+  height: 1px;
+  margin-right: 1rem;
+  background-color: #ddd;
+  content: "";
+}
+#styleguide main > section > article {
+  margin: 3rem 0 0 2rem;
+}
+#styleguide main > section > article > h3 {
+  font-size: 2.5rem;
+  display: block;
+  margin: 3rem 0 2rem;
+  color: #222;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+#styleguide main > section > article > h3:first-child {
+  margin-top: 0;
+}
+#styleguide .syntaxhighlighter {
+  overflow: hidden !important;
+  overflow-x: auto !important;
+  padding: 1rem;
+  border: 1px solid #efefef;
+}
+#styleguide .syntaxhighlighter code {
+  font-size: 1.2rem !important;
+}
+#styleguide .syntaxhighlighter .toolbar {
+  display: none;
+}
+#styleguide .syntaxhighlighter .line.alt2 {
+  background-color: #f8f8f8 !important;
+}
+#styleguide .syntaxhighlighter .keyword {
+  font-weight: normal !important;
+}
+#styleguide .btn_top {
+  font-size: 1.2rem;
+  overflow: hidden;
+  position: fixed;
+  left: 25rem;
+  bottom: 0;
+  width: 5rem;
+  height: 5rem;
+  padding-bottom: 0.5rem;
+  background-color: #ddd;
+  color: #666;
+  text-align: center;
+  line-height: 1.2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#styleguide .btn_top::before {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  font-family: "xeicon";
+  vertical-align: top;
+  font-size: 1.6rem;
+  display: block;
+  content: "\e930";
+}
+#styleguide .btn_top:hover, #styleguide .btn_top:focus {
+  background-color: #aaa;
+  color: #fff;
+}
+#styleguide footer {
+  font-size: 1.2rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 22rem;
+  padding: 3rem;
+  color: #999;
+}

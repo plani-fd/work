@@ -1,0 +1,58 @@
+@charset 'utf-8';
+@import '../../../css/scss/basic';
+@import url('../../css/default.css');
+
+#styleguide
+{
+    header {position: fixed; left: 0; top: 0; z-index: 1; width: 25rem; height: 100%; padding: 3rem 4rem 3rem 3rem; box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); border-right: 1px solid #ddd; background-color: #fcfcfc;}
+
+    h1 span {@include fs(23); display: block; color: #000;}
+
+    main 
+    {
+        margin-left: 28rem; padding: 0 3rem 3rem;
+
+        & > section
+        {
+            margin-top: 4rem;
+
+            & > h2 
+            {
+                @include title(4rem 0 2rem, 30, #000);
+                position: relative;
+
+                &::before {@include position(top); right: 100%; width: 1000%; height: 1px; margin-right: 1rem; background-color: #ddd; content: '';}
+            }
+
+            & > article
+            {
+                margin: 3rem 0 0 2rem;
+
+                & > h3 {@include title(3rem 0 2rem, 25, #222); padding-bottom: 1rem; border-bottom: 1px solid #ddd;}
+            }
+        }
+    }
+
+    .syntaxhighlighter
+    {
+        overflow: hidden !important; overflow-x: auto !important; padding: 1rem; border: 1px solid #efefef;
+
+        code {font-size: 1.2rem !important;}
+
+        .toolbar {display: none;}
+        .line.alt2 {background-color: #f8f8f8 !important;}
+        .keyword {font-weight: normal !important;}
+    }
+    .btn_top 
+    {
+        @include fs(12);
+        overflow: hidden; position: fixed; left: 25rem; bottom: 0; width: 5rem; height: 5rem; padding-bottom: 0.5rem; background-color: #ddd; color: #666; text-align: center; line-height: 1.2; transition: $time2;
+
+        &::before {@include icon(type1); @include fs($fs2); display: block; content: '';}
+
+        &:hover,
+        &:focus {background-color: #aaa; color: #fff;}
+    }
+    
+    footer {@include fs(12); position: fixed; left: 0; bottom: 0; z-index: 2; width: 22rem; padding: 3rem; color: #999;}
+}

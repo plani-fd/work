@@ -20,6 +20,131 @@
 </p>
 
 <div id="wrap">
+    <link rel="stylesheet" href="../../css/modalpopup.css" />
+
+    <section id="issue">  
+        <a href="" class="control open">
+            POPUP
+            <span class="count"><strong class="count">0</strong>건</span>
+        </a>
+
+        <article class="group">
+            <h2 class="title">POPUP</h2>
+            <p class="blank">등록된 팝업이 없습니다.</p>            
+            <div class="item">
+                <p class="label">팝업건수 : 총 <span class="count">0</span>건</p>
+                
+                <a href="" class="control close">닫기</a>
+                <a href="" class="control close oneday">오늘하루열지않기</a>
+            </div>       
+        </article>
+    </section>
+        
+    <script>
+        // 팝업 갯수
+        var issuecount = $("#issue > .group > ul > li").length;
+        $('#issue .count strong, #issue .item .count').text(issuecount);
+        
+        // 팝업 열고 닫기
+        $('#issue').find('.control').on('click', function() {
+            if ( $(this).hasClass('open') == true ) {
+                $('#issue').addClass('active');
+            }
+            else {
+                $('#issue').removeClass('active');
+            }
+            return false;
+        });
+        
+        var $issue = $('#issue .list');
+        // 팝업 슬라이드
+        if ( issuecount > 2 )
+        {
+            // $issue.bxSlider
+            // ({
+            //     pager       : false,
+            //     auto        : true,
+            //     autoHover   : true,
+            //     maxSlides   : 3,
+            //     moveSlides  : 1,
+            //     slideWidth  : 363
+            // });
+        }
+    </script>
+
+    <link rel="stylesheet" href="../../css/topbanner.css" />
+    <script type="text/javascript">
+    //<![CDATA[
+        //
+        function setCookie( name, value, expiredays ) {
+            var expire_date = new Date() ;  //오늘날짜를  대입값으로 설정한다.
+            expire_date.setDate(expire_date.getDate() + expiredays) ;
+            document.cookie = name + "=" + escape( value ) + "; path=/" + "; expires=" + expire_date.toGMTString() + ";";		
+        }
+        $(function() {
+            if( getCookie("topbanner") != "done" ) {
+                $('.topbanner').addClass('active');
+            }else{
+                $('.topbanner').removeClass('active');
+            }
+        });
+        // 
+    </script>
+
+    <div class="topbanner active">
+        <a href="" class="control open">
+            상단배너
+            <span class="count"><strong class="count">0</strong>건</span>
+        </a>
+        
+        <div class="group">
+            <ul class="list">
+        
+                <li><a href="http://easesoft.kr" target="_blank" title="새창" rel="noopener"><img src="/zerolife/upload/topbanner/a1/158322299390800.gif" alt="상단배너1 링크 있음" /></a></li>
+                
+        
+                
+                <li><img src="/zerolife/upload/topbanner/a1/158322377901900.jpg" alt="상단배너1 링크 없음" /></li>
+        
+                
+                <li>상단배너3 이미지 없이 텍스트로만.</li>
+        
+            </ul>
+            <a href="" class="control close">닫기</a>
+            <a href="" class="control close oneday">오늘하루열지않기</a>
+        </div>
+    </div>
+
+    <script>
+        //팝업 갯수
+        $('.topbanner .open .count').text($(".topbanner .list > li").length);
+
+        //탑배너 열고 닫기
+        $('.topbanner').find('.control').on('click', function() {
+            if ( $(this).hasClass('open') == true ) {
+                $('.topbanner').addClass('active');
+            }
+            else {
+                $('.topbanner').removeClass('active');
+                if ( $(this).hasClass('oneday') == true ) {
+                    setCookie("topbanner", "done", 1);
+                }
+            }
+            return false;
+        });
+        
+        // 탑배너 슬라이드
+        var $topbanner = $('.topbanner .list');
+        
+        // $topbanner.bxSlider
+        // ({
+        //     mode        : 'vertical',
+        //     controls    : false,
+        //     auto        : true,
+        //     autoHover   : true
+        // });
+    </script>
+
     <!-- 상단 -->
     <header id="header">
         <div class="header_wrap">
