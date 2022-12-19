@@ -1,0 +1,246 @@
+@charset 'utf-8';
+@import 'basic';
+
+/*-------------------------------------------------
+title       : 콘텐츠 반응형
+Author      : 플랜아이 광주
+Create date : 2020-04-24
+-------------------------------------------------*/
+
+@media (max-width: 1024px)
+{
+    // 오시는길
+    .contact .item li + li
+    {
+        display: block; padding-left: 2.5rem;
+
+        &::before {display: none;}
+    }
+}
+
+@media (max-width: 768px)
+{
+    // 아이콘 라운드박스
+    .box1 
+    {
+        padding: 2rem 3rem;
+
+        .icon {width: 9rem;}
+        .desc {padding-left: 3rem;}
+    }
+
+    // 텍스트 박스
+    .box2 {padding: 2rem 2.5rem;}
+
+    // 오른쪽이미지 박스1
+    .box3
+    {
+        padding: 3rem;
+
+        .title::after {margin-top: 1rem;}
+        .desc {width: calc(100% - 33rem);}
+    }
+
+    // 오른쪽이미지 박스2
+    .box4
+    {
+        padding: 3rem;
+
+        .desc {width: calc(100% - 30rem); padding: 1rem 0;}
+    }
+
+    // 왼쪽이미지 박스1
+    .box5
+    {
+        padding: 3rem;
+
+        .title {margin-bottom: 1rem;}
+        .desc {padding: 0 0 0 3rem;}
+    }
+
+    // 왼쪽이미지 박스2
+    .box6
+    {
+        padding: 3rem;
+    }
+
+    // 아이콘 박스
+    .box7
+    {
+        .title {vertical-align: top;}
+        .desc {padding-right: 0;}
+        .btn {@include position(none); margin-top: 1rem;}
+    }
+
+    // 리스트
+    .list1 li {padding: 2rem !important;}
+
+    // 가로형 절차도1
+    .diagram1
+    {
+        @include table(4rem, middle);
+
+        li 
+        {
+            &::before {width: calc(100% - 4rem);}
+            &::after {left: calc(100% - 2rem);}
+        }
+    }
+
+    // 가로형 절차도2
+    .diagram2
+    {
+        @include list(2rem, 1.5rem, 4);
+
+        li::after {right: -2.5rem;}
+    }
+
+    // STEP 절차도
+    .diagram3 
+    {
+        @include list(2rem, 1.5rem, 3);
+
+        li::after {right: -2rem;}
+    }
+
+    // 내용 많은 절차도
+    .diagram4
+    {
+        @include list(2rem, 2rem, 2);
+        width: 100%;
+
+        li::after {right: -2rem;}
+
+        .desc {min-height: 17rem; padding: 1.5rem;}
+    }
+
+    // 아이콘 절차도
+    .diagram5 
+    {
+        @include list(0px, 4rem, 4);
+        padding: 0 2rem 4rem 2rem;
+    }
+
+    // 세로형 절차도
+    .diagram6 li
+    {
+        padding-left: 16rem;
+
+        .label {width: 15rem;}
+    }
+}
+
+@media (max-width: 520px)
+{
+    // 아이콘 라운드박스
+    .box1
+    {
+        padding: 2rem;
+
+        .icon {display: block; margin: 0 auto;}
+        .desc {display: block; padding: 1rem 0 0;}
+    }
+
+    // 오른쪽이미지 박스
+    .box3, .box4
+    {
+        padding: 2rem;
+
+        .img {display: block; float: none; width: 100%; text-align: center;}
+        .desc {float: none; width: 100%; padding: 2rem 0 0;}
+    }
+
+    // 왼쪽이미지 박스
+    .box5, .box6
+    {
+        padding: 2rem;
+
+        .img {display: block; width: 100%; text-align: center;}
+        .desc {display: block; width: 100%; padding: 1rem 0;}
+    }
+
+    // 아이콘 박스
+    .box7
+    {
+        padding: 2rem 0;
+
+        .title {display: block; width: 100%;}
+        .desc {display: block; padding: 2rem 0 0;}
+    }
+
+    // 리스트1
+    .list1
+    {
+        &,
+        &.type1
+        {
+            @include list(0, 1rem, 1);
+        }
+    }
+
+    // 리스트2
+    .list2 .group
+    {
+        .title {display: block; float: none; width: 100%; padding-top: 2rem;}
+        .item {float: none; width: 100%; padding-top: 1rem; border-top: 0 none;}
+
+        & + .group {margin-top: 3rem;}
+    }
+
+    // 가로형 절차도1
+    .diagram1
+    {
+        @include list(0px, 2rem, 2);
+
+        li {display: flex; align-items: center; justify-content: center;}
+    }
+
+    // 가로형 절차도2
+    .diagram2 
+    {
+        @include list(2rem, 1rem, 2);
+
+        li:nth-child(2n)::after {display: none;}
+    }
+
+    // STEP 절차도
+    .diagram3 
+    {
+        @include list(0, 3rem, 1);
+
+        li::after {@include position(left); top: calc(100% + 0.5rem); width: 2rem; height: 2rem; transform: rotate(90deg);}
+    }
+
+    // 아이콘 절차도
+    .diagram5 
+    {
+        @include list(0px, 3rem, 2);
+
+        li
+        {
+            &:nth-child(n+5) {float: left;}
+
+            &::before,
+            &::after {display: none;}
+        }        
+    }
+
+    // 오시는길
+    .contact
+    {
+        .map 
+        {
+            height: 30rem;
+
+            .root_daum_roughmap {@include position(center);}
+        }
+
+        .item
+        {
+            ul::before {display: none;}
+            li {display: block; padding-left: 0 !important;}
+        }
+
+        .btn {@include position(none); margin-top: 1rem;}
+    }
+}

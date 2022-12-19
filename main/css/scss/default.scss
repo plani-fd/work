@@ -1,0 +1,70 @@
+@charset 'utf-8';
+@import 'basic';
+
+@import url('https://fonts.googleapis.com/css?family=#{$ff3}:300,400,500,600,700,800,900');     // 영문폰트
+@import url('../../font/webfonts_NotoSansKR.css');      		                                // font-family: 'Noto Sans KR'; 300,400,500,700,900
+@import url('../../font/webfonts_NanumSquare.css');      		                                // font-family: 'Nanum Square'; 300,400,700,900
+@import url('../../font/dingbat_xeicon.css');                           		                // XEIcon 2.3.3
+
+/*-------------------------------------------------
+title       : 초기화
+Author      : 플랜아이 광주
+Create date : 2020-03-02
+-------------------------------------------------*/
+
+*,
+*::before,
+*::after {box-sizing: inherit;}
+
+html {overflow: hidden; overflow-y: auto; box-sizing: border-box; font-size: $fs1+px;}
+body {overflow: hidden; margin: 0; padding: 0; @include font;}
+
+header, footer, main, section, article, nav, aside {display: block;}
+ul, ol, li, dl, dt, dd {margin: 0; padding: 0; list-style: none;}
+h1, h2, h3, h4, h5, h6, p, form, figure, figcaption {margin: 0; padding: 0;}
+fieldset, hr {display: block; margin: 0; padding: 0; border: 0 none;}
+input, select {max-width: 100%; vertical-align: middle;}
+input, select, button, textarea, optgroup {margin: 0; font-family: inherit; font-size: inherit; color: inherit;}
+select {appearance: none;}
+select::-ms-expand {display: none;}
+address, em, i {font-style: normal;}
+
+strong {font-weight: 600;}
+a {color: inherit; text-decoration: none;}
+button {padding: 0; border: 0 none; background: none; cursor: pointer;}
+input[type='submit'] {appearance: none;}
+img {max-width: 100%; border: 0 none; font-size: 0; vertical-align: middle;}
+
+table {width: 100%; border-collapse: collapse;}
+caption, legend,
+.sr_only, .hidden, .blind, .IR {overflow: hidden; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0 none; clip: rect(0, 0, 0, 0);}
+
+// bx슬라이더 기본설정
+.bx-wrapper 
+{
+    .bx-loading {display: none;}
+    .bx-viewport {box-shadow: 0 0 0 transparent;}
+}
+
+// 건너뛰기
+#skip_nav
+{
+    position:absolute; left:0; top:-1000px; width:100%; height: 0px; z-index:1000; line-height:0px; font-size:0px;
+
+    a 
+    {
+        display:block; text-align:center; width: 100%; line-height:0px; font-size:0px;
+
+        &:focus, 
+        &:hover, 
+        &:active {position:absolute; left:0px; top:1000px; padding: 8px 0; display:block; height:30px; background:#20262c; font-size:12px; font-weight:bold; line-height:18px; color:#fff}
+    }
+}
+
+// 정렬
+.txt_left   {text-align: left !important;}
+.txt_center {text-align: center !important;}
+.txt_right  {text-align: right !important;}
+
+@media (max-width: 1280px)  { html {font-size: $fs1 - 1 + px;} }
+@media (max-width: 768px)   { html {font-size: $fs1 - 2 + px;} }

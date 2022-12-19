@@ -1,0 +1,436 @@
+@charset 'utf-8';
+@import 'basic';
+
+/*-------------------------------------------------
+title       : 콘텐츠
+Author      : 플랜아이 광주
+Create date : 2020-04-24
+-------------------------------------------------*/
+
+// 타이틀1
+.title1
+{
+    @include title(3rem 0, 26, #222);
+    font-weight: 500;
+
+    &::before {display: block; width: 6rem; height: 0.4rem; margin-bottom: 1rem; background-color: #356dc8; content: '';}
+}
+
+// 타이틀2
+.title2
+{
+    @include title(3rem 0 2rem, 20, #2f3c91);
+    position: relative; padding-left: 2rem; font-weight: 500;
+
+    &::before {position: absolute; left: -0.25rem; top: 0.75rem; width: 1.3rem; height: 1.3rem; border-top: 0.4rem solid #1ba1de; border-right: 0.4rem solid #116fc4; content: ''; transform: rotate(45deg);}
+    &::after {position: absolute; left: -0.25rem; top: 0.75rem; width: 0.4rem; height: 0.4rem; margin: 0.5rem 0 0 1rem; background-color: #00488b; content: ''; transform: rotate(45deg);}
+}
+
+// 타이틀3
+.title3
+{
+    @include title(2rem 0 1rem, 18, #333);
+    position: relative; padding-left: 2rem; font-weight: 500;
+
+    &::before {@include icon(type2); @include fs($fs2); left: 0; margin-top: 0.2rem; color: #31639c; content: '';}
+}
+
+// 타이틀4, 블릿1
+.title4,
+.bul1 > li > .title
+{
+    @include title(1rem 0 0.5rem, 17, $point1);    
+    font-weight: 500;
+}
+
+.title4,
+.bul1 > li
+{
+    @include bul(2rem);
+    
+    &::before {left: 0.8rem; top: 1rem; width: 0.5rem; height: 0.5rem; border-radius: 100%; background-color: #c7c7c7;}
+
+    ul {margin-bottom: 1rem;}
+}
+
+// 블릿1
+.bul1 > li + li {margin-top: 0.5rem;}
+
+// 블릿2
+.bul2 > li 
+{
+    @include bul(1.2rem);
+
+    &::before {content: '·';}
+}
+
+// 블릿3
+.bul3 > li
+{
+    @include bul(2rem);
+
+    &::before {left: 0.8rem; top: 1rem; width: 0.4rem; height: 0.4rem; background-color: #333;}
+}
+
+// 모든 블릿
+* + [class*='bul'] {margin-top: 1rem;}
+
+// 박스1
+.box1
+{
+    @include table(0px, top);
+    padding: 3rem 5rem; box-shadow: 1px 1px 0 #b8b8b8; border-radius: 1rem; border: 1px solid #dcdcdc;
+
+    .icon {width: 10.6rem;}
+    .desc {padding-left: 4rem;}
+    .title {@include title(0 0 1rem, 20, #333b43);}
+
+    .tip 
+    {
+        display: block; position: relative; margin-top: 1rem; padding: 1rem 0 0 2.5rem; border-top: 1px dashed #ddd; color: #84878e;
+
+        &::before {@include icon(type2); @include fs(20); left: 0; margin-top: -0.2rem; color: #2a323c; content: '';}
+    }
+
+    .btn 
+    {
+        @include btn(17rem, 40, 0 2rem, 1, #d6d6d6, #fff, 15, #6e7276);
+        margin-top: 1.5rem; border-radius: 0.5rem;
+
+        i {@include fs(17); margin-left: 0.25rem; color: #1967be; vertical-align: middle; transition: $time2;}
+
+        &:hover,
+        &:focus
+        {
+            border-color: #1967be; background-color: #1967be; color: #fff;
+
+            i {color: inherit;}
+        }
+    }
+}
+
+// 박스2
+.box2
+{
+    padding: 4rem 5rem; border: 1px solid #cfcfcf; border-top-color: #9c9c9c; background-color: #f9f9f9;
+
+    .title {@include title(0 0 1rem, 22, #333b43);}
+}
+
+// 박스3
+.box3
+{
+    overflow: hidden; padding: 6rem 7rem; border: 1px solid #ededed;
+
+    .desc {float: left; width: calc(100% - 35.5rem);}
+    .img {float: right; width: 28.5rem;}
+    
+    .title 
+    {
+        @include title(0 0 2.5rem, 24, #2f2f2f);
+
+        &::after {display: block; width: 5.5rem; height: 0.2rem; margin-top: 2rem; background-color: #2f2f2f; content: '';}
+    }
+}
+
+// 박스4
+.box4
+{
+    overflow: hidden; padding: 4.5rem 7rem; border: 1px solid #d5d5d5; border-top-color: #3f3f3f;
+
+    .desc {float: left; width: calc(100% - 33.5rem); padding: 1.5rem 0;}
+    .img {float: right; width: 26rem;}    
+    .title {@include title(0 0 2rem, 23, #333b43);}
+}
+
+// 박스5
+.box5
+{
+    @include table(0px, top);
+    padding: 5rem 6rem; border: 1px solid #d5d5d5;
+
+    .img {width: 28rem;}
+    .desc {padding: 1rem 0 1rem 5.5rem;}    
+    .title {@include title(0 0 2rem, 23, #333b43);}
+}
+
+// 박스6
+.box6
+{
+    @include table(0px, top);
+    padding: 6rem 6.5rem; border: 1px solid #ddd; border-bottom: 0.3rem solid #4f555b;
+
+    .img {width: 19.5rem;}
+    .desc {padding-left: 5rem;}    
+    .title {@include title(0 0 2.5rem, 24, #2f2f2f);}
+
+    .btn 
+    {
+        @include btn(16rem, 50, 0 3rem, 1, #dedede, #f7f7f7, 15, #4c4c4c);
+        margin-top: 3rem; font-weight: 400;
+
+        i {@include fs($fs2); margin-left: 2.5rem; transition: $time2;}
+
+        &:hover,
+        &:focus {border-color: #4c4c4c; background-color: #4c4c4c; color: #fff;}
+    }
+}
+
+// 박스7
+.box7 
+{
+    @include table(0px, middle);
+    height: 6rem; padding: 3.5rem 3rem; border-top: 1px solid #919191; border-bottom: 1px solid #d8d8d8;
+
+    .title {@include fs(18); width: 22rem; color: #333b43;}
+    .icon {@include fs(30); display: inline-block; width: 6rem; height: 6rem; margin-right: 1rem; border-radius: 100%; background-color: #a3a9af; text-align: center; color: #fff; vertical-align: middle; line-height: 6rem;}
+    .desc {position: relative; padding-right: 15rem;}
+
+    .btn 
+    {
+        @include position(top); 
+        @include btn(12.7rem, 45, 0 2.5rem, 1, #505b72, #505b72, 15, #fff);
+        right: 0; border-radius: 0.5rem;
+
+        i {margin-left: 1.5rem;}
+    }
+}
+
+// 리스트1
+.list1
+{
+    @include list(2.5rem, 2.5rem, 2);
+
+    li {padding: 6rem 7rem; border: 1px solid #d5d5d5; text-align: center;}
+
+    .img {display: block; overflow: hidden; background-color: #f6f7f7;}
+    .title {@include title(2.5rem 0 1.5rem, 22, #2f2f2f); font-weight: 500;}
+    .txt {display: block; overflow: hidden; height: 7rem;}
+
+    &.type1
+    {
+        @include list(2rem, 2rem, 3);
+
+        li {padding: 4rem 5rem;}
+    }
+}
+
+// 리스트2
+.list2 .group
+{
+    overflow: hidden;
+
+    .title {@include fs(20); float: left; width: 18rem; padding-top: 3rem; border-top: 2px solid #000; font-weight: 600; color: #333;}
+    .item {float: right; width: calc(100% - 23rem); padding-top: 3rem; border-top: 1px solid #ddd;}
+    .label {@include title(2rem 0 0.5rem, 18, #2e3f8e); display: block; font-weight: 500;}
+
+    & + .group {margin-top: 5rem;}
+}
+
+// 가로형 절차도1
+.diagram1
+{
+    @include table(7rem, middle);
+    @include fs(17); 
+    color: #fff; text-align: center;
+
+    li 
+    {
+        @include bg1;
+        overflow: hidden; height: 8rem; border-radius: 8rem; word-break: keep-all;
+
+        &::before {position: absolute; left: 0; top: 0; z-index: -1; width: calc(100% - 7rem); height: 8rem; border-radius: 8rem; background-color: #828d96; content: '';}
+        &::after {@include fs(18); @include icon(type2); left: calc(100% - 3.5rem); top: 4rem; width: 3rem; height: 3rem; margin: -1.5rem 0 0 -1.5rem; border-radius: 100%; border: 1px solid #ddd; color: #555; content: ''; text-align: center;}
+
+        &:last-child::after {display: none;}
+
+        $colors : (type2: #5b7896, type3: #0c3958, type4: #405b5f);
+
+        @each $key, $color in $colors
+        {            
+            &.#{$key}::before {background-color: $color;}
+        }
+    }
+}
+
+// 가로형 절차도2
+.diagram2
+{
+    @include list(5rem, 3.5rem, 4);
+
+    li 
+    {
+        display: flex; position: relative; height: 12.5rem; padding: 1rem; border: 1px solid #ddd; text-align: center; align-items: center; justify-content: center; word-break: keep-all;
+
+        &::after {@include icon(type2); @include position(top); @include fs(26); right: -4rem; color: #272727; content: ''; opacity: 0.6;}
+
+        &:nth-child(4n)::after,
+        &:last-child::after {display: none;}
+
+        $colors : (type1: #2c8ada, type2: #5a5e65);
+
+        @each $key, $color in $colors
+        {            
+            &.#{$key} {border: 0 none; background-color: $color; color: #fff;}
+        }
+    }
+}
+
+// STEP 절차도
+.diagram3
+{
+    @include list(5.5rem, 3.5rem, 3);
+
+    li 
+    {
+        position: relative;
+
+        &::after {@include icon(type2); @include position(top); @include fs(21); right: -3.8rem; color: #191919; content: ''; opacity: 0.9;}
+
+        &:nth-child(3n)::after,
+        &:last-child::after {display: none;}
+    }
+
+    .label {display: block; height: 5.5rem; background-color: #2f3643; color: #fff; text-align: center; line-height: 5.5rem;}
+    .txt {display: flex; height: 8rem; border: 1px solid #d5d5d5; border-top: 0 none; text-align: center; align-items: center; justify-content: center; word-break: keep-all;}
+}
+
+// 내용 많은 절차도
+.diagram4
+{
+    @include list(2.5rem, 2.5rem, 4);
+
+    & > li 
+    {
+        position: relative;
+
+        &::after {@include icon(type2); @include position(top); @include fs(23); right: -2.5rem; margin-top: 3rem; color: #282d33; content: ''; opacity: 0.8;}
+
+        &:nth-child(4n)::after,
+        &:last-child::after {display: none;}
+    }
+
+    .label {@include height(60, 1, #1855ac); @include fs(17); display: block; margin-bottom: 1rem; font-weight: 500; color: #1a59a7; text-align: center;}
+    .desc {@include fs(15); min-height: 21rem; padding: 2.5rem; border: 1px solid #d1d1d1;}
+    
+    .bul1
+    {
+        & > li::before {width: 0.3rem; height: 0.3rem; background-color: #282d33;}
+
+        .title {@include fs($fs2); margin-bottom: 0; color: #282d33;}
+
+        .bul2 
+        {
+            margin-top: 0.5rem;
+
+            & > li::before {content: '-';}
+        }
+    }
+}
+
+// 아이콘 절차도
+.diagram5
+{
+    @include bg1;
+    @include list(0px, 6.5rem, 4);
+    @include fslh(15, 19);
+    overflow: hidden; margin-top: 0 !important; padding: 0 9rem 6rem; border: 1px solid #ddd; color: #434343; text-align: center;
+
+    & > li
+    {
+        position: relative;
+
+        &::before {position: absolute; left: 50%; top: 5.5rem; z-index: -1; width: 100%; height: 0.2rem; background-color: #eaeef3; content: '';}
+        &::after {@include icon(type2); @include fs(20); right: 0; top: 5.5rem; content: ''; color: #717c8e; transform: translateX(50%) translateY(calc(-50% + 0.2rem));}
+
+        &:nth-child(4)
+        {
+            &::before {left: 0; z-index: -3; height: calc(100% + 6.5rem); border-radius: 100%; border: 0.2rem solid #eaeef3; border-left: 0 none; background: none;}
+            &::after {top: 100%; right: -0.75rem; transform: translate(0, -50%) rotate(90deg);}
+        }
+
+        &:nth-child(5)
+        {
+            &::before {top: auto; bottom: 50%; left: auto; right: 50%; z-index: -2; height: 300%; background-color: #fff;}
+            &::after {display: none;}
+        }
+
+        &:nth-child(n + 5) 
+        {
+            float: right;
+
+            &::after {transform: translateX(50%) translateY(calc(-50% + 0.2rem)) rotateY(180deg);}
+        }
+    }
+
+    .icon 
+    {
+        display: inline-block; position: relative; z-index: 0; width: 11rem; height: 11rem; border-radius: 100%; border: 0.4rem solid #eaeef3; background-color: #fff; vertical-align: middle;
+
+        img {@include position(center);}
+    }
+
+    .label {@include fs(14); position: absolute; left: 50%; top: 0; z-index: 1; width: 3.5rem; height: 3.5rem; margin-left: 2rem; border-radius: 100%; background-color: #4a77b6; color: #fff; text-align: center; line-height: 3.5rem;}
+    .txt {display: block; width: 16rem; margin: 1rem auto 0;}
+}
+
+// 세로형 절차도
+.diagram6 li
+{
+    position: relative; padding-left: 21rem;
+
+    .label 
+    {
+        position: absolute; left: 0; top: 0; z-index: 0; width: 18.5rem; height: 6rem; border-radius: 6rem; background-color: #3d65a6; color: #fff; text-align: center; line-height: 6rem;
+
+        &::before {position: absolute; left: 50%; bottom: -1rem; z-index: -1; width: 2rem; height: 2rem; background-color: #3d65a6; content: ''; transform: translateX(-50%) scaleX(0.5) rotate(45deg);}
+    }
+
+    .txt {@include fs(15); padding: 2rem 3rem; border-radius: 3rem; border: 1px solid #ddd;}
+
+    & + li {margin-top: 2rem;}
+}
+
+// 오시는길
+.contact
+{
+    margin-bottom: 5rem; border: 1px solid #ddd;
+
+    .map 
+    {
+        overflow: hidden; position: relative; height: 58rem;
+
+        .root_daum_roughmap 
+        {
+            @include position(left);
+            top: -1px;
+
+            .roughmap_maker_label {display: none;}
+        }
+    }
+
+    .item 
+    {
+        @include fs(18); 
+        position: relative; padding: 3rem; border-top: 1px solid #ddd; color: #333;
+
+        ul::before {@include icon(type1); @include fs(24); position: relative; top: -0.1rem; color: #3273c3; content: ''; vertical-align: middle;}
+        strong {font-weight: 500;}
+
+        li 
+        {
+            display: inline;
+
+            & + li::before {display: inline-block; position: relative; top: -0.15rem; width: 1px; height: 1.5rem; margin: 0 1rem 0 0.5rem; background-color: #ddd; content: ''; vertical-align: middle;}
+        }
+    }
+
+    .btn 
+    {
+        @include btn(15.5rem, 45, 0 2rem, 2, #3273c3, #3273c3, 15, #fff);
+        @include position(top); 
+        right: 3rem; text-align: left;
+
+        &::after {@include icon(type2); right: 2rem; content: '';}
+    }
+}

@@ -1,0 +1,249 @@
+@charset 'utf-8';
+
+// title       : 설정
+// Author      : 플랜아이 광주
+// Create date : 2020-02-14
+
+$width1 : 1500;                 // 가로값 기본
+
+$ff1    : 'xeicon';             // xeicon
+$ff2    : 'Noto Sans KR';       // 국문폰트
+$ff3    : unquote('Roboto');    // 영문폰트(구글)
+$ff4    : 'Nanum Square';       // 나눔스퀘어
+
+$fs1    : 10;                   // 폰트 사이즈(html)
+$fs2    : 16;                   // 폰트사이즈(body)
+$lh     : 25;                   // 줄간격
+
+$point1 : #555;               // 색(기본)
+$point2 : #009fdc;            // 색(하늘)
+$point3 : #484c58;            // 색(남색)
+$point4 : #9b8873;            // 색(똥색)
+
+$time1  : all 0s;               // transition 원복
+$time2  : all 0.2s;             // transition 기본
+
+// 가로
+@mixin width($width) {width: $width / $fs1 +rem; max-width: calc(100% - 2rem); margin-left: auto !important; margin-right: auto !important;}
+
+// 폰트사이즈
+@mixin fs($fs) {font-size: $fs / $fs1 + rem;}
+
+// 줄간격
+@mixin lh($lh, $fs) {line-height: $lh / $fs;}
+
+// 폰트/줄간격
+@mixin fslh($fs, $lh) 
+{
+    @include fs($fs);
+    @include lh($lh, $fs);
+}
+
+// 폰트 기본설정
+@mixin font
+{
+    @include fslh($fs2, $lh);
+
+    font-family : "" + $ff3 + "", $ff2;  // 영문폰트(구글)의 경우 따옴표 추가
+    font-weight : 300;
+    color       : $point1;
+}
+
+// 라인이 있는 요소의 세로값
+@mixin height($height, $bdwidth, $bdcolor)
+{
+    height      : $height / $fs1 + rem;
+    border      : $bdwidth + px solid $bdcolor;
+    line-height : ($height - ($bdwidth * 2)) / $fs1 + rem;
+}
+
+// 한줄 줄임
+@mixin ellipsis1 {overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+// 두줄 줄임 
+@mixin ellipsis2 {overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+
+// 세줄 줄임 
+@mixin ellipsis3 {overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+
+// 배경
+@mixin bg1 {position: relative; z-index: 0;}
+
+@mixin bg2($type) 
+{
+    @if $type == type1
+    {
+        position: absolute; left: 50%; top: 0; z-index: -1; width: 1000%; height: 100%; margin-left: -500%; content: '';
+    }    
+    @else if $type == type2
+    {
+        position: absolute; left: 0; top: 0; z-index: -1; width: 100%; height: 100%; content: '';
+    }
+}
+
+// 요소 가운데 정렬
+@mixin position($direction)
+{
+    @if $direction == left
+    {
+        position: absolute; top: auto; left: 50%; transform: translateX(-50%);
+    } 
+    @else if $direction == top
+    {
+        position: absolute; top: 50%; left: auto; transform: translateY(-50%);
+    } 
+    @else if $direction == center
+    {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    }
+    @else if $direction == none
+    {
+        position: relative; top: auto; left: auto; right: auto; bottom: auto; transform: translate(0, 0);
+    }
+}
+
+// 감춤
+@mixin hidden {visibility: hidden; overflow: hidden; width: 0; height: 0; opacity: 0;}
+
+// 보임
+@mixin visible {visibility: visible; overflow: visible; width: auto; height: auto; opacity: 1;}
+
+// 아이콘
+@mixin icon($type)
+{
+    @if $type == type1
+    {
+        display: inline-block; position: relative; top: 1px; font-family: $ff1; vertical-align: top;
+    } 
+    @else if $type == type2
+    {
+        position: absolute; top: auto; left: auto; right: auto; font-family: $ff1;
+    }
+    @else if $type == type3
+    {
+        display: block; width: 100%; height: 100%; font-family: $ff1; text-align: center; line-height: inherit;
+    }
+}
+
+// 더보기 오버 시
+@mixin hover($target)
+{
+    @if $target == before
+    {
+        &::before {transform: rotate(0); transition: $time2;}
+
+        &:hover,
+        &:focus
+        {
+            &::before {transform: rotate(180deg) translateY(2px);}
+        }
+    }
+    @else if $target == after
+    {
+        &::after {transform: rotate(0); transition: $time2;}
+
+        &:hover,
+        &:focus
+        {
+            &::after {transform: rotate(180deg) translateY(2px);}
+        }
+    }
+}
+
+// 타이틀
+@mixin title($margin, $font, $color) 
+{
+    @include fs($font);
+
+    display : block;
+    margin  : $margin;
+    color   : $color;
+
+    &:first-child {margin-top: 0;}
+}
+
+// 블릿 리스트
+@mixin bul($padding)  
+{
+    position        : relative;
+    padding-left    : $padding;
+    text-align      : left;
+
+    &::before {position: absolute; left: 0; top: auto; content: '';}
+}
+
+// 리스트
+@mixin list($mr, $mt, $ea)
+{
+    $cell   : 100% / $ea;
+    $nth    : $ea + 1;
+
+    margin-top: -#{$mt};
+
+    @if $ea == 1
+    {
+        display: block; width: 100%; margin-top: 0;
+
+        & > *
+        {
+            display: block; clear: none; float: none; width: 100%; margin: 0;
+
+            & + * {margin-top: $mt;}
+        }
+    }
+    @else
+    {
+        display: inline-block; width: calc(100% + #{$mr});
+
+        & > *
+        {
+            clear: none; float: left; width: calc(#{$cell} - #{$mr}); margin: $mt $mr 0 0;
+
+            @for $i from 2 through $ea
+            {
+                @if ($i != $ea)
+                {
+                    &:nth-child(#{$i}n + 1) {clear: none;}
+                }
+            }
+            
+            &:nth-child(#{$ea}n + 1) {clear: both;}
+        }
+    }
+}
+
+// 테이블형 리스트
+@mixin table($margin, $valign)
+{
+    display: table; width: calc(100% + #{$margin}); table-layout: fixed;
+
+    & > * {display: table-cell; padding-right: $margin; vertical-align: $valign;}
+}
+
+// 버튼
+@mixin btn($width, $height, $padding, $bdwidth, $bdcolor, $bgcolor, $font, $color)
+{
+    @include height($height, $bdwidth, $bdcolor);
+    @include ellipsis1;
+    @include fs($font);
+
+    display             : inline-block; 
+    min-width           : $width;
+    padding             : $padding;
+    background-color    : $bgcolor;
+    color               : $color;
+    text-align          : center;
+    vertical-align      : middle;
+    transition          : $time2;
+
+    @if $bdcolor == $bgcolor
+    {
+        &:hover,
+        &:focus {background-color: transparent; color: $bgcolor;}
+    }   
+    @else if $bgcolor == #fff && $bgcolor == transparent
+    {
+        &:hover,
+        &:focus {background-color: $bdcolor; color: #fff;}
+    }
+}

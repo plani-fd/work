@@ -1,0 +1,270 @@
+@charset 'utf-8';
+@import 'basic';
+
+/*-------------------------------------------------
+title       : 메인
+Author      : 플랜아이 광주
+Create date : 2020-02-14
+-------------------------------------------------*/
+
+// 비주얼
+#visual
+{
+    @include width(1920);
+    overflow: hidden; position: relative; z-index: 0; max-width: 100%; height: 64rem; text-align: center;
+
+    .title 
+    {
+        @include position(center); 
+        @include fslh(80, 94); 
+        z-index: 100; width: 70rem; max-width: 90%; margin-top: -5rem; font-weight: 800; color: #fff; text-align: center; opacity: 0; filter: blur(10px); transition: all 0.5s;
+    }
+
+    .bx-wrapper {overflow: hidden; height: 100%; position: static; background-color: #000;}
+    .bx-viewport {height: 100% !important;}
+
+    .bx-controls 
+    {
+        @include position(center); 
+        z-index: 100; width: 14rem; margin-top: 10rem;
+
+        a 
+        {
+            @include height(40, 1, #fff); 
+            @include fs(18);
+            overflow: hidden; position: static; width: 4rem; margin: 0; border-radius: 100%; background: none; color: #fff; text-align: center;
+
+            &::before {@include icon(type3); text-indent: 0;}
+
+            &.bx-prev::before {content: '';}
+            &.bx-next::before {content: '';}
+            &.bx-stop::before {content: '';}
+            &.bx-start::before {content: '';}
+        }
+
+        .bx-prev {float: left;}
+        .bx-next {float: right;}
+
+        .bx-controls-auto-item
+        {
+            vertical-align: top;
+
+            a 
+            {
+                @include position(center);
+
+                &.active {display: none;}
+            }
+        }
+    }
+
+    .list
+    {
+        height: 100%;
+
+        li {overflow: hidden; height: 100%; background: none; text-align: center; opacity: 0.8;}
+        img {width: 100%; opacity: 0; transition: opacity 0.5s;}
+
+        .active img {transform: scale(1.2); opacity: 1; transition: transform 20s, opacity 0.5s;}
+    }
+
+    &.active .title {opacity: 1; filter: blur(0); transition: all 1s 0.5s;}
+}
+
+// 콘텐츠
+#contents 
+{
+    @include width($width1); 
+    margin: 9rem 0;
+
+    .more 
+    {
+        @include hover(after);
+        @include fs(15);
+        position: absolute; right: 2rem; top: 0; font-weight: 500; line-height: 5.5rem;
+
+        &::after {@include icon(type1); @include fs(20); content: '';}
+    }
+}
+
+// 섹션
+.section::after {display: block; clear: both; width: 100%; height: 0; content: '';}
+
+// 최근게시물
+#contents .latest
+{
+    @include bg1;
+    float: left; width: calc(100% - 45rem); max-height: 40rem; padding-top: 5.5rem;
+
+    &::after {@include bg2(type2); height: 5.5rem; border: 1px solid #ddd; content: '';}
+
+    .label a {@include fs(18); position: absolute; left: 0; top: 0; height: 5.5rem; width: 13rem; font-weight: 400; color: #000; text-align: center; line-height: 5.5rem; transition: $time2;}
+    .more {display: none;}
+    .blank {@include hidden; width: 100% !important; padding: 2rem 0; text-align: center;}
+
+    .list
+    {
+        @include hidden;
+
+        a 
+        {
+            @include ellipsis1; 
+            display: block; position: relative; padding: 2.7rem 0 2.7rem 10rem; border-bottom: 1px solid #ddd;
+
+            .date 
+            {
+                @include position(top); 
+                @include fs(15);
+                left: 0; width: 6rem; padding-top: 3.5rem; font-weight: 600; text-align: center;
+
+                strong {@include fs(40); position: absolute; left: 0; top: 0; width: 100%; color: #bdb8af; line-height: 1;}
+            }
+
+            .desc {@include ellipsis1; display: block; height: 5.2rem;}
+            .title {@include ellipsis1; @include fs(20); display: block; font-weight: 400; color: #333;}
+            .xi-new {color: $point2;}
+        }
+    }
+
+    .group
+    {
+        &:nth-child(n + 2) .label a::before {@include position(top); left: 0; z-index: -1; width: 1px; height: 1.2rem; background-color: #ddd; content: '';}
+
+        @for $i from 1 through 3
+        {
+            $j : $i - 1;
+
+            &.group#{$i} .label a {left: calc(13rem * #{$j});}
+        }
+
+        &.active
+        {
+            .label a
+            {
+                @include fs(20); 
+                background-color: $point3; color: #fff;
+
+                &::after {@include icon(type1); content: '';}
+            }
+            
+            .more {display: inline;}
+
+            .blank {@include visible; transition: $time2;}
+            .list {@include visible; transition: $time2;}
+        }
+
+        &.group3 .list {padding-top: 1.7rem;}
+        &.group3 .list a,
+        &.group2 .list li:nth-child(n+2) a
+        {
+            padding: 0 7rem 0 1.5rem;
+
+            &::before {position: absolute; left: 0; top: 2rem; width: 0.4rem; height: 0.4rem; background-color: #bdb8af; content: '';}
+
+            .desc {@include fs(0);}
+            .title {@include fs($fs2); margin-bottom: -1.45rem; padding-top: 1rem;}
+
+            .date 
+            {
+                left: auto; right: 0; width: auto; padding: 0; font-weight: 300;
+
+                strong {position: static; font-size: inherit; font-weight: 300; color: inherit; line-height: inherit;}
+            }
+        }
+    }
+}
+
+// 팝업
+.popup
+{
+    float: right; position: relative; width: 42rem; border: 1px solid #ddd;
+
+    .bx-controls
+    {
+        position: absolute; left: 2.5rem; bottom: 3rem;
+
+        div {display: inline;}
+
+        .bx-pager a 
+        {
+            display: inline-block; overflow: hidden; width: 1rem; height: 1rem; margin-left: 1rem; border-radius: 100%; background-color: #efefef; transition: $time2; text-indent: 1rem;
+
+            &.active {background-color: $point3;}
+        }
+
+        .bx-controls-auto a 
+        {
+            display: inline-block; overflow: hidden; position: relative; top: 0.25rem; width: 1.5rem; height: 1.5rem; margin-left: 1rem; background: 0 none; line-height: 1.5rem; text-indent: 1rem;
+
+            &:before {@include icon(type3); content: ''; text-indent: 0;}
+
+            &.active {display: none;}
+            &.bx-stop::before {content: '';}
+        }
+    }
+}
+
+// 갤러리
+#contents .gallery
+{
+    position: relative; margin-top: 10rem; text-align: center;
+
+    h2.title {@include title(0 0 5rem, 38, #000); text-transform: uppercase;}
+
+    .more {right: 0;}
+    .bx-controls-direction a {display: none;}
+
+    .list 
+    {
+        @include list(2rem, 2rem, 4);
+
+        a 
+        {
+            display: block; border: 1px solid #ddd;
+
+            .img 
+            {
+                display: block; overflow: hidden; height: 21rem; border-bottom: 1px solid #ddd; background-color: #000;
+
+                img {width: 100%; min-height: 100%; transition: $time2;}
+            }
+
+            &:hover,
+            &:focus
+            {
+                .img img {transform: scale(1.2); opacity: 0.7;}
+            }
+
+            .desc 
+            {
+                position: relative; padding: 3rem; text-align: left;
+
+                .date {position: absolute; left: 3rem; top: 3rem; color: #aaa;}
+                .title {@include fslh(20, 25); display: block; overflow: hidden; height: 5rem; margin-top: 3.5rem; font-weight: 500; color: #333;}
+                .txt {display: none;}
+            }
+        }
+    }
+}
+
+// 아이콘
+.link .list
+{
+    @include table(0px, middle);
+    margin: 9rem 0; padding: 5rem; background-color: #eff0f3; text-align: center;
+
+    a 
+    {
+        display: block;
+
+        &:hover,
+        &:focus
+        {
+            img {transform: rotateY(180deg); transition-delay: 0.1s;}
+        }
+    }
+
+    img {transition: $time2;}
+
+    .txt {display: block; margin-top: 1rem; font-weight: 300;}
+}

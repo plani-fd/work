@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/*-------------------------------------------------
+title       : 콘텐츠 반응형
+Author      : 플랜아이 광주
+Create date : 2020-04-24
+-------------------------------------------------*/
+@media (max-width: 1024px) { .contact .item li + li { display: block; padding-left: 2.5rem; }
+  .contact .item li + li::before { display: none; } }
+
+@media (max-width: 768px) { .box1 { padding: 2rem 3rem; }
+  .box1 .icon { width: 9rem; }
+  .box1 .desc { padding-left: 3rem; }
+  .box2 { padding: 2rem 2.5rem; }
+  .box3 { padding: 3rem; }
+  .box3 .title::after { margin-top: 1rem; }
+  .box3 .desc { width: calc(100% - 33rem); }
+  .box4 { padding: 3rem; }
+  .box4 .desc { width: calc(100% - 30rem); padding: 1rem 0; }
+  .box5 { padding: 3rem; }
+  .box5 .title { margin-bottom: 1rem; }
+  .box5 .desc { padding: 0 0 0 3rem; }
+  .box6 { padding: 3rem; }
+  .box7 .title { vertical-align: top; }
+  .box7 .desc { padding-right: 0; }
+  .box7 .btn { position: relative; top: auto; left: auto; right: auto; bottom: auto; -webkit-transform: translate(0, 0); transform: translate(0, 0); margin-top: 1rem; }
+  .list1 li { padding: 2rem !important; }
+  .diagram1 { display: table; width: calc(100% + 4rem); table-layout: fixed; }
+  .diagram1 > * { display: table-cell; padding-right: 4rem; vertical-align: middle; }
+  .diagram1 li::before { width: calc(100% - 4rem); }
+  .diagram1 li::after { left: calc(100% - 2rem); }
+  .diagram2 { margin-top: -1.5rem; display: inline-block; width: calc(100% + 2rem); }
+  .diagram2 > * { clear: none; float: left; width: calc(25% - 2rem); margin: 1.5rem 2rem 0 0; }
+  .diagram2 > *:nth-child(2n + 1) { clear: none; }
+  .diagram2 > *:nth-child(3n + 1) { clear: none; }
+  .diagram2 > *:nth-child(4n + 1) { clear: both; }
+  .diagram2 li::after { right: -2.5rem; }
+  .diagram3 { margin-top: -1.5rem; display: inline-block; width: calc(100% + 2rem); }
+  .diagram3 > * { clear: none; float: left; width: calc(33.33333% - 2rem); margin: 1.5rem 2rem 0 0; }
+  .diagram3 > *:nth-child(2n + 1) { clear: none; }
+  .diagram3 > *:nth-child(3n + 1) { clear: both; }
+  .diagram3 li::after { right: -2rem; }
+  .diagram4 { margin-top: -2rem; display: inline-block; width: calc(100% + 2rem); width: 100%; }
+  .diagram4 > * { clear: none; float: left; width: calc(50% - 2rem); margin: 2rem 2rem 0 0; }
+  .diagram4 > *:nth-child(2n + 1) { clear: both; }
+  .diagram4 li::after { right: -2rem; }
+  .diagram4 .desc { min-height: 17rem; padding: 1.5rem; }
+  .diagram5 { margin-top: -4rem; display: inline-block; width: calc(100% + 0px); padding: 0 2rem 4rem 2rem; }
+  .diagram5 > * { clear: none; float: left; width: calc(25% - 0px); margin: 4rem 0px 0 0; }
+  .diagram5 > *:nth-child(2n + 1) { clear: none; }
+  .diagram5 > *:nth-child(3n + 1) { clear: none; }
+  .diagram5 > *:nth-child(4n + 1) { clear: both; }
+  .diagram6 li { padding-left: 16rem; }
+  .diagram6 li .label { width: 15rem; } }
+
+@media (max-width: 520px) { .box1 { padding: 2rem; }
+  .box1 .icon { display: block; margin: 0 auto; }
+  .box1 .desc { display: block; padding: 1rem 0 0; }
+  .box3, .box4 { padding: 2rem; }
+  .box3 .img, .box4 .img { display: block; float: none; width: 100%; text-align: center; }
+  .box3 .desc, .box4 .desc { float: none; width: 100%; padding: 2rem 0 0; }
+  .box5, .box6 { padding: 2rem; }
+  .box5 .img, .box6 .img { display: block; width: 100%; text-align: center; }
+  .box5 .desc, .box6 .desc { display: block; width: 100%; padding: 1rem 0; }
+  .box7 { padding: 2rem 0; }
+  .box7 .title { display: block; width: 100%; }
+  .box7 .desc { display: block; padding: 2rem 0 0; }
+  .list1, .list1.type1 { margin-top: -1rem; display: block; width: 100%; margin-top: 0; }
+  .list1 > *, .list1.type1 > * { display: block; clear: none; float: none; width: 100%; margin: 0; }
+  .list1 > * + *, .list1.type1 > * + * { margin-top: 1rem; }
+  .list2 .group .title { display: block; float: none; width: 100%; padding-top: 2rem; }
+  .list2 .group .item { float: none; width: 100%; padding-top: 1rem; border-top: 0 none; }
+  .list2 .group + .group { margin-top: 3rem; }
+  .diagram1 { margin-top: -2rem; display: inline-block; width: calc(100% + 0px); }
+  .diagram1 > * { clear: none; float: left; width: calc(50% - 0px); margin: 2rem 0px 0 0; }
+  .diagram1 > *:nth-child(2n + 1) { clear: both; }
+  .diagram1 li { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  .diagram2 { margin-top: -1rem; display: inline-block; width: calc(100% + 2rem); }
+  .diagram2 > * { clear: none; float: left; width: calc(50% - 2rem); margin: 1rem 2rem 0 0; }
+  .diagram2 > *:nth-child(2n + 1) { clear: both; }
+  .diagram2 li:nth-child(2n)::after { display: none; }
+  .diagram3 { margin-top: -3rem; display: block; width: 100%; margin-top: 0; }
+  .diagram3 > * { display: block; clear: none; float: none; width: 100%; margin: 0; }
+  .diagram3 > * + * { margin-top: 3rem; }
+  .diagram3 li::after { position: absolute; top: auto; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); top: calc(100% + 0.5rem); width: 2rem; height: 2rem; -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+  .diagram5 { margin-top: -3rem; display: inline-block; width: calc(100% + 0px); }
+  .diagram5 > * { clear: none; float: left; width: calc(50% - 0px); margin: 3rem 0px 0 0; }
+  .diagram5 > *:nth-child(2n + 1) { clear: both; }
+  .diagram5 li:nth-child(n+5) { float: left; }
+  .diagram5 li::before, .diagram5 li::after { display: none; }
+  .contact .map { height: 30rem; }
+  .contact .map .root_daum_roughmap { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+  .contact .item ul::before { display: none; }
+  .contact .item li { display: block; padding-left: 0 !important; }
+  .contact .btn { position: relative; top: auto; left: auto; right: auto; bottom: auto; -webkit-transform: translate(0, 0); transform: translate(0, 0); margin-top: 1rem; } }

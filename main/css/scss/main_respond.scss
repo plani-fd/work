@@ -1,0 +1,91 @@
+@charset 'utf-8';
+@import 'basic';
+
+/*-------------------------------------------------
+title       : 메인 반응형
+Author      : 플랜아이 광주
+Create date : 2020-02-14
+-------------------------------------------------*/
+
+@media (max-width: 1024px)
+{
+    // 더보기
+    #contents .more {font-size: 0;}
+
+    // 최근게시물
+    #contents .latest .group
+    {
+        .label a {width: 11rem;}
+
+        @for $i from 1 through 3
+        {
+            $j : $i - 1;
+
+            &.group#{$i} .label a {left: calc(11rem * #{$j});}
+        }
+
+        &.active .label a {@include fs(18);}
+    }
+}
+
+@media (max-width: 768px)
+{
+    // 비주얼
+    #visual 
+    {
+        height: 40rem;
+
+        .bx-wrapper,
+        .bx-viewport,
+        .list {height: 100% !important;}
+
+        .list li 
+        {
+            position: relative; height: 100%;
+
+            &.active img {transform: scale(1.2) translate(-50%, -50%);}
+        }
+
+        .title {@include fs(50);}
+        
+        img {@include position(center); max-width: inherit; height: 100%;}
+    }
+
+    // 콘텐츠
+    #contents {margin-top: 3rem;}
+
+    // 최근게시물
+    #contents .latest {float: none; width: 100%;}
+
+    // 팝업
+    .popup {float: none; width: 100%; margin-top: 3rem;}
+
+    // 갤러리
+    #contents .gallery
+    {
+        padding: 0 2rem;
+
+        .list 
+        {
+            @include list(0px, 0px, 1);
+
+            & > li {clear: none !important; margin-top: 0 !important; padding-right: 1rem;}
+        }
+
+        .bx-controls-direction a 
+        {
+            @include position(top); 
+            @include fs(20);
+            display: inline; overflow: hidden; left: 0; width: 5rem; height: 5rem; background: none #fff; color: #000; text-align: center; line-height: 5rem;
+
+            &::before {@include icon(type3); content: ''; text-indent: 0;}
+
+            &.bx-next 
+            {
+                left: auto; right: 0;
+
+                &::before {content: '';}
+            }
+        }
+    }
+}

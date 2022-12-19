@@ -1,0 +1,441 @@
+@charset 'utf-8';
+@import 'basic';
+
+/*-------------------------------------------------
+title       : 레이아웃
+Author      : 플랜아이 광주
+Create date : 2020-02-14
+-------------------------------------------------*/
+
+#wrap {outline: 0;}
+
+// 상단
+#header
+{
+    @include width($width1);
+    position: relative; z-index: 5;
+
+    &::after {display: block; clear: both; width: 100%; height: 0; content: '';}
+
+    // 검색
+    .search
+    {
+        .control.open 
+        {
+            @include fs(30);
+            overflow: hidden; position: absolute; right: 5.5rem; bottom: 3.5rem; width: 3rem; height: 3rem; color: #333; text-align: center; line-height: 3rem;
+
+            &::before {@include icon(type3); content: '';}
+        }
+
+        .group
+        {
+            @include hidden;
+            @include position(left);
+            top: 100%; width: 100% !important; transition: $time2;
+
+            &::before {@include bg2(type1); border-top: 1px solid #ddd; background-color: #fff;}
+        }
+
+        .form 
+        {
+            @include width(500);
+            position: relative; margin: 5rem 0; padding-left: 6rem; color: #000; line-height: 6rem;
+
+            label {@include fs(20); position: absolute; left: 0; top: 0; font-weight: 500;}
+            input {width: 100%; height: 6rem; padding-left: 1rem; border: 0 none; background-color: #efefef;}
+
+            button 
+            {
+                @include fs(25);
+                overflow: hidden; position: absolute; right: 0; top: 0; width: 6rem; height: 6rem; text-align: center; line-height: 6rem;
+
+                &::before {@include icon(type3); content: '';}
+            }
+        }
+
+        .close 
+        {
+            @include position(top);
+            @include btn(7rem, 35, 0 1rem, 1, #ddd, #fff, $fs2, $point1);
+            right: 0;
+        }
+
+        &.active .group {@include visible;}
+    }
+}
+
+// 상단 메뉴
+#hnb
+{
+    @include fs(14);
+    position: absolute; left: 0; top: auto; z-index: 0; width: 100%; height: 4rem; color: rgba(255, 255, 255, 0.7); line-height: 4rem;
+
+    &::before {@include bg2(type1); background-color: $point3;}
+
+    .hnb1 
+    {
+        float: left; position: relative; height: 100%; border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+        .label 
+        {
+            display: none; width: 15rem; border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+            &::after {@include icon(type1); margin-left: 0.5rem; content: ''; transition: $time2;}
+        }
+
+        li {float: left; width: 13rem; border-right: 1px solid rgba(255, 255, 255, 0.2);}
+        a {display: block; text-align: center;}
+
+        &.active .label::after {transform: rotate(180deg);}
+    }
+
+    .hnb2 
+    {
+        float: right;
+
+        li 
+        {
+            display: inline;
+
+            & + li::before {display: inline-block; width: 1px; height: 1.5rem; background-color: #fff; content: ''; vertical-align: middle; opacity: 0.2;}
+        }
+        
+        a {padding: 0 2rem;}
+    }
+
+    .lang 
+    {
+        position: absolute; right: 11.5rem; bottom: -6.5rem; width: 3rem; height: 3rem; padding-left: 1.5rem; color: #999; line-height: 1rem; white-space: nowrap;
+
+        &::before {display: none;}
+        &::after {@include icon(type2); left: 0; top: 0; z-index: -1; @include fs(30); color: #333; content: ''; line-height: 3rem;}
+
+        a 
+        {
+            @include hidden;
+            @include fslh(12, 18); 
+            display: block; position: relative; padding: 0 0.4rem; background-color: #fff; text-align: left; transition: $time2;
+
+            &.active
+            {
+                @include visible;
+
+                &::after {@include icon(type2); content: ''; transition: $time2;}
+            }
+        }
+
+        &.active
+        {
+            a 
+            {
+                @include visible;
+
+                &.active::after {transform: rotate(180deg);}
+            }
+        }
+    }
+}
+
+// 상단 로고
+#logo
+{
+    float: left; width: 15rem; margin: 6.5rem 0 2.5rem;
+
+    a {display: block;}
+}
+
+// 메뉴1
+#gnb1 > ul
+{
+    float: right; width: calc(100% - 36rem); margin: 7.5rem 18rem 0 0; text-align: center;
+
+    & > li 
+    {
+        display: inline-block; margin: 0 5rem; padding-bottom: 3rem;
+
+        & > a {@include fs(20); font-weight: 600;}
+
+        &.active .submenu {@include visible;}
+
+        &.lnb1 .submenu
+        {
+            & > ul 
+            {
+                @include table(0px, top); 
+                width: 80%; padding: 0;
+    
+                & > li 
+                {
+                    padding: 2.5rem; border-right: 1px solid #eee;
+    
+                    & > a {@include fs(18); padding: 0; border: 0 none; background: none; font-weight: 400; color: #3a53a7; text-align: left;}
+                }
+            }
+        }
+
+        &:nth-child(n + 2) .submenu > ul > li 
+        {
+            float: left; width: 25%; padding: 1rem;
+
+            & > a {display: block; padding: 1rem; border: 1px solid #efefef; background: #f8f8f8; text-align: center;}
+        }
+    }
+
+    .submenu 
+    {
+        @include hidden; 
+        display: block !important; position: absolute; left: 0; top: 100%; z-index: 1; width: 100% !important;
+
+        &::before {@include bg2(type1); box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1); border-top: 1px solid #eee; background-color: #fff;}
+        &::after {position: absolute; left: 0; top: 0; width: 1px; height: 100%; background-color: #eee; content: '';}
+
+        .desc 
+        {
+            @include fs(17); 
+            float: left; width: 20%; text-align: center;
+
+            .title {@include fs(30); display: block; padding: 5rem 0 1.8rem; color: #333;}
+
+            &::after {display: block; width: 10rem; height: 10rem; margin: 6rem auto 0; background: url('../img/layout/submenu.png') no-repeat center center; background-size: 100%; content: '';}
+        }
+
+        & > ul 
+        {
+            @include fslh(16, 28);
+            float: right; width: 80%; height: 40rem; padding: 1.5rem; border-left: 1px solid #eee; text-align: left;
+        }
+    }
+}
+
+// 메뉴2 (모바일)
+#gnb2
+{
+    .control 
+    {
+        @include fs(30);
+        overflow: hidden; position: absolute; right: 0; bottom: 3.5rem; z-index: 3; width: 3rem; height: 3rem; color: #333; text-align: center; line-height: 3rem;
+
+        &::before {@include icon(type3); content: '';}
+
+        &.close 
+        {
+            @include hover(before);
+            display: none;
+
+            &::before {color: #fff; content: '';}
+        }
+    }
+
+    & > ul 
+    {
+        @include hidden;
+        @include list(0px, 6rem, 3);
+        position: absolute; left: 0; top: 10rem; z-index: 2; color: #fff; transition: opacity 0.2s;
+
+        &::before {@include bg2(type1); @include position(center); height: 10000%; margin: 0; background-color: #3e3e3e;}
+
+        & > li 
+        {
+            padding: 0 2rem; text-align: center;
+
+            & > a {@include fs(20); display: block; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.2); font-weight: 600; color: $point2;}
+        }
+    }
+
+    .submenu
+    {
+        a 
+        {
+            display: inline-block; padding: 0 3.5rem; border-radius: 4rem; line-height: 4rem; vertical-align: top; transition: $time2;
+
+            &:hover,
+            &:focus {background-color: $point2; color: #3e3e3e;}
+        }
+
+        div {display: none;}
+    }
+
+    &.active
+    {
+        .open {display: none;}
+        .close {display: block;}
+
+        & > ul {@include visible; width: 100%;}
+    }
+}
+
+// 퀵메뉴
+#quick
+{
+    position: fixed; right: -25rem; top: 0; z-index: 500; height: 100%;
+
+    &::before {@include bg2(type1); left: auto; right: 0; width: 0; transform: translateX(0); background-color: rgba(0, 0, 0, 0.5); opacity: 0; transition: opacity 0.2s;}
+
+    .open 
+    {
+        @include position(top); 
+        left: -4.5rem; width: 4.5rem; padding: 2rem 0 0; background-color: $point4; font-weight: 600; color: #fff; line-height: 4.5rem; writing-mode: vertical-rl; text-orientation: mixed;
+
+        &::after {@include icon(type1); margin-top: 1.5rem; padding: 1.5rem 0; background-color: rgba(0, 0, 0, 0.2); content: '';}
+    }
+
+    .group 
+    {
+        width: 25rem; height: 100%; background-color: #f8f8f8;
+
+        .title 
+        {
+            padding: 3rem 1rem; background-color: $point3; color: #fff; text-align: center;
+
+            strong {@include fs(30); display: block; line-height: 1.2;}
+            span {@include fs($fs2); font-weight: 300; opacity: 0.5;}
+        }
+    }
+
+    .list a {display: block; padding: 1.5rem; border-bottom: 1px solid #ddd; font-weight: 400;}
+
+    &.active
+    {
+        right: 0;
+
+        &::before {width: 1000%; opacity: 1;}
+    }
+}
+
+// 하단
+#footer
+{
+    @include bg1;
+    @include width($width1);
+    padding: 4rem 0 7rem; color: #9fa4ad;
+
+    &::before {@include bg2(type1); background-color: #313640;}
+
+    // 관련사이트
+    .related
+    {
+        position: absolute; right: 0; bottom: 13rem;
+
+        .group
+        {
+            @include height(55, 2, #969ca1); 
+            float: left; position: relative; width: 18rem; margin-left: 0.5rem; color: #8e8e8e;
+
+            &.active
+            {
+                .label::after {transform: rotate(180deg);}
+                .list {@include visible; padding: 2rem 0; transition: $time2;}
+            }
+        }
+
+        a {display: block; position: relative; padding: 0 2rem;}
+        
+        .label::after {@include icon(type2); @include fs(18); right: 2rem; color: #bcc3c9; content: ''; transition: $time2;}
+
+        .list {@include hidden; position: absolute; left: 0; bottom: 100%; width: 100% !important; margin-bottom: 0.5rem; background-color: #969ca1; color: #fff; line-height: 2.5rem;}
+    }
+
+    // 마크
+    .mark {position: absolute; right: 30rem; bottom: 6.5rem;}
+
+    // 위로가기
+    .btn_top 
+    {
+        @include hidden;
+        position: fixed; left: 50%; bottom: 26rem; width: 7rem; height: 7rem; margin-left: 78rem; border-radius: 100%; background-color: $point3; color: #fff; text-align: center; transition: all 0.5s;
+
+        &::before {@include icon(type1); display: block; padding-top: 0.5rem; content: '';}
+
+        &:hover,
+        &:focus {animation: updown 0.75s 0.25s infinite alternate;}
+
+        &.active {@include visible; width: 7rem; height: 7rem;}
+    }
+}
+
+@keyframes updown
+{
+    0% {margin-bottom: 0;}
+    100% {margin-bottom: 0.5rem;}
+}
+
+// 하단 메뉴
+#fnb
+{
+    margin-bottom: 3rem;
+
+    .fnb1 li 
+    {
+        display: inline; font-weight: 600;
+
+        & + li::before {display: inline-block; width: 1px; height: 1.5rem; margin: 0 1rem; background-color: #d6dce2; content: ''; vertical-align: middle; opacity: 0.1;}
+    }
+
+    .fnb2 
+    {
+        position: absolute; right: 0; bottom: 6rem; z-index: 1;
+
+        li {display: inline;}
+
+        a 
+        {
+            @include height(40, 1, rgba(255, 255, 255, 0.15)); 
+            @include fs(20);
+            display: inline-block; overflow: hidden; width: 4rem; margin-left: 0.25rem; border-radius: 100%; text-align: center;
+
+            &::before {@include icon(type3); height: 200%; transition: $time2;}
+
+            &:hover,
+            &:focus
+            {
+                &::before {transform: translateY(-50%);}
+            }
+        }
+
+        .blog a::before {padding: 0 0.5rem; font-family: $ff2; font-weight: 800; content: 'b b';}
+        .facebook a::before {content: ' ';}
+        .instagram a::before {content: ' ';}
+        .twitter a::before {content: ' ';}
+        .youtube a::before {content: ' ';}
+        .kakao a::before {content: ' ';}
+    }
+}
+
+// 풋배너
+.footbanner
+{
+    @include bg1;
+    clear: both; padding: 3rem 4rem; text-align: center;
+
+    &::before {@include bg2(type1); background-color: #e5e8ef;}
+
+    li {float: left; padding: 0 0.5rem;}
+
+    .bx-controls-direction a 
+    {
+        @include position(top); 
+        @include fslh(20, 40);
+        overflow: hidden; left: -4rem; width: 4rem; height: 4rem; margin: 0; background: none; text-align: center;
+
+        &::before {@include icon(type3); content: ''; text-indent: 0;}
+
+        &.bx-next 
+        {
+            left: auto; right: -4rem;
+
+            &::before {content: '';}
+        }
+    }
+}
+
+// 사이트정보
+#siteinfo
+{
+    position: relative; padding-left: 19rem;
+
+    .logo {position: absolute; left: 0; top: 0; width: 15rem;}
+    .copyright {@include fs(12); margin-top: 1rem; font-weight: 400; text-transform: uppercase;}
+
+    span {margin-right: 1rem;}
+}
