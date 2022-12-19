@@ -1,21 +1,20 @@
-@charset 'utf-8';
+@charset "utf-8";
 
 // title       : 설정
 // Author      : 플랜아이 광주
 // Create date : 2020-02-14
 
-$width1 : 1500;                 // 가로값 기본
+$width1 : 1400;                 // 가로값 기본
 
 $ff1    : 'xeicon';             // xeicon
-$ff2    : 'Noto Sans KR';       // 국문폰트
+$ff2    : 'Pretendard';         // 국문폰트
 $ff3    : unquote('Roboto');    // 영문폰트(구글)
-$ff4    : 'Nanum Square';       // 나눔스퀘어
 
 $fs1    : 10;                   // 폰트 사이즈(html)
 $fs2    : 16;                   // 폰트사이즈(body)
 $lh     : 25;                   // 줄간격
 
-$point1 : #555;               // 색(기본)
+$point1 : #767676;               // 색(기본)
 $point2 : #009fdc;            // 색(하늘)
 $point3 : #484c58;            // 색(남색)
 $point4 : #9b8873;            // 색(똥색)
@@ -24,13 +23,13 @@ $time1  : all 0s;               // transition 원복
 $time2  : all 0.2s;             // transition 기본
 
 // 가로
-@mixin width($width) {width: $width / $fs1 +rem; max-width: calc(100% - 2rem); margin-left: auto !important; margin-right: auto !important;}
+@mixin width($width) {width: calc($width / $fs1) + rem; max-width: calc(100% - 4rem); margin-left: auto !important; margin-right: auto !important;}
 
 // 폰트사이즈
-@mixin fs($fs) {font-size: $fs / $fs1 + rem;}
+@mixin fs($fs) {font-size: calc($fs / $fs1) + rem;}
 
 // 줄간격
-@mixin lh($lh, $fs) {line-height: $lh / $fs;}
+@mixin lh($lh, $fs) {line-height: calc($lh / $fs);}
 
 // 폰트/줄간격
 @mixin fslh($fs, $lh) 
@@ -44,7 +43,7 @@ $time2  : all 0.2s;             // transition 기본
 {
     @include fslh($fs2, $lh);
 
-    font-family : "" + $ff3 + "", $ff2;  // 영문폰트(구글)의 경우 따옴표 추가
+    font-family : $ff2;  // 영문폰트(구글)의 경우 따옴표 추가
     font-weight : 300;
     color       : $point1;
 }
@@ -52,9 +51,9 @@ $time2  : all 0.2s;             // transition 기본
 // 라인이 있는 요소의 세로값
 @mixin height($height, $bdwidth, $bdcolor)
 {
-    height      : $height / $fs1 + rem;
+    height      : calc($height / $fs1) + rem;
     border      : $bdwidth + px solid $bdcolor;
-    line-height : ($height - ($bdwidth * 2)) / $fs1 + rem;
+    line-height : calc(($height - ($bdwidth * 2)) / $fs1) + rem;
 }
 
 // 한줄 줄임
@@ -175,7 +174,7 @@ $time2  : all 0.2s;             // transition 기본
 // 리스트
 @mixin list($mr, $mt, $ea)
 {
-    $cell   : 100% / $ea;
+    $cell   : calc(100% / $ea);
     $nth    : $ea + 1;
 
     margin-top: -#{$mt};
@@ -241,7 +240,7 @@ $time2  : all 0.2s;             // transition 기본
         &:hover,
         &:focus {background-color: transparent; color: $bgcolor;}
     }   
-    @else if $bgcolor == #fff && $bgcolor == transparent
+    @else if $bgcolor == #fff and $bgcolor == transparent
     {
         &:hover,
         &:focus {background-color: $bdcolor; color: #fff;}

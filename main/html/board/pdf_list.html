@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>프로젝트</title>
-    
-    <link rel="stylesheet" href="../css/default.css" />
-    <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/layout_respond.css" />	
-    
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/main_respond.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>프로젝트명</title>
+<link rel="stylesheet" href="../../css/default.css" />
+<link rel="stylesheet" href="../../css/layout.css" />
+<link rel="stylesheet" href="../../css/layout_respond.css" />	
+
+<link rel="stylesheet" href="../../css/sub.css" />
+<link rel="stylesheet" href="../../css/sub_respond.css" />
 </head>
 
 <body>
@@ -20,10 +20,9 @@
 </p>
 
 <div id="wrap">
-    <!-- 상단 -->
-    <header id="header">
+	<header id="header">        
         <div class="header_wrap">
-            <h1 id="logo"><a href=""><img src="../img/layout/logo.png" alt="로고"></a></h1>
+            <h1 id="logo"><a href="../index.html"><img src="../../img/layout/logo.png" alt="로고"></a></h1>
             
             <div id="hnb">
                 <div class="hnb1">
@@ -288,212 +287,321 @@
             </nav>
         </div>
     </header>
-    <!-- //상단 -->
 
-    <main id="main">
-        <div class="main_wrap">
+	<main id="main">
+		<div class="main_wrap">
+			<div id="visual" class="visual1">
+				<strong class="title">메뉴1</strong>
 
-            <div id="visual">
-                <strong class="title">A goal without a plan is just a wish</strong>
-                
-                <ul class="list">                         
-                    <li><img src="../img/main/visual1.jpg" alt="" /></li>
-                    <li><img src="../img/main/visual2.jpg" alt="" /></li>
-                </ul>
-            </div>
+				<p class="control">
+					<a href="" class="prev"><span>이전</span></a>
+					<a href="" class="next"><span>다음</span></a>
+				</p>
 
-            <div id="contents">
-                <div class="section section1">
-                    <div class="latest">
-                        <article class="group group1 active">
-                            <h2 class="label"><a href="">공지사항</a></h2>
-                            <ul class="list">
-                                <li>
-                                    <a href="">
-                                        <span class="desc">
-                                            <strong class="title"><i class="xi-new" aria-hidden="true"></i><span class="sr_only">새글</span> test2</strong>                        
-                                        </span>
-                                        <span class="date">2020.04.<strong>07</strong></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="desc">
-                                            <strong class="title"><i class="xi-new" aria-hidden="true"></i><span class="sr_only">새글</span> test1</strong>                        
-                                        </span>
-                                        <span class="date">2020.04.<strong>07</strong></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="desc">
-                                            <strong class="title"> 111111111111</strong>
-                                            11111111
-                                        </span>
-                                        <span class="date">2020.03.<strong>06</strong></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="desc">
-                                            <strong class="title"> testtesttesttesttesttesttesttesttesttesttesttesttest</strong>
-                                            1
-                                        </span>
-                                        <span class="date">2020.03.<strong>06</strong></span>
-                                    </a>
-                                </li>
+				<span class="img"><img src="../../img/sub/sub.jpg" alt=""></span>
+			</div>
+			
+			<div id="snb" class="snb1">
+                <h2 class="title">메뉴1</h2>
+                <nav class="list">
+                    <ul>
+                        <li class="active">
+                            <a href="sub1_1.php">메뉴1-1</a>
+                            <ul>
+                                <li class="active"><a href="sub1_1.html">서브메뉴1-1-1</a></li>
+                                <li><a href="sub1_1_2.html">서브메뉴1-1-2</a></li>
+                                <li><a href="sub1_1_3.html">서브메뉴1-1-3</a></li>
+                                <li><a href="sub1_1_4.html">서브메뉴1-1-4</a></li>
                             </ul>
-                            <a href="" class="more">MORE</a>
-                        </article>
+                        </li>
+                        <li><a href="sub1_2.html">메뉴1-2</a></li>
+                        <li><a href="sub1_3.html">메뉴1-3</a></li>
+                        <li><a href="sub1_4.html">메뉴1-4</a></li>
+                        <li><a href="sub1_5.html">메뉴1-5</a></li>
+                    </ul>
+                </nav>
+            </div>	
+				
+			<div id="contents">
+				<div class="contents_util">
+					<h1 id="contents_title">메뉴1</h1>
+					
+					<nav class="location">
+						<ul class="path">
+							<li class="icon"><a href="">홈</a></li>
+							<li><a href="">메뉴1</a></li> 
+							<li><a href="" class="active">메뉴1-1</a></li>
+						</ul>
 
-                        <article class="group group2">
-                            <h2 class="label"><a href="">뉴스</a></h2>
-                            <ul class="list">
-                                <li>
-                                    <a href="">
-                                        <span class="desc">
-                                            <strong class="title"> asdasdasd</strong>
-                                            신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..
-                                        </span>
-                                        <span class="date">2020.03.<strong>10</strong></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <a href="" class="more">MORE</a>
-                        </article>
+						<ul class="list">
+							<li>
+								<button class="label">메뉴</button>
+								<ul class="list depth1">
+									<li class="active"><a href="">컨텐츠</a></li>
+									<li><a href="">게시판</a></li>
+									<li><a href="">갤러리</a></li>
+									<li><a href="">멤버쉽 프로그램</a></li>
+									<li><a href="">기타 프로그램</a></li>
+								</ul>
+							</li>
+							<li>
+								<button class="label">메뉴</button>
+								<ul class="list depth2">
+									<li class="active"><a href="">단순메뉴구조</a></li>
+									<li><a href="">콘텐츠담당자</a></li>
+									<li><a href="">공공누리</a></li>
+									<li><a href="">메뉴옵션</a></li>
+								</ul>
+							</li>
+							<li>
+								<button class="label">메뉴</button>
+								<ul class="list depth3">
+									<li class="active"><a href="">서브메뉴1-1-1</a></li>
+									<li><a href="">서브메뉴1-1-2</a></li>
+									<li><a href="">서브메뉴1-1-3</a></li>
+									<li><a href="">서브메뉴1-1-4</a></li>
+								</ul>
+							</li>
+							<li>
+								<button class="label">메뉴</button>
+								<ul class="list depth4">
+									<li class="active"><a href="">탭1차-1</a></li>
+									<li><a href="">탭1차-2</a></li>
+									<li><a href="">탭1차-3</a></li>
+									<li><a href="">탭1차-4</a></li>
+								</ul>
+							</li>
+							<li>
+								<button class="label">메뉴</button>
+								<ul class="list depth5">
+									<li class="active"><a href="">탭2차-1</a></li>
+									<li><a href="">탭2차-2</a></li>
+									<li><a href="">탭2차-3</a></li>
+									<li><a href="">탭2차-4</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
 
-                        <article class="group group3">
-                            <h2 class="label"><a href="">채용공고</a></h2>
-                            <p class="blank">등록된 게시물이 없습니다.</p>
-                            <a href="" class="more">MORE</a>
-                        </article>
+					<div class="util">
+						<span class="zoom">
+							<a href="" class="btn up">글자 크게</a>
+							<a href="" class="btn down">글자 작게</a>
+						</span>
+					
+						<article class="share">
+							<h2 class="title"><a href="" class="btn open">공유하기</a></h2>
+							
+							<div class="item">
+								<ul id="share" class="list">
+									<li class="facebook"><a href="">페이스북</a></li>
+									<li class="twitter"><a href="">트위터</a></li>
+									<li class="band"><a href="">밴드</a></li>
+									<li class="kakaostory"><a href="">카카오스토리</a></li>
+									<li class="kakaotalk"><a href="">카카오톡</a></li>
+								</ul>
+								<a href="" class="close">닫기</a>
+							</div>
+						</article>
+						
+						<a class="btn print" href="">인쇄</a>
+					</div>
+				</div>
+
+  				<div id="contents_body">
+                    <link rel="stylesheet" href="../../../css/board.css">
+                    <link rel="stylesheet" href="../../../css/board_new.css">
+                    <link rel="stylesheet" href="../../../css/board_v3.css">
+                      
+                    <div class="board_info">
+                        <form name="srhForm" id="srhForm" method="post" action="/board.es?mid=a10201000000&amp;bid=0001">
+                            <fieldset>
+                                <legend class="blind">검색</legend>
+                                <div class="form"> 
+                                    <p class="item">
+                                        <select name="keyField" id="select" title="검색어 분류를 선택하세요." class="form_select">
+                                            <option value="" selected="selected">전체</option>
+                                            <option value="" >제목</option>
+                                            <option value="" >내용</option>
+                                            <option value="" >작성자</option>
+                                        </select>  
+                                    </p>
+                        
+                                    <span class="item type1"><input type="text" name="keyWord" class="form_textbox" placeholder="검색어를 입력하세요" title="검색어를 입력하세요" value=""></span>
+                                    <span class="item type1 btn"><button type="submit" class="Btn-Gray Xs">검색</button></span>
+                                </div>                
+                            </fieldset>
+                        </form>
+                    
+                        <p class="page">
+                            <span class="total">전체 <b>100건</b> </span> <span class="current">현재 페이지 <strong>1</strong>/<b>10</b></span>
+                        </p>
                     </div>
-
-                    <div class="popup">                
-                        <ul class="list">
-                            <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
+                    
+                    <div class="board_list">
+                        <ul class="pdf_list">
+                            <li>
+                                <i class="thumb" aria-hidden="true">
+                                    <img src="../../../img/noimage.jpg" alt="">
+                                </i>
+                                <div class="group">
+                                    <div class="txt_box">                                        
+                                        <!--<span class="divi divi2">구분</span>-->
+                                        <strong class="title">제목이 들어갑니다. 아주 긴 제목의 경우 이렇게 보입니다. 제목이 들어갑니다. 아주 긴 제목의 경우 이렇게 보입니다.</strong>
+                                        <!--<p class="desc">이북형 게시판 등록 테스트</p>-->
+                                        <div class="etc_info">
+                                            <span class="name"><em>작성자</em> 관리자</span>
+                                            <span class="date"><em>작성일</em> 2022.07.01</span>
+                                        </div>                                                                             
+                                    </div>                                        
+                                    <div class="board_btns_icon">
+                                        <a href="" class="btn">다운로드 <i class="xi-download" aria-hidden="true"></i></a>
+                                        <a href="" class="btn">미리보기 <i class="xi-search" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </li>                                
+                            <li>
+                                <i class="thumb" aria-hidden="true">
+                                    <img src="../../../img/noimage.jpg" alt="">
+                                </i>
+                                <div class="group">
+                                    <div class="txt_box">                              
+                                        <strong class="title">2줄 표시 : .title에 .line2 추가 / 3줄 표시 : .title에 .line3 추가 / 모두 표시 : .title에 .nolimit 추가</strong>
+                                        <div class="etc_info">
+                                            <span class="name"><em>작성자</em> 관리자</span>
+                                            <span class="date"><em>작성일</em> 2022.07.01</span>
+                                        </div>                                                                             
+                                    </div>                                        
+                                    <div class="board_btns_icon">
+                                        <a href="" class="btn">다운로드 <i class="xi-download" aria-hidden="true"></i></a>
+                                        <a href="" class="btn">미리보기 <i class="xi-search" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </li>                                
+                            <li>
+                                <i class="thumb" aria-hidden="true">
+                                    <img src="../../../img/noimage.jpg" alt="">
+                                </i>
+                                <div class="group">
+                                    <div class="txt_box">                              
+                                        <strong class="title">제목이 들어갑니다.  </strong>
+                                        <div class="etc_info">
+                                            <span class="name"><em>작성자</em> 관리자</span>
+                                            <span class="date"><em>작성일</em> 2022.07.01</span>
+                                        </div>                                                                             
+                                    </div>                                        
+                                    <div class="board_btns_icon">
+                                        <a href="" class="btn">다운로드 <i class="xi-download" aria-hidden="true"></i></a>
+                                        <a href="" class="btn">미리보기 <i class="xi-search" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </li> 
+                            <li>
+                                <i class="thumb" aria-hidden="true">
+                                    <img src="../../../img/noimage.jpg" alt="">
+                                </i>
+                                <div class="group">
+                                    <div class="txt_box">                              
+                                        <strong class="title">제목이 들어갑니다.  </strong>
+                                        <div class="etc_info">
+                                            <span class="name"><em>작성자</em> 관리자</span>
+                                            <span class="date"><em>작성일</em> 2022.07.01</span>
+                                        </div>                                                                             
+                                    </div>                                        
+                                    <div class="board_btns_icon">
+                                        <a href="" class="btn">다운로드 <i class="xi-download" aria-hidden="true"></i></a>
+                                        <a href="" class="btn">미리보기 <i class="xi-search" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </li> 
                         </ul>
+                    </div>
+                    
+                    <div class="board_pager">
+                        <a href="" class="arr first">처음</a>
+                        <a href="" class="arr prev">이전</a>                                
+                        <span class="group">
+                            <a href="" class="active" title="현재 페이지"><strong>1</strong></a>
+                            <a href="">2</a>
+                            <a href="">3</a>
+                            <a href="">4</a>
+                            <a href="">5</a>
+                            <a href="">6</a>
+                            <a href="">7</a>
+                            <a href="">8</a>
+                            <a href="">9</a>
+                            <a href="">10</a>
+                        </span>                                
+                        <a href="" class="arr next">다음</a>
+                        <a href="" class="arr last">마지막</a>
                     </div>
                 </div>
 
-                <div class="section section2">
-                    <article class="gallery">
-                        <h2 class="title">PHOTO NEWS</h2>
-                        <ul class="list">
-                            <li>
-                                <a href="">
-                                    <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
-                                    <p class="desc">
-                                        <strong class="title">test</strong>
-                                        <span class="txt">test</span>
-                                        <span class="date">2020.05.28</span>
-                                    </p>			
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
-                                    <p class="desc">
-                                        <strong class="title">앨범형 게시판 등록 테스트 30</strong>
-                                        <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
-                                        <span class="date"></span>
-                                    </p>			
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
-                                    <p class="desc">
-                                        <strong class="title">앨범형 게시판 등록 테스트 29</strong>
-                                        <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
-                                        <span class="date"></span>
-                                    </p>			
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
-                                    <p class="desc">
-                                        <strong class="title">정렬 테스트 이미지3개</strong>
-                                        <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
-                                        <span class="date">2020.03.02</span>
-                                    </p>			
-                                </a>
-                            </li>
-                        </ul>
-                        <a href="" class="more">MORE</a>
-                    </article>
-
-                    <div class="link">
-                        <ul class="list">
-                            <li>
-                                <a href="">
-                                    <span class="icon"><img src="../img/main/icon1.png" alt=""></span>
-                                    <strong class="txt">아이콘1</strong>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="icon"><img src="../img/main/icon2.png" alt=""></span>
-                                    <strong class="txt">아이콘2</strong>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="icon"><img src="../img/main/icon3.png" alt=""></span>
-                                    <strong class="txt">아이콘3</strong>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="icon"><img src="../img/main/icon4.png" alt=""></span>
-                                    <strong class="txt">아이콘4</strong>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="icon"><img src="../img/main/icon5.png" alt=""></span>
-                                    <strong class="txt">아이콘5</strong>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- 하단 -->        
-    <div id="quick">
-        <a href="" class="control open">QUICK MENU</a>
-
-        <article class="group">
-            <h2 class="title">
-                <strong>QUICK MENU</strong>
-                <span>원하시는 서비스를 클릭하세요!</span>
-            </h2>
-
-            <ul class="list">
-                <li><a href="" target="_blank">퀵메뉴1</a></li>
-                <li><a href="">퀵메뉴2</a></li>
-
-            </ul>
-        </article>
-    </div>
-
-    <div class="footbanner">
-        <ul class="list">
-            <li><a href="" target="_blank"><img src="../img/layout/footbanner1.gif" alt="대한민국 법원" /></a></li>
-            <li><a href="" target="_blank"><img src="../img/layout/footbanner2.gif" alt="청와대" /></a></li>
-            <li><a href="" target="_blank"><img src="../img/layout/footbanner3.gif" alt="SGIS" /></a></li>
-            <li><a href="" target="_blank"><img src="../img/layout/footbanner4.gif" alt="국가주요지표" /></a></li>
-            <li><a href="" target="_blank"><img src="../img/layout/footbanner5.gif" alt="안전신문고" /></a></li>
-            <li><a href="" target="_blank"><img src="../img/layout/footbanner6.gif" alt="경찰청" /></a></li>
-        </ul>
-    </div>
-
-    <footer id="footer">   
+				<div class="contents_info">
+				
+					<div class="kogl kogl1">
+						<i class="img" aria-hidden="true"><img src="http://www.kogl.or.kr/open/web/images/images_2014/codetype/new_img_opencode1.jpg" alt=""></i> 
+						<span class="txt">본 공공저작물은 공공누리 "출처표시" 조건에 따라 이용할 수 있습니다.</span>
+					</div>
+					
+					<article class="duty">
+						<h2 class="title">콘텐츠 정보책임자</h2>
+						<ul class="list">
+							<li>
+								<strong class="label">담당부서</strong>
+								<span class="part">개발1팀</span>
+							</li>
+							<li>
+								<strong class="label">담당자</strong>
+								<span class="name">이천연</span>
+							</li>
+							<li>
+								<strong class="label">연락처</strong>
+								<span class="tel">062-525-1201</span>
+							</li>
+						</ul>
+						<p class="date">
+							<strong class="label">최근업데이트</strong>
+							<span>2020/03/02</span>
+						</p>
+					</article>
+				
+					<div class="group">
+					
+						<article id="satisfy" class="item">
+							<fieldset>
+								<legend>콘텐츠 만족도 조사</legend>
+								<h2 class="title">
+									<span>콘텐츠 만족도 조사</span>
+									<strong>이 페이지에서 제공하는 정보에 대하여 만족하십니까?</strong>
+									<p class="txt">
+										<span>평균 <strong>5.0</strong>점</span> 
+										<span><strong>2</strong>명 참여</span>
+									</p>
+								</h2>
+								<div class="cont">
+									<ul class="list">
+										<li class="form_radio"><input type="radio" name="chk_point" id="q1" value="5" checked="checked"><label for="q1"> 매우만족</label></li>
+										<li class="form_radio"><input type="radio" name="chk_point" id="q2" value="4"><label for="q2"> 만족</label></li>
+										<li class="form_radio"><input type="radio" name="chk_point" id="q3" value="3"><label for="q3"> 보통</label></li>
+										<li class="form_radio"><input type="radio" name="chk_point" id="q4" value="2"><label for="q4"> 불만족</label></li>
+										<li class="form_radio"><input type="radio" name="chk_point" id="q5" value="1"><label for="q5"> 매우불만족</label></li>
+									</ul>
+								</div>
+							</fieldset>
+						</article>
+					
+						<p class="qr item">
+							<img src="https://chart.apis.google.com/chart?cht=qr&amp;chs=150x150&amp;chl=http://127.0.0.1/menu.es?mid=a10104040000" alt="모두사용 QR코드 http://127.0.0.1/menu.es?mid=a10104040000">
+						</p>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+    <footer id="footer">    
         <div class="footer_wrap">
             <div id="fnb">
                 <ul class="fnb1">
@@ -532,7 +640,7 @@
             </div>
                 
             <div id="siteinfo">
-                <a href="" class="logo"><img src="../img/layout/logo_f.png" alt="로고"></a>
+                <a href="" class="logo"><img src="../../img/layout/logo_f.png" alt="로고"></a>
             
                 <address>61012 광주 북구 첨단과기로208번길 43-10 마루힐 IBC지식산업센터 B동 515호 플랜아이</address>
                 <span>TEL 062.972.3508</span>
@@ -541,17 +649,16 @@
                 <p class="copyright">Copyright 2020 &copy; Plani. All Rights Reserved.</p>
             </div>
             
-            <p class="mark"><img src="../img/layout/mark.png" alt="접근성 마크"></p>
+            <p class="mark"><img src="../../img/layout/mark.png" alt="접근성 마크"></p>
             
             <a href="#wrap" class="btn_top">TOP</a>
         </div>
     </footer>
-    <!-- //하단 -->
 </div>
 
-<script type="text/javascript" src="../../jquery/jquery-1.11.2.min.js"></script>
-
-<script type="text/javascript" src="../js/layout.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../../../jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../js/layout.js"></script>
+<script type="text/javascript" src="../../js/sub.js"></script>
 </body>
+
 </html>

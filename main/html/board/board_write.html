@@ -409,7 +409,320 @@
 				</div>
 
   				<div id="contents_body">
-                    내용 들어갈 곳
+                    <link rel="stylesheet" href="../../../css/board.css">
+                    <link rel="stylesheet" href="../../../css/board_new.css">
+                    <link rel="stylesheet" href="../../../css/board_v3.css">
+                    
+                    <div class="writeForm">
+                        <table class="tstyle_write">
+                            <caption>게시글 쓰기</caption>
+                            <colgroup>
+                                <col width="14%"><col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="title">제목 <span class="point1" title="필수입력 항목"> *</span></label></th>
+                                    <td><input class="form_textbox" type="text" name="title" id="title" value="" maxlength="100" title="제목을 입력하세요" placeholder="제목을 입력하세요."></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="m_name">작성자</label></th>
+                                    <td>
+                                        <input  class="form_textbox" type="text" name="m_name" id="m_name" readonly="readonly" value="관리자" maxlength="12" title="작성자" style="width:auto">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="passwd">비밀번호 <span class="point1" title="필수입력 항목">*</span></label></th>
+                                    <td>
+                                        <input  class="form_textbox" type="password" name="passwd" id="passwd" value="" maxlength="12" class="textbox" title="비밀번호를 입력하세요" style="width:auto">
+                                        <div class="icon_info mt10">비밀번호는 8자리 이상의 영문, 특수문자, 숫자를 모두 사용해야 합니다.</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">공개/비공개</th>
+                                    <td>
+                                        <span class="form_radio">
+                                            <input type="radio" name="open_yn" id="open_ynY" value="Y" checked="checked"> <label for="open_ynY">공개</label>
+                                        </span>                                                
+                                        <span class="form_radio">
+                                            <input type="radio" name="open_yn" id="open_ynN" value="N"> <label for="open_ynN">비공개</label>
+                                        </span>
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <th scope="row"><label for="checkbox_1">비밀글</label></th>
+                                    <td>
+                                        <span class="form_check">
+                                            <input type="checkbox" name="checkbox_1" id="checkbox_1" value="" > <label for="checkbox_1">비밀글</label>
+                                        </span>                                                
+                                        
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <th scope="row"><label for="tel_1">연락처</label></th>
+                                    <td>                                        
+                                        <select name="tel_1" id="tel_1" title="연락처 첫째자리를 선택하세요." class="form_select ">
+                                            <option value="02">02</option>
+                                            <option value="031">031</option>
+                                            <option value="032">032</option>
+                                            <option value="033">033</option>
+                                            <option value="041">041</option>
+                                            <option value="042">042</option>
+                                            <option value="043">043</option>
+                                            <option value="051">051</option>
+                                            <option value="052">052</option>
+                                            <option value="053">053</option>
+                                            <option value="054">054</option>
+                                            <option value="055">055</option>
+                                            <option value="061">061</option>
+                                            <option value="062">062</option>
+                                            <option value="063">063</option>
+                                            <option value="064">064</option>
+                                            <option value="070">070</option>
+                                            <option value="080">080</option>                                            
+                                        </select>
+                                        <span class="lh4rem"> - </span>
+                                        <input type="text" name="tel_2" id="tel_2" maxlength="4" value="" title="연락처 가운데자리를 입력하세요." class="form_textbox" style="width:8rem" class="form_select ">
+                                        <span class="lh4rem"> - </span>
+                                        <input type="text" name="tel_3" id="tel_3" maxlength="4" value="" title="연락처 끝자리를 입력하세요." class="form_textbox" style="width:8rem" class="form_select ">    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="hp_1">휴대전화</label></th>
+                                    <td>
+                                        <select name="hp_1" id="hp_1" title="휴대번호 첫째자리를 선택하세요." class="form_select">
+                                            <option value="010" selected="selected">010</option>
+                                            <option value="010">011</option>
+                                            <option value="010">016</option>
+                                            <option value="010">017</option>
+                                            <option value="010">018</option>
+                                            <option value="010">019</option>
+                                        </select>
+                                        <span class="lh4rem"> - </span>
+                                        <input type="text" name="hp_2" id="hp_2" class="form_textbox" maxlength="4" value="" title="휴대전화번호 가운데자리를 입력하세요." style="width:8rem">
+                                        <span class="lh4rem"> - </span>
+                                        <input type="text" name="hp_3" id="hp_3" class="form_textbox" maxlength="4" value="" title="휴대전화번호 끝자리를 입력하세요." style="width:8rem">                                       
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="email_1">이메일</label></th>
+                                    <td>                                        
+                                        <div class="form_group">
+                                            <span class="item">
+                                                <input type="text" name="email_1" id="email_1" title="이메일 주소를 입력하세요." class="form_textbox" style="width:auto"> 
+                                                <span class="lh4rem"> @ </span>
+                                            </span>
+                                            <span class="item">                                                
+                                                <input type="text" name="email_2" id="email_2" value="" title="이메일 도메인을 입력하세요." class="form_textbox mr5" style="width:auto">
+                                                <select  name="email_code" id="email_code" title="이메일 도메인을 선택하세요" class="form_select">
+                                                    <option value="1" selected>직접입력</option>
+                                                    <option value="naver.com" >naver.com</option>
+                                                    <option value="hanmail.net">hanmail.net</option>
+                                                    <option value="hotmail.com">hotmail.com</option>
+                                                    <option value="nate.com">nate.com</option>
+                                                    <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                                    <option value="empas.com">empas.com</option>
+                                                    <option value="dreamwiz.com">dreamwiz.com</option>
+                                                    <option value="freechal.com">freechal.com</option>
+                                                    <option value="lycos.co.kr">lycos.co.kr</option>
+                                                    <option value="korea.com">korea.com</option>
+                                                    <option value="gmail.com">gmail.com</option>
+                                                    <option value="hanmir.com">hanmir.com</option>
+                                                    <option value="paran.com">paran.com</option>
+                                                </select>
+                                            </span>                                            
+                                        </div>                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="book_nm">희망도서명</label></th>
+                                    <td>
+                                        <div class="form_group_100">
+                                            <input type="text" class="form_textbox mr5" id="book_nm" name="book_nm" title="희망도서명을 입력하세요.">
+                                            <div class="btn_box">
+                                                <a class="btn_basic type2 small" href="javascript:void(0);">검색</a>
+                                            </div>                                            
+                                        </div>
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <th scope="row"><label for="content_textarea">내용</label></th>
+                                    <td class="tb_contents">
+                                        <textarea name="content" id="content_textarea" cols="50" rows="10" title="내용을 입력하세요." placeholder="내용을 입력하세요." class="form_textarea" style="width:100%;"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="cg_code">분류<span class="point1" title="필수입력 항목"> *</span></label></th>
+                                    <td>
+                                        <select id="cg_code" name="cg_code" class="form_select">
+                                            <option value="">선택하세요</option>
+                                            <option value="C01">분류1</option>                                                        
+                                            <option value="C02">분류2</option>
+                                        </select>                                       
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="sdate">납부일</label></th>
+                                    <td>
+                                        <!-- datepicker -->
+                                        <!-- jquery ui CSS -->
+                                        <link rel="stylesheet" href="js/ui.core.css">
+                                        <!-- jquery ui JS -->
+                                        <script src="js/jquery-ui.min.js"></script>
+                                        <script>
+                                            $(function () {
+                                                $.datepicker.setDefaults({
+                                                    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                                                    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                                                    dateFormat: 'yy/mm/dd',
+                                                    showMonthAfterYear: true,
+                                                    changeYear: true,
+                                                    changeMonth: true,
+                                                    yearRange: "c-100:c+10",
+                                                    showOn: 'both'
+                                                });
+                                                $("#sdate").datepicker({
+                                                    buttonText: '<i class="xi-calendar-check" title="시작일"></i>'
+                                                });
+                                                $("#edate").datepicker({
+                                                    buttonText: '<i class="xi-calendar-check" title="종료일"></i>'
+                                                });
+                                            });
+                                        </script>
+                                        <div class="form_group">
+                                            <span class="item">
+                                                <input type="text" name="sdate" id="sdate" value="2019/04/02" maxlength="10" title="시작일을 입력하세요."
+                                                class="form_textbox " style="width:auto">
+                                                <span class="lh4rem"> - </span>
+                                            </span>
+                                            <span class="item">
+                                                <input type="text" name="edate" id="edate" value="2019/04/02" maxlength="10" title="종료일을 입력하세요."
+                                                class="form_textbox " style="width:auto">
+                                            </span>
+                                            
+                                            
+                                        </div>
+                                        <!-- //datepicker -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="year">생년월일</label></th>
+                                    <td>
+                                        <script>
+                                            $(document).ready(function(){            
+                                                var now = new Date();
+                                                var year = now.getFullYear();
+                                                var mon = (now.getMonth() + 1) > 9 ? ''+(now.getMonth() + 1) : '0'+(now.getMonth() + 1); 
+                                                var day = (now.getDate()) > 9 ? ''+(now.getDate()) : '0'+(now.getDate());           
+                                                //년도 selectbox만들기               
+                                                for(var i = 1930 ; i <= year ; i++) {
+                                                    $('#year').append('<option value="' + i + '">' + i + '</option>');    
+                                                }
+                                        
+                                                // 월별 selectbox 만들기            
+                                                for(var i=1; i <= 12; i++) {
+                                                    var mm = i > 9 ? i : "0"+i ;            
+                                                    $('#month').append('<option value="' + mm + '">' + mm + '</option>');    
+                                                }
+                                                
+                                                // 일별 selectbox 만들기
+                                                for(var i=1; i <= 31; i++) {
+                                                    var dd = i > 9 ? i : "0"+i ;            
+                                                    $('#day').append('<option value="' + dd + '">' + dd+ '</option>');    
+                                                }
+                                                $("#year > option[value="+year+"]").attr("selected", "true");        
+                                                $("#month > option[value="+mon+"]").attr("selected", "true");    
+                                                $("#day > option[value="+day+"]").attr("selected", "true");       
+                                            
+                                            })
+                                        </script>
+                                        
+                                        <select name="yy" id="year" class="form_select"></select>                                       
+                                        <span class="lh4rem mr10">년</span>
+
+                                        <select name="mm" id="month" class="form_select"></select>
+                                        <span class="lh4rem mr10">월</span>
+                                    
+                                        <select name="dd" id="day" class="form_select"></select>
+                                        <span class="lh4rem">일</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="address">주소 <span class="point1" title="필수 입력 정보">*</span></label></th>
+                                    <td>
+                                        <!--autoload=false 파라미터를 이용하여 자동으로 로딩되는 것을 막습니다.-->
+                                        <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
+                                        <script>
+                                            /** 우편번호 찾기 */
+                                            function execDaumPostcode() {
+                                                daum.postcode.load(function(){
+                                                    new daum.Postcode({
+                                                        oncomplete: function(data) {
+                                                        // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+                                                        $("#postcode").val(data.zonecode);
+                                                        $("#address").val(data.roadAddress);
+                                                        }
+                                                    }).open();
+                                                });
+                                            }
+                                        </script>
+                                        <div class="form_group mb5">
+                                            <input type="text" class="form_textbox mr5" name="postcode" id="postcode" placeholder="우편번호" readonly style="max-width:20rem"/>                    
+                                            <button type="button" class="btn_basic type2 small" onclick="execDaumPostcode()">우편번호 찾기</button>
+                                        </div>
+                                        <div class="form_group  mb5">
+                                            <input type="text" class="form_textbox " name="address" id="address" placeholder="도로명 주소" readonly />
+                                        </div>
+                                        <div  class="form_group">
+                                            <input type="text" class="form_textbox " name="detailAddress" placeholder="상세 주소" required />
+                                        </div>
+                                    </td>
+                                </tr>
+								<tr class="">
+									<th scope="row">첨부파일</th>
+									<td>
+                                        <div class="add_file">
+                                            <div class="item attach">
+                                                <button type="button"><i class="xi-upload"></i> 파일 첨부</button>
+                                                <span class="txt">hwp,xls,doc,ppt,pdf,zip,jpg,gif,png 파일만 가능합니다. 업로드 용량제한 5MB.</span>
+                                            </div>
+                                            <div class="item">
+                                                <a href="" class="file_down">
+                                                    <img src="../../../img/pdf.png" alt="첨부파일">
+                                                    <span class="file_name">첨부파일명.pdf</span>
+                                                    <span class="file_size">(6KB)</span>
+                                                </a>
+                                                <a href="" class="btn_del"> [파일삭제]</a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="" class="file_down">
+                                                    <img src="../../../img/pdf.png" alt="첨부파일">
+                                                    <span class="file_name">첨부파일명.pdf</span>
+                                                    <span class="file_size">(6KB)</span>
+                                                </a>
+                                                <a href="" class="btn_del"> [파일삭제]</a>
+                                            </div>
+                                        </div>
+									</td>
+								</tr>
+								<!--<tr class="file">
+									<th scope="row"><label for="filename0">첨부파일</label></th>
+									<td>
+										<span class="form_file">
+											<input class="file" type="file" name="filename0" id="filename0" title="첨부파일0">
+											<span class="txt">hwp,xls,doc,ppt,pdf,zip,jpg,gif,png 파일만 가능합니다. 업로드 용량제한 5MB.</span>
+										</span>
+									</td>
+								</tr>-->
+								
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="board_btns ">
+                        <button type="button" class="btn type1">취소</button>
+                        <button type="button" class="btn ">등록 </button>  
+                    </div>
                 </div>
 
 				<div class="contents_info">

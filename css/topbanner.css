@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/*-------------------------------------------------
+title       : 최상단배너
+Author      : 플랜아이 광주
+Create date : 2020-03-03
+-------------------------------------------------*/
+
+.topbanner { position: relative; z-index: 0; z-index: 10; text-align: center; }
+.topbanner::before { position: absolute; left: 0; top: 0; z-index: -1; width: 100%; height: 100%; content: ''; background-color: #f8f8f8; }
+
+.topbanner .group { visibility: hidden; overflow: hidden; width: 0; height: 0; opacity: 0; position: relative; width: 150rem !important; max-width: 100%; margin: 0 auto; -webkit-transition: all 0.2s; transition: all 0.2s; }
+.topbanner .group > .list { overflow: hidden; max-height: 100%; }
+.topbanner .group > .list li { display: none; }
+.topbanner .group > .list li:first-child { display: block; }
+
+.topbanner .bx-viewport li { overflow: hidden; height: 16rem; }
+.topbanner .bx-viewport img { display: inline-block; vertical-align: top; }
+
+.topbanner .open {  position: absolute; right: 1rem; bottom: -4rem; height: 4rem; font-size: 1.2rem; color: #fff; line-height: 4rem; }
+.topbanner .open::after { display: inline-block; position: relative; top: 1px; font-family: "xeicon"; vertical-align: top; font-size: 2rem; content: ''; }
+.topbanner .open .count { float: right; font-size: 1rem; position: relative; z-index: 1; width: 1.5rem; height: 1.5rem; margin: 0.75rem 0 0 -0.75rem; border-radius: 100%; background-color: #009fdc; font-weight: 600; text-align: center; line-height: 1.5rem; vertical-align: top; }
+
+.topbanner .close { font-size: 3rem; overflow: hidden; position: absolute; right: 0; top: 2rem; width: 3rem; height: 3rem; text-align: center; line-height: 3rem; }
+.topbanner .close::before { -webkit-transform: rotate(0); transform: rotate(0); -webkit-transition: all 0.2s; transition: all 0.2s; }
+.topbanner .close:hover::before, .topbanner .close:focus::before { -webkit-transform: rotate(180deg) translateY(2px); transform: rotate(180deg) translateY(2px); }
+.topbanner .close::before { display: block; width: 100%; height: 100%; font-family: "xeicon"; text-align: center; line-height: inherit; content: ''; }
+
+.topbanner .close.oneday { font-size: 1.4rem; top: auto; bottom: 1rem; width: auto; padding: 0 1rem; border: 1px solid #000; background-color: #000; color: #fff; line-height: 2.8rem; -webkit-transition: all 0.2s; transition: all 0.2s; }
+.topbanner .close.oneday::before { display: none; }
+.topbanner .close.oneday::after { display: inline-block; position: relative; top: 1px; font-family: "xeicon"; vertical-align: top; margin-left: 0.5rem; content: ''; transition: all 0.2s;}
+.topbanner .close.oneday:hover, .topbanner .close.oneday:focus { background: #fff; color: #000; }
+.topbanner .control.close:hover::after, .topbanner .control.close:focus::after { -webkit-transform: rotate(180deg) translateY(2px); transform: rotate(180deg) translateY(2px); }
+
+.topbanner .bx-pager { padding: 1.5rem 0; }
+.topbanner .bx-pager div { display: inline; }
+.topbanner .bx-pager .bx-pager-link { display: inline-block; overflow: hidden; width: 1rem; height: 1rem; margin-left: 0.5rem; border-radius: 100%; border: 0.25rem solid #666; background-color: transparent; vertical-align: top; -webkit-transition: all 0.2s; transition: all 0.2s; }
+.topbanner .bx-pager .bx-pager-link.active { background-color: #666; }
+
+.topbanner.active .group { visibility: visible; overflow: visible; width: auto; height: auto; opacity: 1; }
+.topbanner.active .open { display: none; }
