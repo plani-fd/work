@@ -9,7 +9,13 @@ Author      : 플랜아이 광주
 Create date : 2020-03-03
 -------------------------------------------------*/
 
-.main_wrap {@include width($width1);position: relative; }
+.main_wrap 
+{
+    @include width($width1);
+    position: relative; 
+
+    &::after {display: block; clear: both; width: 100%; height: 0; content: '';}
+}
 
 // 비주얼
 #visual 
@@ -139,52 +145,7 @@ Create date : 2020-03-03
         }
     }
 
-    // .list 
-    // {
-    //     float: left; position: relative; width: 20rem; padding-top: 6.8rem; border: 1px solid #303b50; background-color: #fff;
-
-    //     a { display: block; position: relative; padding: 0 2rem; border-right: 1px solid rgba(255, 255, 255, 0.2); }
-
-    //     li 
-    //     {
-    //         @include hidden;
-    //         background-color: #fff;
-
-    //         &.active
-    //         {
-    //             @include visible; 
-    //             position: absolute; left: 0; top: 0; width: 100% !important; height: 6.8rem; padding: 0 !important; background: 0 none; color: #fff; line-height: 6.8rem;
-
-    //             a
-    //             {
-    //                 @include ellipsis1;
-    //                 padding-right: 4rem; background-color: #303b50;
-
-    //                 &::after {@include icon(type2); right: 2rem; top: 0; content: ''; transition: $time2;}
-    //             }
-    //         }
-    //     }
-
-    //     &.active
-    //     {
-    //         padding-bottom: 1rem;
-
-    //         li
-    //         {
-    //             @include visible; 
-    //             transition: $time2; white-space: nowrap;
-
-    //             &:first-child,
-    //             &.active:first-child + li {padding-top: 1rem;}
-
-    //             &.active a {height: 6.9rem;}
-
-    //             a::after {transform: rotate(180deg);}
-    //         }
-    //     }
-    // }
-
-    .list
+    & > .list
     {
         display: inline-block; width: calc(100% - 7rem);
 

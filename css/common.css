@@ -132,6 +132,46 @@ Create date : 2020-03-02
 .sitemap .depth3 { padding: 1.5rem 2rem; font-weight: 400; color: 46464a; }
 .sitemap .depth3 li + li { margin-top: 0.5rem; }
 
+/* 만족도 */
+* + .contents_info { margin-top: 10rem; }
+.contents_info > * + * { margin-top: -1px; }
+
+.contents_info .duty { overflow: hidden; position: relative; padding: 1.5rem 2rem; border: 1px solid #ddd; line-height: 3rem; }
+.contents_info .duty .title { font-size: 2rem; float: left; overflow: hidden; width: 3rem; height: 3rem; border-radius: 100%; background-color: #3c4165; font-weight: 400; color: #fff; text-align: center; }
+.contents_info .duty .title::before { display: block; width: 100%; height: 100%; font-family: "xeicon"; text-align: center; line-height: inherit; content: ''; }
+.contents_info .duty .label { font-weight: 500; color: #3c4165; }
+.contents_info .duty .label::after { display: inline-block; position: relative; top: -2px; width: 1px; height: 1.2rem; margin: 0 0.5rem 0 0.75rem; background-color: #ddd; content: ''; vertical-align: middle; }
+.contents_info .duty .list { float: left; width: calc(100% - 25rem); padding-left: 1rem; }
+.contents_info .duty .list li { float: left; margin-right: 2rem; }
+.contents_info .duty .list li:last-child { margin-right: 0; }
+.contents_info .duty .date { position: absolute; right: 2rem; top: 1.5rem; }
+
+.contents_info .group { display: table; width: calc(100% + 0px); table-layout: fixed; }
+.contents_info .group > * { display: table-cell; padding-right: 0px; vertical-align: middle; }
+.contents_info .group .item + .item { border-left: 0 none; }
+.contents_info .group > .qr:first-child { float: right; }
+.contents_info .group .qr { width: 15rem; border: 1px solid #ddd; }
+
+.contents_info #satisfy { position: relative; padding: 2.5rem 3rem; border: 1px solid #ddd; background-color: #f6f7f9; }
+.contents_info #satisfy .title { font-size: 1.6rem; position: relative; margin-bottom: 1rem; font-weight: 300; }
+.contents_info #satisfy .title > strong { font-size: 1.8rem; font-weight: 600; color: #333; }
+.contents_info #satisfy .title > span { display: block; color: #484c58; line-height: 1.5; }
+.contents_info #satisfy .title .txt { position: absolute; right: 0; bottom: 0; }
+.contents_info #satisfy .title .txt::before { content: '['; }
+.contents_info #satisfy .title .txt::after { content: ']'; }
+.contents_info #satisfy .title .txt span + span::before { content: ' / '; }
+.contents_info #satisfy .title .txt strong { font-weight: 400; }
+
+.contents_info #satisfy .list { padding: 1rem 0; }
+.contents_info #satisfy .form { position: absolute; right: 2.5rem; bottom: 3rem; width: 40rem; height: 4rem; padding: 0 10rem; line-height: 4rem; }
+.contents_info #satisfy .form .length { position: absolute; left: 0; top: 0; width: 9rem; text-align: right; }
+.contents_info #satisfy .form .btn { position: absolute; right: 0; bottom: 0; width: 10rem; height: 100%; border: 0 none; background-color: #484c58; color: #fff; text-align: center; }
+
+.kogl { display: table; width: calc(100% + 0px); table-layout: fixed; border: 1px solid #ddd; }
+.kogl > * { display: table-cell; padding-right: 0px; vertical-align: middle; }
+.kogl .img { width: 17rem; padding: 1rem; border-right: 1px solid #ddd; text-align: center; }
+.kogl .txt { padding: 3rem; }
+
 /* 게시판 상단 */
 .board_info { overflow: hidden; line-height: 4rem; }
 .board_info + * {margin-top: 2rem;}

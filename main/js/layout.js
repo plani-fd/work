@@ -30,18 +30,18 @@ $(function()
     $('#gnb2').gnb2();
 
     // 풋배너 슬라이드
-    var $footbanner = $('.footbanner .list');
+    // var $footbanner = $('.footbanner .list');
 
-    $footbanner.bxSlider
-    ({
-        pager       : false,
-        auto        : true,
-        autoHover   : true,
-        maxSlides   : 9,
-        minSlides   : 2,
-        moveSlides  : 1,
-        slideWidth  : 160
-    });
+    // $footbanner.bxSlider
+    // ({
+    //     pager       : false,
+    //     auto        : true,
+    //     autoHover   : true,
+    //     maxSlides   : 9,
+    //     minSlides   : 2,
+    //     moveSlides  : 1,
+    //     slideWidth  : 160
+    // });
 
     // 퀵메뉴
     $('#quick').classtoggle();
