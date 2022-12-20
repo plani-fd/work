@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*@import url("../../css/common.css");*/
+@import url("../../css/common_v2.css");
 @import url("contents.css");
 /*-------------------------------------------------
 title       : 서브
@@ -7,8 +7,8 @@ Author      : 플랜아이 광주
 Create date : 2020-03-03
 -------------------------------------------------*/
 .main_wrap {
-  width: 150rem;
-  max-width: calc(100% - 2rem);
+  width: 140rem;
+  max-width: calc(100% - 4rem);
   margin-left: auto !important;
   margin-right: auto !important;
   position: relative;
@@ -43,8 +43,8 @@ Create date : 2020-03-03
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 150rem;
-  max-width: calc(100% - 2rem);
+  width: 140rem;
+  max-width: calc(100% - 4rem);
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -209,7 +209,7 @@ Create date : 2020-03-03
   font-size: 3.4rem;
   margin-bottom: 2.5rem;
   padding-top: 5rem;
-  font-family: "Nanum Square";
+  font-family: "Pretendard";
   font-weight: 500;
   color: #000;
 }
@@ -490,7 +490,7 @@ Create date : 2020-03-03
 }
 .contents_util .util .share .item .band a::before {
   font-size: 2rem;
-  font-family: "Noto Sans KR";
+  font-family: "Pretendard";
   font-weight: 900;
   color: #21c531;
   content: "b";
