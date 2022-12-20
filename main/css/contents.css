@@ -90,7 +90,7 @@ Create date : 2020-04-24
   font-size: 1.7rem;
   display: block;
   margin: 1rem 0 0.5rem;
-  color: #555;
+  color: #767676;
   font-weight: 500;
 }
 .title4:first-child,
@@ -236,10 +236,6 @@ Create date : 2020-04-24
   transition: all 0.2s;
   margin-top: 1.5rem;
   border-radius: 0.5rem;
-}
-.box1 .btn:hover, .box1 .btn:focus {
-  background-color: #d6d6d6;
-  color: #fff;
 }
 .box1 .btn i {
   font-size: 1.7rem;
@@ -405,10 +401,6 @@ Create date : 2020-04-24
   transition: all 0.2s;
   margin-top: 3rem;
   font-weight: 400;
-}
-.box6 .btn:hover, .box6 .btn:focus {
-  background-color: #dedede;
-  color: #fff;
 }
 .box6 .btn i {
   font-size: 1.6rem;

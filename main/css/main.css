@@ -6,7 +6,7 @@ Create date : 2020-02-14
 -------------------------------------------------*/
 #visual {
   width: 192rem;
-  max-width: calc(100% - 2rem);
+  max-width: calc(100% - 4rem);
   margin-left: auto !important;
   margin-right: auto !important;
   overflow: hidden;
@@ -144,8 +144,8 @@ Create date : 2020-02-14
 }
 
 #contents {
-  width: 150rem;
-  max-width: calc(100% - 2rem);
+  width: 140rem;
+  max-width: calc(100% - 4rem);
   margin-left: auto !important;
   margin-right: auto !important;
   margin: 9rem 0;
