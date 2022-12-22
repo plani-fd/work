@@ -14,7 +14,14 @@
 
         a 
         {
-            display: inline-block; position: relative; height: 2.5rem; padding: 0 1.5rem; border-radius: 3rem; background-color: #fff; line-height: 2.5rem; transition: $time2;
+            display: inline-block; position: relative; height: 2.5rem; padding: 0 1.5rem; border-radius: 3rem; background-color: #fff; line-height: 2.3rem; white-space: nowrap; transition: $time2;
+
+            &[href*="remix"] 
+            {
+                background-color: #0080ff; color: #fff;
+
+                &::after {margin: 0 -0.5rem 0 0.25rem; font-family: $ff1; content: "\ECAF";}
+            }
     
             &:hover,
             &:focus {background-color: #666; color: #fff;}
@@ -26,7 +33,7 @@
         @include fs(12);
         overflow: hidden; position: fixed; right: 0; top: 0; z-index: 1; width: 5rem; height: 5rem; padding-bottom: 0.5rem; border: 1px solid #aaaa; background-color: #aaa; color: #fff; text-align: center; line-height: 1.2; transition: $time2;
 
-        &::before {@include icon(type1); @include fs($fs2); display: block; content: '';}
+        &::before {@include icon(type1); @include fs($fs2); display: block; content: "\EA77";}
 
         &:hover,
         &:focus {background-color: #fff; color: #666;}

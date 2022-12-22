@@ -38,9 +38,19 @@
   padding: 0 1.5rem;
   border-radius: 3rem;
   background-color: #fff;
-  line-height: 2.5rem;
+  line-height: 2.3rem;
+  white-space: nowrap;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+#styleguide .link a[href*=remix] {
+  background-color: #0080ff;
+  color: #fff;
+}
+#styleguide .link a[href*=remix]::after {
+  margin: 0 -0.5rem 0 0.25rem;
+  font-family: "remixicon";
+  content: "\ecaf";
 }
 #styleguide .link a:hover, #styleguide .link a:focus {
   background-color: #666;
@@ -72,7 +82,7 @@
   vertical-align: top;
   font-size: 1.6rem;
   display: block;
-  content: "\e930";
+  content: "\ea77";
 }
 #styleguide .btn_top:hover, #styleguide .btn_top:focus {
   background-color: #fff;
