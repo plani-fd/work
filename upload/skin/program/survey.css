@@ -1,0 +1,67 @@
+@charset "utf-8";
+@import url("../../../css/board.css");
+
+/* 목록 */
+.survey_list li {position: relative; padding: 1.5rem 18rem 1.5rem 15rem;}
+.survey_list li + li {border-top: 1px solid #ddd;}
+.survey_list .img {overflow: hidden; position: absolute; left: 0; top: auto; width: 13rem; height: 8.5rem; background-color: #ddd;}
+.survey_list .img img {position: absolute; left: 0; top: 50%; width: 100%; min-height: 100%; transform: translateY(-50%);}
+.survey_list .title {display: block; margin-bottom: 0.5rem; font-size: 1.8rem; font-weight: 600; color: #000;}
+.survey_list .desc span {display: block;}
+.survey_list .desc span::before {display: inline-block; margin-right: 0.5rem; font-family: 'xeicon'; color: #999; vertical-align: middle;}
+.survey_list .hit::before {content: '';}
+.survey_list .date::before {content: '';}
+.survey_list .btns {position: absolute; right: 0; top: 50%; width: 16rem; transform: translateY(-50%);}
+.survey_list .btns > * {display: block; padding: 0 1.5rem 0 1rem; height: 4rem; border: 1px solid #ddd; background-color: #fff; line-height: 4rem;}
+.survey_list .btns > *::before {display: inline-block; position: relative; top: -0.1rem; margin-right: 1rem; font-family: 'xeicon'; color: #999;  vertical-align: middle;}
+.survey_list .btns > * + * {margin-top: 0.25rem;}
+.survey_list .wait::before {content: '';}
+.survey_list .btn {color: #fff; transition: all 0.2s;}
+.survey_list .btn::before {color: inherit;}
+.survey_list .btn.type1::before {content: '';}
+.survey_list .btn.type1 {border-color: #9c1c2b; background-color: #9c1c2b;}
+.survey_list .btn.type1:hover,
+.survey_list .btn.type1:focus {background-color: #fff; color: #9c1c2b;}
+.survey_list .btn.type2::before {content: '';}
+.survey_list .btn.type2 {border-color: #484c58; background-color: #484c58;}
+.survey_list .btn.type2:hover,
+.survey_list .btn.type2:focus {background-color: #fff; color: #484c58;}
+
+/* 내용 */
+.survey_view {margin: 5.5rem -5.5rem -5.5rem;}
+.survey_view .group {border-top: 1px solid #ddd;}
+.survey_view .title {padding: 1.5rem 2rem; font-size: 1.8rem; font-weight: 500; color: #000;}
+.survey_view .item {padding: 2rem 2.5rem; border-top: 1px solid #efefef; background-color: #fcfcfc;}
+.survey_view .item .list.type1 li + li {margin-top: 0.5rem;}
+.survey_view .form_radio {display: block;}
+.survey_view .form_radio + textarea {margin: 0.5rem 0 0 2rem; width: calc(100% - 2rem);}
+.survey_view textarea {height: auto; padding: 1rem;}
+
+/* 결과 */
+.survey_view .item .graph {overflow: hidden; margin: 0.5rem 0 1rem;}
+.survey_view .item .graph:last-child {margin-bottom: 0;}
+.survey_view .item .bar {float: left; position: relative; width: calc(100% - 10rem); height: 1.2rem; margin-top: 0.5rem; background: repeating-linear-gradient(-45deg, #ddd, #ddd 0.2rem, #fff 0, #fff 0.4rem);}
+.survey_view .item .bar .per {display: block; height: 100%; background-color: #484c58;}
+.survey_view .item .txt {float: right; width: 9rem; font-size: 1.4rem;}
+
+/*경고창*/
+p.alertMsg {background-color:rgba(0, 0, 0, 0.46); border:1px solid #797979; box-sizing:border-box; border-radius:50px; color:#fff; font-family:'NBG','NanumBarunGothic','나눔바른고딕','Malgun Gothic','맑은고딕'; font-size:14px; padding:10px 20px }
+
+/*에러페이지*/
+div.error {text-align:center; font-size:16px; height:100%; width:100%; margin-top:100px}
+
+@media (max-width: 768px)
+{
+    /* 내용 */
+    .survey_view {margin: 1.5rem 0 -1.5rem;}
+}
+
+@media (max-width: 580px)
+{
+    /* 목록 */
+    .survey_list li {padding-right: 0; padding-left: 10rem;}
+    .survey_list li .img {width: 8rem; height: 5rem;}
+    .survey_list .btns {display: block; position: static; width: auto; margin-top: 0.5rem; transform: translateY(0);}
+    .survey_list .btns > * {display: inline-block; vertical-align: top;}
+    .survey_list .btns > * + * {margin: 0;}
+}
