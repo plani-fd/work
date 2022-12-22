@@ -15,14 +15,42 @@
 #styleguide h1 span {
   font-size: 2.3rem;
   display: block;
+  margin-bottom: 5rem;
   color: #000;
+}
+#styleguide nav a {
+  display: block;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#styleguide nav a::after {
+  display: inline-block;
+  position: relative;
+  top: -0.25rem;
+  width: 0;
+  height: 0;
+  margin-left: 0.5rem;
+  border-radius: 100%;
+  background-color: #000;
+  content: "";
+  vertical-align: middle;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#styleguide nav .active {
+  font-weight: 700;
+  color: #000;
+}
+#styleguide nav .active::after {
+  width: 0.5rem;
+  height: 0.5rem;
 }
 #styleguide main {
   margin-left: 28rem;
   padding: 0 3rem 3rem;
 }
 #styleguide main > section {
-  margin-top: 4rem;
+  padding-top: 4rem;
 }
 #styleguide main > section > h2 {
   font-size: 3rem;
@@ -109,7 +137,7 @@
   background-color: #aaa;
   color: #fff;
 }
-#styleguide footer {
+#styleguide footer p {
   font-size: 1.2rem;
   position: fixed;
   left: 0;
