@@ -21,7 +21,7 @@ $(function()
         $(this).siblings('a').removeClass('active');
         $(this).addClass('active');
 
-        $('html, body').animate({scrollTop: $(this.hash).offset().top});
+        $('html, body').animate({scrollTop: ($(this.hash).offset().top - 50)});
 
         return false;
     });

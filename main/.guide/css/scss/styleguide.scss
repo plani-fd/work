@@ -7,6 +7,31 @@
     header {position: fixed; left: 0; top: 0; z-index: 1; width: 25rem; height: 100%; padding: 3rem 4rem 3rem 3rem; box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); border-right: 1px solid #ddd; background-color: #fcfcfc;}
     h1 span {@include fs(23); display: block; margin-bottom: 5rem; color: #000;}
 
+    .link 
+    {
+        @include fs(12); 
+        position: fixed; right: 5rem; top: 0; left: 25rem; height: 5rem; padding: 0 1.5rem; background-color: #ddd; color: #666; text-align: right; line-height: 5rem;
+
+        a 
+        {
+            display: inline-block; position: relative; height: 2.5rem; padding: 0 1.5rem; border-radius: 3rem; background-color: #fff; line-height: 2.5rem; transition: $time2;
+    
+            &:hover,
+            &:focus {background-color: #666; color: #fff;}
+        }
+    }
+
+    .btn_top 
+    {
+        @include fs(12);
+        overflow: hidden; position: fixed; right: 0; top: 0; z-index: 1; width: 5rem; height: 5rem; padding-bottom: 0.5rem; border: 1px solid #aaaa; background-color: #aaa; color: #fff; text-align: center; line-height: 1.2; transition: $time2;
+
+        &::before {@include icon(type1); @include fs($fs2); display: block; content: '';}
+
+        &:hover,
+        &:focus {background-color: #fff; color: #666;}
+    }
+
     nav
     {
         a 
@@ -26,7 +51,7 @@
 
     main 
     {
-        margin-left: 28rem; padding: 0 3rem 3rem;
+        margin-left: 28rem; padding: 5rem 3rem 3rem;
 
         & > section
         {
@@ -58,17 +83,6 @@
         .toolbar {display: none;}
         .line.alt2 {background-color: #f8f8f8 !important;}
         .keyword {font-weight: normal !important;}
-    }
-
-    .btn_top 
-    {
-        @include fs(12);
-        overflow: hidden; position: fixed; left: 25rem; bottom: 0; width: 5rem; height: 5rem; padding-bottom: 0.5rem; background-color: #ddd; color: #666; text-align: center; line-height: 1.2; transition: $time2;
-
-        &::before {@include icon(type1); @include fs($fs2); display: block; content: '';}
-
-        &:hover,
-        &:focus {background-color: #aaa; color: #fff;}
     }
     
     footer p {@include fs(12); position: fixed; left: 0; bottom: 0; z-index: 2; width: 22rem; padding: 3rem; color: #999;}

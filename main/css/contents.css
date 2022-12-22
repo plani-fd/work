@@ -77,7 +77,7 @@ Create date : 2020-04-24
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   font-size: 1.6rem;
   left: 0;
   margin-top: 0.2rem;
@@ -210,7 +210,7 @@ Create date : 2020-04-24
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   font-size: 2rem;
   left: 0;
   margin-top: -0.2rem;
@@ -614,7 +614,7 @@ Create date : 2020-04-24
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   left: calc(100% - 3.5rem);
   top: 4rem;
   width: 3rem;
@@ -681,7 +681,7 @@ Create date : 2020-04-24
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   position: absolute;
   top: 50%;
   left: auto;
@@ -732,7 +732,7 @@ Create date : 2020-04-24
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   position: absolute;
   top: 50%;
   left: auto;
@@ -800,7 +800,7 @@ Create date : 2020-04-24
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   position: absolute;
   top: 50%;
   left: auto;
@@ -898,7 +898,7 @@ Create date : 2020-04-24
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   font-size: 2rem;
   right: 0;
   top: 5.5rem;
@@ -1050,7 +1050,7 @@ Create date : 2020-04-24
   display: inline-block;
   position: relative;
   top: 1px;
-  font-family: "xeicon";
+  font-family: "remixicon";
   vertical-align: top;
   font-size: 2.4rem;
   position: relative;
@@ -1110,7 +1110,7 @@ Create date : 2020-04-24
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   right: 2rem;
   content: "\e93f";
 }

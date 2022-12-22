@@ -18,6 +18,66 @@
   margin-bottom: 5rem;
   color: #000;
 }
+#styleguide .link {
+  font-size: 1.2rem;
+  position: fixed;
+  right: 5rem;
+  top: 0;
+  left: 25rem;
+  height: 5rem;
+  padding: 0 1.5rem;
+  background-color: #ddd;
+  color: #666;
+  text-align: right;
+  line-height: 5rem;
+}
+#styleguide .link a {
+  display: inline-block;
+  position: relative;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  border-radius: 3rem;
+  background-color: #fff;
+  line-height: 2.5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#styleguide .link a:hover, #styleguide .link a:focus {
+  background-color: #666;
+  color: #fff;
+}
+#styleguide .btn_top {
+  font-size: 1.2rem;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid rgba(170, 170, 170, 0.6666666667);
+  background-color: #aaa;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#styleguide .btn_top::before {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  font-family: "remixicon";
+  vertical-align: top;
+  font-size: 1.6rem;
+  display: block;
+  content: "\e930";
+}
+#styleguide .btn_top:hover, #styleguide .btn_top:focus {
+  background-color: #fff;
+  color: #666;
+}
 #styleguide nav a {
   display: block;
   -webkit-transition: all 0.2s;
@@ -47,7 +107,7 @@
 }
 #styleguide main {
   margin-left: 28rem;
-  padding: 0 3rem 3rem;
+  padding: 5rem 3rem 3rem;
 }
 #styleguide main > section {
   padding-top: 4rem;
@@ -106,36 +166,6 @@
 }
 #styleguide .syntaxhighlighter .keyword {
   font-weight: normal !important;
-}
-#styleguide .btn_top {
-  font-size: 1.2rem;
-  overflow: hidden;
-  position: fixed;
-  left: 25rem;
-  bottom: 0;
-  width: 5rem;
-  height: 5rem;
-  padding-bottom: 0.5rem;
-  background-color: #ddd;
-  color: #666;
-  text-align: center;
-  line-height: 1.2;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-#styleguide .btn_top::before {
-  display: inline-block;
-  position: relative;
-  top: 1px;
-  font-family: "xeicon";
-  vertical-align: top;
-  font-size: 1.6rem;
-  display: block;
-  content: "\e930";
-}
-#styleguide .btn_top:hover, #styleguide .btn_top:focus {
-  background-color: #aaa;
-  color: #fff;
 }
 #styleguide footer p {
   font-size: 1.2rem;

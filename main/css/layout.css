@@ -39,10 +39,10 @@ Create date : 2020-02-14
   display: block;
   width: 100%;
   height: 100%;
-  font-family: "xeicon";
+  font-family: "remixicon";
   text-align: center;
   line-height: inherit;
-  content: "\e97a";
+  content: "\f0d1";
 }
 #header .search .group {
   visibility: hidden;
@@ -112,7 +112,7 @@ Create date : 2020-02-14
   display: block;
   width: 100%;
   height: 100%;
-  font-family: "xeicon";
+  font-family: "remixicon";
   text-align: center;
   line-height: inherit;
   content: "\e97a";
@@ -186,7 +186,7 @@ Create date : 2020-02-14
   display: inline-block;
   position: relative;
   top: 1px;
-  font-family: "xeicon";
+  font-family: "remixicon";
   vertical-align: top;
   margin-left: 0.5rem;
   content: "\e941";
@@ -243,7 +243,7 @@ Create date : 2020-02-14
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   left: 0;
   top: 0;
   z-index: -1;
@@ -280,7 +280,7 @@ Create date : 2020-02-14
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   content: "\e936";
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -450,7 +450,7 @@ Create date : 2020-02-14
   display: block;
   width: 100%;
   height: 100%;
-  font-family: "xeicon";
+  font-family: "remixicon";
   text-align: center;
   line-height: inherit;
   content: "\e959";
@@ -611,7 +611,7 @@ Create date : 2020-02-14
   display: inline-block;
   position: relative;
   top: 1px;
-  font-family: "xeicon";
+  font-family: "remixicon";
   vertical-align: top;
   margin-top: 1.5rem;
   padding: 1.5rem 0;
@@ -713,7 +713,7 @@ Create date : 2020-02-14
   top: auto;
   left: auto;
   right: auto;
-  font-family: "xeicon";
+  font-family: "remixicon";
   font-size: 1.8rem;
   right: 2rem;
   color: #bcc3c9;
@@ -764,7 +764,7 @@ Create date : 2020-02-14
   display: inline-block;
   position: relative;
   top: 1px;
-  font-family: "xeicon";
+  font-family: "remixicon";
   vertical-align: top;
   display: block;
   padding-top: 0.5rem;
@@ -843,7 +843,7 @@ Create date : 2020-02-14
   display: block;
   width: 100%;
   height: 100%;
-  font-family: "xeicon";
+  font-family: "remixicon";
   text-align: center;
   line-height: inherit;
   height: 200%;
@@ -918,7 +918,7 @@ Create date : 2020-02-14
   display: block;
   width: 100%;
   height: 100%;
-  font-family: "xeicon";
+  font-family: "remixicon";
   text-align: center;
   line-height: inherit;
   content: "\e93b";

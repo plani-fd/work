@@ -1,10 +1,8 @@
 @charset 'utf-8';
 @import 'basic';
 
+@import url('../../font/remixicon/remixicon.css');                           		            // Rimix Icon 2.5.0
 @import url('https://fonts.googleapis.com/css?family=#{$ff3}:300,400,500,600,700,800,900');     // 영문폰트
-@import url('../../font/webfonts_NotoSansKR.css');      		                                // font-family: 'Noto Sans KR'; 300,400,500,700,900
-@import url('../../font/webfonts_NanumSquare.css');      		                                // font-family: 'Nanum Square'; 300,400,700,900
-@import url('../../font/dingbat_xeicon.css');                           		                // XEIcon 2.3.3
 
 /*-------------------------------------------------
 title       : 초기화

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("../../font/pretendard/font_pretendard_m.css");
 /*-------------------------------------------------
 title       : 메인
 Author      : 플랜아이 광주
@@ -74,7 +75,7 @@ Create date : 2020-02-14
   display: block;
   width: 100%;
   height: 100%;
-  font-family: "xeicon";
+  font-family: "remixicon";
   text-align: center;
   line-height: inherit;
   text-indent: 0;
@@ -172,7 +173,7 @@ Create date : 2020-02-14
   display: inline-block;
   position: relative;
   top: 1px;
-  font-family: "xeicon";
+  font-family: "remixicon";
   vertical-align: top;
   font-size: 2rem;
   content: "\e914";
@@ -321,7 +322,7 @@ Create date : 2020-02-14
   display: inline-block;
   position: relative;
   top: 1px;
-  font-family: "xeicon";
+  font-family: "remixicon";
   vertical-align: top;
   content: "\e942";
 }
@@ -429,7 +430,7 @@ Create date : 2020-02-14
   display: block;
   width: 100%;
   height: 100%;
-  font-family: "xeicon";
+  font-family: "remixicon";
   text-align: center;
   line-height: inherit;
   content: "\ea3e";
