@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import 'maxin';
+
+/*-------------------------------------------------
+title       : 인쇄
+Author      : 플랜아이 광주
+Create date : 2022-12-22
+-------------------------------------------------*/
+
+@media print 
+{
+    .topbanner,
+    .footbanner,
+    .contents_info,
+    .contents_util,
+    #issue,
+    #quick,
+    #header, 
+    #visual,
+    #snb,
+    #footer {display: none;}
+
+    #wrap,
+    #main,
+    #contents, 
+    #contents_body,
+    .main_wrap {@include width(100%, 100%);}
+}

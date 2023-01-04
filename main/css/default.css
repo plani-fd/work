@@ -1,9 +1,8 @@
 @import url("../../css/default.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700,800,900");
+@import url("//fonts.googleapis.com/css?family=Open+Sans:200,300,400,500,600,700,800");
 body {
-  font-size: 1.6rem;
   line-height: 1.5625;
-  font-family: "Pretendard";
-  font-weight: 300;
-  color: #767676;
+  font-family: "Open+Sans", "Pretendard";
+  font-size: 1.6rem;
+  color: #555;
 }

@@ -1,0 +1,275 @@
+@charset "utf-8";
+@import 'maxin';
+
+/*-------------------------------------------------
+title       : 공통 영역
+Author      : 플랜아이 광주
+Create date : 2022-12-26
+-------------------------------------------------*/
+
+// 통합검색 폼
+.search_form
+{
+    form 
+    { 
+        position: relative; width: 50rem; max-width: 100%; margin: 0 auto; padding: 0 8rem; line-height: 4rem; 
+
+        label {position: absolute; left: 0; top: 0; font-weight: 400;}
+    }
+
+    .btn 
+    { 
+        position: absolute; right: 0; top: 0; width: 8rem; height: 4rem; border: 1px solid #000; background-color: #000; color: #fff; -webkit-transition: all 0.2s; transition: all 0.2s; 
+
+        &:hover,
+        &:focus {background-color: #fff; color: #000;}
+    }
+}
+
+// 통합검색 결과
+.search_result
+{
+    .label 
+    {
+        padding: 3rem 0; border-bottom: 1px solid #ddd; font-size: 2rem; color: #000; text-align: center;
+
+        strong {font-weight: 600; color: #484c58;}
+    }
+
+    .depth4_tab {margin-top: 3rem;}
+
+    .group 
+    {
+        position: relative; margin-top: 5rem;
+
+        .more 
+        {
+            display: block; margin-top: 1rem; padding: 1rem; border: 1px solid #ddd; background-color: #f8f8f8; text-align: center;
+
+            i {transition: all 0.2s;}
+
+            &:hover,
+            &:focus
+            {
+                i {transform: rotate(180deg);}
+            }
+        }
+    }
+
+    .title 
+    {
+        margin-bottom: 2rem; font-size: 2.5rem; font-weight: 500; color: #000;
+
+        .point1 {color: #c00;}
+
+        small {font-size: 1.6rem; font-weight: 300; color: #555;}
+    }
+
+    .board_list
+    {
+        li 
+        {
+            padding: 2rem 0;
+
+            & + li {border-top: 1px solid #ddd;}
+        }
+
+        strong {display: block; font-size: 1.8rem; font-weight: 400; color: #000;}
+
+        .info 
+        {
+            margin: 0.5rem 0 0; padding: 1rem 1.5rem; background-color: #f8f8f8;
+
+            span 
+            {
+                display: inline-block; vertical-align: middle;
+
+                & + span::before {display: inline-block; position: relative; top: -0.2rem; width: 1px; height: 1.5rem; margin: 0 1rem 0 0.75rem; background-color: #ddd; content: ''; vertical-align: middle;}
+            }
+        }
+
+        .txt {margin-top: 1rem;}
+    }
+}
+
+// 사이트맵
+.sitemap 
+{ 
+    margin-top: -4rem; 
+
+    .group {overflow: hidden; padding: 4rem 0; border-bottom: 1px solid #ddd;}
+
+    dt {float: left; width: 20%; font-size: 2.6rem; font-weight: 600; color: #2d6dbb; word-break: keep-all;}
+    dd {float: right; width: 80%;}
+
+    .depth2 
+    { 
+        width: calc(100% + 2rem); margin-bottom: -2rem; 
+
+        a { display: block; }
+
+        & > li 
+        { 
+            float: left; width: 25%; margin-bottom: 2rem; padding-right: 2rem;
+            
+            & > a 
+            { 
+                overflow: hidden; height: 4.5rem; padding: 0 2rem; border: 1px solid #ddd; background-color: #f6f6f8; font-size: 1.8rem; font-weight: 500; color: #242427; text-overflow: ellipsis; line-height: 4.5rem; white-space: nowrap; transition: all 0.2s; 
+
+                &:hover,
+                &:focus {border-color: #2d6dbb; background-color: #2d6dbb; color: #fff;}
+            }
+        }
+    }
+
+    .depth3 
+    { 
+        padding: 1.5rem 2rem; font-weight: 400; color: #46464a; 
+
+        li + li { margin-top: 0.5rem; }
+    }
+}
+
+// 만족도 조사
+* + .contents_info { margin-top: 10rem; }
+
+.contents_info
+{
+    & > * + * {margin-top: -1px;}
+
+    .duty 
+    { 
+        overflow: hidden; position: relative; padding: 1.5rem 2rem; border: 1px solid #ddd; line-height: 3rem; 
+
+        .title 
+        { 
+            font-size: 2rem; float: left; overflow: hidden; width: 3rem; height: 3rem; border-radius: 100%; background-color: #3c4165; font-weight: 400; color: #fff; text-align: center; 
+
+            &::before {display: block; width: 100%; height: 100%; font-family: "xeicon"; text-align: center; line-height: inherit; content: '';}
+        }
+
+        .label 
+        { 
+            font-weight: 500; color: #3c4165; 
+
+            &::after {display: inline-block; position: relative; top: -2px; width: 1px; height: 1.2rem; margin: 0 0.5rem 0 0.75rem; background-color: #ddd; content: ''; vertical-align: middle;}
+        }
+
+        .list 
+        { 
+            float: left; width: calc(100% - 25rem); padding-left: 1rem; 
+
+            li 
+            { 
+                float: left; margin-right: 2rem; 
+
+                &:last-child {margin-right: 0;}
+            }
+        }
+
+        .date {position: absolute; right: 2rem; top: 1.5rem;}
+    }
+
+    .group 
+    { 
+        display: table; width: calc(100% + 0px); table-layout: fixed; 
+
+        & > * {display: table-cell; padding-right: 0px; vertical-align: middle;}
+
+        .item + .item {border-left: 0 none;}
+        .qr {width: 15rem; border: 1px solid #ddd;}
+
+        & > .qr:first-child {float: right;}
+    }
+
+    #satisfy 
+    { 
+        position: relative; padding: 2.5rem 3rem; border: 1px solid #ddd; background-color: #f6f7f9; 
+
+        .title 
+        { 
+            font-size: 1.6rem; position: relative; margin-bottom: 1rem; font-weight: 300; 
+
+            & > strong {font-size: 1.8rem; font-weight: 600; color: #333;}
+            & > span {display: block; color: #484c58; line-height: 1.5;}
+
+            .txt 
+            { 
+                position: absolute; right: 0; bottom: 0; 
+
+                &::before {content: '[';}
+                &::after {content: ']';}
+
+                span + span::before {content: ' / ';}
+                strong {font-weight: 400;}
+            }
+        }
+
+        .list {padding: 1rem 0;}
+
+        .form 
+        {
+            position: absolute; right: 2.5rem; bottom: 3rem; width: 40rem; height: 4rem; padding: 0 10rem; line-height: 4rem;
+
+            .length {position: absolute; left: 0; top: 0; width: 9rem; text-align: right;}
+            .btn {position: absolute; right: 0; bottom: 0; width: 10rem; height: 100%; border: 0 none; background-color: #484c58; color: #fff; text-align: center;}
+        }
+    }
+}
+
+// 공공누리
+.kogl 
+{ 
+    display: table; width: calc(100% + 0px); table-layout: fixed; border: 1px solid #ddd; 
+
+    & > * {display: table-cell; padding-right: 0px; vertical-align: middle;}
+
+    .img {width: 17rem; padding: 1rem; border-right: 1px solid #ddd; text-align: center;}
+    .txt {padding: 3rem;}
+}
+
+// 공공누리 디자인
+.kogl_open
+{
+    .label {display: block; width: 17.1rem; height: 3.5rem; background-color: #999; font-size: 400; text-align: center; color: #fff; line-height: 3.5rem;}
+    .kogl {margin-bottom: 2rem;}
+
+    .form_radio 
+    {
+        display: block; margin-top: 1rem;
+
+        .img {float: left; width: 13rem; padding-right: 1rem;}
+    }
+
+    .txt_right {margin: 1rem 0;}
+}
+
+@media (max-width: 1024px) 
+{ 
+    // 사이트맵
+    .sitemap
+    {
+        dt {width: 25%;}
+        dd {width: 75%;}
+
+        .depth2 > li {width: 33.333%;}
+    }
+}
+
+@media (max-width: 580px) 
+{ 
+    // 사이트맵
+    .sitemap 
+    {
+        margin-top: -2rem; 
+
+        dt {float: none; width: 100%; margin-bottom: 2rem; text-align: center;}
+        dd {overflow: hidden; float: none; width: 100%;}
+
+        .group {padding: 2rem 0;}
+        .depth2 > li {width: 50%;}
+    }
+	
+	// 공공누리 
+    .kogl_open .form_radio .img {display: block; float: none; width: 100%; padding: 0 0 0.5rem;}
+}
