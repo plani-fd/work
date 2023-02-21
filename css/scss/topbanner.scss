@@ -1,71 +1,13 @@
 @charset "utf-8";
-@import 'maxin';
+@import 'mixin';
 
 /*-------------------------------------------------
 title       : 최상단 가로형 팝업
-Author      : 플랜아이 광주
-Create date : 2022-12-22
+Author      : PLAN I
+Create date : 2023-01-01
 -------------------------------------------------*/
 
 .topbanner 
 { 
-    position: relative; z-index: 0; z-index: 10; text-align: center; 
-
-    &::before {position: absolute; left: 0; top: 0; z-index: -1; width: 100%; height: 100%; content: ''; background-color: #f8f8f8;}
-
-    .group 
-    { 
-        visibility: hidden; overflow: hidden; width: 0; height: 0; opacity: 0; position: relative; width: 150rem !important; max-width: 100%; margin: 0 auto; transition: all 0.2s; 
-
-        & > .list
-        {
-            overflow: hidden; max-height: 100%;
-
-            li
-            {
-                display: none;
-
-                &:first-child {display: block;}
-            }
-        }
-    }
-
-    .open 
-    {  
-        position: absolute; right: 1rem; bottom: -4rem; height: 4rem; font-size: 1.2rem; color: #fff; line-height: 4rem; 
-
-        &::after {display: inline-block; position: relative; top: 1px; font-family: "xeicon"; vertical-align: top; font-size: 2rem; content: '';}
-
-        .count {float: right; font-size: 1rem; position: relative; z-index: 1; width: 1.5rem; height: 1.5rem; margin: 0.75rem 0 0 -0.75rem; border-radius: 100%; background-color: #009fdc; font-weight: 600; text-align: center; line-height: 1.5rem; vertical-align: top;}
-    }
-
-    .close 
-    { 
-        font-size: 3rem; overflow: hidden; position: absolute; right: 0; top: 2rem; width: 3rem; height: 3rem; text-align: center; line-height: 3rem; 
-
-        &::before {display: block; width: 100%; height: 100%; font-family: "xeicon"; text-align: center; line-height: inherit; content: ''; transform: rotate(0); transition: all 0.2s;}
-
-        &:hover,
-        &:focus
-        {
-            &::before {transform: rotate(180deg) translateY(2px);}
-        }
-
-        &.oneday
-        {
-            font-size: 1.4rem; top: auto; bottom: 1rem; width: auto; padding: 0 1rem; border: 1px solid #000; background-color: #000; color: #fff; line-height: 2.8rem; transition: all 0.2s;
-
-            &::before {display: none;}
-            &::after {display: inline-block; position: relative; top: 1px; font-family: "xeicon"; vertical-align: top; margin-left: 0.5rem; content: ''; transition: all 0.2s; transform: rotate(180deg) translateY(2px);}
-
-            &:hover,
-            &:focus {background: #fff; color: #000;}
-        }
-    }
-
-    &.active
-    {
-        .group {visibility: visible; overflow: visible; width: auto; height: auto; opacity: 1;}
-        .open {display: none;}
-    }
+    
 }

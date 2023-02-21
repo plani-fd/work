@@ -1,0 +1,705 @@
+@charset "utf-8";
+@import 'mixin';
+@import url('cmp.css');
+
+/*-------------------------------------------------
+title       : 게시판
+Author      : PLAN I
+Create date : 2023-01-01
+-------------------------------------------------*/
+
+// 리스트
+[class*="_list"]
+{
+    a 
+    {
+        &:hover,
+        &:focus
+        {
+            .thumb
+            {
+                &::before {margin-top: 2.5rem; opacity: 1;}
+                &::after {transform: translate(-50%, -50%) rotate(180deg); opacity: 0.75; transition-delay: 0.1s;}
+
+                img {transform: translate(-50%, -50%) scale(1.2); opacity: 0.5;}
+
+                &.media::after {transform: translate(-50%, -50%) scale(1);}
+            }
+        }
+    }
+
+    .thumb 
+    {
+        display: block; overflow: hidden; position: relative; width: 100%; height: 0; padding-top: 60%; background-color: #000; color: #fff;
+
+        &::before {@include position(center); margin-top: 3rem; font-weight: 700; content: '자세히보기'; opacity: 0; transition: $time2;}
+        &::after {@include icon(type2, '\EA13'); @include position(center); margin-top: -1.5rem; font-size: 4rem; font-weight: 300; opacity: 0; transition: $time2;}
+
+        img {@include position(center); width: 101%; max-width: 101%; transition: $time2;}
+
+        &.media::after {content: '\F008'; transform: translate(-50%, -50%) scale(1.5);}
+    }
+
+    .title 
+    {
+        @include title(1rem 0 1rem, 1.8rem, #000);
+        @include ellipsis(type2, 5rem);
+        font-weight: 700;
+
+        & + br {display: none;}
+    }
+
+    .desc,
+    .item
+    {
+        span
+        {
+            display: inline-block; vertical-align: middle;
+
+            &::after {display: inline-block; position: relative; top: -0.1rem; width: 1px; height: 1rem; margin: 0 0.5rem 0 1rem; background-color: #ddd; content: ''; vertical-align: middle;}
+
+            strong {margin-right: 0.5rem; color: #333;}
+
+            &:last-child::after {display: none;}
+        }
+    }
+}
+
+// 모든 게시판
+[class*="board"]
+{
+    .file
+    {
+        @include bg1;
+        padding: 2rem 0 2rem 15rem; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;
+
+        strong
+        {
+            &.title,
+            &.label {@include position(top); left: 0; width: 15rem; font-size: $size; color: #000; text-align: center;}
+        }
+
+        img {position: relative; top: -0.1rem; width: 2.5rem; margin-right: 0.5rem;}
+
+        .list 
+        {
+            li 
+            {
+                position: relative;
+
+                & + li {margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #efefef;}
+            }
+
+            .txt {font-size: 1.4rem; font-weight: 300; color: #999;}
+            .link {position: absolute; right: 0; bottom: -0.2rem;}
+        }
+
+        .btn_del
+        {
+            @include hover(before);
+            display: inline-block; overflow: hidden; position: relative; top: -0.2rem; width: 2rem; height: 2rem; margin-left: 0.25rem; border-radius: 100%; background-color: #999; text-indent: -0.1rem ; color: #fff; text-align: center; line-height: 2rem; vertical-align: middle;
+
+            &::before {@include icon(type3, '\EB98');}
+        }
+    }
+
+    .category {display: inline-block; min-height: 2.8rem; padding: 0 1.5rem; border-radius: 3rem; background-color: #000; font-size: 1.4rem; color: #fff; line-height: 2.8rem; vertical-align: middle;}
+}
+
+// 게시판 상단
+.board_info
+{
+    overflow: hidden; margin-bottom: 2rem;
+
+    form
+    {
+        float: right;
+
+        .form {@include table; width: auto; max-width: 100%;}
+        .btn {min-width: 0; padding: 0; height: auto; border: 0 none; line-height: 0;}
+
+        .item 
+        {
+            padding-right: 0.5rem;
+
+            &.type1 
+            {
+                padding-right: 0;
+
+                .form_textbox {border-right: 0 none;}
+            }
+        }
+
+        button 
+        {
+            height: 4rem; padding: 0 2rem; border: 1px solid #333; background-color: #333; color: #fff; transition: $time2;
+
+            &:hover,
+            &:focus {background-color: #fff; color: #333;}
+        }
+    }
+
+    .page 
+    {
+        float: left; line-height: 4rem;
+
+        span + span::before {display: inline-block; position: relative; top: -0.1rem; width: 1px; height: 1rem; margin: 0 1rem 0 0.5rem; background-color: #ddd; content: ''; vertical-align: middle;}
+
+        b,
+        strong {color: #000;}
+    }
+}
+
+// FAQ
+.faq
+{
+    border-top: 1px solid #555; border-bottom: 1px solid #aaa;
+
+    .group
+    {
+        & + .group {border-top: 1px solid #aaa;}
+    }
+
+    .label 
+    {
+        display: block; position: relative; padding: 1.5rem 5.5rem; font-size: 1.8rem; font-weight: 600; color: #000; transition: $time2;
+
+        &::before {position: absolute; left: 1rem; top: 1.5rem; width: 3rem; height: 3rem; border-radius: 0.5rem; background-color: #000; color: #fff; content: 'Q'; text-align: center; line-height: 3rem;}
+        &::after {@include icon(type2, '\EA4E'); right: 2rem; top: 1.5rem; font-weight: 300; line-height: 3rem; transition: $time2;}
+
+        &:hover,
+        &:focus {background-color: #f8f8f8;}
+    }
+
+    .item
+    {
+        @include hidden(100%, 0);
+        position: relative; padding: 0 1.5rem 0 5.5rem; border-top: 1px solid transparent; transition: $time2;
+
+        &::before {position: absolute; left: 1rem; top: 1.5rem; width: 3rem; height: 3rem; border-radius: 0.5rem; border: 1px solid #ddd; color: #000; content: 'A'; text-align: center; line-height: 3rem;}
+    }
+
+    .active 
+    {
+        .label::after {transform: rotate(180deg);}
+        .item {@include visible(100%, auto); padding: 1.5rem 1.5rem 1.5rem 5.5rem; border-color: #ddd;}
+    }
+}
+
+// 갤러리
+.gallery_list
+{
+    @include list(type2, 4rem, 4rem, 3);
+    padding: 4rem 0;
+
+    &.type1 {@include list(type2, 4rem, 4rem, 4);}
+
+    .thumb {display: block; margin-bottom: 2rem;}
+
+    .desc .name 
+    {
+        display: none;
+
+        & + span::before {display: none;}
+    }
+}
+
+// 블로그
+.board_list .blog_list
+{
+    & > li 
+    {
+        padding: 4rem 0; border-bottom: 1px solid #ddd;
+
+        &:last-child {border-bottom: 0 none;}
+    }
+
+    a {@include table;}
+
+    .thumb 
+    {
+        width: 30rem; height: 19rem; padding-top: 0;
+
+        & + .desc {padding-left: 4rem;}
+    }
+    
+    .txt {@include ellipsis(type3, 7.5rem); display: block; margin-bottom: 1rem;}
+}
+
+// 이북
+.board_list .board_ebook
+{
+    @include list(type2, 0px, 4rem, 2);
+    overflow: hidden; 
+
+    & > li 
+    {
+        @include table;
+        width: 50%; min-height: 36rem; margin: 0 0 -0.1rem; padding: 4rem 0; border-bottom: 1px solid #ddd;
+
+        &:last-child {border-bottom: 0 none;}
+    }
+
+    .thumb 
+    {
+        width: 20rem; padding-top: 0;
+
+        img {width: initial; max-width: initial; height: 101%;}
+    }
+
+    .group {position: relative; padding: 2rem 4rem 5rem 4rem; vertical-align: top;}
+    .desc {@include ellipsis(type3, 7.5rem); display: block; margin-bottom: 1rem;}
+    .btn {position: absolute; left: 4rem; bottom: 0; width: 30rem; max-width: calc(100% - 7rem);}
+}
+
+// 이북, PDF 게시판
+.board_ebook,
+.board_pdf
+{
+    .btn_line 
+    {
+        @include ellipsis(type1, 4rem);
+        position: relative; width: 100%; min-width: 0; height: 4rem; padding: 0 4rem 0 2rem; font-size: $size; text-align: left;
+
+        i {position: absolute; right: 2rem; top: 0; line-height: 3.8rem;}
+    }
+
+    .btn
+    {
+        display: block; width: calc(100% + 1rem); margin-top: 2rem;
+
+        & > * 
+        {
+            float: left; width: calc(50% - 0.5rem);
+
+            & + * {float: right;}
+        }
+    }
+}
+
+// PDF
+.board_pdf
+{
+    @include list(type2, 4rem, 4rem, 4);
+    padding: 4rem 0;
+
+    li {position: relative; padding-bottom: 6rem;}
+
+    .thumb 
+    {
+        display: block; margin-bottom: 2rem; padding-top: 120%;
+
+        img {width: initial; max-width: initial; height: 101%;}
+    }
+
+    .btn {position: absolute; left: 0; bottom: 0; width: 100%;}
+}
+
+// 게시판 내용보기
+.board_view
+{
+    border-top: 0.2rem solid #555; border-bottom: 1px solid #ddd;
+
+    & > .title {padding: 2rem 0; border-bottom: 1px solid #ddd; font-size: 2.5rem; color: #000; text-align: center;}
+    .category {display: block; width: 7rem; margin: 0 auto 1rem;}
+
+    .info 
+    {
+        padding: 2rem 0; border-bottom: 1px solid #ddd; background-color: #fcfcfc; text-align: center;
+
+        li 
+        {
+            display: inline;
+
+            & + li::before {display: inline-block; position: relative; top: -0.1rem; width: 1px; height: 1rem; margin: 0 1rem 0 0.75rem; background-color: #ddd; content: ''; vertical-align: middle;}
+        }
+
+        strong {margin-right: 1rem; color: #000;}
+    }
+
+    .contents {padding: 6rem;}
+    .img {margin: 2rem 0; text-align: center;}
+
+    // 비디오
+    .video
+    {
+        @include width(90rem, 100%);
+
+        .desc {overflow: hidden; overflow-y: auto; position: relative; max-height: 20rem; margin-top: 3rem; padding: 3rem; border: 1px solid #ddd; background-color: #f8f8f8;}
+        
+        .youtube 
+        {
+            @include bg1;
+            overflow: hidden; height: 0; margin-bottom: 3rem; padding-top: 65%;
+
+            iframe {@include position(center);}
+        }
+    }
+
+    .file {margin-bottom: -1px;}
+}
+
+// 갤러리 내용 보기
+.gallery_view 
+{
+    @include bg1;
+    @include width(90rem, 100%);
+    margin-bottom: 6rem; text-align: center;
+
+    .list img {display: block; margin: 0 auto;}
+
+    .thumb 
+    {
+        margin-bottom: 3rem;
+
+        ul {justify-content: center;}
+
+        a 
+        {
+            display: block; overflow: hidden; position: relative; width: 100%; height: 10rem; background-color: #000;
+
+            img {@include position(center); max-width: inherit; min-width: 100%; height: 100%; opacity: 0.5; transition: $time2;}
+        }
+
+        .swiper-slide-thumb-active img {opacity: 1;}
+    }
+
+    .control 
+    {
+        position: absolute; left: -4rem; top: 5rem; width: calc(100% + 8rem); color: #999; transform: translateY(-50%);
+
+        button {overflow: hidden; position: relative; z-index: 999; width: 4rem; height: 4rem; font-size: 3rem; line-height: 4rem;}
+
+        $arrow: 
+        (
+            prev: (float: left, icon: '\EA64'),
+            next: (float: right, icon: '\EA6E')
+        );
+
+        @each $keys, $map in $arrow
+        {
+            .#{$keys} 
+            {
+                float: map-get($map, float); text-align: map-get($map, float);
+
+                &::before {@include icon(type3, map-get($map, icon));}
+            }
+        }
+    }
+}
+
+// 게시글 댓글
+.board_reply
+{
+    position: relative; margin-top: 4rem; border-top: 1px solid #555; border-bottom: 1px solid #ddd;
+
+    .title {padding: 1.5rem 2rem; background-color: #f8f8f8; font-size: $size; color: #000;}
+    .contents {padding: 2rem;}
+    .file {border-bottom: 0 none;}
+
+    .info 
+    {
+        position: absolute; right: 0; top: 0; padding: 1.5rem 2rem;
+
+        li 
+        {
+            display: inline;
+
+            & + li::before {display: inline-block; position: relative; top: -0.1rem; width: 1px; height: 1rem; margin: 0 1rem 0 0.75rem; background-color: #ddd; content: ''; vertical-align: middle;}
+        }
+
+        strong {margin-right: 1rem; color: #333;}
+    }
+}
+
+// 처리상황
+.board_state
+{
+    margin-top: 4rem; padding: 2rem; border: 1px solid #ddd; background-color: #f8f8f8;
+
+    .title 
+    {
+        display: block; margin-bottom: 1rem; color: #000; line-height: 3rem;
+
+        &::before {@include icon(type1, '\EF44'); width: 3rem; height: 3rem; margin-right: 1rem; border-radius: 100%; background-color: #000; font-weight: 400; color: #fff; text-align: center;}
+    }
+
+    .form
+    {
+        position: relative; padding: 0 9rem 0 4rem; line-height: 4rem;
+
+        ul {@include table;}
+        label {position: absolute; left: 0; top: 0; font-weight: 500; color: #333;}
+
+        li 
+        {
+            position: relative; padding: 0 2rem 0 7rem;
+
+            &:first-child {width: 27rem;}
+
+            button 
+            {
+                display: inline-block; overflow: hidden; position: relative; top: -0.1rem; height: 2.5rem; margin-left: 0.5rem; padding: 0 0.5rem; border-radius: 0.5rem; border: 1px solid #999; background-color: #999; font-size: 1.4rem; color: #fff; line-height: 2.3rem; vertical-align: middle; transition: $time2;
+    
+                &::before,
+                &::after {position: absolute; top: 0; width: 1rem; height: 100%; background-color: #999; content: ''; transition: $time2;}
+    
+                &::before {left: 0;}
+                &::after {right: 0;}
+
+                &:hover,
+                &:focus 
+                {
+                    background-color: #fff; color: #999;
+
+                    &::before,
+                    &::after {background-color: #fff;}
+                }
+            }
+        }
+
+        .form_textbox,
+        .form_select select {width: 100%;}
+
+        .btn 
+        {
+            position: absolute; right: 0; bottom: 0; width: 10rem; height: 4rem; border: 1px solid #333; background-color: #333; color: #fff; text-align: center; line-height: 3.8rem; transition: $time2;
+
+            &:hover,
+            &:focus {background-color: #fff; color: #333;}
+        }
+    }
+}
+
+// 이전글 다음글
+.prevnext
+{
+    border-bottom: 1px solid #ddd;
+
+    li {overflow: hidden; position: relative; padding: 1.5rem; border-top: 1px solid #ddd;}
+    span {float: left; width: 15rem; color: #000; text-align: center;}
+    a {float: left; max-width: calc(100% - 15rem);}
+
+    $icons: (prev: '\EA78', next: '\EA4E');
+
+    @each $keys, $icon in $icons
+    {
+        .#{$keys} span::before {@include icon(type2, $icon); margin: -0.2rem 0 0 -1rem; font-size: 1.8rem; transform: translateX(-100%);}
+    }
+}
+
+// 코멘트
+.comment
+{
+    .form
+    {
+        position: relative; border: 1px solid #ddd; background-color: #f8f8f8; text-align: right;
+
+        .length {position: absolute; left: 0; bottom: 0; padding: 0 2rem; font-size: 1.4rem; color: #999; text-align: left; line-height: 5rem;}
+        
+        textarea {display: block; width: 100%; height: 10rem; padding: 2rem; border: 0 none;}
+
+        button 
+        {
+            height: 5rem; padding: 0 3rem; border: 1px solid #333; background-color: #333; color: #fff; line-height: 4.8rem; vertical-align: top; transition: $time2;
+
+            &:hover,
+            &:focus {background-color: #fff; color: #333;}
+        }
+    }
+
+    .title 
+    {
+        display: block; margin: 3rem 0 1rem; font-size: 1.6rem; font-weight: 500;
+
+        span {font-weight: 700; color: #000;}
+    }
+
+    .list
+    {
+        ul {border-top: 1px solid #555;}
+        li {position: relative; padding: 2rem; border-bottom: 1px solid #ddd;}
+        br {display: none;}
+
+        .re 
+        {
+            padding-left: 4rem;
+
+            &::before {position: absolute; left: 2rem; top: 2.25rem; width: 1rem; height: 1rem; border-left: 1px solid #ccc; border-bottom: 1px solid #ccc; content: '';}
+
+            .date {transform: translateX(4rem);}
+        }
+
+        .btn 
+        {
+            position: absolute; right: 2rem; top: 2rem; min-width: 0; font-size: 1.4rem;
+
+            a + a::before {display: inline-block; width: 1px; height: 1rem; margin: 0 1rem 0 0.75rem; background-color: #ddd; content: ''; vertical-align: middle;}
+        }
+
+        .form {margin-top: 2rem;}
+        .name {display: inline-block; margin-bottom: 0.5rem; font-weight: 600; color: #333; vertical-align: top;}
+
+        .date 
+        {
+            position: absolute; top: 2.25rem; font-size: 1.4rem; font-weight: 300; color: #999; transform: translateX(2rem);
+
+            &::before {display: inline-block; width: 1px; height: 1rem; margin: 0 1rem 0 0.75rem; background-color: #ddd; content: ''; vertical-align: middle;}
+        }
+    }
+}
+
+// 게시판 상단 박스
+.board_box 
+{
+    position: relative; padding: 4rem; padding-left: 26.5rem; border: 1px solid #ddd;
+
+    .img {position: absolute; left: 4rem; top: 4rem; width: 18.5rem;}
+    .title {display: block; margin-bottom: 1rem; font-size: 2rem; font-weight: 600; color: #000;}
+
+    .btn_line 
+    {
+        margin-top: 1.5rem; padding: 0 2rem; border-radius: 3rem; border-color: #333; background-color: #333; color: #fff;
+
+        &:hover,
+        &:focus {background-color: #fff; color: #333;}
+    }
+}
+
+// 공공누리 유형 선택
+.kogl_open
+{
+    margin-top: 4rem; border-top: 0.2rem solid #555;
+    
+    .group
+    {
+        ul {display: flex; padding: 4rem 2rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; text-align: center;}
+
+        li 
+        {
+            position: relative; width: 20%; word-break: keep-all;
+
+            & + li::before {@include position(top); left: 0; width: 1px; height: 80%; border-left: 1px dashed #ddd; content: '';}
+
+            .img 
+            {
+                display: block; margin-bottom: 2rem;
+
+                img {height: 2.7rem;}
+            }
+        }
+
+        label 
+        {
+            display: block; padding: 3.5rem 2rem 0;
+
+            &::before,
+            &::after {@include position(left);}
+        }
+    }
+
+    .txt_right 
+    {
+        border: 1px solid #ddd; border-bottom: 0 none; background-color: #f8f8f8;
+
+        .btn_line 
+        {
+            height: 5rem; max-height: initial; padding: 0 2rem; border-color: #333; background-color: #333; color: #fff; line-height: 4.8rem;
+
+            &:hover,
+            &:focus {background-color: #fff; color: #333;}
+        }
+    }
+
+    .label {position: absolute; left: auto; top: auto; margin-top: -5rem; padding-left: 2rem; font-size: 1.6rem; color: #333; line-height: 5rem;}
+    .bul.depth2 {margin-top: 1rem;}
+
+    .kogl 
+    {
+        display: flex; border: 1px solid #ddd; border-top: 0 none; align-items: center;
+
+        .img 
+        {
+            width: 15rem; padding: 2rem; text-align: center;
+
+            img {height: 2.7rem;}
+        }
+
+        &.hide {@include hidden(0, 0);}
+    }
+}
+
+@media (max-width: 1024px) 
+{
+    // 이북
+    .board_list .board_ebook
+    {
+        display: block;
+
+        & > li {width: 100%;}
+    }
+
+    // pdf
+    .board_pdf
+    {
+        li {padding-bottom: 10.5rem;}
+
+        .btn .btn_line 
+        {
+            float: none; width: 100%;
+
+            & + .btn_line {float: none; margin-top: 0.5rem;}
+        }
+    }
+}
+
+@media (max-width: 768px) 
+{
+    // 게시판 상단
+    .board_info
+    {
+        form 
+        {
+            float: none; margin-bottom: 1rem; padding: 2rem; background-color: #f8f8f8; text-align: center;
+
+            .form,
+            .form_textbox,
+            .form_select select,
+            button {width: 100%;}
+
+            .btn {width: 7rem;}
+        }
+
+        .page {float: none;}
+    }
+
+    // 갤러리
+    .gallery_list
+    {
+        &,
+        &.type1 {@include list(type2, 4rem, 4rem, 3);}
+    }
+
+    // 공공누리 유형 선택
+    .kogl_open .group
+    {
+        ul {display: block; padding: 2rem 4rem;}
+        
+        li 
+        {
+            width: 100%; padding: 2rem 0; text-align: left;
+
+            & + li::before {@include position(left); top: 0; width: 100%; height: 1px; border-left: 0 none; border-top: 1px dashed #ddd;}
+        }
+
+        label 
+        {
+            padding: 0 0 0 3.5rem;
+
+            &::before {@include position(top); left: 0;}
+            &::after {@include position(top); left: 0.5rem;}
+
+            .img {display: inline-block; width: 12rem; margin: 0 1rem 0 0; vertical-align: middle;}
+        }
+    }
+}

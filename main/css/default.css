@@ -1,8 +1,8 @@
-@import url("../../css/default.css");
-@import url("//fonts.googleapis.com/css?family=Open+Sans:200,300,400,500,600,700,800");
-body {
-  line-height: 1.5625;
-  font-family: "Open+Sans", "Pretendard";
-  font-size: 1.6rem;
-  color: #555;
-}
+@charset "UTF-8";
+/*-------------------------------------------------
+title       : 국문 초기화
+Author      : PLAN I
+Create date : 2023-01-01
+
+History     : 2023-01-16 ㅈㅁㅈ
+-------------------------------------------------*/

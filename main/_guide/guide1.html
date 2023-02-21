@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>[콘텐츠] 스타일가이드</title>
+
+<script src="../../jquery/jquery-1.11.2.min.js"></script>
+
+<script src="js/shCore.js"></script>
+<script src="js/shBrushXml.js"></script>
+
+<script src="js/guide.js"></script>
+
+<link rel="stylesheet" href="css/shCore.css" />
+<link rel="stylesheet" href="css/shThemeEclipse.css" />
+
+<link rel="stylesheet" href="css/guide.css">
+</head>
+
+<body>
+<div id="_guide">
+    <header>
+        <h1><i><img src="../img/layout/logo.png" alt="PLAN I"></i><span>스타일가이드</span></h1>
+
+        <nav id="lnb">
+            <a href="guide1.html">콘텐츠</a>
+            <a href="guide2.html">게시판</a>
+            <a href="guide3.html">멤버십</a>
+            <a href="guide4.html">기타</a>
+            <a href="guide5.html">문서</a>
+        </nav>
+
+        <ul id="gnb"></ul>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>타이틀/블릿</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>타이틀</h3>
+
+                <div class="item">
+                    <h2 class="title1">타이틀1 / 폰트명 / font-size: / 700 / #000</h2>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+            
+            <!-- ============================== -->
+            <article class="group">
+                <h3>블릿</h3>
+
+                <div class="item">
+                    <ul class="bul1">
+                        <li>블릿1 / padding-left: 2rem / -</li>
+                        <li>
+                            하위 블릿
+                            <ul class="bul2">
+                                <li>블릿2 / padding-left: 2rem / &middot;</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="section">
+            <h2>박스</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>박스1</h3>
+
+                <div class="item">
+                    <article class="box1">
+                        <i class="ri-building-fill"></i>
+                        <div class="desc">
+                            <h2 class="title">박스 타이틀 / 폰트명 / font-size: / 700 / #000</h2>
+                            <p class="txt">박스 내용 / 폰트명 / font-size: / 700 / #000</p>
+                        </div>
+                    </article>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+    </main>
+
+    <footer><p>COPYRIGHT &copy; 2022 <strong>Plan I.</strong> ALL RIGHTS RESERVED.</p><button>위로</button></footer>
+</div>
+</body>
+</html>

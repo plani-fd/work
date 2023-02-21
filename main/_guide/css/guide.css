@@ -1,0 +1,318 @@
+@import url("../../../css/default.css");
+#_guide header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  height: 6rem;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  background-color: #111;
+}
+#_guide header h1 {
+  float: left;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #fff;
+}
+#_guide header h1 img {
+  height: 3rem;
+  margin-right: 1.5rem;
+  vertical-align: bottom;
+}
+#_guide #lnb {
+  float: right;
+  margin-top: 0.75rem;
+  font-size: 1.4rem;
+  color: #fff;
+}
+#_guide #lnb a {
+  position: relative;
+  margin-left: 2rem;
+  opacity: 0.5;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide #lnb a::before {
+  font-family: "remixicon";
+  content: "\eb7b";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  top: -1.75rem;
+  opacity: 0;
+}
+#_guide #lnb a:hover, #_guide #lnb a:focus {
+  font-weight: 600;
+  opacity: 1;
+}
+#_guide #lnb .active {
+  font-weight: 600;
+  opacity: 1;
+}
+#_guide #lnb .active::before {
+  opacity: 1;
+}
+#_guide #gnb {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 6rem;
+  width: 20rem;
+  height: calc(100% - 6rem);
+  background-color: #222;
+  color: #fff;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+#_guide #gnb a {
+  display: block;
+  position: relative;
+}
+#_guide #gnb > li {
+  opacity: 0.5;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide #gnb > li > a {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 400;
+}
+#_guide #gnb > li.active {
+  opacity: 1;
+}
+#_guide #gnb > li.active > a {
+  font-weight: 600;
+}
+#_guide #gnb > li.active .depth2 {
+  visibility: visible;
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  padding: 1.5rem 2rem;
+}
+#_guide #gnb .depth2 {
+  visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide #gnb .depth2 a::after {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  left: auto;
+  width: 0;
+  height: 0;
+  margin: -0.1rem 0 0 0.5rem;
+  border-radius: 100%;
+  background-color: #fff;
+  content: "";
+  vertical-align: middle;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide #gnb .depth2 .active a {
+  color: #fff;
+}
+#_guide #gnb .depth2 .active a::after {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+#_guide main {
+  position: relative;
+  margin: 10rem 3rem 5rem 25rem;
+  -webkit-transition: margin 0.5s;
+  transition: margin 0.5s;
+}
+#_guide main .btn_control {
+  height: 4rem;
+  border: 0.2rem solid #000;
+  line-height: 3.6rem;
+  position: fixed;
+  right: 3rem;
+  top: 10rem;
+  z-index: 10;
+  padding: 0 1.5rem 0 2rem;
+  background-color: #fff;
+  font-weight: 600;
+  color: #000;
+}
+#_guide main .btn_control::after {
+  font-family: "remixicon";
+  content: "\ea4d";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -0.2rem;
+  margin-left: 0.5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide main .btn_control.active::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#_guide main > .section {
+  margin-top: 4rem;
+}
+#_guide main > .section > h2 {
+  display: block;
+  margin: 0 0 2rem;
+  font-size: 3rem;
+  color: #000;
+  position: relative;
+}
+#_guide main > .section > h2:first-child {
+  margin-top: 0;
+}
+#_guide main > .section > h2::before {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  left: -5rem;
+  z-index: -1;
+  width: 3.5rem;
+  height: 0.2rem;
+  background-color: #000;
+  content: "";
+}
+#_guide main > .section > .group {
+  position: relative;
+  margin-top: 2rem;
+}
+#_guide main > .section > .group > h3 {
+  display: block;
+  margin: 0 0 2rem;
+  font-size: 2rem;
+  color: #333;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+#_guide main > .section > .group > h3:first-child {
+  margin-top: 0;
+}
+#_guide main > .section > .group > .item {
+  padding-bottom: 2rem;
+}
+#_guide main > .section > .group > .item .board_list,
+#_guide main > .section > .group > .item .board_view,
+#_guide main > .section > .group > .item .faq,
+#_guide main > .section > .group > .item .kogl_open {
+  margin-top: calc(-2rem - 1px);
+}
+#_guide main > .section > .group > textarea {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+}
+#_guide main > .section > .group > button {
+  position: absolute;
+  right: 0;
+  top: auto;
+  z-index: 1;
+  margin-top: -0.9rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  border: 1px solid #efefef;
+  background-color: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide main > .section > .group > button:hover, #_guide main > .section > .group > button:focus {
+  background-color: #efefef;
+}
+#_guide footer p {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 20.1rem;
+  padding: 2rem 4rem 2rem 2rem;
+  font-size: 1.1rem;
+  color: #999;
+}
+#_guide footer button {
+  position: fixed;
+  left: 20rem;
+  bottom: 0;
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid #ddd;
+  border-left: 0 none;
+  background-color: #ddd;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide footer button::before {
+  font-family: "remixicon";
+  content: "\ea78";
+  display: inline-block;
+  vertical-align: middle;
+  display: block;
+  margin-top: -0.3rem;
+}
+#_guide footer button:hover, #_guide footer button:focus {
+  background-color: #fff;
+}
+#_guide .syntaxhighlighter {
+  overflow: hidden !important;
+  overflow-x: auto !important;
+  padding: 1rem;
+  border: 1px solid #efefef;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide .syntaxhighlighter code {
+  font-size: 1.2rem !important;
+}
+#_guide .syntaxhighlighter .toolbar {
+  display: none;
+}
+#_guide .syntaxhighlighter .line.alt2 {
+  background-color: #f8f8f8 !important;
+}
+#_guide .syntaxhighlighter .keyword {
+  font-weight: normal !important;
+}
+#_guide .syntaxhighlighter.disable {
+  overflow-y: hidden !important;
+  height: 0;
+  padding: 0 1rem;
+  border-color: transparent;
+}
+
+@media (max-width: 1024px) {
+  #_guide #gnb {
+    left: -20rem;
+  }
+  #_guide main {
+    margin-left: 3rem;
+  }
+  #_guide footer p {
+    display: none;
+  }
+  #_guide footer button {
+    left: 0;
+  }
+}

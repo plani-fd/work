@@ -1,28 +1,13 @@
 @charset "utf-8";
-@import 'maxin';
+@import 'mixin';
 
 /*-------------------------------------------------
 title       : 인쇄
-Author      : 플랜아이 광주
-Create date : 2022-12-22
+Author      : PLAN I
+Create date : 2023-01-01
 -------------------------------------------------*/
 
 @media print 
 {
-    .topbanner,
-    .footbanner,
-    .contents_info,
-    .contents_util,
-    #issue,
-    #quick,
-    #header, 
-    #visual,
-    #snb,
-    #footer {display: none;}
-
-    #wrap,
-    #main,
-    #contents, 
-    #contents_body,
-    .main_wrap {@include width(100%, 100%);}
+    
 }

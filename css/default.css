@@ -3,8 +3,8 @@
 @import url("../font/pretendard/font_pretendard.css");
 /*-------------------------------------------------
 title       : 초기화
-Author      : 플랜아이 광주
-Create date : 2022-12-22
+Author      : PLAN I
+Create date : 2023-01-01
 -------------------------------------------------*/
 *,
 *::before,
@@ -115,7 +115,7 @@ table {
 
 caption, legend,
 .sr_only, .hidden, .blind, .IR {
-  display: block;
+  float: left;
   overflow: hidden;
   width: 1px;
   height: 1px;
@@ -130,29 +130,27 @@ caption, legend,
   left: 0;
   top: -1000px;
   width: 100%;
-  height: 0px;
+  height: 0;
   z-index: 1000;
-  line-height: 0px;
-  font-size: 0px;
+  line-height: 0;
+  font-size: 0;
 }
 #skip_nav a {
   display: block;
-  text-align: center;
   width: 100%;
-  line-height: 0px;
-  font-size: 0px;
+  line-height: 0;
+  font-size: 0;
+  text-align: center;
 }
 #skip_nav a:focus, #skip_nav a:hover, #skip_nav a:active {
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 1000px;
-  padding: 8px 0;
-  display: block;
-  height: 30px;
-  background: #20262c;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 18px;
+  height: 3rem;
+  background-color: #20262c;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 3rem;
   color: #fff;
 }
 
@@ -166,6 +164,23 @@ caption, legend,
 
 .txt_right {
   text-align: right !important;
+}
+
+.swiper-initialized {
+  overflow: hidden;
+}
+.swiper-initialized > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: visible !important;
+}
+.swiper-initialized > * > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 @media (max-width: 1280px) {

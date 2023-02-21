@@ -6,8 +6,8 @@
 
 /*-------------------------------------------------
 title       : 초기화
-Author      : 플랜아이 광주
-Create date : 2022-12-22
+Author      : PLAN I
+Create date : 2023-01-01
 -------------------------------------------------*/
 
 *,
@@ -35,20 +35,20 @@ img {max-width: 100%; border: 0 none; font-size: 0; vertical-align: middle;}
 
 table {width: 100%; border-collapse: collapse;}
 caption, legend,
-.sr_only, .hidden, .blind, .IR {display: block; overflow: hidden; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0 none; clip: rect(0, 0, 0, 0);}
+.sr_only, .hidden, .blind, .IR {float: left; overflow: hidden; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0 none; clip: rect(0, 0, 0, 0);}
 
 // 건너뛰기
 #skip_nav
 {
-    position:absolute; left:0; top:-1000px; width:100%; height: 0px; z-index:1000; line-height:0px; font-size:0px;
+    position: absolute; left: 0; top: -1000px; width: 100%; height: 0; z-index: 1000; line-height: 0; font-size: 0;
 
     a 
     {
-        display:block; text-align:center; width: 100%; line-height:0px; font-size:0px;
+        display: block; width: 100%; line-height: 0; font-size: 0; text-align: center;
 
         &:focus, 
         &:hover, 
-        &:active {position:absolute; left:0px; top:1000px; padding: 8px 0; display:block; height:30px; background:#20262c; font-size:12px; font-weight:bold; line-height:18px; color:#fff}
+        &:active {position: absolute; left: 0; top: 1000px; height: 3rem; background-color: #20262c; font-size: 1.2rem; font-weight: 600; line-height: 3rem; color:#fff;}
     }
 }
 
@@ -56,6 +56,19 @@ caption, legend,
 .txt_left   {text-align: left !important;}
 .txt_center {text-align: center !important;}
 .txt_right  {text-align: right !important;}
+
+// 스와이퍼
+.swiper-initialized
+{
+    overflow: hidden;
+
+    & > * 
+    {
+        display: flex; overflow: visible !important;
+
+        & > * {display: flex; flex-shrink: 0;}
+    }
+}
 
 @media (max-width: 1280px)  { html {font-size: 9px;} }
 @media (max-width: 768px)   { html {font-size: 8px;} }

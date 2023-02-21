@@ -1,26 +1,10 @@
 @charset "utf-8";
-@import '../.../../../../css/scss/mixin.scss';
-@import url('../../css/default.css');
+@import '../../../css/scss/mixin.scss';
 
-// title       : 설정
-// Author      : 플랜아이 광주
-// Create date : 2020-02-14
+/*-------------------------------------------------
+title       : 국문 초기화
+Author      : PLAN I
+Create date : 2023-01-01
 
-$width1 : 1400;                 // 가로값 기본
-
-$ff3    : unquote('Open+Sans');    // 영문폰트(구글)
-
-$ff: '' + $ff3 + '', $font;
-
-$point1 : #767676;               // 색(기본)
-$point2 : #009fdc;            // 색(하늘)
-$point3 : #484c58;            // 색(남색)
-$point4 : #9b8873;            // 색(똥색)
-
-$time1  : all 0s;               // transition 원복
-$time2  : all 0.2s;             // transition 기본
-
-
-@import url('//fonts.googleapis.com/css?family=#{$ff3}:200,300,400,500,600,700,800');     // 영문폰트
-
-body {@include font($ff, $size, $color, 2.5rem);}
+History     : 2023-01-16 ㅈㅁㅈ
+-------------------------------------------------*/
