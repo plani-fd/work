@@ -86,9 +86,9 @@ Create date : 2023-01-01
   font-size: 1.8rem;
   color: #000;
   overflow: hidden;
-  max-height: 5rem;
   text-overflow: ellipsis;
   display: -webkit-box;
+  max-height: 5rem;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -113,7 +113,7 @@ Create date : 2023-01-01
   top: -0.1rem;
   width: 1px;
   height: 1rem;
-  margin: 0 0.5rem 0 1rem;
+  margin: 0 0.75rem 0 1rem;
   background-color: #ddd;
   content: "";
   vertical-align: middle;
@@ -153,7 +153,13 @@ Create date : 2023-01-01
   margin-right: 0.5rem;
 }
 [class*=board] .file .list li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 2.8rem;
+  line-height: 2.8rem;
   position: relative;
+  padding-right: 19rem;
 }
 [class*=board] .file .list li + li {
   margin-top: 1rem;
@@ -168,7 +174,7 @@ Create date : 2023-01-01
 [class*=board] .file .list .link {
   position: absolute;
   right: 0;
-  bottom: -0.2rem;
+  bottom: 0;
 }
 [class*=board] .file .btn_del {
   display: inline-block;
@@ -205,7 +211,7 @@ Create date : 2023-01-01
   line-height: inherit;
 }
 [class*=board] .category {
-  display: inline-block;
+  display: inline-block !important;
   min-height: 2.8rem;
   padding: 0 1.5rem;
   border-radius: 3rem;
@@ -291,14 +297,30 @@ Create date : 2023-01-01
   border-top: 1px solid #aaa;
 }
 .faq .label {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
+  min-height: 6rem;
   padding: 1.5rem 5.5rem;
   font-size: 1.8rem;
   font-weight: 600;
   color: #000;
+  word-break: keep-all;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+.faq .label span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 3rem;
+  line-height: 3rem;
+  min-height: 0;
+  line-height: 1.25;
 }
 .faq .label::before {
   position: absolute;
@@ -355,6 +377,9 @@ Create date : 2023-01-01
 .faq .active .label::after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+.faq .active .label span {
+  white-space: normal;
 }
 .faq .active .item {
   visibility: visible;
@@ -422,27 +447,26 @@ Create date : 2023-01-01
   border-bottom: 0 none;
 }
 .board_list .blog_list a {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-.board_list .blog_list a > * {
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
 }
 .board_list .blog_list .thumb {
+  display: inline-block;
   width: 30rem;
   height: 19rem;
   padding-top: 0;
+  vertical-align: middle;
 }
 .board_list .blog_list .thumb + .desc {
+  display: inline-block;
+  width: calc(100% - 30.5rem);
   padding-left: 4rem;
+  vertical-align: middle;
 }
 .board_list .blog_list .txt {
   overflow: hidden;
-  max-height: 7.5rem;
   text-overflow: ellipsis;
   display: -webkit-box;
+  max-height: 7.5rem;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   line-clamp: 3;
@@ -475,7 +499,7 @@ Create date : 2023-01-01
   width: 100%;
   table-layout: fixed;
   width: 50%;
-  min-height: 36rem;
+  height: 36rem;
   margin: 0 0 -0.1rem;
   padding: 4rem 0;
   border-bottom: 1px solid #ddd;
@@ -503,9 +527,9 @@ Create date : 2023-01-01
 }
 .board_list .board_ebook .desc {
   overflow: hidden;
-  max-height: 7.5rem;
   text-overflow: ellipsis;
   display: -webkit-box;
+  max-height: 7.5rem;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   line-clamp: 3;
@@ -524,9 +548,9 @@ Create date : 2023-01-01
 .board_ebook .btn_line,
 .board_pdf .btn_line {
   overflow: hidden;
-  max-height: 4rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-height: 4rem;
   line-height: 4rem;
   position: relative;
   width: 100%;
@@ -611,7 +635,7 @@ Create date : 2023-01-01
   text-align: center;
 }
 .board_view .category {
-  display: block;
+  display: block !important;
   width: 7rem;
   margin: 0 auto 1rem;
 }
@@ -645,6 +669,12 @@ Create date : 2023-01-01
 .board_view .img {
   margin: 2rem 0;
   text-align: center;
+}
+.board_view .img:first-child {
+  margin-top: 0;
+}
+.board_view .img:last-child {
+  margin-bottom: 0;
 }
 .board_view .video {
   width: 90rem;
@@ -697,6 +727,7 @@ Create date : 2023-01-01
 }
 .gallery_view .thumb {
   margin-bottom: 3rem;
+  padding-left: 1rem;
 }
 .gallery_view .thumb ul {
   -webkit-box-pack: center;
@@ -820,24 +851,36 @@ Create date : 2023-01-01
   background-color: #f8f8f8;
 }
 .board_state .title {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  min-height: 3rem;
+  padding-left: 4rem;
   margin-bottom: 1rem;
   color: #000;
-  line-height: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1.2;
+  word-break: keep-all;
 }
 .board_state .title::before {
   font-family: "remixicon";
   content: "\ef44";
   display: inline-block;
   vertical-align: middle;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 3rem;
   height: 3rem;
-  margin-right: 1rem;
   border-radius: 100%;
   background-color: #000;
   font-weight: 400;
   color: #fff;
   text-align: center;
+  line-height: 3rem;
 }
 .board_state .form {
   position: relative;
@@ -947,6 +990,11 @@ Create date : 2023-01-01
   text-align: center;
 }
 .prevnext a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 2rem;
+  line-height: 2rem;
   float: left;
   max-width: calc(100% - 15rem);
 }
@@ -1208,6 +1256,7 @@ Create date : 2023-01-01
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  word-break: keep-all;
 }
 .kogl_open .kogl .img {
   width: 15rem;
@@ -1245,6 +1294,24 @@ Create date : 2023-01-01
   }
 }
 @media (max-width: 768px) {
+  [class*=board] .file {
+    padding: 1rem 0;
+  }
+  [class*=board] .file strong.title, [class*=board] .file strong.label {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    display: block;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  [class*=board] .file img {
+    width: 2rem;
+  }
   .board_info form {
     float: none;
     margin-bottom: 1rem;
@@ -1282,6 +1349,73 @@ Create date : 2023-01-01
   .gallery_list > *:nth-child(n+4), .gallery_list.type1 > *:nth-child(n+4) {
     margin-top: 4rem;
   }
+  .board_pdf {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(100% + 4rem);
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .board_pdf > * {
+    width: calc(33.3333333333% - 4rem);
+    margin-right: 4rem;
+  }
+  .board_pdf > *:nth-child(n+3) {
+    margin-top: initial;
+  }
+  .board_pdf > *:nth-child(n+4) {
+    margin-top: 4rem;
+  }
+  .board_view .info {
+    padding: 1rem 1.5rem;
+    text-align: left;
+  }
+  .board_view .info li {
+    display: block;
+    overflow: hidden;
+  }
+  .board_view .info li + li::before {
+    display: none;
+  }
+  .board_view .info strong {
+    float: left;
+    width: 7rem;
+  }
+  .board_view .contents {
+    padding: 2rem 0;
+  }
+  .gallery_view {
+    margin-bottom: 2rem;
+  }
+  .gallery_view .thumb {
+    width: calc(100% - 8rem);
+    margin: 0 auto 1rem;
+  }
+  .gallery_view .control {
+    left: 0;
+    width: 100%;
+  }
+  .board_state .title {
+    margin-bottom: 0;
+  }
+  .board_state .form ul {
+    display: block;
+  }
+  .board_state .form li {
+    display: block;
+    min-width: 100%;
+    margin-top: 0.5rem;
+  }
+  .board_reply .info {
+    position: static;
+    padding: 1rem 2rem;
+    border-bottom: 1px dashed #ddd;
+    background-color: #fff;
+  }
+  .board_reply .file {
+    padding: 1rem 0 1rem 2rem;
+  }
   .kogl_open .group ul {
     display: block;
     padding: 2rem 4rem;
@@ -1303,7 +1437,7 @@ Create date : 2023-01-01
     border-top: 1px dashed #ddd;
   }
   .kogl_open .group label {
-    padding: 0 0 0 3.5rem;
+    padding: 0 0 0 16rem;
   }
   .kogl_open .group label::before {
     top: 50%;
@@ -1320,9 +1454,228 @@ Create date : 2023-01-01
     left: 0.5rem;
   }
   .kogl_open .group label .img {
-    display: inline-block;
+    position: absolute;
+    left: 3.5rem;
+    top: auto;
     width: 12rem;
     margin: 0 1rem 0 0;
     vertical-align: middle;
+  }
+}
+@media (max-width: 580px) {
+  [class*=_list] .desc span,
+  [class*=_list] .item span {
+    display: block;
+  }
+  [class*=_list] .desc span::after,
+  [class*=_list] .item span::after {
+    display: none;
+  }
+  .gallery_list {
+    padding: 2rem 0;
+  }
+  .gallery_list, .gallery_list.type1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(100% + 2rem);
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .gallery_list > *, .gallery_list.type1 > * {
+    width: calc(50% - 2rem);
+    margin-right: 2rem;
+  }
+  .gallery_list > *:nth-child(n+2), .gallery_list.type1 > *:nth-child(n+2) {
+    margin-top: initial;
+  }
+  .gallery_list > *:nth-child(n+3), .gallery_list.type1 > *:nth-child(n+3) {
+    margin-top: 2rem;
+  }
+  .board_list .blog_list > li {
+    padding: 2rem 0;
+  }
+  .board_list .blog_list .thumb {
+    width: 15rem;
+    height: 9.5rem;
+    vertical-align: top;
+  }
+  .board_list .blog_list .thumb + .desc {
+    width: calc(100% - 15.5rem);
+    padding-left: 2rem;
+  }
+  .board_list .board_ebook > li {
+    height: 24rem;
+    min-height: 0;
+    padding: 2rem 0;
+  }
+  .board_list .board_ebook .thumb {
+    width: 15rem;
+  }
+  .board_list .board_ebook .group {
+    padding: 0 0 5rem 2rem;
+  }
+  .board_list .board_ebook .btn {
+    left: 2rem;
+    width: 25rem;
+    max-width: calc(100% - 2rem);
+  }
+  .board_pdf {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(100% + 2rem);
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 2rem 0;
+  }
+  .board_pdf > * {
+    width: calc(33.3333333333% - 2rem);
+    margin-right: 2rem;
+  }
+  .board_pdf > *:nth-child(n+3) {
+    margin-top: initial;
+  }
+  .board_pdf > *:nth-child(n+4) {
+    margin-top: 2rem;
+  }
+  .board_box {
+    padding: 3rem;
+  }
+  .board_box .img {
+    display: block;
+    position: static;
+    margin: 0 auto 2rem;
+  }
+}
+@media (max-width: 390px) {
+  [class*=board] .file .list li {
+    padding-right: 0;
+  }
+  [class*=board] .file .list li + li {
+    padding-top: 0.5rem;
+  }
+  [class*=board] .file .list img {
+    display: none;
+  }
+  [class*=board] .file .list .link {
+    display: block;
+    position: static;
+  }
+  .board_info form .form > .item {
+    display: block;
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+  .board_info form .form > .item.type1 .form_textbox {
+    border-right: 1px solid #ddd;
+  }
+  .board_info form .form > .item.btn {
+    min-height: 0;
+    margin: 1rem auto 0;
+  }
+  .board_list .blog_list .thumb {
+    display: block;
+    width: 100%;
+    height: 21rem;
+  }
+  .board_list .blog_list .thumb + .desc {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0;
+  }
+  .board_list .board_ebook > li {
+    position: relative;
+    height: 29rem;
+    padding-bottom: 7rem;
+  }
+  .board_list .board_ebook .group {
+    position: static;
+    padding-bottom: 0;
+    vertical-align: middle;
+  }
+  .board_list .board_ebook .btn {
+    left: 0;
+    bottom: 2rem;
+    width: 100%;
+    max-width: inherit;
+  }
+  .board_pdf {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(100% + 2rem);
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .board_pdf > * {
+    width: calc(50% - 2rem);
+    margin-right: 2rem;
+  }
+  .board_pdf > *:nth-child(n+2) {
+    margin-top: initial;
+  }
+  .board_pdf > *:nth-child(n+3) {
+    margin-top: 2rem;
+  }
+  .gallery_view .thumb a {
+    height: 8rem;
+  }
+  .board_reply .file {
+    padding: 1rem 2rem;
+  }
+  .board_state .form {
+    padding-right: 0;
+  }
+  .board_state .form li {
+    padding-right: 0;
+  }
+  .board_state .form .btn {
+    display: block;
+    position: static;
+    margin: 1rem 0 0 7rem;
+  }
+  .kogl_open .group ul {
+    padding: 1rem 2rem;
+  }
+  .kogl_open .group li {
+    padding: 2rem 0 1rem;
+  }
+  .kogl_open .group label {
+    padding-left: 3rem;
+  }
+  .kogl_open .group label::before {
+    top: 0.1rem;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  .kogl_open .group label::after {
+    top: 0.6rem;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  .kogl_open .group label .img {
+    display: block;
+    position: static;
+    margin: 0 0 1rem;
+  }
+  .kogl_open .txt_right {
+    background-color: #333;
+  }
+  .kogl_open .label {
+    display: block;
+    position: static;
+    width: 100%;
+    margin-top: 0;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    background-color: #f8f8f8;
+  }
+  .prevnext span {
+    width: 10rem;
+  }
+  .prevnext a {
+    max-width: calc(100% - 10rem);
   }
 }

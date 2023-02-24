@@ -19,9 +19,28 @@ $(function()
     {
         wrapperClass        : "swiper",
         slideClass          : "swiper > li",
-        slidesPerView       : 6,
+        slidesPerView       : 2,
         spaceBetween        : 10,
         loop                : false,
+        breakpoints             : 
+        {
+            1025 : 
+            {
+                slidesPerView   : 6,            // 한 슬라이드에 보여줄 갯수
+            },
+            769 : 
+            {
+                slidesPerView   : 5,            // 한 슬라이드에 보여줄 갯수
+            },
+            581 : 
+            {
+                slidesPerView   : 4,            // 한 슬라이드에 보여줄 갯수
+            },
+            391 : 
+            {
+                slidesPerView   : 3,            // 한 슬라이드에 보여줄 갯수
+            }
+        }
     });
 
     // 썸네일 링크 동작 안 하게
@@ -62,7 +81,7 @@ $(function()
     });
 
     // 댓글
-    $('.comment .list li').each(function(i)
+    $('.comment .list li').each(function()
     {
         $(this).find('.date').css({'left': $(this).find('.name').width()});
     });

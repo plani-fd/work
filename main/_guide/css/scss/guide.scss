@@ -165,12 +165,33 @@
     #_guide
     {
         #gnb {left: -20rem;}
-        main {margin-left: 3rem;}
+
+        main 
+        {
+            margin-left: 3rem;
+
+            .btn_control {right: 0; top: 6rem; margin-top: -1px;}
+        }
         
         footer
         {
             p {display: none;}
             button {left: 0;}
         }
+    }
+}
+
+@media (max-width: 420px)
+{
+    #_guide
+    {
+        header 
+        {
+            padding-right: 2rem;
+
+            h1 img {display: block; height: 1.75rem; margin-top: -0.5rem;}
+        }
+
+        #lnb a {margin-left: 1rem;}
     }
 }

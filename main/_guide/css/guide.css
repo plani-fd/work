@@ -309,10 +309,28 @@
   #_guide main {
     margin-left: 3rem;
   }
+  #_guide main .btn_control {
+    right: 0;
+    top: 6rem;
+    margin-top: -1px;
+  }
   #_guide footer p {
     display: none;
   }
   #_guide footer button {
     left: 0;
+  }
+}
+@media (max-width: 420px) {
+  #_guide header {
+    padding-right: 2rem;
+  }
+  #_guide header h1 img {
+    display: block;
+    height: 1.75rem;
+    margin-top: -0.5rem;
+  }
+  #_guide #lnb a {
+    margin-left: 1rem;
   }
 }

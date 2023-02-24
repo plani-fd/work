@@ -39,17 +39,19 @@ $time2  : all 0.2s;             // transition 기본
 // 한줄 줄임
 @mixin ellipsis($type, $height)
 {
-    overflow: hidden; max-height: $height; text-overflow: ellipsis;
+    overflow: hidden; text-overflow: ellipsis;
 
     @if $type == type1
     {
         white-space : nowrap;
+        min-height  : $height;
         line-height : $height;
     }
 
     @if $type != type1
     {
         display             : -webkit-box;
+        max-height          : $height;
         -webkit-box-orient  : vertical;
     }
 

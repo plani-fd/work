@@ -163,7 +163,6 @@ Create date : 2023-01-01
   display: block;
   overflow: hidden;
   height: 4rem;
-  line-height: 4rem;
 }
 .form_file input {
   position: absolute !important;
@@ -184,11 +183,18 @@ Create date : 2023-01-01
   color: #fff;
 }
 .form_file .txt {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   z-index: -1;
   height: 100%;
   padding-left: 14rem;
+  line-height: 1.25;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  word-break: keep-all;
 }
 .form_file .txt::before {
   position: absolute;
@@ -200,6 +206,7 @@ Create date : 2023-01-01
   border: 1px solid #999;
   content: "파일첨부";
   text-align: center;
+  line-height: 4rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -207,7 +214,9 @@ Create date : 2023-01-01
   font-family: "remixicon";
   content: "\f24a";
   position: absolute;
+  top: 0;
   left: 2rem;
+  line-height: 4rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -344,9 +353,9 @@ Create date : 2023-01-01
   border: 1px solid #ddd;
   line-height: calc(5rem - 2px);
   overflow: hidden;
-  max-height: 5rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-height: 5rem;
   line-height: 5rem;
   display: inline-block;
   padding: 0 2rem;
@@ -363,9 +372,9 @@ Create date : 2023-01-01
   border: 1px solid #333;
   line-height: calc(5rem - 2px);
   overflow: hidden;
-  max-height: 5rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-height: 5rem;
   line-height: 5rem;
   display: inline-block;
   padding: 0 2rem;
@@ -389,9 +398,9 @@ Create date : 2023-01-01
 
 .btn_line {
   overflow: hidden;
-  max-height: 2.8rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-height: 2.8rem;
   line-height: 2.8rem;
   display: inline-block;
   min-width: 8.5rem;
@@ -510,7 +519,7 @@ Create date : 2023-01-01
 .board_list .comment {
   position: relative;
   z-index: 0;
-  display: inline-block;
+  display: inline-block !important;
   overflow: hidden;
   height: 2rem;
   margin-left: 0.5rem;
@@ -524,11 +533,13 @@ Create date : 2023-01-01
   vertical-align: middle;
 }
 .board_list .comment::before, .board_list .comment::after {
-  position: absolute;
+  display: inline !important;
+  position: absolute !important;
   top: 0;
-  width: 0.8rem;
-  height: 100%;
-  background-color: #f0f1f3;
+  width: 0.8rem !important;
+  margin: 0 !important;
+  height: 100% !important;
+  background-color: #f0f1f3 !important;
   content: "";
 }
 .board_list .comment::before {
@@ -712,91 +723,6 @@ Create date : 2023-01-01
 }
 
 @media (max-width: 768px) {
-  .tstyle_list thead {
-    display: none;
-  }
-  .tstyle_list tr {
-    display: block;
-    padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
-  }
-  .tstyle_list tr.type1 td[aria-label=번호]:first-child {
-    float: left;
-    margin-right: 1rem;
-  }
-  .tstyle_list td {
-    display: block;
-    overflow: hidden;
-    padding: 0;
-    border-bottom: 0 none;
-    text-align: left;
-  }
-  .tstyle_list td[aria-label]::before {
-    float: left;
-    width: 7rem;
-    font-weight: 500;
-    color: #333;
-    content: attr(aria-label);
-  }
-  .tstyle_list td[aria-label=첨부파일] img {
-    position: relative;
-    top: -0.1rem;
-    height: 2rem;
-  }
-  .tstyle_list td[aria-label=링크] {
-    margin-top: 0.5rem;
-  }
-  .tstyle_list td[aria-label=번호]:first-child {
-    display: inline-block;
-    width: 4.5rem;
-    height: 4.5rem;
-    margin: 0 0.5rem 1rem 0;
-    border-radius: 100%;
-    background-color: #000;
-    font-size: 1.2rem;
-    color: #fff;
-    text-align: center;
-    line-height: 4.5rem;
-    vertical-align: middle;
-  }
-  .tstyle_list td[aria-label=번호]:first-child::before {
-    display: none;
-  }
-  .tstyle_list td[aria-label=번호]:first-child + [aria-label=분류]::before {
-    display: none;
-  }
-  .tstyle_list td[aria-label=번호]:first-child + [aria-label=분류] + [aria-label=제목].txt_left {
-    max-width: calc(100% - 5.5rem);
-  }
-  .tstyle_list td[aria-label=제목].txt_left {
-    overflow: hidden;
-    max-height: 5rem;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    line-height: 2.5rem;
-    display: inline-block;
-    max-width: calc(100% - 5.5rem);
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #000;
-    vertical-align: middle;
-  }
-  .tstyle_list td[aria-label=제목].txt_left::before {
-    display: none;
-  }
-  .tstyle_list td[aria-label=제목].txt_left + td {
-    clear: both;
-  }
-  .tstyle_list td.hidden_m {
-    display: none;
-  }
-  .tstyle_list .icon_notice {
-    margin: 0;
-  }
   .board_pager .group a {
     display: none;
     margin: 0;
@@ -817,5 +743,123 @@ Create date : 2023-01-01
   }
   .board_pager .group a:only-child::after {
     content: " / 1";
+  }
+  .tstyle_list thead {
+    display: none;
+  }
+  .tstyle_list tr {
+    display: block;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .tstyle_list tr.type1 td[aria-label=번호]:first-child {
+    float: left;
+    margin-right: 1rem;
+  }
+  .tstyle_list td {
+    display: block;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    padding: 0;
+    border-bottom: 0 none;
+    text-align: left;
+  }
+  .tstyle_list td[aria-label]::before {
+    float: left;
+    width: 7rem;
+    font-weight: 500;
+    color: #333;
+    content: attr(aria-label);
+  }
+  .tstyle_list td[aria-label=첨부파일] img {
+    position: relative;
+    top: -0.1rem;
+    height: 2rem;
+  }
+  .tstyle_list td[aria-label=번호]:first-child {
+    display: inline-block;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0 0.5rem 1rem 0;
+    border-radius: 100%;
+    background-color: #000;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+    line-height: 4.5rem;
+    vertical-align: middle;
+  }
+  .tstyle_list td[aria-label=번호]:first-child::before {
+    display: none;
+  }
+  .tstyle_list td[aria-label=번호]:first-child + [aria-label=분류] {
+    margin: 0;
+  }
+  .tstyle_list td[aria-label=번호]:first-child + [aria-label=분류]::before {
+    display: none;
+  }
+  .tstyle_list td[aria-label=번호]:first-child + [aria-label=분류] + [aria-label=제목].txt_left {
+    max-width: calc(100% - 5.5rem);
+  }
+  .tstyle_list td[aria-label=제목].txt_left {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    max-height: 5rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    line-height: 2.5rem;
+    display: inline-block;
+    max-width: calc(100% - 5.5rem);
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    vertical-align: middle;
+  }
+  .tstyle_list td[aria-label=제목].txt_left::before {
+    display: none;
+  }
+  .tstyle_list td[aria-label=제목].txt_left + td {
+    clear: both;
+  }
+  .tstyle_list td.hidden_m {
+    display: none;
+  }
+  .tstyle_list .icon_notice {
+    margin: 0;
+  }
+  .tstyle_write th {
+    display: block;
+    border-bottom: 1px dashed #efefef;
+    background-color: #fcfcfc;
+  }
+  .tstyle_write td {
+    display: block;
+    height: auto;
+  }
+  .tstyle_write .file + .file th {
+    display: none;
+  }
+  .tstyle_write .file + .file td {
+    margin-top: -1px;
+    padding-top: 0;
+    background-color: #fff;
+  }
+}
+@media (max-width: 390px) {
+  .form_file {
+    height: auto;
+  }
+  .form_file .txt {
+    padding: 4.5rem 0 0;
+    line-height: 1.5;
+  }
+  .form_file .txt::before {
+    height: 4rem;
+  }
+  .btn {
+    min-width: 0;
   }
 }
