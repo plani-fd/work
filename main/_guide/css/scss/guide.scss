@@ -115,7 +115,10 @@
                     .board_list,
                     .board_view,
                     .faq,
-                    .kogl_open {margin-top: calc(-2rem - 1px);}
+                    .kogl_open 
+                    {
+                        &:first-child {margin-top: calc(-2rem - 1px);}
+                    }
                 }
     
                 & > textarea {display: block; overflow: hidden; position: absolute; width: 100%; height: 0; opacity: 0;}

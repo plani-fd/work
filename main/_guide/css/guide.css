@@ -210,10 +210,10 @@
 #_guide main > .section > .group > .item {
   padding-bottom: 2rem;
 }
-#_guide main > .section > .group > .item .board_list,
-#_guide main > .section > .group > .item .board_view,
-#_guide main > .section > .group > .item .faq,
-#_guide main > .section > .group > .item .kogl_open {
+#_guide main > .section > .group > .item .board_list:first-child,
+#_guide main > .section > .group > .item .board_view:first-child,
+#_guide main > .section > .group > .item .faq:first-child,
+#_guide main > .section > .group > .item .kogl_open:first-child {
   margin-top: calc(-2rem - 1px);
 }
 #_guide main > .section > .group > textarea {

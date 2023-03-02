@@ -1,6 +1,248 @@
 @charset "UTF-8";
+@import url("../../../css/cmp.css");
 /*-------------------------------------------------
-title       : 회원
+title       : 멤버십
 Author      : PLAN I
 Create date : 2023-01-01
 -------------------------------------------------*/
+.member_title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.member_btn {
+  height: 5rem;
+  border: 1px solid #333;
+  line-height: calc(5rem - 2px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 5rem;
+  line-height: 5rem;
+  display: inline-block;
+  padding: 0 2rem;
+  background-color: #333;
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.member_btn:hover, .member_btn:focus {
+  background-color: transparent;
+  color: #333;
+}
+
+.board_box.type1 {
+  padding: 5rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.board_box.type1 i {
+  overflow: hidden;
+  height: 5rem;
+  line-height: 5rem;
+}
+.board_box.type1 i::before {
+  font-family: "remixicon";
+  content: "\f10c";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+  font-size: 5rem;
+  font-weight: 200;
+}
+.board_box.type1 .title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+}
+.board_box.type2 {
+  margin-bottom: 2rem;
+}
+.board_box.type2 .img {
+  display: block;
+}
+.board_box.type2 .title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.login1 {
+  width: 40rem;
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+}
+.login1 .title {
+  margin-bottom: 1rem;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #000;
+}
+.login1 .form_textbox {
+  width: 100%;
+  height: 5rem;
+  margin-bottom: -1px;
+}
+.login1 .btn {
+  height: 6rem;
+  border: 0.2rem solid #000;
+  line-height: 5.6rem;
+  width: 100%;
+  margin: 2rem 0 1rem;
+  background-color: #000;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.login1 .btn:hover, .login1 .btn:focus {
+  background-color: #fff;
+  color: #000;
+}
+.login1 .list {
+  overflow: hidden;
+  font-size: 0;
+  color: #777;
+}
+.login1 .list li {
+  float: left;
+}
+.login1 .list li + li {
+  float: right;
+}
+.login1 .list a {
+  position: relative;
+  font-size: 1.5rem;
+}
+.login1 .list a::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #777;
+  content: "";
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.login1 .list a:hover::before, .login1 .list a:focus::before {
+  width: 100%;
+}
+
+.login2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5rem 0;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.login2 .group {
+  width: 50%;
+  padding: 0 5rem;
+}
+.login2 .group2 {
+  border-left: 1px dashed #ddd;
+}
+.login2 .member_btn {
+  min-width: 16rem;
+}
+.login2 .group1 i::before {
+  font-family: "remixicon";
+  content: "\f15a";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.login2 .group2 i::before {
+  font-family: "remixicon";
+  content: "\ea0b";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.login2 i {
+  overflow: hidden;
+  height: 5rem;
+  font-size: 5rem;
+  font-weight: 200;
+  line-height: 5rem;
+}
+.login2 img {
+  display: none;
+}
+.login2 span {
+  width: 35rem;
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  word-break: keep-all;
+}
+
+.agree .title {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+}
+.agree .item {
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 20rem;
+  padding: 3rem;
+  border: 1px solid #ddd;
+}
+.agree .form {
+  margin: 1rem 0 3rem;
+}
+
+.tstyle_write td p:last-child {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  color: #777;
+}
+
+.find {
+  position: relative;
+  padding: 5rem 5rem 11rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.find .form {
+  width: 40rem;
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.find .btns {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  width: 40rem;
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  bottom: 5rem;
+}
+.find .btns .member_btn {
+  float: left;
+  width: calc(50% - 0.05rem);
+}
+.find .btns .member_btn + .member_btn {
+  float: right;
+}

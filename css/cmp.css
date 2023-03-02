@@ -32,7 +32,15 @@ Create date : 2023-01-01
   vertical-align: middle;
 }
 
+.xi-check::before {
+  font-family: "remixicon";
+  content: "\eb7b";
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .form_textbox {
+  position: relative;
   height: 4rem;
   padding: 0 1.5rem;
   border: 1px solid #ddd;
@@ -40,8 +48,36 @@ Create date : 2023-01-01
   transition: all 0.2s;
 }
 .form_textbox:focus {
+  z-index: 1;
   outline: 0 none;
   border-color: #000;
+}
+.form_textbox[maxlength="1"] {
+  width: 2rem;
+}
+.form_textbox[maxlength="2"] {
+  width: 4rem;
+}
+.form_textbox[maxlength="3"] {
+  width: 6rem;
+}
+.form_textbox[maxlength="4"] {
+  width: 8rem;
+}
+.form_textbox[maxlength="5"] {
+  width: 10rem;
+}
+.form_textbox[maxlength="6"] {
+  width: 12rem;
+}
+.form_textbox[maxlength="7"] {
+  width: 14rem;
+}
+.form_textbox[maxlength="8"] {
+  width: 16rem;
+}
+.form_textbox[maxlength="9"] {
+  width: 18rem;
 }
 .form_textbox[maxlength="10"] {
   width: 10rem;
@@ -78,7 +114,9 @@ Create date : 2023-01-01
 }
 
 .form_select {
+  display: inline-block;
   position: relative;
+  vertical-align: middle;
 }
 .form_select::after {
   font-family: "remixicon";
@@ -695,6 +733,15 @@ Create date : 2023-01-01
   bottom: 0.1rem;
 }
 
+.tstyle_write .point1 {
+  color: #f00;
+}
+.tstyle_write .btn_line {
+  height: 4rem;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  line-height: 3.8rem;
+}
 .tstyle_write tr {
   border: 0 none !important;
 }
@@ -704,17 +751,17 @@ Create date : 2023-01-01
 }
 .tstyle_write th {
   position: relative;
-  padding: 1rem 1rem 1rem 3rem;
+  padding: 1.75rem 1rem 1rem 3rem;
   border-bottom: 1px solid #ddd;
   font-weight: 600;
   text-align: left;
+  vertical-align: top;
 }
 .tstyle_write th .point1 {
   position: absolute;
   left: 1.5rem;
   top: 1.5rem;
   font-weight: 300;
-  color: #f00;
 }
 .tstyle_write td {
   height: 6rem;

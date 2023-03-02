@@ -8,7 +8,7 @@ Create date : 2023-01-01
 -------------------------------------------------*/
 
 // 아이콘
-$icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\ECAF');
+$icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\ECAF', check: '\EB7B');
 
 @each $keys, $icon in $icons
 {
@@ -18,13 +18,22 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
 // 텍스트박스
 .form_textbox 
 {
-    height: 4rem; padding: 0 1.5rem; border: 1px solid #ddd; transition: $time2;
+    position: relative; height: 4rem; padding: 0 1.5rem; border: 1px solid #ddd; transition: $time2;
 
-    &:focus {outline: 0 none; border-color: #000;}
+    &:focus {z-index: 1; outline: 0 none; border-color: #000;}
 
-    @for $i from 10 to 20
+    @for $i from 1 to 20
     {
-        &[maxlength="#{$i}"] {width: #{$i}rem;}
+        $j : $i *2;
+
+        @if $i < 10
+        {
+            &[maxlength="#{$i}"] {width: #{$j}rem;}
+        }
+        @else
+        {
+            &[maxlength="#{$i}"] {width: #{$i}rem;}
+        }
     }
 
     &.hasDatepicker {min-width: 13.5rem;}
@@ -33,7 +42,7 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
 // 셀렉트박스
 .form_select 
 {
-    position: relative;
+    display: inline-block; position: relative; vertical-align: middle;
 
     &::after {@include icon(type2, '\EA4D'); @include position(top); right: 1rem;}
 
@@ -361,6 +370,9 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
 // 테이블 쓰기
 .tstyle_write
 {
+    .point1 {color: #f00;}
+    .btn_line {height: 4rem; padding: 0 1.5rem; font-size: $size; line-height: 3.8rem;}
+
     tr 
     {
         border: 0 none !important;
@@ -374,9 +386,9 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
 
     th 
     {
-        position: relative; padding: 1rem 1rem 1rem 3rem; border-bottom: 1px solid #ddd; font-weight: 600; text-align: left;
+        position: relative; padding: 1.75rem 1rem 1rem 3rem; border-bottom: 1px solid #ddd; font-weight: 600; text-align: left; vertical-align: top;
 
-        .point1 {position: absolute; left: 1.5rem; top: 1.5rem; font-weight: 300; color: #f00;}
+        .point1 {position: absolute; left: 1.5rem; top: 1.5rem; font-weight: 300;}
     }
     
     td {height: 6rem; padding: 1rem; border-bottom: 1px solid #ddd;}

@@ -1,8 +1,142 @@
 @charset "utf-8";
 @import '../../../../css/scss/mixin.scss';
 
+@import url('../../../css/cmp.css');
+
 /*-------------------------------------------------
-title       : 회원
+title       : 멤버십
 Author      : PLAN I
 Create date : 2023-01-01
 -------------------------------------------------*/
+
+// 타이틀
+.member_title {font-size: 1.8rem; font-weight: 700; color: #000;}
+
+// 버튼
+.member_btn {@include btn(5rem, 0 2rem, 1px, #333, #333, $size, #fff);}
+
+// 상단 박스
+.board_box
+{
+    &.type1
+    {
+        padding: 5rem; border: 1px solid #ddd; text-align: center;
+
+        i
+        {
+            overflow: hidden; height: 5rem; line-height: 5rem;
+
+            &::before {@include icon(type3, '\F10C'); font-size: 5rem; font-weight: 200;}
+        }
+
+        .title {font-size: 1.8rem; font-weight: 700; color: #000;}
+    }
+
+    &.type2
+    {
+        margin-bottom: 2rem;
+    
+        .img {display: block;}
+        .title {font-size: 1.8rem; font-weight: 700; color: #000;}
+    }
+}
+
+// 로그인
+.login1
+{
+    @include width(40rem, 100%);
+    text-align: center;
+
+    .title {margin-bottom: 1rem; font-size: 5rem; font-weight: 800; color: #000;}
+    .form_textbox {width: 100%; height: 5rem; margin-bottom: -1px;}
+
+    .btn
+    {
+        @include height(6rem, 0.2rem, #000);
+        width: 100%; margin: 2rem 0 1rem; background-color: #000; font-size: 1.8rem; font-weight: 700; color: #fff; transition: $time2;
+
+        &:hover,
+        &:focus {background-color: #fff; color: #000;}
+    }
+
+    .list
+    {
+        overflow: hidden; font-size: 0; color: #777;
+
+        li 
+        {
+            float: left;
+
+            & + li {float: right;}
+        }
+        
+        a 
+        {
+            position: relative; font-size: 1.5rem; 
+
+            &::before {position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background-color: #777; content: ''; transition: $time2;}
+
+            &:hover,
+            &:focus 
+            {
+                &::before {width: 100%;}
+            }
+        }
+    }
+}
+
+// 본인인증
+.login2
+{
+    display: flex; padding: 5rem 0; border: 1px solid #ddd; text-align: center;
+
+    .group {width: 50%; padding: 0 5rem;}
+    .group2 {border-left: 1px dashed #ddd;}
+    .member_btn {min-width: 16rem;}
+
+    $icons: ('\F15A', '\EA0B');
+
+    @each $icon in $icons
+    {
+        $i: index($icons, $icon);
+
+        .group#{$i} i::before {@include icon(type3, $icon);}
+    }
+    
+    i {overflow: hidden; height: 5rem; font-size: 5rem; font-weight: 200; line-height: 5rem;}
+    img {display: none;}
+    span {@include width(35rem, 100%); display: block; margin-top: 1rem; margin-bottom: 2rem; word-break: keep-all;}
+}
+
+// 약관동의
+.agree
+{
+    .title {margin: 0 0 1rem; font-size: 1.8rem; font-weight: 700; color: #000;}
+    .item {overflow: hidden; overflow-y: auto; max-height: 20rem; padding: 3rem; border: 1px solid #ddd;}
+    .form {margin: 1rem 0 3rem;}
+}
+
+// 정보입력
+.tstyle_write td p:last-child {display: block; margin-top: 0.5rem; font-size: 1.4rem; color: #777;}
+
+// 찾기
+.find
+{
+    position: relative; padding: 5rem 5rem 11rem; border: 1px solid #ddd; text-align: center;
+
+    .form {@include width(40rem, 100%);}
+
+    .btns 
+    {
+        @include position(left); 
+        @include width(40rem, 100%);
+        bottom: 5rem;
+
+        .member_btn 
+        {
+            float: left; width: calc(50% - 0.05rem);
+
+            & + .member_btn {float: right;}
+        }
+    }
+}

@@ -86,6 +86,19 @@ $(function()
         $(this).find('.date').css({'left': $(this).find('.name').width()});
     });
 
+    // 파일 목록
+    $('.file .list li').each(function()
+    {
+        if ( $(this).find('.btn_line').length == 1 )
+        {
+            $(this).addClass('type1');
+        }
+        else
+        {
+            $(this).addClass('type2');
+        }        
+    });
+
     // 파일 첨부
     $('.form_file').find('input').on('change', function()
 	{
