@@ -13,7 +13,7 @@ Create date : 2023-01-01
 .member_title {font-size: 1.8rem; font-weight: 700; color: #000;}
 
 // 버튼
-.member_btn {@include btn(5rem, 0 2rem, 1px, #333, #333, $size, #fff);}
+.member_btn {@include btn(5rem, 0 2rem, 1px, #000, #000, $size, #fff);}
 
 // 상단 박스
 .board_box
@@ -88,7 +88,8 @@ Create date : 2023-01-01
 // 본인인증
 .login2
 {
-    display: flex; padding: 5rem 0; border: 1px solid #ddd; text-align: center;
+    @include list(type1, 0px, 0px, 2);
+    padding: 5rem 0; border: 1px solid #ddd; text-align: center;
 
     .group {width: 50%; padding: 0 5rem;}
     .group2 {border-left: 1px dashed #ddd;}
@@ -117,26 +118,100 @@ Create date : 2023-01-01
 }
 
 // 정보입력
-.tstyle_write td p:last-child {display: block; margin-top: 0.5rem; font-size: 1.4rem; color: #777;}
+.tstyle_write td
+{
+    strong:first-child 
+    {
+        color: #000;
+
+        & + input + span,
+        & + span {font-size: 1.5rem; color: #888;}
+    }
+    
+    p:last-child {display: block; margin: 0.5rem 0 -0.5rem; font-size: 1.4rem; color: #777;}
+}
 
 // 찾기
 .find
 {
-    position: relative; padding: 5rem 5rem 11rem; border: 1px solid #ddd; text-align: center;
+    position: relative; padding-bottom: 6rem; text-align: center;
 
-    .form {@include width(40rem, 100%);}
+    .form 
+    {
+        @include width(60rem, 100%);
+
+        ul 
+        {
+            @include position(left); 
+            @include list(type1, 0px, 0px, 2); 
+            @include width(60rem, 100%); 
+            height: 5rem; margin-top: -5rem; background-color: #fff;
+
+            li {width: 50%;}
+            label {display: block; position: relative; height: 5rem; border-bottom: 1px solid #ddd; font-size: 1.8rem; font-weight: 700; line-height: 4rem;}
+
+            input 
+            {
+                position: absolute; opacity: 0;
+
+                &:checked + label {border-bottom: 0.2rem solid #555; font-weight: 700; color: #000;}
+            }
+        }
+    }
+    
+    .member_title {height: 5rem; border-bottom: 0.2rem solid #555; text-align: left; line-height: 4rem;}
+    .txt {margin: 3rem 0;}
+    .box {@include width(60rem, 100%); margin: 3rem 0; word-break: keep-all; text-align: left;}
 
     .btns 
     {
         @include position(left); 
-        @include width(40rem, 100%);
-        bottom: 5rem;
+        @include width(60rem, 100%);
+        bottom: 0;
 
         .member_btn 
         {
-            float: left; width: calc(50% - 0.05rem);
+            float: left; width: calc(50% - 0.5px); height: 6rem; line-height: 5.8rem;
 
             & + .member_btn {float: right;}
         }
+    }
+}
+
+// 진행절차
+.member_step
+{
+    @include list(type1, 2rem, 0px, 4);
+    @include width(50rem, 100%);
+    text-align: center;
+    
+    li
+    {
+        position: relative;
+
+        & + li::before {@include icon(type2, '\EA6D'); @include position(top); left: -2rem; width: 2rem; text-align: center;}
+    }
+
+    small {display: inline-block; width: 2rem; height: 2rem; margin-right: 0.5rem; border-radius: 100%; background-color: #999; font-size: 1rem; color: #fff; line-height: 2rem; vertical-align: middle;}
+    strong {font-weight: normal;}
+
+    .active
+    {
+        small {background-color: #000;}
+        strong {font-weight: 700; color: #000;}
+    }
+}
+
+@media (max-width: 580px) 
+{
+    .board_box.type1 {padding: 3rem;}
+
+    // 본인인증
+    .login2
+    {
+        display: block; padding: 0 3rem;
+
+        .group {width: 100%; padding: 2rem 0 3rem;}
+        .group2 {border: 0 none; border-top: 1px dashed #ddd;}
     }
 }

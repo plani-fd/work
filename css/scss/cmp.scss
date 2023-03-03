@@ -48,7 +48,7 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
 
     select 
     {
-        height: 4rem; padding: 0 3.5rem 0 1.5rem; border: 1px solid #ddd; transition: $time2;
+        width: 100%; height: 4rem; padding: 0 3.5rem 0 1.5rem; border: 1px solid #ddd; transition: $time2;
 
         &:focus {outline: 0 none; border-color: #000;}
     }
@@ -206,7 +206,7 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
     $colors:
     (
         type1: (color1: #ddd, color2: #fff, color3: #666), 
-        type2: (color1: #333, color2: #333, color3: #fff)
+        type2: (color1: #000, color2: #000, color3: #fff)
     );
 
     @each $key, $map in $colors
@@ -484,6 +484,24 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
             th {display: none;}
             td {margin-top: -1px; padding-top: 0; background-color: #fff;}
         }
+    }
+}
+
+@media (max-width: 580px) 
+{
+    // 메일
+    .form_mail
+    {
+        overflow: hidden;
+
+        .form_textbox 
+        {
+            clear: both; float: left; width: calc(50% - 0.25rem);
+
+            &:first-child {float: none; width: calc(100% - 2rem); margin-bottom: 0.5rem;}
+        }
+
+        .form_select {float: right; width: calc(50% - 0.25rem);}
     }
 }
 

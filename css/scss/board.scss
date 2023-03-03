@@ -106,7 +106,12 @@ Create date : 2023-01-01
         }
     }
 
-    .category {display: inline-block !important; min-height: 2.8rem; padding: 0 1.5rem; border-radius: 3rem; background-color: #000; font-size: 1.4rem; color: #fff; line-height: 2.8rem; vertical-align: middle;}
+    .category 
+    {
+        display: inline-block !important; min-height: 2.8rem; padding: 0 1.5rem; border-radius: 3rem; background-color: #000; font-size: 1.4rem; color: #fff; line-height: 2.8rem; vertical-align: middle;
+
+        &::after {display: none !important;}
+    }
 }
 
 // 게시판 상단
@@ -135,10 +140,10 @@ Create date : 2023-01-01
 
         button 
         {
-            height: 4rem; padding: 0 2rem; border: 1px solid #333; background-color: #333; color: #fff; transition: $time2;
+            height: 4rem; padding: 0 2rem; border: 1px solid #000; background-color: #000; color: #fff; transition: $time2;
 
             &:hover,
-            &:focus {background-color: #fff; color: #333;}
+            &:focus {background-color: #fff; color: #000;}
         }
     }
 
@@ -482,10 +487,10 @@ Create date : 2023-01-01
 
         .btn 
         {
-            position: absolute; right: 0; bottom: 0; width: 10rem; height: 4rem; border: 1px solid #333; background-color: #333; color: #fff; text-align: center; line-height: 3.8rem; transition: $time2;
+            position: absolute; right: 0; bottom: 0; width: 10rem; height: 4rem; border: 1px solid #000; background-color: #000; color: #fff; text-align: center; line-height: 3.8rem; transition: $time2;
 
             &:hover,
-            &:focus {background-color: #fff; color: #333;}
+            &:focus {background-color: #fff; color: #000;}
         }
     }
 }
@@ -520,10 +525,10 @@ Create date : 2023-01-01
 
         button 
         {
-            height: 5rem; padding: 0 3rem; border: 1px solid #333; background-color: #333; color: #fff; line-height: 4.8rem; vertical-align: top; transition: $time2;
+            height: 5rem; padding: 0 3rem; border: 1px solid #000; background-color: #000; color: #fff; line-height: 4.8rem; vertical-align: top; transition: $time2;
 
             &:hover,
-            &:focus {background-color: #fff; color: #333;}
+            &:focus {background-color: #fff; color: #000;}
         }
     }
 
@@ -592,7 +597,7 @@ Create date : 2023-01-01
     
     .group
     {
-        ul {display: flex; padding: 4rem 2rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; text-align: center;}
+        ul {@include list(type1, 0px, 0px, 5); padding: 4rem 2rem; border-left: 1px solid #ddd; border-right: 1px solid #ddd; text-align: center;}
 
         li 
         {

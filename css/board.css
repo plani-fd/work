@@ -224,6 +224,9 @@ Create date : 2023-01-01
   line-height: 2.8rem;
   vertical-align: middle;
 }
+[class*=board] .category::after {
+  display: none !important;
+}
 
 .board_info {
   overflow: hidden;
@@ -262,15 +265,15 @@ Create date : 2023-01-01
 .board_info form button {
   height: 4rem;
   padding: 0 2rem;
-  border: 1px solid #333;
-  background-color: #333;
+  border: 1px solid #000;
+  background-color: #000;
   color: #fff;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 .board_info form button:hover, .board_info form button:focus {
   background-color: #fff;
-  color: #333;
+  color: #000;
 }
 .board_info .page {
   float: left;
@@ -965,8 +968,8 @@ Create date : 2023-01-01
   bottom: 0;
   width: 10rem;
   height: 4rem;
-  border: 1px solid #333;
-  background-color: #333;
+  border: 1px solid #000;
+  background-color: #000;
   color: #fff;
   text-align: center;
   line-height: 3.8rem;
@@ -975,7 +978,7 @@ Create date : 2023-01-01
 }
 .board_state .form .btn:hover, .board_state .form .btn:focus {
   background-color: #fff;
-  color: #333;
+  color: #000;
 }
 
 .prevnext {
@@ -1047,8 +1050,8 @@ Create date : 2023-01-01
 .comment .form button {
   height: 5rem;
   padding: 0 3rem;
-  border: 1px solid #333;
-  background-color: #333;
+  border: 1px solid #000;
+  background-color: #000;
   color: #fff;
   line-height: 4.8rem;
   vertical-align: top;
@@ -1057,7 +1060,7 @@ Create date : 2023-01-01
 }
 .comment .form button:hover, .comment .form button:focus {
   background-color: #fff;
-  color: #333;
+  color: #000;
 }
 .comment .title {
   display: block;
@@ -1182,10 +1185,23 @@ Create date : 2023-01-01
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: calc(100% + 0px);
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   padding: 4rem 2rem;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
   text-align: center;
+}
+.kogl_open .group ul > * {
+  width: calc(20% - 0px);
+  margin-right: 0px;
+}
+.kogl_open .group ul > *:nth-child(n+5) {
+  margin-top: initial;
+}
+.kogl_open .group ul > *:nth-child(n+6) {
+  margin-top: 0px;
 }
 .kogl_open .group li {
   position: relative;
