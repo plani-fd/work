@@ -39,6 +39,13 @@ Create date : 2023-01-01
   vertical-align: middle;
 }
 
+.xi-plus-min::before {
+  font-family: "remixicon";
+  content: "\ea12";
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .form_textbox {
   position: relative;
   height: 4rem;
