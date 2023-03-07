@@ -10,7 +10,6 @@ $(document).ready(function () {
 
     function Mobile(){return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);}
     
-    
     function mouseOver(label) {
         var device = $(window).width();
         if (Mobile()) { // 모바일일 경우
@@ -22,7 +21,7 @@ $(document).ready(function () {
                     $(this).parent('li').addClass('active');
                 }
             });
-            
+
         } else { // 모바일 외
 
             label.focus(function () {

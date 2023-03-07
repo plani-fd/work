@@ -197,6 +197,7 @@ Create date : 2023-03-07
   margin-top: 2rem;
 }
 
+/* ======================================================================================================================= */
 /* 개인정보처리방침 */
 .policy {
   font-size: 1.7rem;
@@ -250,22 +251,22 @@ Create date : 2023-03-07
   font-weight: 600;
 }
 .policy .labeling li .label_box .icon01 {
-  background-image: url("../_guide/img/policy/private_icon01.png");
+  background-image: url("../img/policy/private_icon01.png");
 }
 .policy .labeling li .label_box .icon02 {
-  background-image: url("../_guide/img/policy/private_icon02.png");
+  background-image: url("../img/policy/private_icon02.png");
 }
 .policy .labeling li .label_box .icon03 {
-  background-image: url("../_guide/img/policy/private_icon03.png");
+  background-image: url("../img/policy/private_icon03.png");
 }
 .policy .labeling li .label_box .icon04 {
-  background-image: url("../_guide/img/policy/private_icon04.png");
+  background-image: url("../img/policy/private_icon04.png");
 }
 .policy .labeling li .label_box .icon05 {
-  background-image: url("../_guide/img/policy/private_icon05.png");
+  background-image: url("../img/policy/private_icon05.png");
 }
 .policy .labeling li .label_box .icon06 {
-  background-image: url("../_guide/img/policy/private_icon06.png");
+  background-image: url("../img/policy/private_icon06.png");
 }
 .policy .labeling li:nth-child(3n) .labeling_area {
   left: auto;
@@ -381,43 +382,43 @@ Create date : 2023-03-07
   font-size: 1.6rem;
 }
 .policy .privacy_list li .icon1 {
-  background-image: url("../_guide/img/policy/private_sico1.png");
+  background-image: url("../img/policy/private_sico1.png");
 }
 .policy .privacy_list li .icon2 {
-  background-image: url("../_guide/img/policy/private_sico2.png");
+  background-image: url("../img/policy/private_sico2.png");
 }
 .policy .privacy_list li .icon3 {
-  background-image: url("../_guide/img/policy/private_sico3.png");
+  background-image: url("../img/policy/private_sico3.png");
 }
 .policy .privacy_list li .icon4 {
-  background-image: url("../_guide/img/policy/private_sico4.png");
+  background-image: url("../img/policy/private_sico4.png");
 }
 .policy .privacy_list li .icon5 {
-  background-image: url("../_guide/img/policy/private_sico5.png");
+  background-image: url("../img/policy/private_sico5.png");
 }
 .policy .privacy_list li .icon6 {
-  background-image: url("../_guide/img/policy/private_sico6.png");
+  background-image: url("../img/policy/private_sico6.png");
 }
 .policy .privacy_list li .icon7 {
-  background-image: url("../_guide/img/policy/private_sico7.png");
+  background-image: url("../img/policy/private_sico7.png");
 }
 .policy .privacy_list li .icon8 {
-  background-image: url("../_guide/img/policy/private_sico8.png");
+  background-image: url("../img/policy/private_sico8.png");
 }
 .policy .privacy_list li .icon9 {
-  background-image: url("../_guide/img/policy/private_sico9.png");
+  background-image: url("../img/policy/private_sico9.png");
 }
 .policy .privacy_list li .icon10 {
-  background-image: url("../_guide/img/policy/private_sico10.png");
+  background-image: url("../img/policy/private_sico10.png");
 }
 .policy .privacy_list li .icon11 {
-  background-image: url("../_guide/img/policy/private_sico11.png");
+  background-image: url("../img/policy/private_sico11.png");
 }
 .policy .privacy_list li .icon12 {
-  background-image: url("../_guide/img/policy/private_sico12.png");
+  background-image: url("../img/policy/private_sico12.png");
 }
 .policy .privacy_list li .icon13 {
-  background-image: url("../_guide/img/policy/private_sico13.png");
+  background-image: url("../img/policy/private_sico13.png");
 }
 .policy .ico_title {
   font-size: 2.4rem;
@@ -438,43 +439,43 @@ Create date : 2023-03-07
   background-size: 100% auto;
 }
 .policy .ico_title .icon1 {
-  background-image: url("../_guide/img/policy/private_sico1.png");
+  background-image: url("../img/policy/private_sico1.png");
 }
 .policy .ico_title .icon2 {
-  background-image: url("../_guide/img/policy/private_sico2.png");
+  background-image: url("../img/policy/private_sico2.png");
 }
 .policy .ico_title .icon3 {
-  background-image: url("../_guide/img/policy/private_sico3.png");
+  background-image: url("../img/policy/private_sico3.png");
 }
 .policy .ico_title .icon4 {
-  background-image: url("../_guide/img/policy/private_sico4.png");
+  background-image: url("../img/policy/private_sico4.png");
 }
 .policy .ico_title .icon5 {
-  background-image: url("../_guide/img/policy/private_sico5.png");
+  background-image: url("../img/policy/private_sico5.png");
 }
 .policy .ico_title .icon6 {
-  background-image: url("../_guide/img/policy/private_sico6.png");
+  background-image: url("../img/policy/private_sico6.png");
 }
 .policy .ico_title .icon7 {
-  background-image: url("../_guide/img/policy/private_sico7.png");
+  background-image: url("../img/policy/private_sico7.png");
 }
 .policy .ico_title .icon8 {
-  background-image: url("../_guide/img/policy/private_sico8.png");
+  background-image: url("../img/policy/private_sico8.png");
 }
 .policy .ico_title .icon9 {
-  background-image: url("../_guide/img/policy/private_sico9.png");
+  background-image: url("../img/policy/private_sico9.png");
 }
 .policy .ico_title .icon10 {
-  background-image: url("../_guide/img/policy/private_sico10.png");
+  background-image: url("../img/policy/private_sico10.png");
 }
 .policy .ico_title .icon11 {
-  background-image: url("../_guide/img/policy/private_sico11.png");
+  background-image: url("../img/policy/private_sico11.png");
 }
 .policy .ico_title .icon12 {
-  background-image: url("../_guide/img/policy/private_sico12.png");
+  background-image: url("../img/policy/private_sico12.png");
 }
 .policy .ico_title .icon13 {
-  background-image: url("../_guide/img/policy/private_sico13.png");
+  background-image: url("../img/policy/private_sico13.png");
 }
 .policy .cont_table {
   margin-top: 2rem;
@@ -525,20 +526,21 @@ Create date : 2023-03-07
   position: relative;
 }
 .policy .step li::before {
-  content: "";
+  content: "\ea4e";
   position: absolute;
   top: 0.3rem;
   left: 50%;
   margin-left: -4px;
   width: 9px;
   height: 20px;
-  background: url("../_guide/img/policy/step_arr.png") no-repeat;
+  font-family: "remixicon";
 }
 .policy .step.step1 > p {
   background-color: #014BAC;
   color: #fff;
   padding: 2rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 .policy .step .step2 > li {
   float: left;
@@ -792,13 +794,17 @@ Create date : 2023-03-07
   .policy .scroll_x > * {
     width: 862px;
   }
+  .policy .step li::before {
+    top: 0;
+  }
 }
 @media (max-width: 768px) {
   .policy .labeling {
     grid-template-columns: 1fr 1fr;
   }
   .policy .labeling li .labeling_area {
-    min-width: 55rem;
+    min-width: 0;
+    width: 100;
   }
   .policy .labeling li:nth-child(2n) .labeling_area {
     left: auto;

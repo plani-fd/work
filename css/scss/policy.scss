@@ -118,6 +118,8 @@ Create date : 2023-03-07
 .mgt20{ margin-top: 2rem; }
 
 
+/* ======================================================================================================================= */
+
 /* 개인정보처리방침 */
 .policy {
     font-size: 1.7rem;
@@ -143,7 +145,7 @@ Create date : 2023-03-07
                 .tit { font-size: 1.7rem; font-weight: 600; }
                 @for $i from 1 through 6{
                     .icon0#{$i}{
-                        background-image: url('../_guide/img/policy/private_icon0#{$i}.png');
+                        background-image: url('../img/policy/private_icon0#{$i}.png');
                     }
                 }
             }
@@ -190,7 +192,7 @@ Create date : 2023-03-07
             a { display: block; line-height: 2.4rem; color: #333; font-weight: 500; font-size: 1.6rem; }
             @for $i from 1 through 13{
                 .icon#{$i}{
-                    background-image: url('../_guide/img/policy/private_sico#{$i}.png');
+                    background-image: url('../img/policy/private_sico#{$i}.png');
                 }
             }
         }
@@ -201,7 +203,7 @@ Create date : 2023-03-07
         
         @for $i from 1 through 13{
             .icon#{$i}{
-                background-image: url('../_guide/img/policy/private_sico#{$i}.png');
+                background-image: url('../img/policy/private_sico#{$i}.png');
             }
         }
     }
@@ -233,11 +235,11 @@ Create date : 2023-03-07
         p { line-height: 1.9rem; border-radius: 6px; margin-top: 3rem; text-align: center; margin-bottom: 1.3rem; }
         li {
             position: relative;
-            &::before{ content: ''; position: absolute; top: 0.3rem; left: 50%; margin-left: -4px; width: 9px; height: 20px; background: url('../_guide/img/policy/step_arr.png') no-repeat; }
+            &::before{ content: "\ea4e"; position: absolute; top: 0.3rem; left: 50%; margin-left: -4px; width: 9px; height: 20px; font-family: 'remixicon'; }
         }
 
         &.step1  {
-            > p { background-color: #014BAC; color: #fff;padding: 2rem; font-weight: 600; }
+            > p { background-color: #014BAC; color: #fff;padding: 2rem; font-weight: 600; margin-bottom: 0.5rem; }
         }
         .step2 > li {
             float: left; width: calc(50% - 2.5rem); 
@@ -384,6 +386,7 @@ Create date : 2023-03-07
             overflow-x: auto;
             > * { width: 862px; }
         }
+        .step li::before { top: 0;}
     }
 }
 @media (max-width: 768px)
@@ -392,7 +395,7 @@ Create date : 2023-03-07
         .labeling {
             grid-template-columns: 1fr 1fr;
             li {
-                .labeling_area { min-width: 55rem;}
+                .labeling_area { min-width: 0; width: 100;}
                 &:nth-child(2n){
                     .labeling_area {
                         left: auto; transform: none; right: 0;
