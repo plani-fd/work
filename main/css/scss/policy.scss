@@ -32,7 +32,7 @@ Create date : 2023-03-07
                 .tit { font-size: 1.7rem; font-weight: 600; }
                 @for $i from 1 through 6{
                     .icon0#{$i}{
-                        background-image: url('../../_guide/img/policy/private_icon0#{$i}.png');
+                        background-image: url('../_guide/img/policy/private_icon0#{$i}.png');
                     }
                 }
             }
@@ -79,7 +79,7 @@ Create date : 2023-03-07
             a { display: block; line-height: 2.4rem; color: #333; font-weight: 500; font-size: 1.6rem; }
             @for $i from 1 through 13{
                 .icon#{$i}{
-                    background-image: url('../../_guide/img/policy/private_sico#{$i}.png');
+                    background-image: url('../_guide/img/policy/private_sico#{$i}.png');
                 }
             }
         }
@@ -90,7 +90,7 @@ Create date : 2023-03-07
         
         @for $i from 1 through 13{
             .icon#{$i}{
-                background-image: url('../../_guide/img/policy/private_sico#{$i}.png');
+                background-image: url('../_guide/img/policy/private_sico#{$i}.png');
             }
         }
     }
