@@ -15,32 +15,6 @@ Create date : 2023-01-01
 // 버튼
 .member_btn {@include btn(5rem, 0 2rem, 1px, #000, #000, $size, #fff);}
 
-// 상단 박스
-.board_box
-{
-    &.type1
-    {
-        padding: 5rem; border: 1px solid #ddd; text-align: center;
-
-        i
-        {
-            overflow: hidden; height: 5rem; line-height: 5rem;
-
-            &::before {@include icon(type3, '\F10C'); font-size: 5rem; font-weight: 200;}
-        }
-
-        .title {font-size: 1.8rem; font-weight: 700; color: #000;}
-    }
-
-    &.type2
-    {
-        margin-bottom: 2rem;
-    
-        .img {display: block;}
-        .title {font-size: 1.8rem; font-weight: 700; color: #000;}
-    }
-}
-
 // 로그인
 .login1
 {
@@ -148,13 +122,14 @@ Create date : 2023-01-01
             height: 5rem; margin-top: -5rem; background-color: #fff;
 
             li {width: 50%;}
-            label {display: block; position: relative; height: 5rem; border-bottom: 1px solid #ddd; font-size: 1.8rem; font-weight: 700; line-height: 4rem;}
+            label {display: block; position: relative; height: 5rem; border-bottom: 1px solid #ddd; font-size: 1.8rem; font-weight: 700; line-height: 4rem; cursor: pointer;}
 
             input 
             {
                 position: absolute; opacity: 0;
 
                 &:checked + label {border-bottom: 0.2rem solid #555; font-weight: 700; color: #000;}
+                &:hover + label {color: #000;}
             }
         }
     }
@@ -204,8 +179,6 @@ Create date : 2023-01-01
 
 @media (max-width: 580px) 
 {
-    .board_box.type1 {padding: 3rem;}
-
     // 본인인증
     .login2
     {

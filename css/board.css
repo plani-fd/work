@@ -1145,26 +1145,27 @@ Create date : 2023-01-01
   vertical-align: middle;
 }
 
-.board_box {
+.kogl_open .board_box {
   position: relative;
+  margin-bottom: 0;
   padding: 4rem;
   padding-left: 26.5rem;
   border: 1px solid #ddd;
 }
-.board_box .img {
+.kogl_open .board_box .img {
   position: absolute;
   left: 4rem;
   top: 4rem;
   width: 18.5rem;
 }
-.board_box .title {
+.kogl_open .board_box .title {
   display: block;
   margin-bottom: 1rem;
   font-size: 2rem;
   font-weight: 600;
   color: #000;
 }
-.board_box .btn_line {
+.kogl_open .board_box .btn_line {
   margin-top: 1.5rem;
   padding: 0 2rem;
   border-radius: 3rem;
@@ -1172,7 +1173,7 @@ Create date : 2023-01-01
   background-color: #333;
   color: #fff;
 }
-.board_box .btn_line:hover, .board_box .btn_line:focus {
+.kogl_open .board_box .btn_line:hover, .kogl_open .board_box .btn_line:focus {
   background-color: #fff;
   color: #333;
 }
@@ -1294,6 +1295,11 @@ Create date : 2023-01-01
   opacity: 0;
 }
 
+.board_box.type1 .form .form_textbox[type=password] {
+  width: 30rem;
+  margin-top: 1rem;
+}
+
 @media (max-width: 1024px) {
   .board_list .board_ebook {
     display: block;
@@ -1341,6 +1347,7 @@ Create date : 2023-01-01
   }
   .board_info form .form,
   .board_info form .form_textbox,
+  .board_info form .form_select,
   .board_info form .form_select select,
   .board_info form button {
     width: 100%;
@@ -1559,10 +1566,10 @@ Create date : 2023-01-01
   .board_pdf > *:nth-child(n+4) {
     margin-top: 2rem;
   }
-  .board_box {
+  .kogl_open .board_box {
     padding: 3rem;
   }
-  .board_box .img {
+  .kogl_open .board_box .img {
     display: block;
     position: static;
     margin: 0 auto 2rem;

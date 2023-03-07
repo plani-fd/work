@@ -6,3 +6,118 @@ title       : 공통영역
 Author      : PLAN I
 Create date : 2023-01-01
 -------------------------------------------------*/
+
+// 만족도 조사
+.contents_info
+{
+    * + .group {margin-top: -1px;}
+
+    .group
+    {
+        @include table;
+        border: 1px solid #ddd;
+
+        .qr {width: 15rem; border-left: 1px solid #ddd;}
+
+        .title
+        {
+            position: relative; margin-bottom: 1rem; font-size: $size; font-weight: 400;
+
+            & > strong {display: block; font-size: 1.8rem; font-weight: 700; color: #000;}
+
+            .txt 
+            {
+                position: absolute; right: 0; bottom: 0; color: #888;
+
+                &::before {content: '[ ';}
+                &::after {content: ' ]';}
+
+                strong {font-weight: normal;}
+                span + span::before {content: ' / ';}
+            }
+        }
+    }
+
+    #satisfy {padding: 2.5rem 3rem; background-color: #f8f8f8;}
+}
+
+// 만족도 조사 중 공공누리
+.kogl 
+{
+    @include table;
+    border: 1px solid #ddd;
+
+    .img {width: 25rem; padding: 1rem; border-right: 1px solid #ddd; text-align: center;}
+    .txt {padding: 1rem 2rem;}
+
+    & + .duty {margin-top: -1px;}
+}
+
+// 만족도 조사 중 콘텐츠 정보책임자
+.duty
+{
+    position: relative; padding: 1rem 1.5rem; border: 1px solid #ddd; line-height: 3rem;
+
+    .title 
+    {
+        display: inline-block; overflow: hidden; width: 3rem; height: 3rem; margin-right: 1rem; border-radius: 100%; background-color: #000; font-size: $size; font-weight: 400; color: #fff; text-align: center; vertical-align: middle;
+
+        &::before {@include icon(type3, "\F264");}
+    }
+
+    ul {display: inline;}
+
+    li 
+    {
+        display: inline;
+
+        &::after {display: inline-block; position: relative; top: -0.1rem; width: 1px; height: 1rem; margin: 0 1rem; background-color: #ddd; content: ''; vertical-align: middle;}
+        &:last-child::after {display: none;}
+    }
+
+    .date {position: absolute; right: 1.5rem; top: 1rem;}
+    .label {margin-right: 0.5rem; font-weight: 700; color: #000;}
+}
+
+// 사이트맵
+.sitemap
+{
+    @include list(type2, 4rem, 4rem, 4);
+
+    dt a 
+    {
+        @include height(6rem, 0.2rem, #000); 
+        display: block; font-size: 1.8rem; font-weight: 700; color: #000; text-align: center; transition: $time2;
+
+        &:hover,
+        &:focus {background-color: #000; color: #fff;}
+    }
+
+    .depth2 > li > a
+    {
+        display: flex; min-height: 6rem; padding: 0.5rem 2rem; border-bottom: 1px solid #ddd; align-items: center; transition: $time2;
+
+        &:hover,
+        &:focus {font-weight: 600; color: #000;}
+    }
+
+    .depth3 
+    {
+        padding: 1.5rem 2rem; border-bottom: 1px solid #ddd; background-color: #f8f8f8;
+
+        a
+        {
+            @include bul(1rem);
+            color: #666;
+
+            &::before {content: '·';}
+            &::after {position: absolute; left: 1rem; bottom: 0; width: 0; max-width: calc(100% - 1rem); height: 1px; background-color: #666; content: ''; transition: $time2;}
+
+            &:hover,
+            &:focus
+            {
+                &::after {width: 100%;}
+            }
+        }
+    }
+}

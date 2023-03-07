@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+<title>[기타] 스타일가이드</title>
+
+<script src="../../jquery/js/jquery-1.11.2.min.js"></script>
+<script src="../../jquery/js/jquery-ui.min.js"></script>
+<script src="../../jquery/js/swiper-bundle.min.js"></script>
+
+<script src="js/shCore.js"></script>
+<script src="js/shBrushXml.js"></script>
+
+<script src="js/guide.js"></script>
+
+<link rel="stylesheet" href="css/shCore.css" />
+<link rel="stylesheet" href="css/shThemeEclipse.css" />
+
+<link rel="stylesheet" href="css/guide.css">
+
+<link rel="stylesheet" href="../../jquery/css/swiper-bundle.min.css" />
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../upload/skin/program/member.css">
+</head>
+
+<body>
+<div id="_guide">
+    <header>
+        <h1><i><img src="../img/layout/logo.png" alt="PLAN I"></i><span>스타일가이드</span></h1>
+
+        <nav id="lnb">
+            <a href="guide1.html">콘텐츠</a>
+            <a href="guide2.html">게시판</a>
+            <a href="guide3.html">멤버십</a>
+            <a href="guide4.html">기타</a>
+            <a href="guide5.html">문서</a>
+        </nav>
+
+        <ul id="gnb"></ul>
+    </header>
+
+    <main>
+        <button class="btn_control">전체 소스 닫기</button>
+
+        <section class="section">
+            <h2>블릿</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>기본</h3>
+
+                <div class="item">
+                    <ul class="bul depth1">
+                        <li>질의답변을 위한 게시자 의견 확인을 위해 수집·이용됨</li>
+                        <li>
+                            <strong>수집항목</strong>
+                            <ul class="bul depth2">
+                                <li>필수항목 : 성명, 연락처</li>
+                                <li>3년간 보유 및 이용 이후 파기</li>
+                            </ul>
+                        </li>
+                        <li>
+                            개인정보 수집·이용에 대하여 동의를 거부할 수 있으며, 동의를 하지 않으면 글쓰기가 되지 않습니다.
+                            <ul class="bul depth2">
+                                <li>필수항목 : 성명, 연락처</li>
+                                <li>3년간 보유 및 이용 이후 파기</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="section">
+            <h2>버튼</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>큰 버튼</h3>
+
+                <div class="item">                     
+                    <button type="button" class="btn type2">저장</button>                            
+                    <button type="button" class="btn type1">목록</button>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>작은 버튼</h3>
+
+                <div class="item">                     
+                    <a class="btn_line" href="">부서변경<i aria-hidden="true" class="xi-sitemap"></i></a>
+                    <a class="btn_line" href="">다운로드<i aria-hidden="true" class="xi-download"></i></a>
+                    <a class="btn_line" href="">미리보기<i aria-hidden="true" class="xi-search"></i></a>
+                    <a class="btn_line" href="">중복확인<i aria-hidden="true" class="xi-check"></i></a>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="section">
+            <h2>공통영역</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>만족도조사</h3>
+
+                <div class="item">
+                    <div class="contents_info">
+                        <div class="kogl kogl1">
+                            <i class="img" aria-hidden="true"><img src="http://www.kogl.or.kr/open/web/images/images_2014/codetype/new_img_opencode1.jpg" alt=""></i> 
+                            <span class="txt">본 공공저작물은 공공누리 "출처표시" 조건에 따라 이용할 수 있습니다.</span>
+                        </div>
+                            
+                        <article class="duty">
+                            <h2 class="title">콘텐츠 정보책임자</h2>
+                            <ul class="list">
+                                <li>
+                                    <strong class="label">담당부서</strong>
+                                    <span class="part">개발1팀</span>
+                                </li>
+                                <li>
+                                    <strong class="label">담당자</strong>
+                                    <span class="name">홍길동</span>
+                                </li>
+                                <li>
+                                    <strong class="label">연락처</strong>
+                                    <span class="tel">012-345-6789</span>
+                                </li>
+                            </ul>
+                            <p class="date">
+                                <strong class="label">최근업데이트</strong>
+                                <span>2020/03/02</span>
+                            </p>
+                        </article>
+                        
+                        <div class="group">                        
+                            <article id="satisfy" class="item">
+                                <fieldset>
+                                    <legend>콘텐츠 만족도 조사</legend>
+                                    <h2 class="title">
+                                        <span>콘텐츠 만족도 조사</span>
+                                        <strong>이 페이지에서 제공하는 정보에 대하여 만족하십니까?</strong>
+                                        <p class="txt">
+                                            <span>평균 <strong>5.0</strong>점</span> 
+                                            <span><strong>2</strong>명 참여</span>
+                                        </p>
+                                    </h2>
+                                    <div class="cont">
+                                        <ul class="list">
+                                            <li class="form_radio"><input type="radio" name="chk_point" id="q1" value="5" checked="checked"><label for="q1"> 매우만족</label></li>
+                                            <li class="form_radio"><input type="radio" name="chk_point" id="q2" value="4"><label for="q2"> 만족</label></li>
+                                            <li class="form_radio"><input type="radio" name="chk_point" id="q3" value="3"><label for="q3"> 보통</label></li>
+                                            <li class="form_radio"><input type="radio" name="chk_point" id="q4" value="2"><label for="q4"> 불만족</label></li>
+                                            <li class="form_radio"><input type="radio" name="chk_point" id="q5" value="1"><label for="q5"> 매우불만족</label></li>
+                                        </ul>
+                                    </div>
+                                </fieldset>
+                            </article>
+                            
+                            <p class="qr item">
+                                <img src="https://chart.apis.google.com/chart?cht=qr&amp;chs=150x150" alt="모두사용 QR코드">
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>사이트맵</h3>
+
+                <div class="item">
+                    <div class="sitemap">
+
+                        <dl class="group group1">
+                            <dt><a href="" target="_self">센터소개</a></dt>
+                            <dd>
+                                <ul class="depth2">                    
+                                    <li><a href="" target="_self">센터소개</a></li>                    
+                                    <li><a href="" target="_self">주요사업안내</a></li>                    
+                                    <li><a href="" target="_self">오시는 길</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    
+                        <dl class="group group2">
+                            <dt><a href="" target="_self">건축법제 정보</a></dt>
+                            <dd>
+                                <ul class="depth2">
+                                    <li>
+                                        <a href="" target="_self">건축규제 MAP</a>
+                                        <ul class="depth3">
+                                            <li><a href="" target="_self">지역별 건축규제</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_self">건축규제 해설</a>
+                                        <ul class="depth3">
+                                            <li><a href="" target="_self">한눈에 보는 법령정보</a></li>
+                                            <li><a href="" target="_self">법령 해석례</a></li>
+                                            <li><a href="" target="_self">관련 판례</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_self">건축규제 제·개정 정보</a>
+                                        <ul class="depth3">
+                                            <li><a href="" target="_self">입법예고</a></li>
+                                            <li><a href="" target="_self">입법현황</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    
+                        <dl class="group group3">
+                            <dt><a href="" target="_self">건축규제 신고</a></dt>
+                            <dd>
+                                <ul class="depth2">
+                                    <li><a href="" target="_self">건축 임의규제란?</a></li>                    
+                                    <li>
+                                        <a href="" target="_self">건축 임의규제 신고</a>                    
+                                        <ul class="depth3">                    
+                                            <li><a href="" target="_self">신고하기</a></li>                    
+                                            <li><a href="" target="_self">결과조회</a></li>                    
+                                        </ul>
+                                    </li>
+                                    <li><a href="" target="_self">건축 임의규제 신고 운영 결과</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    
+                        <dl class="group group8">
+                            <dt><a href="" target="_self">건축규제 패널</a></dt>
+                            <dd>
+                                <ul class="depth2">                    
+                                    <li><a href="" target="_self">패널 운영 안내</a></li>                    
+                                    <li>
+                                        <a href="" target="_self">패널 신고하기</a>                    
+                                        <ul class="depth3">                    
+                                            <li><a href="" target="_self">신고하기</a></li>                    
+                                            <li><a href="" target="_self">결과조회</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="" target="_self">패널 운영 결과</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    
+                        <dl class="group group4">
+                            <dt><a href="" target="_self">우수사례</a></dt>
+                            <dd>
+                                <ul class="depth2">
+                                    <li><a href="" target="_self">건축 임의규제 개선사례</a></li>
+                                    <li><a href="" target="_self">건축행정 우수사례</a></li>
+                                    <li><a href="" target="_self">지자체 법규정비 지원사례</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    
+                        <dl class="group group5">
+                            <dt><a href="" target="_self">소식·참여</a></dt>
+                            <dd>
+                                <ul class="depth2">
+                                    <li><a href="" target="_self">공지사항</a></li>                    
+                                    <li><a href="" target="_self">유관사이트</a></li>                    
+                                    <li><a href="" target="_self">자료실</a></li>
+                                    <li><a href="" target="_self">사용자 의견</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    
+                    </div>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="section">
+            <h2>통합검색</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>기본</h3>
+
+                <div class="item">
+                    <div class="search_result">
+
+                        <div class="board_box type1 search_form">
+                            <form id="command" name="tForm" action="" method="post">
+                                <fieldset>
+                                    <legend class="blind">통합검색</legend>
+                                    <label for="allKeyWord">검색어</label>
+                                    <input type="text" name="allKeyWord" id="allKeyWord" class="form_textbox" value="건축" title="검색어 입력">
+                                    <button class="btn">검색</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    
+                        <p class="spot"><strong>'검색어'</strong>에 대한 총 <strong>721건</strong>의 결과를 찾았습니다.</p>
+                    
+                        <div class="depth4_tab">
+                            <ul>
+                                <li class="active"><a href="#" onclick="">전체 <span>(721)</span></a></li>
+                                <li><a href="#" onclick="">메뉴 <span>(18)</span></a></li>
+                                <li><a href="#" onclick="">콘텐츠 <span>(7)</span></a></li>
+                                <li><a href="#" onclick="">게시판 <span>(696)</span></a></li>                                
+                                <li><a href="#" onclick="">첨부파일 <span>(0)</span></a></li>
+                            </ul>
+                        </div>
+                        
+                        <article class="group">
+                            <h2 class="title">메뉴 <small>총 <span class="point1">18</span>건</small></h2>
+                            <ul class="board_list">                                            
+                                <li><a href=""><strong><span style="color:red">검색어</span> 메뉴명</strong></a></li>                                            
+                                <li><a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; <span style="color:red">검색어</span> 메뉴명</strong></a></li>
+                                <li><a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; <span style="color:red">검색어</span> 메뉴명 &gt; <span style="color:red">검색어</span> 메뉴명</strong></a></li>
+                            </ul>
+                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
+                        </article>
+                               
+                        <article class="group">
+                            <h2 class="title">콘텐츠 <small>총 <span class="point1">7</span>건</small></h2>
+                            <ul class="board_list">                                            
+                                <li>
+                                    <a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; 메뉴명</strong></a>
+                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다 길이 최대 200자</p>
+                                </li>
+                                <li>
+                                    <a href=""><strong>제목이 아닌 메뉴 뎁스가 나옵니다</strong></a>
+                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
+                                </li>                                            
+                                <li>
+                                    <a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; 메뉴명</strong></a>
+                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
+                                </li>
+                            </ul>
+                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
+                        </article>
+
+                        <article class="group">
+                            <h2 class="title">게시판 <small>총 <span class="point1">696</span>건</small></h2>
+                            <ul class="board_list">
+                                <li>
+                                    <a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; 메뉴명</strong></a>
+                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
+                                </li>
+                                <li>
+                                    <a href=""><strong>제목이 아닌 메뉴 뎁스가 나옵니다</strong></a>
+                                    <p class="txt">게시판 내용이 나옵니다.</p>
+                                </li>       
+                                <li>
+                                    <a href=""><strong>제목이 아닌 메뉴 뎁스가 나옵니다</strong></a>
+                                    <p class="txt">-</p>
+                                </li>
+                            </ul>
+                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
+                        </article>
+
+                        <article class="group">
+                            <h2 class="title">첨부파일 <small>총 <span class="point1">111</span>건</small></h2>
+                            <ul class="board_list">
+                                <li>
+                                    <a href="">
+                                        <strong>제목이 나옵니다.</strong>
+                                        <p class="info">
+                                            <span>게시판 : 메뉴명</span>
+                                            <span>등록일시 : 2022-12-19</span>
+                                        </p>
+                                    </a>
+                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <strong>제목이 나옵니다.</strong>
+                                        <p class="info">
+                                            <span>게시판 : 메뉴명</span>
+                                            <span>등록일시 : 2022-12-19</span>
+                                        </p>
+                                    </a>
+                                    <p class="txt">게시판 내용이 나옵니다.</p>
+                                </li>       
+                                <li>
+                                    <a href="">
+                                        <strong>제목이 나옵니다.</strong>
+                                        <p class="info">
+                                            <span>게시판 : 메뉴명</span>
+                                            <span>등록일시 : 2022-12-19</span>
+                                        </p>
+                                    </a>
+                                    <p class="txt">-</p>
+                                </li>
+                            </ul>
+                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
+                        </article>
+                    </div>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>결과없음</h3>
+
+                <div class="item">
+                    <div class="search_result">
+                        <div class="board_box type1 search_form">
+                            <form id="command" name="tForm" action="/search.es?mid=a10700000000" method="post">
+                                <input type="hidden" name="act" value="">
+                                <input type="hidden" name="nPage" value="1">
+                                <fieldset>
+                                    <legend class="blind">통합검색</legend>
+                                    <label for="allKeyWord">검색어</label>
+                                    <input type="text" name="allKeyWord" id="allKeyWord" class="form_textbox" value="검색어" title="검색어 입력">
+                                    <button class="btn">검색</button>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <p class="label">
+                            <strong>'검색어'</strong>에 대한 검색 결과가 없습니다.
+                        </p>
+                        
+                        <ul class="bul depth1 blank">
+                            <li>단어와 철자가 정확한지 확인해 보세요.</li>
+                            <li>한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</li>
+                            <li>검색어의 단어 수를 줄이거나, 보다 일반적인 검색어로 다시 검색해 보세요.</li>
+                            <li>두 단어 이상의 검색어인 경우 띄어쓰기를 확인해 보세요.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>에이아이보리</h3>
+
+                <div class="item">
+                </div>
+
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+    </main>
+
+    <footer><p>COPYRIGHT &copy; 2022 <strong>Plan I.</strong> ALL RIGHTS RESERVED.</p><button>위로</button></footer>
+</div>
+</body>
+</html>

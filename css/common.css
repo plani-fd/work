@@ -4,3 +4,223 @@ title       : 공통영역
 Author      : PLAN I
 Create date : 2023-01-01
 -------------------------------------------------*/
+.contents_info * + .group {
+  margin-top: -1px;
+}
+.contents_info .group {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #ddd;
+}
+.contents_info .group > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.contents_info .group .qr {
+  width: 15rem;
+  border-left: 1px solid #ddd;
+}
+.contents_info .group .title {
+  position: relative;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.contents_info .group .title > strong {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+}
+.contents_info .group .title .txt {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #888;
+}
+.contents_info .group .title .txt::before {
+  content: "[ ";
+}
+.contents_info .group .title .txt::after {
+  content: " ]";
+}
+.contents_info .group .title .txt strong {
+  font-weight: normal;
+}
+.contents_info .group .title .txt span + span::before {
+  content: " / ";
+}
+.contents_info #satisfy {
+  padding: 2.5rem 3rem;
+  background-color: #f8f8f8;
+}
+
+.kogl {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #ddd;
+}
+.kogl > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.kogl .img {
+  width: 25rem;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  text-align: center;
+}
+.kogl .txt {
+  padding: 1rem 2rem;
+}
+.kogl + .duty {
+  margin-top: -1px;
+}
+
+.duty {
+  position: relative;
+  padding: 1rem 1.5rem;
+  border: 1px solid #ddd;
+  line-height: 3rem;
+}
+.duty .title {
+  display: inline-block;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  border-radius: 100%;
+  background-color: #000;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+.duty .title::before {
+  font-family: "remixicon";
+  content: "\f264";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.duty ul {
+  display: inline;
+}
+.duty li {
+  display: inline;
+}
+.duty li::after {
+  display: inline-block;
+  position: relative;
+  top: -0.1rem;
+  width: 1px;
+  height: 1rem;
+  margin: 0 1rem;
+  background-color: #ddd;
+  content: "";
+  vertical-align: middle;
+}
+.duty li:last-child::after {
+  display: none;
+}
+.duty .date {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+}
+.duty .label {
+  margin-right: 0.5rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.sitemap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100% + 4rem);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.sitemap > * {
+  width: calc(25% - 4rem);
+  margin-right: 4rem;
+}
+.sitemap > *:nth-child(n+4) {
+  margin-top: initial;
+}
+.sitemap > *:nth-child(n+5) {
+  margin-top: 4rem;
+}
+.sitemap dt a {
+  height: 6rem;
+  border: 0.2rem solid #000;
+  line-height: 5.6rem;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.sitemap dt a:hover, .sitemap dt a:focus {
+  background-color: #000;
+  color: #fff;
+}
+.sitemap .depth2 > li > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 6rem;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid #ddd;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.sitemap .depth2 > li > a:hover, .sitemap .depth2 > li > a:focus {
+  font-weight: 600;
+  color: #000;
+}
+.sitemap .depth3 {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #ddd;
+  background-color: #f8f8f8;
+}
+.sitemap .depth3 a {
+  position: relative;
+  padding-left: 1rem;
+  text-align: left;
+  color: #666;
+}
+.sitemap .depth3 a::before {
+  position: absolute;
+  left: 0;
+  top: auto;
+  content: "";
+}
+.sitemap .depth3 a::before {
+  content: "·";
+}
+.sitemap .depth3 a::after {
+  position: absolute;
+  left: 1rem;
+  bottom: 0;
+  width: 0;
+  max-width: calc(100% - 1rem);
+  height: 1px;
+  background-color: #666;
+  content: "";
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.sitemap .depth3 a:hover::after, .sitemap .depth3 a:focus::after {
+  width: 100%;
+}

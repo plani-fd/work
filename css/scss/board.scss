@@ -573,10 +573,10 @@ Create date : 2023-01-01
     }
 }
 
-// 게시판 상단 박스
-.board_box 
+// 공공누리 상단 박스
+.kogl_open .board_box 
 {
-    position: relative; padding: 4rem; padding-left: 26.5rem; border: 1px solid #ddd;
+    position: relative; margin-bottom: 0; padding: 4rem; padding-left: 26.5rem; border: 1px solid #ddd;
 
     .img {position: absolute; left: 4rem; top: 4rem; width: 18.5rem;}
     .title {display: block; margin-bottom: 1rem; font-size: 2rem; font-weight: 600; color: #000;}
@@ -653,6 +653,9 @@ Create date : 2023-01-01
     }
 }
 
+// 비밀번호 확인
+.board_box.type1 .form .form_textbox[type="password"] {width: 30rem; margin-top: 1rem;}
+
 @media (max-width: 1024px) 
 {
     // 이북
@@ -702,6 +705,7 @@ Create date : 2023-01-01
 
             .form,
             .form_textbox,
+            .form_select,
             .form_select select,
             button {width: 100%;}
 
@@ -846,7 +850,7 @@ Create date : 2023-01-01
     .board_pdf {@include list(type2, 2rem, 2rem, 3); padding: 2rem 0;}
 
     // 게시판 상단 박스
-    .board_box
+    .kogl_open .board_box
     {
         padding: 3rem;
 
