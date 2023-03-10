@@ -13,40 +13,34 @@
 <script src="js/shBrushXml.js"></script>
 
 <script src="js/guide.js"></script>
+
+
+<script src="../../jquery/js/swiper-bundle.min.js"></script>
 <script type="text/javascript">
     $(function () {
         // 통합검색
-        /* tab메뉴 */
-        function tab(class_name, tab, tab_content, start_num) {
-            var class_name = $("." + class_name);
-            var tab = class_name.find("." + tab);
-            var tab_list = class_name.find('.' + tab_content);
+        $(".search_result .tab_ti").on('click', function () {
+            $(this).parents(".tab_contents").addClass("active").siblings().removeClass("active");
+            return false;
+        });
 
-            //탭 시작 내용 보이기
-            tab_list.removeClass('active').eq(start_num).addClass('active');
-            tab.find('a').removeClass('on').eq(start_num).parent().addClass('on');
+        const swiper_sch = new Swiper(".shc_slider", {
+            direction: 'vertical',
+            speed: 500,
+            loop: true,
+            loopAdditionalSlides: 1,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },           
+            a11y: true,
+        });
 
-            //탭 해당 내용 보이기
-            tab.children('li').each(function (index) {
-                var index = index;
-                $(this).children('a').on('click focusin', function (e) {
-                    var href = $(this).attr('href');
+        $(".search_result .tab_wrap .more").on('click', function () {
+            $(this).parent(".box").toggleClass("active");
+            return false;
+        });
 
-                    tab.find('a').parent().removeClass('on');
-                    $(this).parent().addClass('on');
-                    tab.find('a').attr('title', "비활성 메뉴");
-                    $(this).attr('title', '선택된 메뉴');
-
-                    tab_list.removeClass('active');
-                    $(href).addClass('active');
-                    tab_list.attr('aria-label', "비활성 내용");
-                    $(href).attr('aria-label', '선택된 내용');
-
-                    return false;
-                });
-            });
-        }
-        tab('tab_wrap_sch', 'tab', 'tab_contents', 0);
     });
 </script>
 
@@ -284,12 +278,191 @@
                                     </div>
                                 </fieldset>
                             </form>
-                        </div>
-                    
-                        <p class="spot"><strong>'검색어'</strong>에 대한 총 <strong>721건</strong>의 결과를 찾았습니다.</p>
+                        </div>                        
                     
                         <div class="inner">
+                            <div class="word_box">
+                                <div class="article">
+                                    <p class="ti">인기검색어</p>
+                                    <div class="unit">
+                                        <div class="tab_wrap">                                            
+                                            <div class="tab_contents active" >
+                                                <p class="tab_ti">주간 <span>2023.01.11~2023.01.18</span></p>
+                                                <div class="box">
+                                                    
+                                                    <ul class="list_wd">                                      
+                                                        <li>
+                                                            <a href=""><span class="num">1</span> 교육</a>
+                                                        </li>                                     
+                                                        <li>
+                                                            <a href=""><span class="num">2</span> 개발제한구역</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">3</span> 민간투자</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">4</span> 행사</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">5</span> 빈집</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">6</span> 스마트시티</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href=""><span class="num">7</span> 데이터</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">8</span> 혁신도시</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">9</span> 가이드라인</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">10</span> 산업단지</a>
+                                                        </li>                                      
+                                                    </ul>
+
+                                                    <div class="swiper shc_slider" >
+                                                        <div class="swiper-wrapper " >
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">1.</span> 교육</a>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">2.</span> 개발제한구역</a>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">3.</span> 민간투자</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">4.</span> 행사</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">5.</span> 빈집</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">6.</span> 스마트시티</a>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">7.</span> 데이터</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">8.</span> 혁신도시</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">9.</span> 가이드라인</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">10.</span> 산업단지</a>
+                                                            </div>   
+                                                        </div>
+                                                    </div>
+
+                                                    <a href="" class="more"><span class="sr_only">전체보기</span><i class="ri-arrow-down-s-line"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="tab_contents" >
+                                                <p class="tab_ti">일간 <span>2023.01.18</span></p>
+                                                <div class="box">
+                                                    <ul class="list_wd">                                      
+                                                        <li>
+                                                            <a href=""><span class="num">1</span> 일간교육</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">2</span> 개발제한구역</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">3</span> 민간투자</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">4</span> 행사</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">5</span> 빈집</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">6</span> 스마트시티</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href=""><span class="num">7</span> 데이터</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">8</span> 혁신도시</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">9</span> 가이드라인</a>
+                                                        </li>                                      
+                                                        <li>
+                                                            <a href=""><span class="num">10</span> 산업단지</a>
+                                                        </li>                                      
+                                                    </ul>
+                                                    <div class="swiper shc_slider" >
+                                                        <div class="swiper-wrapper " >
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">1.</span> 일간교육</a>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">2.</span> 개발제한구역 개발제한구역 개발제한구역</a>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">3.</span> 민간투자</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">4.</span> 행사</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">5.</span> 빈집</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">6.</span> 스마트시티</a>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">7.</span> 데이터</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">8.</span> 혁신도시</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">9.</span> 가이드라인</a>
+                                                            </div>                                      
+                                                            <div class="swiper-slide">
+                                                                <a href=""><span class="num">10.</span> 산업단지</a>
+                                                            </div>   
+                                                        </div>
+                                                    </div>
+
+                                                    <a href="" class="more"><span class="sr_only">전체보기</span><i class="ri-arrow-down-s-line"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                    </div>                                 
+                                </div>
+                                <div class="article">
+                                    <p class="ti">추천검색어</p>
+                                    <div class="unit">
+                                        <ul class="list_wd2">   
+                                            <li>
+                                                <a href="">교육</a>
+                                            </li>
+                                            <li>
+                                                <a href="">민간투자</a>
+                                            </li>
+                                            <li>
+                                                <a href="">가이드라인정책</a>
+                                            </li>
+                                            <li>
+                                                <a href="">콘텐츠</a>
+                                            </li>
+                                            <li>
+                                                <a href="">혁신도시</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="result_box">
+                                <p class="spot"><strong>'검색어'</strong>에 대한 총 <strong>721건</strong>의 결과를 찾았습니다.</p>
+
                                 <div class="depth4_tab">
                                     <ul>
                                         <li class="active"><a href="#" onclick="">전체 <span>(721)</span></a></li>
@@ -448,107 +621,7 @@
                                     <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
                                 </article>
                             </div>
-                            <div class="word_box">
-                                <div class="group_wd">
-                                    <p class="ti">인기검색어</p>
-                                    <div class="tab_wrap_sch">
-                                        <ul class="tab">
-                                            <li><a href="#tab1" onclick="return false;" id="week">주간</a></li>
-                                            <li><a href="#tab2" onclick="return false;" id="day">일간</a></li>
-                                        </ul>
-                                        <div class="tab_contents" id="tab1">
-                                            <p class="desc"><i class="xi-time-o"></i> 2023.01.11~2023.01.18</p>
-                                            <ul class="list_wd">                                      
-                                                <li>
-                                                    <a href=""><span class="num">1</span> 교육</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">2</span> 개발제한구역</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">3</span> 민간투자</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">4</span> 행사</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">5</span> 빈집</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">6</span> 스마트시티</a>
-                                                </li>
-                                                <li>
-                                                    <a href=""><span class="num">7</span> 데이터</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">8</span> 혁신도시</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">9</span> 가이드라인</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">10</span> 산업단지</a>
-                                                </li>                                      
-                                            </ul>
-                                        </div>
-                                        <div class="tab_contents" id="tab2">
-                                            <p class="desc"><i class="xi-time-o"></i> 2023.01.11</p>
-                                            <ul class="list_wd">                                      
-                                                <li>
-                                                    <a href=""><span class="num">1</span> 일간교육</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">2</span> 개발제한구역</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">3</span> 민간투자</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">4</span> 행사</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">5</span> 빈집</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">6</span> 스마트시티</a>
-                                                </li>
-                                                <li>
-                                                    <a href=""><span class="num">7</span> 데이터</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">8</span> 혁신도시</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">9</span> 가이드라인</a>
-                                                </li>                                      
-                                                <li>
-                                                    <a href=""><span class="num">10</span> 산업단지</a>
-                                                </li>                                      
-                                            </ul>
-                                        </div>
-                                    </div>                                    
-                                </div>
-                                <div class="group_wd">
-                                    <p class="ti">추천검색어</p>
-                                    <ul class="list_wd2">   
-                                        <li>
-                                            <a href="">교육</a>
-                                        </li>
-                                        <li>
-                                            <a href="">민간투자</a>
-                                        </li>
-                                        <li>
-                                            <a href="">가이드라인정책</a>
-                                        </li>
-                                        <li>
-                                            <a href="">콘텐츠</a>
-                                        </li>
-                                        <li>
-                                            <a href="">혁신도시</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
