@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>프로젝트</title>
-    
-    <link rel="stylesheet" href="../css/default.css" />
-    <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/layout_respond.css" />	
-    
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/main_respond.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>프로젝트</title>
+
+<link rel="stylesheet" href="../../css/default.css" />
+<link rel="stylesheet" href="../../css/layout.css" />
+<link rel="stylesheet" href="../../css/layout_respond.css" />	
+<link rel="stylesheet" href="../../css/main.css" />
+<link rel="stylesheet" href="../../css/main_respond.css" />
 </head>
 
 <body>
@@ -20,6 +19,23 @@
 </p>
 
 <div id="wrap">
+    
+    <link href="../../css/layerpopup.css" rel="stylesheet" type="text/css" />
+
+    <div id="layerPopup0" style="width:420px; height:400px; top:0px;left:400px; position:absolute; z-index:999999;">
+        <div class="popup_cont" style="width:420px; height:400px; ">
+            <a href=""><img src="../img/main/popup.jpg" width="420" height="400"></a>
+        </div>
+        <div class="close">
+            <span class="form_check">
+                <input type="checkbox" style="cursor:hand;" name="join" id="join0" onclick="check_close('join0', 'layerPopup0');"> 
+                <label for="join0" class="font_c4">오늘 하루 열지 않습니다.</label>
+            </span>
+            
+            <a href="#" onclick="closeLayer('layerPopup0'); return false;">닫기</a>
+        </div>
+    </div>
+
     <link rel="stylesheet" href="../../css/modalpopup.css" />
 
     <section id="issue">  
@@ -73,23 +89,6 @@
     </script>
 
     <link rel="stylesheet" href="../../css/topbanner.css" />
-    <script type="text/javascript">
-    //<![CDATA[
-        //
-        function setCookie( name, value, expiredays ) {
-            var expire_date = new Date() ;  //오늘날짜를  대입값으로 설정한다.
-            expire_date.setDate(expire_date.getDate() + expiredays) ;
-            document.cookie = name + "=" + escape( value ) + "; path=/" + "; expires=" + expire_date.toGMTString() + ";";		
-        }
-        $(function() {
-            if( getCookie("topbanner") != "done" ) {
-                $('.topbanner').addClass('active');
-            }else{
-                $('.topbanner').removeClass('active');
-            }
-        });
-        // 
-    </script>
 
     <div class="topbanner active">
         <a href="" class="control open">

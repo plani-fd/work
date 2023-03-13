@@ -54,8 +54,9 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
     }
 }
 
-// 라디오박스
-.form_radio
+// 라디오/체크박스
+.form_radio,
+.form_check
 {
     display: inline-block; position: relative; margin-right: 2rem; vertical-align: middle;
     
@@ -76,8 +77,7 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
     {
         position: relative; padding-left: 2.75rem; cursor: pointer;
 
-        &::before {position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 100%; border: 1px solid #ddd; background-color: #fff; content: ''; transition: $time2;}
-        &::after {position: absolute; left: 0.5rem; top: 0.5rem; width: 1rem; height: 1rem; border-radius: 100%; background-color: #000; content: ''; opacity: 0; transition: $time2;}
+        &::before {position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; border: 1px solid #ddd; background-color: #fff; font-family: $icon; content: ''; text-align: center; line-height: 1.8rem; transition: $time2;}
 
         &:hover,
         &:focus
@@ -87,6 +87,20 @@ $icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\
     }
 
     &:last-child {margin-right: 0;}
+}
+
+// 라디오
+.form_radio label
+{
+    &::before {border-radius: 100%;}
+    &::after {position: absolute; left: 0.5rem; top: 0.5rem; width: 1rem; height: 1rem; border-radius: 100%; background-color: #000; content: ''; opacity: 0; transition: $time2;}
+}
+
+// 체크박스
+.form_check
+{
+    label::before {border-radius: 0.25rem; color: transparent; content: '\EB7B';}
+    input:checked + label::before {color: #000;}
 }
 
 // 파일박스

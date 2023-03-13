@@ -1,0 +1,54 @@
+@charset "utf-8";
+@import 'mixin';
+
+@import url('cmp.css');
+
+/*-------------------------------------------------
+title       : 레이어 팝업
+Author      : PLAN I
+Create date : 2023-01-01
+-------------------------------------------------*/
+
+[id*="layerPopup"]
+{
+    height: auto !important; box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
+
+    .close
+    {
+        position: relative; padding: 1rem 1.5rem; background-color: #000; color: #fff;
+
+        a 
+        {
+            @include hover(after);
+            @include position(top);
+            right: 1rem; line-height: 2rem;
+
+            &::after {@include icon(type1, "\EB99"); margin: -0.25rem 0 0 0.5rem; font-size: 2rem;}
+        }
+    }
+
+    .form_check
+    {
+        label
+        {
+            &::before {border-color: #ddd !important; background-color: transparent;}
+
+            &:hover,
+            &:focus
+            {
+                &::before {background-color: rgba(255, 255, 255, 0.5);}
+            }
+        }
+
+        input
+        {
+            &:checked + label::before {color: #fff;}
+
+            &:hover,
+            &:focus
+            {
+                label::before {background-color: rgba(255, 255, 255, 0.5);}
+            }
+        }
+    }
+}

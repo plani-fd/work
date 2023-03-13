@@ -148,42 +148,64 @@ Create date : 2023-01-01
   border-color: #000;
 }
 
-.form_radio {
+.form_radio,
+.form_check {
   display: inline-block;
   position: relative;
   margin-right: 2rem;
   vertical-align: middle;
 }
-.form_radio input {
+.form_radio input,
+.form_check input {
   position: absolute;
   left: 0;
   top: 0;
   cursor: pointer;
   opacity: 0;
 }
-.form_radio input:hover + label::before, .form_radio input:focus + label::before {
+.form_radio input:hover + label::before, .form_radio input:focus + label::before,
+.form_check input:hover + label::before,
+.form_check input:focus + label::before {
   border-color: #000;
 }
-.form_radio input:checked + label::after {
+.form_radio input:checked + label::after,
+.form_check input:checked + label::after {
   opacity: 1;
 }
-.form_radio label {
+.form_radio label,
+.form_check label {
   position: relative;
   padding-left: 2.75rem;
   cursor: pointer;
 }
-.form_radio label::before {
+.form_radio label::before,
+.form_check label::before {
   position: absolute;
   left: 0;
   top: 0;
   width: 2rem;
   height: 2rem;
-  border-radius: 100%;
   border: 1px solid #ddd;
   background-color: #fff;
+  font-family: "remixicon";
   content: "";
+  text-align: center;
+  line-height: 1.8rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+.form_radio label:hover::before, .form_radio label:focus::before,
+.form_check label:hover::before,
+.form_check label:focus::before {
+  border-color: #000;
+}
+.form_radio:last-child,
+.form_check:last-child {
+  margin-right: 0;
+}
+
+.form_radio label::before {
+  border-radius: 100%;
 }
 .form_radio label::after {
   position: absolute;
@@ -198,11 +220,14 @@ Create date : 2023-01-01
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-.form_radio label:hover::before, .form_radio label:focus::before {
-  border-color: #000;
+
+.form_check label::before {
+  border-radius: 0.25rem;
+  color: transparent;
+  content: "\eb7b";
 }
-.form_radio:last-child {
-  margin-right: 0;
+.form_check input:checked + label::before {
+  color: #000;
 }
 
 .form_file {
