@@ -8,9 +8,9 @@ Create date : 2023-01-01
 -------------------------------------------------*/
 
 // 아이콘
-$icons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\ECAF', check: '\EB7B', plus-min:'\EA12');
+$xeicons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: '\ECAF', check: '\EB7B', plus-min:'\EA12');
 
-@each $keys, $icon in $icons
+@each $keys, $icon in $xeicons
 {
     .xi-#{$keys}::before {@include icon(type1, '#{$icon}');}
 }

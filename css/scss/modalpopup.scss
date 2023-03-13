@@ -7,7 +7,162 @@ Author      : PLAN I
 Create date : 2023-01-01
 -------------------------------------------------*/
 
-#issue .group
+#issue
 {
-    position: fixed; left: 0; top: 0; z-index: 9999999; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); color: #fff; text-align: center;
+    &::before {@include bg2(type1); @include position(center); @include hidden(0, 0); z-index: 99999999; background-color: rgba(0, 0, 0, 0.5);}
+
+    .open
+    {
+        @include position(top);
+        @include hover(before);
+        overflow: hidden; left: 2rem; z-index: 999999999; width: 10rem; height: 10rem; padding-top: 1.5rem; border-radius: 100%; background-color: #000; font-weight: 800; color: #fff; text-align: center; transition: all 0s 0.2s, opacity 0.2s;
+
+        &::before {@include icon(type3, "\EA13"); height: auto;}
+
+        span.count {display: block; font-size: 1.4rem; font-weight: 400; line-height: 1;}
+        strong {color: #f00;}
+    }
+
+    .group {@include position(center); @include width(128rem, calc(100% - 6rem)); @include hidden(0, 0); position: fixed; z-index: 99999999; color: #fff; text-align: center;}
+    .title {display: block; margin-bottom: 2rem; font-size: 4.5rem; font-weight: 800;}
+    .pager {display: none;}
+
+    .list
+    {
+        white-space: nowrap;
+
+        li {display: inline-block; position: relative; left: 2rem; vertical-align: top; opacity: 0;}
+    }
+
+    .item 
+    {
+        display: block; margin-top: 3rem; white-space: nowrap;
+
+        & > * {display: inline-block; height: 4rem; margin: 0 0.5rem; padding: 0 2rem; border-radius: 4rem; background-color: #000; color: #fff; line-height: 4rem; vertical-align: middle;}
+
+        .close
+        {
+            @include hover(after);
+
+            &::after {@include icon(type1, "\EB99"); margin: -0.1rem 0 0 0.5rem; font-size: 1.8rem;}
+        }
+
+        .count {color: #f00;}
+    }
+
+    div.control
+    {
+        display: block; margin-top: 2rem; text-align: center;
+
+        & > * {display: inline-block; vertical-align: middle;}
+    }
+
+    .prev,
+    .next
+    {
+        @include position(top);
+        @include height(5rem, 0.2rem, #000);
+        overflow: hidden; z-index: 999999999; width: 6rem; font-size: 3rem; background-color: #000; color: #fff; transition: $time2;
+
+        $btns: 
+        (
+            prev: (direction: left, icon: "\EA60"), 
+            next: (direction: right, icon: "\EA6C")
+        );
+
+        @each $keys, $map in $btns
+        {
+            &.#{$keys}
+            {
+                #{map-get($map, direction)}: 0;
+
+                &::before {@include icon(type3, map-get($map, icon));}
+            }
+        }
+
+        &:hover,
+        &:focus {background-color: #fff; color: #000;}
+
+        &.swiper-button-disabled {display: none;}
+    }
+
+    .play,
+    .pause
+    {
+        display: none !important; overflow: hidden; width: 3rem; height: 3rem; margin: 0 0.5rem 0 -3.5rem; font-size: 2rem; text-align: center; line-height: 3rem;
+
+        $icons: (play: "\F009", pause: "\EFD6");
+
+        @each$keys, $icon in $icons
+        {
+            &.#{$keys}::before {@include icon(type3, $icon);}
+        }
+
+        &.active {display: inline-block !important;}
+    }
+
+    .pager 
+    {
+        width: auto;
+
+        span {width: 1.2rem; height: 1.2rem; border: 1px solid #fff; background: none; opacity: 1;}
+
+        .swiper-pagination-bullet-active {background-color: #fff;}
+    }
+
+    &.type1
+    {
+        .list {justify-content: center;}
+
+        div.control {display: none;}
+    }
+
+    &.active
+    {
+        .open::before {content: "\EB99"; transform: translate(0);}
+        .group {@include visible(128rem, auto); overflow: hidden; transition: opacity 0.2s 0.1s;}
+
+        .list li 
+        {
+            left: 0; opacity: 1; transition: $time2;
+
+            @for $i from 1 to 5
+            {
+                $j: $i * 0.1;
+
+                &:nth-child(#{$i}) {transition-delay: #{$j}s;}
+            }
+        }
+
+        &::before {@include visible(10000%, 1000%); transition: all 0.5s;}
+    }
+}
+
+@keyframes issue 
+{
+    0%      {transform: scale(1); opacity: 1;}
+    100%    {transform: scale(1.5); opacity: 0;}
+}
+
+// 반응형
+@media (max-width: 1580px)
+{
+    #issue.active .open {width: 0; height: 0; padding: 0; opacity: 0;}
+}
+
+@media (max-width: 430px)
+{
+    #issue
+    {
+        .item
+        {
+            margin-top: 0; white-space: normal;
+
+            .label {display: block; height: auto; margin-bottom: 2rem; padding: 0 1rem 1.5rem; border-radius: 0; border-bottom: 1px solid #fff; background: none; text-align: right; line-height: initial;}
+        }
+
+        div.control {margin: 1rem 0 -2.5rem; text-align: left;}
+
+        .play, .pause {margin-left: 0;}
+    }
 }

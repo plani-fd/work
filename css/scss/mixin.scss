@@ -79,7 +79,7 @@ $time2  : all 0.2s;             // transition 기본
 
     @if $type == type1
     {
-        left: 50%; width: 1000%; transform: translateX(-50%);
+        left: 50%; width: 10000%; transform: translateX(-50%);
     }
 
     @if $type == type2

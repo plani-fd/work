@@ -7,7 +7,43 @@ Author      : PLAN I
 Create date : 2023-01-01
 -------------------------------------------------*/
 
-.topbanner 
-{ 
-    
+.topbanner
+{
+    position: relative;
+
+    .open {position: absolute; left: 0; top: 100%;}
+
+    .close 
+    {
+        @include hover(before);
+        display: block; visibility: hidden; overflow: hidden !important; position: absolute; right: 2rem; top: 2rem; width: 4rem; height: 4rem; font-size: 4rem; color: #fff; text-align: center; line-height: 4rem; opacity: 0; transition: $time2;
+
+        &::before {@include icon(type3, "\EB99");}
+
+        &.oneday 
+        {
+            top: auto; bottom: 2rem; overflow: visible; width: auto; height: auto; font-size: $size; line-height: initial;
+
+            &::before {@include icon(type1, "\EB7B"); width: 1.75rem; height: 1.75rem; margin-right: 0.75rem; border-radius: 0.25rem; border: 1px solid #fff; color: transparent; transform: translate(0);}
+
+            &:hover,
+            &:focus
+            {
+                &::before {color: #fff;}
+            }
+        }
+    }
+
+    .group
+    { 
+        overflow: hidden; height: 0; background-color: #efeff1; transition: $time2;
+
+        span {display: inline;}
+    }
+
+    &.active
+    {
+        .group {height: 20rem;}
+        .close {visibility: visible; opacity: 1;}
+    }
 }

@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>프로젝트</title>
 
+<script src="../../jquery/js/jquery-1.11.2.min.js"></script>
+<script src="../../jquery/js/jquery-ui.min.js"></script>
+<script src="../../jquery/js/swiper-bundle.min.js"></script>
+
+<script type="text/javascript" src="../../jquery/js/default.js"></script>
+<script type="text/javascript" src="../js/layout.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+
 <link rel="stylesheet" href="../../css/default.css" />
 <link rel="stylesheet" href="../../css/layout.css" />
 <link rel="stylesheet" href="../../css/layout_respond.css" />	
@@ -20,8 +28,9 @@
 
 <div id="wrap">
     
+    <!-- 레이어팝업이 있을 때 -->
+    <!-- 
     <link href="../../css/layerpopup.css" rel="stylesheet" type="text/css" />
-
     <div id="layerPopup0" style="width:420px; height:400px; top:0px;left:400px; position:absolute; z-index:999999;">
         <div class="popup_cont" style="width:420px; height:400px; ">
             <a href=""><img src="../img/main/popup.jpg" width="420" height="400"></a>
@@ -34,10 +43,12 @@
             
             <a href="#" onclick="closeLayer('layerPopup0'); return false;">닫기</a>
         </div>
-    </div>
+    </div> 
+    -->
+    <!-- //레이어팝업이 있을 때 -->
 
+    <!-- 모달팝업이 있을 때 -->
     <link rel="stylesheet" href="../../css/modalpopup.css" />
-
     <section id="issue">  
         <a href="" class="control open">
             POPUP
@@ -46,7 +57,11 @@
 
         <article class="group">
             <h2 class="title">POPUP</h2>
-            <p class="blank">등록된 팝업이 없습니다.</p>            
+            <!-- <p class="blank">등록된 팝업이 없습니다.</p> -->
+            <ul class="list modalpopup">
+                <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
+                <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
+            </ul>
             <div class="item">
                 <p class="label">팝업건수 : 총 <span class="count">0</span>건</p>
                 
@@ -55,41 +70,10 @@
             </div>       
         </article>
     </section>
-        
-    <script>
-        // 팝업 갯수
-        var issuecount = $("#issue > .group > ul > li").length;
-        $('#issue .count strong, #issue .item .count').text(issuecount);
-        
-        // 팝업 열고 닫기
-        $('#issue').find('.control').on('click', function() {
-            if ( $(this).hasClass('open') == true ) {
-                $('#issue').addClass('active');
-            }
-            else {
-                $('#issue').removeClass('active');
-            }
-            return false;
-        });
-        
-        var $issue = $('#issue .list');
-        // 팝업 슬라이드
-        if ( issuecount > 2 )
-        {
-            // $issue.bxSlider
-            // ({
-            //     pager       : false,
-            //     auto        : true,
-            //     autoHover   : true,
-            //     maxSlides   : 3,
-            //     moveSlides  : 1,
-            //     slideWidth  : 363
-            // });
-        }
-    </script>
+    <!-- //모달팝업이 있을 때 -->
 
+    <!-- 최상단배너가 있을 때 -->
     <link rel="stylesheet" href="../../css/topbanner.css" />
-
     <div class="topbanner active">
         <a href="" class="control open">
             상단배너
@@ -97,15 +81,9 @@
         </a>
         
         <div class="group">
-            <ul class="list">
-        
-                <li><a href="http://easesoft.kr" target="_blank" title="새창" rel="noopener"><img src="/zerolife/upload/topbanner/a1/158322299390800.gif" alt="상단배너1 링크 있음" /></a></li>
-                
-        
-                
-                <li><img src="/zerolife/upload/topbanner/a1/158322377901900.jpg" alt="상단배너1 링크 없음" /></li>
-        
-                
+            <ul class="list">        
+                <li><a href=""><img src="../img/main/visual1.jpg" alt="상단배너1 링크 있음" /></a></li>                
+                <li><img src="../../img/noimage.jpg" alt="상단배너1 링크 없음" /></li>
                 <li>상단배너3 이미지 없이 텍스트로만.</li>
         
             </ul>
@@ -113,36 +91,7 @@
             <a href="" class="control close oneday">오늘하루열지않기</a>
         </div>
     </div>
-
-    <script>
-        //팝업 갯수
-        $('.topbanner .open .count').text($(".topbanner .list > li").length);
-
-        //탑배너 열고 닫기
-        $('.topbanner').find('.control').on('click', function() {
-            if ( $(this).hasClass('open') == true ) {
-                $('.topbanner').addClass('active');
-            }
-            else {
-                $('.topbanner').removeClass('active');
-                if ( $(this).hasClass('oneday') == true ) {
-                    setCookie("topbanner", "done", 1);
-                }
-            }
-            return false;
-        });
-        
-        // 탑배너 슬라이드
-        var $topbanner = $('.topbanner .list');
-        
-        // $topbanner.bxSlider
-        // ({
-        //     mode        : 'vertical',
-        //     controls    : false,
-        //     auto        : true,
-        //     autoHover   : true
-        // });
-    </script>
+    <!-- //최상단배너가 있을 때 -->
 
     <!-- 상단 -->
     <header id="header">
@@ -671,11 +620,7 @@
         </div>
     </footer>
     <!-- //하단 -->
+
 </div>
-
-<script type="text/javascript" src="../../jquery/jquery-1.11.2.min.js"></script>
-
-<script type="text/javascript" src="../js/layout.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>

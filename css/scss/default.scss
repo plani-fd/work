@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import 'mixin';
 
+@import url('../jquery/css/swiper-bundle.min.css');
 @import url('../font/remixicon/remixicon.css');                           		            // Rimix Icon 2.5.0
 @import url('../font/pretendard/font_pretendard.css');                           		    // Pretendard 100-900
 
@@ -68,6 +69,15 @@ caption, legend,
 
         & > * {display: flex; flex-shrink: 0;}
     }
+
+    &.swiper-vertical
+    {
+        & > * {flex-direction: column;}
+
+        [role="group"] {overflow: hidden; max-height: 100%; text-align: center; justify-content: center; align-items: center;}
+    }
+
+    .swiper-pagination-bullets {display: block;}
 }
 
 @media (max-width: 1280px)  { html {font-size: 9px;} }

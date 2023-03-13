@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("../jquery/css/swiper-bundle.min.css");
 @import url("../font/remixicon/remixicon.css");
 @import url("../font/pretendard/font_pretendard.css");
 /*-------------------------------------------------
@@ -181,6 +182,26 @@ caption, legend,
   display: flex;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+.swiper-initialized.swiper-vertical > * {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.swiper-initialized.swiper-vertical [role=group] {
+  overflow: hidden;
+  max-height: 100%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.swiper-initialized .swiper-pagination-bullets {
+  display: block;
 }
 
 @media (max-width: 1280px) {
