@@ -1,38 +1,74 @@
 /*-------------------------------------------------
 title       : 메인
-Author      : 플랜아이 광주
-Create date : 2020-02-14
+Author      : PLAN I
+Create date : 2023-01-01
 -------------------------------------------------*/
 
 $(function()
 {
-    // 비주얼
-    // $visual = $('#visual .list');
+    // 비주얼, 팝업, 갤러리 컨트롤러 장착
+    $('#visual, .popup, .gallery').find('.list').after('<div class="control"><button class="prev">이전</button><button class="next">다음</button><button class="play">재생</button><button class="pause active">정지</button><div class="pager"></div></div>');
 
-    // $visual.bxSlider
-    // ({
-    //     pause           : 5000,
-    //     speed           : 10,
-    //     pager           : false,
-    //     autoControls    : true,
-    //     auto            : true,
-    //     autoHover       : true,
-    //     onSliderLoad    : function(currentIndex)
-    //     {
-    //         $visual.find('li').eq(currentIndex + 1).addClass('active');
-    //     },
-    //     onSlideBefore   : function($slideElement, oldIndex, newIndex)
-    //     {
-    //         $visual.find('li').removeClass('active');
-    //         $visual.find('li').eq(newIndex + 1).addClass('active');
-    //     }
-    // });
-
-    setTimeout(function()
+    // 비주얼, 팝업 재생/정지
+    $('#visual, .popup').find('.play, .pause').on('click', function()
     {
-        $('#visual').addClass('active');
+        $(this).removeClass('active');
+        $(this).siblings('.play, .pause').addClass('active');
 
-    }, 100);
+        if ( $(this).hasClass('play') == true )
+        {
+            // 비주얼
+            if ( $(this).parents('#visual').length == 1 )
+            {
+                visual.autoplay.start();
+            }
+            else if ( $(this).parents('.popup').length == 1 )
+            {
+                visual.autoplay.start();
+            }
+        }
+        else
+        {
+            // 비주얼
+            if ( $(this).parents('#visual').length == 1 )
+            {
+                popup.autoplay.stop();
+            }
+            else if ( $(this).parents('.popup').length == 1 )
+            {
+                popup.autoplay.stop();
+            }
+        }
+    });
+
+    // 비주얼
+    var visual = new Swiper("#visual", 
+    {
+        autoplay                : 
+        {
+            delay               : 5000,
+            disableOnInteraction: false,
+        },
+        wrapperClass            : "list",
+        slideClass              : "list > li",
+        effect                  : "fade",
+        loop                    : true,
+        loopAdditionalSlides    : 1,            // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
+        navigation              : 
+        {
+            nextEl              : "#visual .next",
+            prevEl              : "#visual .prev",
+        },
+        pagination              : 
+        {
+            el                  : "#visual .pager",
+            clickable           : true,
+            renderBullet        : function (index, className) 
+            {
+              return '<button class="' + className + '"> 0' + (index + 1) + "</button>";
+            },
+        }
+    });
 
     // 최근게시물
     $('.latest .group').classtoggle
@@ -42,45 +78,58 @@ $(function()
     });
 
     // 팝업
-    // $('.popup .list').bxSlider
-    // ({
-    //     controls        : false,
-    //     autoControls    : true,
-    //     auto            : true,
-    //     autoHover       : true
-    // });
+    var popup = new Swiper(".popup", 
+    {
+        autoplay                : 
+        {
+            delay               : 3000,
+            disableOnInteraction: false,
+        },
+        wrapperClass            : "list",
+        slideClass              : "list > li",
+        loop                    : true,
+        loopAdditionalSlides    : 1,            // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
+        navigation              : 
+        {
+            nextEl              : ".popup .next",
+            prevEl              : ".popup .prev",
+        },
+        pagination              : 
+        {
+            el                  : ".popup .pager",
+            clickable           : true
+        }
+    });
 
     // 갤러리
-    // $gallery = $('.gallery .list');
-
-    // $gallery.bxSlider
-    // ({
-    //     pager           : false,
-    //     autoHover       : true,
-    //     maxSlides       : 4,
-    //     minSlides       : 1,
-    //     moveSlides      : 1,
-    //     slideWidth      : 355
-    // }).destroySlider();
-
-    // $(window).on('load resize', function()
-    // {
-    //     if ( $(window).width() <= 768 )
-    //     {
-    //         $gallery.reloadSlider
-    //         ({
-    //             pager           : false,
-    //             autoHover       : true,
-    //             maxSlides       : 2,
-    //             minSlides       : 1,
-    //             moveSlides      : 1,
-    //             slideWidth      : 295
-    //         });
-    //     }
-    //     else
-    //     {
-    //         $gallery.destroySlider();
-    //         $gallery.find('li').css('width', '');
-    //     }
-    // });
+    var gallery = new Swiper(".gallery .group", 
+    {
+        autoplay                : 
+        {
+            delay               : 3000,
+            disableOnInteraction: false,
+        },
+        wrapperClass            : "list",
+        slideClass              : "list > li",
+        slidesPerView           : "auto",
+        spaceBetween            : 30,
+        centeredSlides          : true,
+        loop                    : true,
+        loopAdditionalSlides    : 1,            // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
+        navigation              : 
+        {
+            nextEl              : ".gallery .next",
+            prevEl              : ".gallery .prev",
+        },
+        pagination              : 
+        {
+            el                  : ".gallery .pager",
+            clickable           : true
+        },
+        scrollbar               : 
+        {
+            el                  : ".gallery .scroll",
+            hide                : true,
+        },
+    });
 });

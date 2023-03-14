@@ -1,10 +1,318 @@
 @charset "utf-8";
 @import '../../../css/scss/mixin.scss';
+@import 'default';
+
+@import url('../../css/default.css');
 
 /*-------------------------------------------------
 title       : 레이아웃
 Author      : PLAN I
 Create date : 2023-01-01
 
-History     : 2023-01-16 ㅈㅁㅈ
+History     : 2023-03-14 ㅈㅁㅈ
 -------------------------------------------------*/
+
+.header_wrap {@include width($width1, $width2);}
+
+// 상단
+#header 
+{
+    position: relative; height: 14rem; padding-top: 7rem; text-align: center;
+
+    // 검색, 전체메뉴 버튼
+    .search .control,
+    #gnb2 .control {overflow: hidden; width: 4rem; height: 4rem; font-size: 2.5rem; color: #000; text-align: center;}
+
+    // 검색
+    .search 
+    {
+        .control 
+        {
+            $icons: (open: "\F0CD", close: "\EB99");
+
+            @each$keys, $icon in $icons
+            {
+                &.#{$keys}::before {@include icon(type3, $icon);}
+            }
+        }
+
+        .open {float: right; margin-right: 5rem; line-height: 4rem;}
+
+        .close 
+        {
+            @include hidden(0, 0); 
+            position: absolute; left: 50%; top: -7.25rem; margin-left: calc($width1 / 2); background-color: #fff; font-size: 3rem; transform: translateX(calc(-100% - 5rem));
+
+            &::before {transform: rotate(180deg); transition: $time2;}
+        }
+
+        .group 
+        {
+            @include hidden(100%, 0);
+            position: absolute; left: 0; top: 100%; z-index: 999; background-color: #fff; transition: $time2;
+
+            &::before {@include bg2(type1); top: 100%; height: 0; background-color: #000; opacity: 0.5; transition: $time2;}
+        }
+
+        .form 
+        {
+            @include width(50rem, 100%);
+            position: relative;
+
+            label {overflow: hidden; position: absolute; left: 0; height: 0;}
+
+            input 
+            {
+                width: 100%; height: 6rem; padding: 1rem 6rem 1rem 2rem; border: 0.3rem solid transparent; border-bottom-color: #555; outline: 0 none; transition: $time2;
+
+                &:hover,
+                &:focus {border-color: #000;}
+            }
+
+            button 
+            {
+                overflow: hidden; position: absolute; right: 1rem; top: 1rem; width: 5rem; height: 5rem; font-size: 3rem; text-align: center; line-height: 4rem;
+
+                &::before {@include icon(type3, "\F0CD");}
+            }
+        }
+
+        &.active
+        {
+            .group
+            {
+                @include visible(100%, auto);
+                padding: 5rem 0 7rem; border-top: 1px solid #ddd;
+
+                &::before {height: 100000%;}
+            }
+
+            .close 
+            {
+                @include visible(4rem, 4rem);
+                overflow: hidden;
+
+                &::before {transform: rotate(0); transition: $time2;}
+            }
+        }
+    }
+}
+
+// 상단 메뉴
+#hnb
+{
+    position: absolute; left: 0; top: 0; width: 100%; height: 4rem; padding-right: 15rem; color: #fff; line-height: 4rem;
+
+    &::before {@include bg2(type1); background-color: #000;}
+
+    li {float: left; margin-left: 1rem;}
+
+    .hnb1 
+    {
+        float: left;
+
+        .label {display: none;}
+    }
+
+    .hnb2 {float: right;}
+
+    .lang
+    {
+        position: relative; height: 4rem; margin-left: 1.5rem; padding: 0 1rem; border: 1px solid #000; transition: $time2;
+
+        a {@include hidden(100%, 0); display: block; padding-left: 2.25rem;}
+
+        .active 
+        {
+            @include visible(100%, 4rem);
+            line-height: 3.8rem !important;
+
+            &::before {@include icon(type2, "\EDCF"); left: 1rem;}
+        }
+
+        &.active 
+        {
+            height: 8rem; background-color: #fff; color: #000;
+
+            a {@include visible(100%, 4rem); line-height: 3.5rem;}
+        }
+    }
+}
+
+// 로고
+#logo
+{
+    a {float: left;}
+    img {height: 3.5rem; vertical-align: top;}
+}
+
+// 주메뉴
+#gnb1
+{
+    display: inline-block; margin-right: 11rem; vertical-align: middle;
+
+    & > ul > li
+    {
+        display: inline;
+
+        & > a 
+        {
+            display: inline-block; position: relative; padding: 0 4rem; font-size: 2rem; font-weight: 700; color: #000; line-height: 4rem; vertical-align: top;
+
+            &::before {@include position(left); bottom: -3rem; width: 0; height: 0.3rem; background-color: #000; content: ''; transition: $time2;}
+        }
+
+        &.active
+        {
+            & > a::before {width: 100%;}
+
+            .submenu 
+            {
+                @include visible($width1, auto); 
+                padding: 3rem 0; transition: $time2;
+
+                &::after {height: 10000%;}
+            }
+        }
+    }
+
+    .submenu 
+    {
+        @include position(left);
+        @include hidden(128rem, 0); 
+        top: 100%; z-index: 999; max-width: $width2; text-align: left;
+
+        &::before {@include bg2(type1); border-top: 1px solid #ddd; background-color: #fff;}
+        &::after {@include bg2(type1); top: 100%; clear: both; height: 0; background-color: #000; opacity: 0.5; transition: $time2;}
+
+        .desc {float: left; width: 25rem;}
+        .title {display: block; margin-bottom: 1rem; font-size: 1.8rem; font-weight: 700; color: #000;}
+
+        & > ul 
+        {
+            @include list(type2, 2rem, 2rem, 4);
+            float: right; width: calc(100% - 24.5rem); margin-right: -2rem;
+
+            & > li
+            {
+                & > a 
+                {
+                    @include height(5rem, 0.1rem, #ddd); 
+                    display: block; position: relative; padding: 0 2rem; transition: $time2;
+    
+                    &::after {@include icon(type2, "\EA6E"); right: 2rem;}
+    
+                    &:hover,
+                    &:focus {border-color: #000;}
+                }
+
+                &.active > a {border-color: #000;}
+            }
+
+            ul 
+            {
+                padding: 1rem; font-size: 1.5rem; color: #777;
+
+                a 
+                {
+                    @include bul(1rem);
+
+                    &::before {content: '·';}
+                    &::after {position: absolute; left: 1rem; bottom: 0; width: 0; max-width: calc(100% - 1rem); height: 1px; background-color: #777; content: ''; transition: $time2;}
+
+                    &:hover,
+                    &:focus
+                    {
+                        &::after {width: 100%;}
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 전체메뉴
+#gnb2 
+{
+    .control
+    {
+        position: absolute; left: 50%; top: 7rem; margin-left: calc(#{$width1} / 2); line-height: 4.25rem; transform: translateX(-100%);
+
+        &.close {@include hover(before); display: none; position: fixed; z-index: 99999999; font-size: 3rem; color: #fff !important; transform: translate(2rem, 0);}
+
+        $icons: (open: "\EF3E", close: "\EB99");
+
+        @each$keys, $icon in $icons
+        {
+            &.#{$keys}::before {@include icon(type3, $icon);}
+        }
+    }
+
+    & > ul 
+    {
+        @include hidden(0, 0);
+        @include position(center);
+        @include table;
+        position: fixed; z-index: 99999999; color: #fff; text-align: left;
+
+        & > li 
+        {
+            position: relative; padding: 5rem 3rem; vertical-align: top;
+
+            &::after {@include position(top); right: 0; width: 1px; height: 10000%; background-color: #fff; content: ''; opacity: 0.2;}
+
+            &:first-child::before {@include position(top); left: 0; width: 1px; height: 10000%; background-color: #fff; content: ''; opacity: 0.2;}
+            &:last-child::before {@include bg2(type1); @include position(center); height: 1000%; background-color: #000;}
+
+            & > a {display: block; margin-bottom: 2rem; font-size: 2rem; font-weight: 800;}
+        }
+
+        .submenu > ul
+        {
+            & > li
+            {
+                & + li {margin-top: 0.75rem;}
+
+                & > a 
+                {                    
+                    &::after {position: absolute; left: 1rem; bottom: 0; width: 0; max-width: calc(100% - 1rem); height: 1px; background-color: #fff; content: ''; transition: $time2;}
+
+                    &:hover,
+                    &:focus
+                    {
+                        &::after {width: 100%;}
+                    }
+                }
+            }
+
+            a
+            {
+                @include bul(1rem);
+    
+                &::before {content: '-';}
+            }
+
+            ul 
+            {
+                padding: 0.75rem 0.5rem; font-size: 1.5rem; color: rgba(255, 255, 255, 0.5);
+
+                a
+                {
+                    transition: $time2;
+
+                    &::before {content: '·';}
+
+                    &:hover,
+                    &:focus {color: #fff;}
+                }
+            }
+        }
+    }
+
+    &.active 
+    {
+        .close {display: block;}
+
+        & > ul {@include visible(128rem, auto);}
+    }
+}

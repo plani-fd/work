@@ -13,11 +13,11 @@
 <script type="text/javascript" src="../js/layout.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 
-<link rel="stylesheet" href="../../css/default.css" />
-<link rel="stylesheet" href="../../css/layout.css" />
-<link rel="stylesheet" href="../../css/layout_respond.css" />	
-<link rel="stylesheet" href="../../css/main.css" />
-<link rel="stylesheet" href="../../css/main_respond.css" />
+<link rel="stylesheet" href="../css/default.css" />
+<link rel="stylesheet" href="../css/layout.css" />
+<link rel="stylesheet" href="../css/layout_respond.css" />	
+<link rel="stylesheet" href="../css/main.css" />
+<link rel="stylesheet" href="../css/main_respond.css" />
 </head>
 
 <body>
@@ -29,9 +29,8 @@
 <div id="wrap">
     
     <!-- 레이어팝업이 있을 때 -->
-    <!-- 
     <link href="../../css/layerpopup.css" rel="stylesheet" type="text/css" />
-    <div id="layerPopup0" style="width:420px; height:400px; top:0px;left:400px; position:absolute; z-index:999999;">
+    <div id="layerPopup0" style="width:420px; height:400px; top:0;left:0; position:absolute; z-index:999999;">
         <div class="popup_cont" style="width:420px; height:400px; ">
             <a href=""><img src="../img/main/popup.jpg" width="420" height="400"></a>
         </div>
@@ -41,10 +40,9 @@
                 <label for="join0" class="font_c4">오늘 하루 열지 않습니다.</label>
             </span>
             
-            <a href="#" onclick="closeLayer('layerPopup0'); return false;">닫기</a>
+            <a href="" onclick="closeLayer('layerPopup0'); return false;">닫기</a>
         </div>
     </div> 
-    -->
     <!-- //레이어팝업이 있을 때 -->
 
     <!-- 모달팝업이 있을 때 -->
@@ -59,6 +57,8 @@
             <h2 class="title">POPUP</h2>
             <!-- <p class="blank">등록된 팝업이 없습니다.</p> -->
             <ul class="list modalpopup">
+                <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
+                <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
                 <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
                 <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
             </ul>
@@ -81,8 +81,7 @@
         </a>
         
         <div class="group">
-            <ul class="list">        
-                <li><a href=""><img src="../img/main/visual1.jpg" alt="상단배너1 링크 있음" /></a></li>                
+            <ul class="list">             
                 <li><img src="../../img/noimage.jpg" alt="상단배너1 링크 없음" /></li>
                 <li>상단배너3 이미지 없이 텍스트로만.</li>
         
@@ -400,6 +399,14 @@
                                 <li>
                                     <a href="">
                                         <span class="desc">
+                                            <strong class="title"><i class="xi-new" aria-hidden="true"></i><span class="sr_only">새글</span> test1</strong>                        
+                                        </span>
+                                        <span class="date">2020.04.<strong>07</strong></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="desc">
                                             <strong class="title"> 111111111111</strong>
                                             11111111
                                         </span>
@@ -452,48 +459,51 @@
                 <div class="section section2">
                     <article class="gallery">
                         <h2 class="title">PHOTO NEWS</h2>
-                        <ul class="list">
-                            <li>
-                                <a href="">
-                                    <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
-                                    <p class="desc">
-                                        <strong class="title">test</strong>
-                                        <span class="txt">test</span>
-                                        <span class="date">2020.05.28</span>
-                                    </p>			
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
-                                    <p class="desc">
-                                        <strong class="title">앨범형 게시판 등록 테스트 30</strong>
-                                        <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
-                                        <span class="date"></span>
-                                    </p>			
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
-                                    <p class="desc">
-                                        <strong class="title">앨범형 게시판 등록 테스트 29</strong>
-                                        <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
-                                        <span class="date"></span>
-                                    </p>			
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
-                                    <p class="desc">
-                                        <strong class="title">정렬 테스트 이미지3개</strong>
-                                        <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
-                                        <span class="date">2020.03.02</span>
-                                    </p>			
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="group">
+                            <ul class="list">
+                                <li>
+                                    <a href="">
+                                        <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
+                                        <p class="desc">
+                                            <strong class="title">test</strong>
+                                            <span class="txt">test</span>
+                                            <span class="date">2020.05.28</span>
+                                        </p>			
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
+                                        <p class="desc">
+                                            <strong class="title">앨범형 게시판 등록 테스트 30</strong>
+                                            <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
+                                            <span class="date"></span>
+                                        </p>			
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
+                                        <p class="desc">
+                                            <strong class="title">앨범형 게시판 등록 테스트 29</strong>
+                                            <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
+                                            <span class="date"></span>
+                                        </p>			
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
+                                        <p class="desc">
+                                            <strong class="title">정렬 테스트 이미지3개</strong>
+                                            <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
+                                            <span class="date">2020.03.02</span>
+                                        </p>			
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="scroll"></div>
                         <a href="" class="more">MORE</a>
                     </article>
 

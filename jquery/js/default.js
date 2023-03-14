@@ -9,24 +9,34 @@ $(function()
     // 모달팝업, 최상단배너 열기 닫기 버튼 클릭 시
     $('#issue, .topbanner').find('a.control').on('click', function()
     {
+        // 열기 눌렀을 때
         if ( $(this).hasClass('open') == true )
         {
+            // 안 열려있을 때
             if ( $(this).parents('#issue, .topbanner').hasClass('active') == false )
             {
                 $(this).parents('#issue, .topbanner').addClass('active');
 
+                // 모달팝업 일 때
                 if ( $(this).parents('#issue').length == 1 )
                 {   
                     modalpopup.slideTo(0);
                     modalpopup.autoplay.start();
 
                     modalpopupControl();                       
+                }
+                else
+                {
+                    topbanner.slideTo(2);
+                    topbanner.autoplay.start();
                 }           
             }
+            // 열려있을 때
             else
             {
                 $(this).parents('#issue, .topbanner').removeClass('active');
 
+                // 모달팝업 일 때
                 if ( $(this).parents('#issue').length == 1 )
                 {                
                     modalpopup.autoplay.stop();
@@ -34,18 +44,39 @@ $(function()
 
                     $('#issue').removeClass('type1');
                 }
+                else
+                {
+                    topbanner.autoplay.stop();
+
+                    setTimeout(function()
+                    {
+                        topbanner.slideTo(2);
+
+                    }, 200);  
+                }
             }
         }
         else
         {
             $(this).parents('#issue, .topbanner').removeClass('active');
 
+            // 모달팝업 일 때
             if ( $(this).parents('#issue').length == 1 )
             {                
                 modalpopup.autoplay.stop();
                 modalpopup.slideTo(0);
 
                 $('#issue').removeClass('type1');
+            }
+            else
+            {
+                topbanner.autoplay.stop();
+
+                setTimeout(function()
+                {
+                    topbanner.slideTo(2);
+
+                }, 200);                
             }
         }
 
@@ -154,8 +185,7 @@ $(function()
 
     /*------------------------------------------------- //모달팝업 -------------------------------------------------*/
 
-    /*------------------------------------------------- 최상단팝업 -------------------------------------------------*/
-    
+    // 최상단배너    
     var topbanner = new Swiper(".topbanner .group", 
     {
         autoplay                : 
@@ -177,27 +207,6 @@ $(function()
         {
             el                  : ".topbanner .pager",
             clickable           : true,
-        },
-        // breakpoints             : 
-        // {
-        //     1025 : 
-        //     {
-        //         slidesPerView   : 6,            // 한 슬라이드에 보여줄 갯수
-        //     },
-        //     769 : 
-        //     {
-        //         slidesPerView   : 5,            // 한 슬라이드에 보여줄 갯수
-        //     },
-        //     581 : 
-        //     {
-        //         slidesPerView   : 4,            // 한 슬라이드에 보여줄 갯수
-        //     },
-        //     391 : 
-        //     {
-        //         slidesPerView   : 3,            // 한 슬라이드에 보여줄 갯수
-        //     }
-        // }
+        }
     });
-
-    /*------------------------------------------------- //최상단팝업 -------------------------------------------------*/
 });

@@ -11,7 +11,16 @@ Create date : 2023-01-01
 {
     position: relative;
 
-    .open {position: absolute; left: 0; top: 100%;}
+    .open 
+    {
+        position: absolute; right: 0; top: 100%; z-index: 999; padding: 0 1rem; font-weight: 700; color: #fff; line-height: 3.9rem;
+
+        &::before {@include icon(type1, "\EF9A"); position: relative; top: -0.1rem; font-weight: 400;}
+        &::after {@include icon(type1, "\EA78"); position: relative; top: -0.15rem; transition: $time2 0.2s;}
+
+        span.count {margin-left: 0.5rem; font-weight: 400;}
+        strong.count {color: #f00;}
+    }
 
     .close 
     {
@@ -24,7 +33,7 @@ Create date : 2023-01-01
         {
             top: auto; bottom: 2rem; overflow: visible; width: auto; height: auto; font-size: $size; line-height: initial;
 
-            &::before {@include icon(type1, "\EB7B"); width: 1.75rem; height: 1.75rem; margin-right: 0.75rem; border-radius: 0.25rem; border: 1px solid #fff; color: transparent; transform: translate(0);}
+            &::before {@include icon(type1, "\EB7B"); width: 1.75rem; height: 1.75rem; margin-right: 0.75rem; border-radius: 0.25rem; border: 1px solid #fff; color: transparent; transform: translate(0, -1px);}
 
             &:hover,
             &:focus
@@ -41,9 +50,44 @@ Create date : 2023-01-01
         span {display: inline;}
     }
 
+    div.control
+    {
+        display: inline-block; position: absolute; left: 1rem; bottom: 1rem; height: 4rem; color: #fff; line-height: 4rem; white-space: nowrap; vertical-align: middle;
+
+        button {display: block; overflow: hidden; height: 100%; border: 0 none; line-height: inherit;}
+
+        $icons: (prev: "\EA60", next: "\EA6C", play: "\F00A", pause: "\EFD7");
+
+        @each$keys, $icon in $icons
+        {
+            .#{$keys}::before {@include icon(type3, $icon);}
+        }
+
+        .prev {float: left; width: 10rem; padding-left: 1.5rem; border-radius: 4rem; background-color: rgba(0, 0, 0, 0.5); text-align: left;}
+        .next {position: absolute; left: 6rem; top: 0; text-align: center;}
+
+        .play,
+        .pause
+        {
+            display: none; position: absolute; left: 4rem; top: 0; width: 1.75rem; background: none;
+
+            &.active {display: block;}
+        }
+
+        .pager 
+        {
+            display: block; float: right; position: static; width: auto; height: 100%; margin-left: 1px; padding: 0 1.5rem; border-radius: 4rem; background-color: rgba(0, 0, 0, 0.5); transform: translate(0);
+
+            span {display: inline-block !important; position: relative; top: -0.1rem; width: 1.2rem; height: 1.2rem; margin: 0 0.5rem !important; border: 1px solid #fff; background: none; opacity: 1; vertical-align: middle; transition: $time2;}
+            
+            .swiper-pagination-bullet-active {background-color: #fff;}
+        }
+    }
+
     &.active
     {
-        .group {height: 20rem;}
+        .open::after {transform: rotate(180deg);}
+        .group {height: 15rem;}
         .close {visibility: visible; opacity: 1;}
     }
 }

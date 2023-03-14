@@ -1,10 +1,279 @@
 @charset "utf-8";
 @import '../../../css/scss/mixin.scss';
+@import 'default';
 
 /*-------------------------------------------------
 title       : 메인
 Author      : PLAN I
 Create date : 2023-01-01
 
-History     : 2023-01-16 ㅈㅁㅈ
+History     : 2023-03-14 ㅈㅁㅈ
 -------------------------------------------------*/
+
+// 비주얼, 팝업, 갤러리 컨트롤러
+#visual,
+.popup,
+.gallery
+{
+    $icons: (prev: "\EA64", next: "\EA6E", play: "\F00A", pause: "\EFD7");
+
+    @each$keys, $icon in $icons
+    {
+        .#{$keys}::before {@include icon(type3, $icon);}
+    }
+
+    button
+    {
+        display: inline-block; overflow: hidden; color: #fff; text-align: center; line-height: inherit; vertical-align: middle;
+    }
+
+    .play,
+    .pause
+    {
+        display: none;
+
+        &.active {display: inline-block;}
+    }
+}
+
+// 더보기
+.more::before {@include icon(type3, "\EA13");}
+
+// 비주얼
+#visual
+{
+    @include bg1;
+    overflow: hidden; height: 70rem;
+
+    .title {@include position(center); @include width($width1, $width2); z-index: 10; margin-top: -5rem; font-size: 5rem; font-weight: 800; color: #fff; text-align: left;}
+
+    .list
+    {
+        img {width: 100%; transition: all 20s;}
+        
+        [class*="active"] img {transform: scale(1.2);}
+    }
+
+    .control
+    {   
+        @include position(center); 
+        @include width($width1, $width2);
+        display: block; margin-top: 5rem; line-height: 4rem;
+
+        button 
+        {
+            width: 4rem; height: 4rem; margin-left: 0.5rem; border-radius: 100%; border: 1px solid rgba(255, 255, 255, 0.5); transition: $time2;
+
+            &:hover,
+            &:focus {background-color: rgba(255, 255, 255, 0.1); border-color: #fff;}
+        }
+    }
+
+    .pager 
+    {
+        display: inline-block; width: auto; margin-left: 2rem; color: #fff; vertical-align: middle;
+
+        button 
+        {
+            position: relative; width: auto; height: auto; border-radius: 0; border: 0 none; background: none; opacity: 0.5; transition: $time2;
+
+            &::before {@include position(top); left: 3rem; width: 0; height: 0.3rem; background-color: #fff; content: '';}
+            &::after {display: inline-block; width: 0; height: 0.3rem; background-color: rgba(255, 255, 255, 0.1); content: ''; vertical-align: middle;}
+        }
+
+        [class*="active"] 
+        {
+            font-weight: 800; opacity: 1;
+
+            &::before {width: 10rem; transition: all 5s;}
+            &::after {width: 10rem; margin: 0 1rem;}
+        }
+    }
+}
+
+// 섹션1
+.section1
+{
+    @include width($width1, $width2); 
+    margin: 8rem 0;
+
+    &::after {display: inline-block; width: 100%; height: 0; content: ''; vertical-align: top;}
+}
+
+// 최근게시물
+.latest 
+{
+    float: left; position: relative; width: calc(100% - 38rem); padding-top: 6rem;
+
+    .label a 
+    {
+        position: absolute; top: 0; width: 12rem; height: 4rem; border-radius: 4rem; border: 1px solid #ddd; font-size: $size; font-weight: 400; text-align: center; line-height: 4rem; transition: $time2;
+
+        &:hover,
+        &:focus {background-color: #ddd;}
+    }
+
+    @for $i from 1 to 4
+    {
+        $j: $i - 1;
+
+        .group#{$i} .label a {left: calc(12rem * #{$j});}
+    }
+
+    .list
+    {
+        a 
+        {
+            display: block; position: relative; margin-top: 0.5rem; padding-right: 10rem;
+
+            .desc {font-size: 0;}
+
+            .title 
+            {
+                @include bul(1.5rem); 
+                font-size: $size; font-weight: normal;
+
+                &::before {top: 0.75rem; width: 0.5rem; height: 0.5rem; border-radius: 100%; background-color: #999;}
+                &::after {position: absolute; left: 1.5rem; bottom: 0; width: 0; max-width: calc(100% - 1.5rem); height: 1px; background-color: #555; content: ''; transition: $time2;}
+            }
+
+            .date
+            {
+                position: absolute; right: 0; top: 0; font-size: 1.5rem; color: #888;
+
+                strong {font-weight: normal;}
+            }
+
+            &:hover,
+            &:focus
+            {
+                .title::after {width: 100%;}
+            }
+        }
+
+        li:first-child a
+        {
+            height: 10rem; margin: 0 0 1.5rem; padding: 0 0 1rem 10rem; border-bottom: 1px solid #ddd;
+
+            .date 
+            {
+                position: absolute; left: 0; top: 0; width: 8rem; height: 8rem; padding-top: 4rem; border: 0.3rem solid #ddd; font-size: 1.4rem; text-align: center;
+
+                strong {position: absolute; left: 0; top: 1rem; width: 100%; font-size: 2.5rem; font-weight: 800; color: #000;}
+            }
+
+            .title 
+            {
+                @include ellipsis(type1, 2.25rem);
+                display: block; margin-bottom: 0.5rem; padding-left: 0; font-size: 1.8rem; font-weight: 600; color: #000;
+
+                &::before,
+                &::after {display: none;}
+            }
+
+            .desc {font-size: $size;}
+
+            &:hover,
+            &:focus
+            {
+                .title {text-decoration: underline;}
+            }
+        }
+    }
+
+    .list,
+    .blank {@include hidden(100%, 0); padding-left: 1rem;}
+
+    .more {@include hover(before); display: none; overflow: hidden; position: absolute; right: 0; top: 0; width: 4rem; height: 4rem; font-size: 2rem; text-align: center; line-height: 4rem;}
+
+    .active
+    {
+        .label a {border-color: #000; background-color: #000; font-weight: 800; color: #fff;}
+        .more {display: block;}
+
+        .list,
+        .blank {@include visible(100%, auto);}
+    }
+}
+
+// 팝업존
+.popup 
+{
+    float: right; position: relative; width: 30.5rem; border: 1px solid #ddd;
+
+    .control 
+    {
+        display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 4rem; padding-left: 1.5rem; background-color: rgba(0, 0, 0, 0.5); color: #fff; text-align: right; line-height: 4rem;
+
+        button 
+        {
+            width: 4rem; border-left: 1px solid rgba(255, 255, 255, 0.2); transition: $time2;
+
+            &:hover,
+            &:focus {background-color: #000;}
+        }
+    }
+
+    .next {float: right;}
+
+    .pager 
+    {
+        float: left; width: auto;
+
+        span {display: inline-block !important; width: 1.2rem; height: 1.2rem; margin-right: 0.5rem; border-radius: 100%; border: 1px solid #fff; background: none; vertical-align: middle; transition: $time2;}
+
+        [class*="active"] {background-color: #fff;}
+    }
+}
+
+// 섹션2
+.gallery
+{
+    @include bg1;
+    display: block; padding: 8rem 0; background-color: #f8f8f8;
+
+    //&::before {position: absolute; right: 50%; top: 0; z-index: 10; width: 1000%; height: calc(100% - 1rem); margin-right: calc($width1 / 2); background-color: #f8f8f8; content: '';}
+
+    h2.title {margin-bottom: 3rem; font-size: 4rem; color: #000; text-align: center; line-height: 1.2;}
+
+    .list a
+    {
+        width: 40rem;
+
+        .title {display: block; margin: 1.5rem 0 0.5rem; font-size: 1.8rem; font-weight: 700; color: #000;}
+        .txt {@include ellipsis(type2, 5rem); min-height: 5rem;}
+        .date {display: block; margin-top: 0.5rem; font-size: 1.5rem; font-weight: 300; color: #888;}
+    }
+
+    .more,
+    .control button
+    {
+        overflow: hidden; position: absolute; left: 50%; top: 8rem; width: 5rem; height: 5rem; margin-left: calc($width1 / 2); border-radius: 0.5rem; border: 1px solid #ddd; background-color: #fff; font-size: 2rem; color: #000; text-align: center; line-height: 5rem; transition: $time2;
+
+        &:hover,
+        &:focus {background-color: #ddd;}
+    }
+
+    $translateXs : (more: -100%, prev: calc(-100% - 17rem), next: calc(-100% - 6rem), play: calc(-100% - 11.5rem), pause: calc(-100% - 11.5rem));
+
+    @each $keys, $translateX in $translateXs
+    {
+        .#{$keys} {transform: translateX($translateX);}
+    }
+
+    .pager 
+    {
+        margin-top: 2rem; text-align: center;
+        
+        span {width: 1.2rem; height: 1.2rem; border: 1px solid #000; background: none; transition: $time2;}
+
+        [class*="active"] {background-color: #000;}
+    }
+
+    .scroll 
+    {
+        display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 1rem; border-radius: 0; background-color: rgba(0, 0, 0, 0.1); opacity: 1 !important;
+
+        div {border-radius: 0; background-color: #000;}
+    }
+}

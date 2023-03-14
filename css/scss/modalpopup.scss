@@ -9,13 +9,13 @@ Create date : 2023-01-01
 
 #issue
 {
-    &::before {@include bg2(type1); @include position(center); @include hidden(0, 0); z-index: 99999999; background-color: rgba(0, 0, 0, 0.5);}
+    &::before {@include bg2(type1); @include position(center); @include hidden(0, 0); z-index: 9999999; background-color: rgba(0, 0, 0, 0.5);}
 
     .open
     {
         @include position(top);
         @include hover(before);
-        overflow: hidden; left: 2rem; z-index: 999999999; width: 10rem; height: 10rem; padding-top: 1.5rem; border-radius: 100%; background-color: #000; font-weight: 800; color: #fff; text-align: center; transition: all 0s 0.2s, opacity 0.2s;
+        overflow: hidden; position: fixed; left: 2rem; z-index: 999; width: 10rem; height: 10rem; padding-top: 1.5rem; border-radius: 100%; background-color: #000; font-weight: 800; color: #fff; text-align: center;
 
         &::before {@include icon(type3, "\EA13"); height: auto;}
 
@@ -23,7 +23,7 @@ Create date : 2023-01-01
         strong {color: #f00;}
     }
 
-    .group {@include position(center); @include width(128rem, calc(100% - 6rem)); @include hidden(0, 0); position: fixed; z-index: 99999999; color: #fff; text-align: center;}
+    .group {@include position(center); @include width(128rem, calc(100% - 6rem)); @include hidden(0, 0); position: fixed; z-index: 9999999; color: #fff; text-align: center;}
     .title {display: block; margin-bottom: 2rem; font-size: 4.5rem; font-weight: 800;}
     .pager {display: none;}
 
@@ -31,7 +31,19 @@ Create date : 2023-01-01
     {
         white-space: nowrap;
 
-        li {display: inline-block; position: relative; left: 2rem; vertical-align: top; opacity: 0;}
+        li {display: inline-block; position: relative; left: 2rem; vertical-align: top; opacity: 0;}        
+        img {transition: $time2;}
+
+        a 
+        {
+            display: block; overflow: hidden; background-color: #000;
+
+            &:hover,
+            &:focus
+            {
+                img {transform: scale(1.1); opacity: 0.75;}
+            }
+        }
     }
 
     .item 
@@ -119,7 +131,13 @@ Create date : 2023-01-01
 
     &.active
     {
-        .open::before {content: "\EB99"; transform: translate(0);}
+        .open
+        {
+            z-index: 9999999;
+
+            &::before {content: "\EB99"; transform: translate(0);}
+        }
+
         .group {@include visible(128rem, auto); overflow: hidden; transition: opacity 0.2s 0.1s;}
 
         .list li 
@@ -138,13 +156,6 @@ Create date : 2023-01-01
     }
 }
 
-@keyframes issue 
-{
-    0%      {transform: scale(1); opacity: 1;}
-    100%    {transform: scale(1.5); opacity: 0;}
-}
-
-// 반응형
 @media (max-width: 1580px)
 {
     #issue.active .open {width: 0; height: 0; padding: 0; opacity: 0;}
