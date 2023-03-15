@@ -1,7 +1,7 @@
 /*-------------------------------------------------
 title       : 레이아웃
-Author      : 플랜아이 광주
-Create date : 2020-02-14
+Author      : PLAN I
+Create date : 2023-01-01
 -------------------------------------------------*/
 
 $(function()
@@ -15,10 +15,7 @@ $(function()
     });
 
     // 언어
-    $('.lang').classtoggle
-    ({
-        'button'            : '.active'  // 이벤트 받을 타겟 선택
-    });
+    $('.lang').classtoggle({'button' : '.active'});
 
     // 검색어
     $('.search').classtoggle();
@@ -29,50 +26,81 @@ $(function()
     // 전체메뉴이자 모바일 메뉴
     $('#gnb2').gnb2();
 
-    // 풋배너 슬라이드
-    // var $footbanner = $('.footbanner .list');
-
-    // $footbanner.bxSlider
-    // ({
-    //     pager       : false,
-    //     auto        : true,
-    //     autoHover   : true,
-    //     maxSlides   : 9,
-    //     minSlides   : 2,
-    //     moveSlides  : 1,
-    //     slideWidth  : 160
-    // });
-
     // 퀵메뉴
     $('#quick').classtoggle();
 
-    // 위로가기 활성화
-    $(window).on('scroll load', function()
+    /*------------------------------------------------- 하단배너 -------------------------------------------------*/
+
+    // 컨트롤러
+    $('.footbanner .list').after('<div class="control"><button class="prev">이전</button><button class="next">다음</button><button class="play">재생</button><button class="pause active">정지</button></div>');
+
+    // 재생/정지
+    $('.footbanner').find('.play, .pause').on('click', function()
     {
-        if ( $('html, body').scrollTop() > 300 )
+        $(this).removeClass('active');
+        $(this).siblings('.play, .pause').addClass('active');
+
+        if ( $(this).hasClass('play') == true )
         {
-            $('#footer .btn-top').addClass('active');
+            footbanner.autoplay.start();
         }
         else
         {
-            $('#footer .btn-top').removeClass('active');
+            footbanner.autoplay.stop();
         }
     });
 
+    // 스와이퍼
+    var modalpopup = new Swiper(".footbanner", 
+    {
+        autoplay                : 
+        {
+            delay               : 2500,
+            disableOnInteraction: false,
+        },
+        wrapperClass            : "list",
+        slideClass              : "list > li",
+        slidesPerView           : "auto",
+        spaceBetween            : 25,
+        loop                    : false,
+        loopAdditionalSlides    : 1,            // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
+        navigation              : 
+        {
+            nextEl              : ".footbanner .next",
+            prevEl              : ".footbanner .prev",
+        }
+    });
+
+    // 배너가 8개 이하일 때
+    $(window).on('load resize', function()
+    {
+        setTimeout(function()
+        {
+            if ( $('.footbanner').find('.prev, next').hasClass('swiper-button-lock') == true )
+            {
+                $('.footbanner').addClass('type1');
+            }
+            else
+            {
+                $('.footbanner').removeClass('type1');
+            }  
+            
+        }, 100);  
+    });
+
+    /*------------------------------------------------- //하단배너 -------------------------------------------------*/
+
+    // 관련사이트
+    $('.related .group').classtoggle({'button' : '.label'});
+
     // 위로가기
-    $('#footer .btn-top').on('click', function()
+    $('#footer .btn_top').on('click', function()
     {
         $('html, body').animate({scrollTop: $(this.hash).offset().top});
         
         $(this.hash).focus();
 
         return false;
-    });
-
-    // 관련사이트
-    $('.related .group').classtoggle
-    ({
-        'button'            : '.label'  // 이벤트 받을 타겟 선택
     });
 });
 

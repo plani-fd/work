@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*-------------------------------------------------
-title       : 국문 초기화
+title       : 국문 초기화, 믹스인 등
 Author      : PLAN I
 Create date : 2023-01-01
 
@@ -628,4 +628,486 @@ History     : 2023-03-14 ㅈㅁㅈ
   width: 128rem;
   height: auto;
   opacity: 1;
+}
+
+#quick .open {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  position: fixed;
+  right: 0;
+  z-index: 1001;
+  width: 4.5rem;
+  padding: 2rem 1rem;
+  background-color: #000;
+  font-weight: 700;
+  color: #fff;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+#quick .open::after {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1px solid #000;
+  background-color: #fff;
+  font-size: 1.6rem;
+  color: #000;
+  font-family: "remixicon";
+  content: "\ea60";
+  text-align: center;
+  line-height: 4.5rem;
+}
+#quick .open:hover::after, #quick .open:focus::after {
+  background-color: #f00;
+  color: #fff;
+}
+#quick .group {
+  visibility: hidden;
+  position: fixed;
+  right: -25rem;
+  top: 0;
+  z-index: 1000;
+  width: 25rem;
+  height: 100%;
+  background-color: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#quick .group::before {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #000;
+  content: "";
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#quick .title {
+  padding: 2rem 0 2rem 3rem;
+  background-color: #000;
+  color: #fff;
+}
+#quick .title span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+#quick .list a {
+  display: block;
+  position: relative;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #ddd;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#quick .list a::after {
+  font-family: "remixicon";
+  content: "\ea6e";
+  position: absolute;
+  right: 2rem;
+}
+#quick .list a:hover, #quick .list a:focus {
+  background-color: #ddd;
+}
+#quick.active .open {
+  top: 0;
+  height: 4.5rem;
+  padding: 0;
+  background: none;
+  font-size: 0;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+#quick.active .open::after {
+  top: 0;
+  border: 0 none;
+  background: none;
+  color: #fff;
+  content: "\eb99";
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+#quick.active .open:hover::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#quick.active .group {
+  visibility: visible;
+  right: 0;
+}
+#quick.active .group::before {
+  width: 10000%;
+  opacity: 0.5;
+}
+
+.footbanner {
+  width: 128rem;
+  max-width: calc(100% - 6rem);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  position: relative;
+  padding: 2rem 0 2rem 14.5rem;
+}
+.footbanner .control {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  width: 12rem;
+  height: 4rem;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+.footbanner .control button {
+  display: block;
+  float: left;
+  overflow: hidden;
+  width: 4rem;
+  height: 100%;
+  text-align: center;
+  line-height: 4rem;
+}
+.footbanner .control .play,
+.footbanner .control .pause {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  display: none;
+  top: 0;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.footbanner .control .play.active,
+.footbanner .control .pause.active {
+  display: inline-block;
+}
+.footbanner .control .next {
+  float: right;
+}
+.footbanner .prev::before {
+  font-family: "remixicon";
+  content: "\ea64";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.footbanner .next::before {
+  font-family: "remixicon";
+  content: "\ea6e";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.footbanner .play::before {
+  font-family: "remixicon";
+  content: "\f00a";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.footbanner .pause::before {
+  font-family: "remixicon";
+  content: "\efd7";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.footbanner.type1 {
+  padding: 2rem 0;
+}
+.footbanner.type1 .control {
+  display: none;
+}
+.footbanner.type1 .list {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#footer {
+  background-color: #222;
+  color: rgba(255, 255, 255, 0.75);
+}
+#footer .footer_wrap {
+  width: 128rem;
+  max-width: calc(100% - 6rem);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  position: relative;
+  padding-bottom: 4rem;
+}
+#footer .related {
+  position: absolute;
+  right: 0;
+  top: 7rem;
+  width: 18rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+#footer .related a {
+  display: block;
+  padding: 0 2rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#footer .related a:hover, #footer .related a:focus {
+  color: #fff;
+}
+#footer .related .group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+#footer .related .label {
+  height: 4rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  line-height: 3.8rem;
+  position: relative;
+}
+#footer .related .label::after {
+  font-family: "remixicon";
+  content: "\ea4d";
+  position: absolute;
+  right: 1.5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#footer .related .list {
+  visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin-bottom: 1px;
+  background-color: #444;
+}
+#footer .related .active .label::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#footer .related .active .list {
+  visibility: visible;
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  padding: 1.5rem 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#footer .btn_top {
+  position: absolute;
+  right: -8rem;
+  top: 0;
+  width: 5rem;
+  height: 5rem;
+  padding-top: 0.75rem;
+  border-radius: 100%;
+  border: 1px solid #000;
+  background-color: #fff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #000;
+  line-height: 1;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+#footer .btn_top::before {
+  font-family: "remixicon";
+  content: "\ea78";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+  height: auto;
+}
+#footer .btn_top::after {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  content: "";
+  left: 0;
+  width: 100%;
+  border-radius: 100%;
+  background-color: #000;
+  opacity: 0;
+}
+#footer .btn_top:hover::after, #footer .btn_top:focus::after {
+  -webkit-animation: circle 1s infinite;
+          animation: circle 1s infinite;
+}
+#footer .mark {
+  position: absolute;
+  bottom: 4rem;
+  right: 20rem;
+}
+
+@-webkit-keyframes circle {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes circle {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    opacity: 0;
+  }
+}
+#fnb {
+  position: relative;
+  z-index: 0;
+  height: 5rem;
+  margin-bottom: 3rem;
+  line-height: 5rem;
+}
+#fnb::after {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  content: "";
+  left: 50%;
+  width: 10000%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#fnb .fnb1 {
+  float: left;
+}
+#fnb .fnb1 li {
+  display: inline;
+  margin-right: 1rem;
+}
+#fnb .fnb1 a {
+  position: relative;
+}
+#fnb .fnb1 a::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.75);
+  content: "";
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#fnb .fnb1 a:hover::after, #fnb .fnb1 a:focus::after {
+  width: 100%;
+}
+#fnb .fnb2 {
+  float: right;
+}
+#fnb .fnb2 li {
+  display: inline;
+  margin-left: 1rem;
+}
+#fnb .fnb2 a {
+  display: inline-block;
+  overflow: hidden;
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: middle;
+}
+#fnb .fnb2 a::before {
+  min-height: 200%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#fnb .fnb2 a:hover::before, #fnb .fnb2 a:focus::before {
+  color: #fff;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+#fnb .fnb2 .twitter a::before {
+  font-family: "remixicon";
+  content: "\f23a   \f23a";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+#fnb .fnb2 .facebook a::before {
+  font-family: "remixicon";
+  content: "\ecbc   \ecbc";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+#fnb .fnb2 .instagram a::before {
+  font-family: "remixicon";
+  content: "\ee65   \ee65";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+#fnb .fnb2 .kakao a::before {
+  font-family: "remixicon";
+  content: "\ee6c   \ee6c";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+#fnb .fnb2 .youtube a::before {
+  font-family: "remixicon";
+  content: "\f2d4   \f2d4";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+#fnb .fnb2 .blog a::before {
+  display: block;
+  font-weight: 800;
+  content: "N N";
+}
+
+#siteinfo {
+  position: relative;
+  padding-left: 20rem;
+}
+#siteinfo .logo {
+  position: absolute;
+  left: 0;
+  top: 0;
 }

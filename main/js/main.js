@@ -113,8 +113,8 @@ $(function()
         slideClass              : "list > li",
         slidesPerView           : "auto",
         spaceBetween            : 30,
-        centeredSlides          : true,
-        loop                    : true,
+        //centeredSlides          : true,
+        loop                    : false,
         loopAdditionalSlides    : 1,            // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
         navigation              : 
         {
@@ -129,7 +129,23 @@ $(function()
         scrollbar               : 
         {
             el                  : ".gallery .scroll",
-            hide                : true,
         },
+    });
+
+    // 갤러리 게시물이 4개 이하일 때
+    $(window).on('load resize', function()
+    {
+        setTimeout(function()
+        {
+            if ( $('.gallery').find('.prev, next').hasClass('swiper-button-lock') == true )
+            {
+                $('.gallery').addClass('type1');
+            }
+            else
+            {
+                $('.gallery').removeClass('type1');
+            }  
+            
+        }, 100);  
     });
 });

@@ -231,34 +231,57 @@ History     : 2023-03-14 ㅈㅁㅈ
 {
     @include bg1;
     display: block; padding: 8rem 0; background-color: #f8f8f8;
-
-    //&::before {position: absolute; right: 50%; top: 0; z-index: 10; width: 1000%; height: calc(100% - 1rem); margin-right: calc($width1 / 2); background-color: #f8f8f8; content: '';}
-
+    
     h2.title {margin-bottom: 3rem; font-size: 4rem; color: #000; text-align: center; line-height: 1.2;}
 
-    .list a
+    .list
     {
-        width: 40rem;
+        li:last-child {margin-right: 0 !important;}
+        img {transition: $time2;}        
 
-        .title {display: block; margin: 1.5rem 0 0.5rem; font-size: 1.8rem; font-weight: 700; color: #000;}
-        .txt {@include ellipsis(type2, 5rem); min-height: 5rem;}
-        .date {display: block; margin-top: 0.5rem; font-size: 1.5rem; font-weight: 300; color: #888;}
+        a
+        {
+            width: 29.75rem;
+
+            .title {display: block; margin: 1.5rem 0 0.5rem; font-size: 1.8rem; font-weight: 700; color: #000;}
+            .txt {@include ellipsis(type2, 5rem); min-height: 5rem;}
+            .date {display: block; margin-top: 0.5rem; font-size: 1.5rem; font-weight: 300; color: #888;}
+
+            &:hover,
+            &:focus
+            {
+                img {transform: scale(1.2); opacity: 0.75;}
+            }
+        }        
+
+        .img {display: block; overflow: hidden; background-color: #000;}
     }
 
     .more,
-    .control button
-    {
-        overflow: hidden; position: absolute; left: 50%; top: 8rem; width: 5rem; height: 5rem; margin-left: calc($width1 / 2); border-radius: 0.5rem; border: 1px solid #ddd; background-color: #fff; font-size: 2rem; color: #000; text-align: center; line-height: 5rem; transition: $time2;
-
-        &:hover,
-        &:focus {background-color: #ddd;}
-    }
+    .control button {overflow: hidden; position: absolute; left: 50%; top: 8rem; width: 5rem; height: 5rem; margin-left: calc($width1 / 2); border-radius: 0.5rem; border: 1px solid #ddd; background-color: #fff; font-size: 2rem; color: #000; text-align: center; line-height: 5rem; transition: $time2;}
 
     $translateXs : (more: -100%, prev: calc(-100% - 17rem), next: calc(-100% - 6rem), play: calc(-100% - 11.5rem), pause: calc(-100% - 11.5rem));
 
     @each $keys, $translateX in $translateXs
     {
         .#{$keys} {transform: translateX($translateX);}
+    }
+
+    .control button
+    {
+        &:hover,
+        &:focus {background-color: #ddd;}
+    }
+
+    .more
+    {
+        &::before {transition: $time2;}
+
+        &:hover,
+        &:focus
+        {
+            &::before {transform: rotate(180deg);}
+        }
     }
 
     .pager 
@@ -272,8 +295,39 @@ History     : 2023-03-14 ㅈㅁㅈ
 
     .scroll 
     {
-        display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 1rem; border-radius: 0; background-color: rgba(0, 0, 0, 0.1); opacity: 1 !important;
+        display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 1rem; border-radius: 0; background-color: rgba(0, 0, 0, 0.1);
 
-        div {border-radius: 0; background-color: #000;}
+        div {display: block; border-radius: 0; background-color: #000;}
+    }
+
+    &.type1
+    {
+        .control button {display: none;}
+        .list {justify-content: center;}
+    }
+}
+
+.link
+{
+    @include bg1;
+    @include width($width1, $width2);
+    padding: 5rem 0; text-align: center;
+
+    &::before {@include bg2(type1); border-bottom: 1px solid #ddd;}
+    
+    .list {@include table;}
+    .txt {display: block; margin-top: 1rem;}
+
+    img {position: relative; top: 0; transition: $time2;}
+
+    a 
+    {
+        display: block;
+
+        &:hover,
+        &:focus
+        {
+            img {top: -1rem;}
+        }
     }
 }
