@@ -17,8 +17,7 @@ $(function()
     // 언어
     $('.lang').classtoggle({'button' : '.active'});
 
-    // 검색어
-    $('.search').classtoggle();
+    $('.search').classtoggle({'tabout' : true});
 
     // 주메뉴
     $('#gnb1').gnb1();
@@ -27,7 +26,7 @@ $(function()
     $('#gnb2').gnb2();
 
     // 퀵메뉴
-    $('#quick').classtoggle();
+    $('#quick').classtoggle({'tabout' : true});
 
     /*------------------------------------------------- 하단배너 -------------------------------------------------*/
 
@@ -51,7 +50,7 @@ $(function()
     });
 
     // 스와이퍼
-    var modalpopup = new Swiper(".footbanner", 
+    var footbanner = new Swiper(".footbanner", 
     {
         autoplay                : 
         {
@@ -91,7 +90,7 @@ $(function()
     /*------------------------------------------------- //하단배너 -------------------------------------------------*/
 
     // 관련사이트
-    $('.related .group').classtoggle({'button' : '.label'});
+    $('.related .group').classtoggle({'button' : '.label', 'tabout' : true});
 
     // 위로가기
     $('#footer .btn_top').on('click', function()
@@ -300,6 +299,32 @@ $.fn.gnb2 = function( options )
                 menuAction($(this));
             }
         });
+
+        // 탭 아웃
+        $selecter.find('a:last').keydown(function(e) 
+        {
+            if ( $(window).width() > settings.responsiveWidth )
+            {
+                if(e.keyCode === 9) 
+                {
+                    $selecter.find('li').removeClass(settings.className);
+                    $(settings.classAdd).removeClass(settings.className);
+                }
+            }
+        });
+
+        // 역탭 아웃
+        $selecter.find('ul a:first').keydown(function(e) 
+        {
+            if ( $(window).width() > settings.responsiveWidth )
+            {
+                if(e.keyCode === 9 && e.shiftKey) 
+                {
+                    $selecter.find('li').removeClass(settings.className);
+                    $(settings.classAdd).removeClass(settings.className);
+                }
+            }
+        });
     });
 };
 
@@ -317,9 +342,11 @@ $.fn.classtoggle = function( options )
         'action'            : 'click',      // 액션 선택 (click | over)
         'classname'         : 'active',     // 추가할 클래스명
         'accordion'			: false,		// active 될 때 형제요소의 반응 여부
+        'latest'            : false,        // 탭으로 사용할 때 활성화 된 요소 누르면 비활성화 되는 부분 방지
         'respond'           : false,        // 반응형일 때 (true 시 반응형일때 가로 사이즈 이하에서만 / click 일때만)
         'respondWidth'      : '768',        // 반응형 가로 사이즈
-        'close'             : '.close'      // 닫기 버튼이 별도로 존재하는 경우 (닫기 버튼은 클릭시에만)
+        'close'             : '.close',     // 닫기 버튼이 별도로 존재하는 경우 (닫기 버튼은 클릭시에만)
+        'tabout'            : false         // 탭 아웃 시 클래스 삭제 여부
     }, 
     options );
 
@@ -340,8 +367,8 @@ $.fn.classtoggle = function( options )
             }
             else
             {
-                // 닫기 버튼 존재할 경우 토글되지 않음
-                if ( $selecter.find(settings.close).length == 0 )
+                // 닫기 버튼 존재할 경우, 탭으로 사용할 때 토글되지 않음
+                if ( $selecter.find(settings.close).length == 0 && settings.latest == false )
                 {
                     $selecter.removeClass(settings.classname);
                 }
@@ -406,9 +433,11 @@ $.fn.classtoggle = function( options )
                 return false;
             });
         }
-        else
+
+        // 탭 아웃 시 클래스 삭제 여부
+        if ( settings.tabout == true )
         {
-            // 탭 아웃
+            // 탭
             $selecter.find('a:last').keydown(function(e) 
             {
                 if(e.keyCode === 9) 
@@ -417,8 +446,8 @@ $.fn.classtoggle = function( options )
                 }
             });
 
-            // 역탭 아웃
-            $selecter.find('a:first').keydown(function(e) 
+            // 역탭
+            $selecter.find('ul a:first').keydown(function(e) 
             {
                 if(e.keyCode === 9 && e.shiftKey) 
                 {

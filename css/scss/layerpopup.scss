@@ -11,7 +11,14 @@ Create date : 2023-01-01
 
 [id*="layerPopup"]
 {
-    height: auto !important; box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
+    height: auto !important; max-width: calc(100% - 4rem); box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
+
+    .popup_cont 
+    {
+        max-width: 100%; height: auto !important;
+
+        img {height: auto !important;}
+    }
 
     .close
     {
@@ -47,7 +54,7 @@ Create date : 2023-01-01
             &:hover,
             &:focus
             {
-                label::before {background-color: rgba(255, 255, 255, 0.5);}
+                & + label::before {background-color: rgba(255, 255, 255, 0.5);}
             }
         }
     }

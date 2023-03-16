@@ -25,7 +25,6 @@ Create date : 2023-01-01
 
     .group {@include position(center); @include width(128rem, calc(100% - 6rem)); @include hidden(0, 0); position: fixed; z-index: 9999999; color: #fff; text-align: center;}
     .title {display: block; margin-bottom: 2rem; font-size: 4.5rem; font-weight: 800;}
-    .pager {display: none;}
 
     .list
     {
@@ -117,7 +116,13 @@ Create date : 2023-01-01
     {
         width: auto;
 
-        span {width: 1.2rem; height: 1.2rem; border: 1px solid #fff; background: none; opacity: 1;}
+        span 
+        {
+            width: 1.2rem; height: 1.2rem; border: 1px solid #fff; background: none; opacity: 1; transition: $time2;
+
+            &:hover,
+            &:focus {background-color: rgba(255, 255, 255, 0.5);}
+        }
 
         .swiper-pagination-bullet-active {background-color: #fff;}
     }

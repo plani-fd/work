@@ -7,8 +7,16 @@ Create date : 2023-01-01
 -------------------------------------------------*/
 [id*=layerPopup] {
   height: auto !important;
+  max-width: calc(100% - 4rem);
   -webkit-box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
           box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
+}
+[id*=layerPopup] .popup_cont {
+  max-width: 100%;
+  height: auto !important;
+}
+[id*=layerPopup] .popup_cont img {
+  height: auto !important;
 }
 [id*=layerPopup] .close {
   position: relative;
@@ -52,6 +60,6 @@ Create date : 2023-01-01
 [id*=layerPopup] .form_check input:checked + label::before {
   color: #fff;
 }
-[id*=layerPopup] .form_check input:hover label::before, [id*=layerPopup] .form_check input:focus label::before {
+[id*=layerPopup] .form_check input:hover + label::before, [id*=layerPopup] .form_check input:focus + label::before {
   background-color: rgba(255, 255, 255, 0.5);
 }

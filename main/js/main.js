@@ -75,9 +75,12 @@ $(function()
     ({
         'button'        : '.label a',   // 이벤트 받을 타겟 선택
         'accordion'		: true,		    // active 될 때 형제요소의 반응 여부
+        'latest'        : true
     });
 
-    // 팝업
+    /*------------------------------------------------- 팝업 -------------------------------------------------*/
+
+    // 스와이퍼
     var popup = new Swiper(".popup", 
     {
         autoplay                : 
@@ -100,8 +103,32 @@ $(function()
             clickable           : true
         }
     });
+    
+    // 스와이퍼 안에 초점 있을 때 자동재생 정지(접근성)
+    $('.popup').find('.list *').on({
+        focusin         : function()
+        {
+            popup.autoplay.stop();
+        },
+        mouseover   : function()
+        {
+            popup.autoplay.stop();
+        },
+        focusout    : function()
+        {
+            popup.autoplay.start();
+        },
+        mouseleave  : function()
+        {
+            popup.autoplay.start();
+        },
+    });
 
-    // 갤러리
+    /*------------------------------------------------- //팝업 -------------------------------------------------*/
+
+    /*------------------------------------------------- 갤러리 -------------------------------------------------*/
+
+    // 스와이퍼
     var gallery = new Swiper(".gallery .group", 
     {
         autoplay                : 
@@ -131,6 +158,26 @@ $(function()
             el                  : ".gallery .scroll",
         },
     });
+    
+    // 스와이퍼 안에 초점 있을 때 자동재생 정지(접근성)
+    $('.gallery').find('.list *').on({
+        focusin         : function()
+        {
+            gallery.autoplay.stop();
+        },
+        mouseover   : function()
+        {
+            gallery.autoplay.stop();
+        },
+        focusout    : function()
+        {
+            gallery.autoplay.start();
+        },
+        mouseleave  : function()
+        {
+            gallery.autoplay.start();
+        },
+    });
 
     // 갤러리 게시물이 4개 이하일 때
     $(window).on('load resize', function()
@@ -148,4 +195,6 @@ $(function()
             
         }, 100);  
     });
+
+    /*------------------------------------------------- //갤러리 -------------------------------------------------*/
 });

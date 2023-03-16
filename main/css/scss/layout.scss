@@ -87,6 +87,8 @@ History     : 2023-03-14 ㅈㅁㅈ
                 &::before {height: 100000%;}
             }
 
+            .open {display: none;}
+
             .close 
             {
                 @include visible(4rem, 4rem);
@@ -180,7 +182,7 @@ History     : 2023-03-14 ㅈㅁㅈ
     {
         @include position(left);
         @include hidden(128rem, 0); 
-        top: 100%; z-index: 999; max-width: $width2; text-align: left;
+        top: 100%; z-index: 1002; max-width: $width2; text-align: left;
 
         &::before {@include bg2(type1); border-top: 1px solid #ddd; background-color: #fff;}
         &::after {@include bg2(type1); top: 100%; clear: both; height: 0; background-color: #000; opacity: 0.5; transition: $time2;}
@@ -431,7 +433,7 @@ History     : 2023-03-14 ㅈㅁㅈ
     // 관련사이트
     .related 
     {
-        position: absolute; right: 0; top: 7rem; width: 18rem; color: rgba(255, 255, 255, 0.5);
+        position: absolute; right: 0; top: 7rem; z-index: 10; width: 18rem; color: rgba(255, 255, 255, 0.5);
 
         a 
         {

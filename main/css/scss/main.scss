@@ -199,15 +199,16 @@ History     : 2023-03-14 ㅈㅁㅈ
 // 팝업존
 .popup 
 {
-    float: right; position: relative; width: 30.5rem; border: 1px solid #ddd;
+    @include bg1;
+    float: right; width: 30.5rem; border: 1px solid #ddd;
 
     .control 
     {
-        display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 4rem; padding-left: 1.5rem; background-color: rgba(0, 0, 0, 0.5); color: #fff; text-align: right; line-height: 4rem;
+        display: block; position: absolute; left: 0; bottom: 0; z-index: 10; width: 100%; height: 4rem; padding-left: 1.5rem; background-color: rgba(0, 0, 0, 0.5); color: #fff; text-align: right; line-height: 4rem;
 
         button 
         {
-            width: 4rem; border-left: 1px solid rgba(255, 255, 255, 0.2); transition: $time2;
+            overflow: hidden; width: 4rem; height: 100%; border-left: 1px solid rgba(255, 255, 255, 0.2); transition: $time2;
 
             &:hover,
             &:focus {background-color: #000;}
@@ -220,9 +221,28 @@ History     : 2023-03-14 ㅈㅁㅈ
     {
         float: left; width: auto;
 
-        span {display: inline-block !important; width: 1.2rem; height: 1.2rem; margin-right: 0.5rem; border-radius: 100%; border: 1px solid #fff; background: none; vertical-align: middle; transition: $time2;}
+        span 
+        {
+            display: inline-block !important; width: 1.2rem; height: 1.2rem; margin-right: 0.5rem; border-radius: 100%; border: 1px solid #fff; background: none; vertical-align: middle; transition: $time2; transition: $time2;
+
+            &:hover,
+            &:focus {background-color: rgba(255, 255, 255, 0.5);}
+        }
 
         [class*="active"] {background-color: #fff;}
+    }
+
+    .list a 
+    {
+        overflow: hidden; background-color: #000;
+
+        img {transition: $time2;}
+
+        &:hover,
+        &:focus
+        {
+            img {transform: scale(1.1); opacity: 0.75;}
+        }
     }
 }
 
@@ -288,7 +308,13 @@ History     : 2023-03-14 ㅈㅁㅈ
     {
         margin-top: 2rem; text-align: center;
         
-        span {width: 1.2rem; height: 1.2rem; border: 1px solid #000; background: none; transition: $time2;}
+        span 
+        {
+            width: 1.2rem; height: 1.2rem; border: 1px solid #000; background: none; transition: $time2; transition: $time2;
+
+            &:hover,
+            &:focus {background-color: rgba(0, 0, 0, 0.5);}
+        }
 
         [class*="active"] {background-color: #000;}
     }

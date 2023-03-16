@@ -6,6 +6,23 @@ Create date : 2023-01-01
 
 $(function()
 {
+    // 레이어팝업 닫기
+    $('[id*="layerPopup"]').find('.close a').on('click', function()
+    {
+        $(this).parents('[id*="layerPopup"]').hide();
+
+        return false;
+    });
+
+    // 레이어팝업에서 키보드가 나갔을 때 팝업 닫음(접근성)
+    $('[id*="layerPopup"]').find('*:last').keydown(function(e) 
+    {
+        if(e.keyCode === 9) 
+        {
+            $(this).parents('[id*="layerPopup"]').hide();
+        }
+    });
+
     // 모달팝업, 최상단배너 열기 닫기 버튼 클릭 시
     $('#issue, .topbanner').find('a.control').on('click', function()
     {
@@ -16,6 +33,7 @@ $(function()
             if ( $(this).parents('#issue, .topbanner').hasClass('active') == false )
             {
                 $(this).parents('#issue, .topbanner').addClass('active');
+                $(this).find('.sr_only').text('닫기');
 
                 // 모달팝업 일 때
                 if ( $(this).parents('#issue').length == 1 )
@@ -35,6 +53,7 @@ $(function()
             else
             {
                 $(this).parents('#issue, .topbanner').removeClass('active');
+                $(this).find('.sr_only').text('열기');
 
                 // 모달팝업 일 때
                 if ( $(this).parents('#issue').length == 1 )
@@ -59,14 +78,14 @@ $(function()
         else
         {
             $(this).parents('#issue, .topbanner').removeClass('active');
+            $('#issue').removeClass('type1');
+            $(this).parents('#issue, .topbanner').find('.open').find('.sr_only').text('열기');
 
             // 모달팝업 일 때
             if ( $(this).parents('#issue').length == 1 )
             {                
                 modalpopup.autoplay.stop();
                 modalpopup.slideTo(0);
-
-                $('#issue').removeClass('type1');
             }
             else
             {
@@ -118,6 +137,9 @@ $(function()
 
     /*------------------------------------------------- 모달팝업 -------------------------------------------------*/
 
+    // 열기 버튼에 링크텍스트 추가
+    $('#issue .open .count').after('<span class="sr_only">열기</span>');
+
     // 팝업건수
     $('#issue .open strong.count, #issue .label .count').text( $('#issue .list li').length );
 
@@ -134,7 +156,6 @@ $(function()
         slidesPerView           : 1,
         spaceBetween            : 10,
         loop                    : false,
-        loopAdditionalSlides    : 1,            // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
         navigation              : 
         {
             nextEl              : "#issue .next",
@@ -158,6 +179,27 @@ $(function()
                 spaceBetween    : 20,
             }
         }
+    });
+    
+    // 스와이퍼 안에 초점 있을 때 자동재생 정지(접근성)
+    $('#issue').find('.list *').on
+    ({
+        focusin         : function()
+        {
+            modalpopup.autoplay.stop();
+        },
+        mouseover   : function()
+        {
+            modalpopup.autoplay.stop();
+        },
+        focusout    : function()
+        {
+            modalpopup.autoplay.start();
+        },
+        mouseleave  : function()
+        {
+            modalpopup.autoplay.start();
+        },
     });
 
     // 이전다음이 작동 안 할 때 팝업 정렬 등을 위함
@@ -183,7 +225,36 @@ $(function()
         modalpopupControl();
     });
 
+    // 모달팝업에서 키보드가 나갔을 때 팝업 닫음(탭 아웃-접근성)
+    $('#issue').find('a:last').keydown(function(e) 
+    {
+        if ( $(this).parents('#issue').hasClass('active') == true )
+        {
+            if(e.keyCode === 9) 
+            {
+                $(this).parents('#issue').removeClass('active');
+            }
+        }
+    });
+
+    // 모달팝업에서 키보드가 나갔을 때 팝업 닫음(역탭 아웃-접근성)
+    $('#issue').find('a:first').keydown(function(e) 
+    {
+        if(e.keyCode === 9 && e.shiftKey) 
+        {
+            if ( $(this).parents('#issue').hasClass('active') == true )
+            {
+                $(this).parents('#issue').removeClass('active');
+            }
+        }
+    });
+
     /*------------------------------------------------- //모달팝업 -------------------------------------------------*/
+
+    /*------------------------------------------------- 최상단배너 -------------------------------------------------*/
+
+    // 최상단배너 열기 버튼에 링크텍스트 추가
+    $('.topbanner .open .count').after('<span class="sr_only">닫기</span>');
 
     // 최상단배너    
     var topbanner = new Swiper(".topbanner .group", 
@@ -197,7 +268,6 @@ $(function()
         slideClass              : "list > li",
         direction               : "vertical",
         loop                    : true,
-        loopAdditionalSlides    : 1,            // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
         navigation              : 
         {
             nextEl              : ".topbanner .next",
@@ -209,4 +279,27 @@ $(function()
             clickable           : true,
         }
     });
+    
+    // 스와이퍼 안에 초점 있을 때 자동재생 정지(접근성)
+    $('.topbanner').find('.list *').on
+    ({
+        focusin         : function()
+        {
+            topbanner.autoplay.stop();
+        },
+        mouseover   : function()
+        {
+            topbanner.autoplay.stop();
+        },
+        focusout    : function()
+        {
+            topbanner.autoplay.start();
+        },
+        mouseleave  : function()
+        {
+            topbanner.autoplay.start();
+        },
+    });
+
+    /*------------------------------------------------- //최상단배너 -------------------------------------------------*/
 });

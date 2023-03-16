@@ -99,9 +99,6 @@ Create date : 2023-01-01
   font-size: 4.5rem;
   font-weight: 800;
 }
-#issue .pager {
-  display: none;
-}
 #issue .list {
   white-space: nowrap;
 }
@@ -268,6 +265,11 @@ Create date : 2023-01-01
   border: 1px solid #fff;
   background: none;
   opacity: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#issue .pager span:hover, #issue .pager span:focus {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 #issue .pager .swiper-pagination-bullet-active {
   background-color: #fff;

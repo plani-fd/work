@@ -398,8 +398,9 @@ History     : 2023-03-14 ㅈㅁㅈ
 }
 
 .popup {
-  float: right;
   position: relative;
+  z-index: 0;
+  float: right;
   width: 30.5rem;
   border: 1px solid #ddd;
 }
@@ -408,6 +409,7 @@ History     : 2023-03-14 ㅈㅁㅈ
   position: absolute;
   left: 0;
   bottom: 0;
+  z-index: 10;
   width: 100%;
   height: 4rem;
   padding-left: 1.5rem;
@@ -417,7 +419,9 @@ History     : 2023-03-14 ㅈㅁㅈ
   line-height: 4rem;
 }
 .popup .control button {
+  overflow: hidden;
   width: 4rem;
+  height: 100%;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -443,9 +447,26 @@ History     : 2023-03-14 ㅈㅁㅈ
   vertical-align: middle;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  transition: all 0.2s;
+}
+.popup .pager span:hover, .popup .pager span:focus {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .popup .pager [class*=active] {
   background-color: #fff;
+}
+.popup .list a {
+  overflow: hidden;
+  background-color: #000;
+}
+.popup .list a img {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.popup .list a:hover img, .popup .list a:focus img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 0.75;
 }
 
 .gallery {
@@ -568,6 +589,10 @@ History     : 2023-03-14 ㅈㅁㅈ
   background: none;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  transition: all 0.2s;
+}
+.gallery .pager span:hover, .gallery .pager span:focus {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .gallery .pager [class*=active] {
   background-color: #000;
