@@ -9,5 +9,36 @@ title       : 서브
 Author      : PLAN I
 Create date : 2023-01-01
 
-History     : 2023-01-16 ㅈㅁㅈ
+History     : 2023-03-20 ㅈㅁㅈ
 -------------------------------------------------*/
+
+#visual 
+{
+    overflow: hidden; position: relative; height: 25rem;
+
+    .title {@include position(center); font-size: 4rem; color: #fff;}
+    .img img {min-width: 100%; max-width: initial; min-height: 100%;}
+
+    .control a
+    {
+        @include position(top);
+        @include square(5rem);
+        border-radius: 100%; border: 1px solid rgba(255, 255, 255, 0.5); color: #fff;
+
+        $btns: 
+        (
+            prev: (direction: left, icon: "\EA60"), 
+            next: (direction: right, icon: "\EA6C")
+        );
+
+        @each $keys, $map in $btns
+        {
+            &.#{$keys}
+            {
+                #{map-get($map, direction)}: 3rem;
+
+                &::before {@include icon(type3, map-get($map, icon));}
+            }
+        }
+    }
+}

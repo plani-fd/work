@@ -29,12 +29,15 @@ History     : 2023-03-14 ㅈㅁㅈ
 }
 #header .search .control,
 #header #gnb2 .control {
+  display: inline-block;
   overflow: hidden;
   width: 4rem;
   height: 4rem;
+  text-align: center;
+  line-height: 4rem;
+  vertical-align: middle;
   font-size: 2.5rem;
   color: #000;
-  text-align: center;
 }
 #header .search .control.open::before {
   font-family: "remixicon";
@@ -136,14 +139,17 @@ History     : 2023-03-14 ㅈㅁㅈ
   border-color: #000;
 }
 #header .search .form button {
+  display: inline-block;
   overflow: hidden;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  line-height: 5rem;
+  vertical-align: middle;
   position: absolute;
   right: 1rem;
   top: 1rem;
-  width: 5rem;
-  height: 5rem;
   font-size: 3rem;
-  text-align: center;
   line-height: 4rem;
 }
 #header .search .form button::before {
@@ -465,7 +471,7 @@ History     : 2023-03-14 ㅈㅁㅈ
           transform: translateX(-100%);
 }
 #gnb2 .control.close {
-  display: none;
+  display: none !important;
   position: fixed;
   z-index: 99999999;
   font-size: 3rem;
@@ -623,7 +629,7 @@ History     : 2023-03-14 ㅈㅁㅈ
   color: #fff;
 }
 #gnb2.active .close {
-  display: block;
+  display: block !important;
 }
 #gnb2.active > ul {
   visibility: visible;
@@ -773,13 +779,15 @@ History     : 2023-03-14 ㅈㅁㅈ
   background-color: #fff;
 }
 .footbanner .control button {
-  display: block;
-  float: left;
+  display: inline-block;
   overflow: hidden;
   width: 40px;
-  height: 100%;
+  height: 40px;
   text-align: center;
   line-height: 40px;
+  vertical-align: middle;
+  display: block;
+  float: left;
 }
 .footbanner .control .play,
 .footbanner .control .pause {
@@ -917,11 +925,17 @@ History     : 2023-03-14 ㅈㅁㅈ
   transition: all 0.2s;
 }
 #footer .btn_top {
+  display: inline-block;
+  overflow: hidden;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  line-height: 5rem;
+  vertical-align: middle;
+  overflow: visible;
   position: absolute;
   right: -8rem;
   top: 0;
-  width: 5rem;
-  height: 5rem;
   padding-top: 0.75rem;
   border-radius: 100%;
   border: 1px solid #000;
@@ -1045,10 +1059,10 @@ History     : 2023-03-14 ㅈㅁㅈ
   overflow: hidden;
   width: 2rem;
   height: 2rem;
-  font-size: 2rem;
   text-align: center;
   line-height: 2rem;
   vertical-align: middle;
+  font-size: 2rem;
 }
 #fnb .fnb2 a::before {
   min-height: 200%;

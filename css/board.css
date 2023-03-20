@@ -182,18 +182,18 @@ Create date : 2023-01-01
 [class*=board] .file .btn_del {
   display: inline-block;
   overflow: hidden;
-  position: relative;
-  top: -0.2rem;
   width: 2rem;
   height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: middle;
+  position: relative;
+  top: -0.2rem;
   margin-left: 0.25rem;
   border-radius: 100%;
   background-color: #999;
   text-indent: -0.1rem;
   color: #fff;
-  text-align: center;
-  line-height: 2rem;
-  vertical-align: middle;
 }
 [class*=board] .file .btn_del::before {
   -webkit-transform: rotate(0);
@@ -774,13 +774,16 @@ Create date : 2023-01-01
           transform: translateY(-50%);
 }
 .gallery_view .control button {
+  display: inline-block;
   overflow: hidden;
-  position: relative;
-  z-index: 999;
   width: 4rem;
   height: 4rem;
-  font-size: 3rem;
+  text-align: center;
   line-height: 4rem;
+  vertical-align: middle;
+  position: relative;
+  z-index: 999;
+  font-size: 3rem;
 }
 .gallery_view .control .prev {
   float: left;

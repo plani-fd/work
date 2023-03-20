@@ -531,9 +531,15 @@ Create date : 2023-01-01
   text-align: center;
 }
 .board_box.type1 i {
+  display: inline-block;
   overflow: hidden;
+  width: 5rem;
   height: 5rem;
+  text-align: center;
   line-height: 5rem;
+  vertical-align: middle;
+  font-size: 5rem;
+  font-weight: 200;
 }
 .board_box.type1 i::before {
   font-family: "remixicon";
@@ -542,8 +548,6 @@ Create date : 2023-01-01
   width: 100%;
   height: 100%;
   line-height: inherit;
-  font-size: 5rem;
-  font-weight: 200;
 }
 .board_box.type1 .title {
   font-size: 1.8rem;
@@ -568,9 +572,10 @@ Create date : 2023-01-01
 .board_pager a {
   display: inline-block;
   overflow: hidden;
+  width: 4rem;
   height: 4rem;
   text-align: center;
-  line-height: 3.8rem;
+  line-height: 4rem;
   vertical-align: middle;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -769,14 +774,14 @@ Create date : 2023-01-01
   overflow: hidden;
   width: 3.5rem;
   height: 3.5rem;
+  text-align: center;
+  line-height: 3.5rem;
+  vertical-align: middle;
   margin: -0.5rem 0;
   border-radius: 100%;
   background-color: #000;
   font-size: 1.6rem;
   color: #fff;
-  text-align: center;
-  line-height: 3.5rem;
-  vertical-align: middle;
 }
 .tstyle_list .icon_notice::before {
   font-family: "remixicon";

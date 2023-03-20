@@ -25,7 +25,8 @@ Create date : 2023-01-01
     .close 
     {
         @include hover(before);
-        display: block; visibility: hidden; overflow: hidden !important; position: absolute; right: 2rem; top: 2rem; width: 4rem; height: 4rem; font-size: 4rem; color: #fff; text-align: center; line-height: 4rem; opacity: 0; transition: $time2;
+        @include square(4rem);
+        display: block; visibility: hidden; overflow: hidden !important; position: absolute; right: 2rem; top: 2rem; font-size: 4rem; color: #fff; opacity: 0; transition: $time2;
 
         &::before {@include icon(type3, "\EB99");}
 
@@ -56,7 +57,7 @@ Create date : 2023-01-01
 
         &::before {position: absolute; left: 0; top: 0; z-index: -1; width: 10rem; height: 100%; border-radius: 4rem; background-color: rgba(0, 0, 0, 0.5); content: '';}
 
-        button {display: block; overflow: hidden; float: left; width: 4rem; height: 100%; padding-left: 1rem; border: 0 none; text-align: center; line-height: inherit;}
+        button {@include square(4rem); display: block; float: left; padding-left: 1rem; border: 0 none; line-height: inherit;}
 
         $icons: (prev: "\EA60", next: "\EA6C", play: "\F00A", pause: "\EFD7");
 

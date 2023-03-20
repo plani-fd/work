@@ -21,7 +21,7 @@ History     : 2023-03-14 ㅈㅁㅈ
 
     // 검색, 전체메뉴 버튼
     .search .control,
-    #gnb2 .control {overflow: hidden; width: 4rem; height: 4rem; font-size: 2.5rem; color: #000; text-align: center;}
+    #gnb2 .control {@include square(4rem); font-size: 2.5rem; color: #000;}
 
     // 검색
     .search 
@@ -71,7 +71,8 @@ History     : 2023-03-14 ㅈㅁㅈ
 
             button 
             {
-                overflow: hidden; position: absolute; right: 1rem; top: 1rem; width: 5rem; height: 5rem; font-size: 3rem; text-align: center; line-height: 4rem;
+                @include square(5rem);
+                position: absolute; right: 1rem; top: 1rem; font-size: 3rem; line-height: 4rem;
 
                 &::before {@include icon(type3, "\F0CD");}
             }
@@ -240,7 +241,7 @@ History     : 2023-03-14 ㅈㅁㅈ
     {
         position: absolute; left: 50%; top: 7rem; margin-left: calc(#{$width1} / 2); line-height: 4.25rem; transform: translateX(-100%);
 
-        &.close {@include hover(before); display: none; position: fixed; z-index: 99999999; font-size: 3rem; color: #fff !important; transform: translate(2rem, 0);}
+        &.close {@include hover(before); display: none !important; position: fixed; z-index: 99999999; font-size: 3rem; color: #fff !important; transform: translate(2rem, 0);}
 
         $icons: (open: "\EF3E", close: "\EB99");
 
@@ -313,7 +314,7 @@ History     : 2023-03-14 ㅈㅁㅈ
 
     &.active 
     {
-        .close {display: block;}
+        .close {display: block !important;}
 
         & > ul {@include visible(128rem, auto);}
     }
@@ -393,7 +394,7 @@ History     : 2023-03-14 ㅈㅁㅈ
     {
         display: block; position: absolute; left: 0; top: 2rem; width: 120px; height: 40px; border: 1px solid #ddd; background-color: #fff;
 
-        button {display: block; float: left; overflow: hidden; width: 40px; height: 100%; text-align: center; line-height: 40px;}
+        button {@include square(40px); display: block; float: left;}
         
         .play,
         .pause
@@ -466,7 +467,8 @@ History     : 2023-03-14 ㅈㅁㅈ
     // 위로가기
     .btn_top 
     {
-        position: absolute; right: -8rem; top: 0; width: 5rem; height: 5rem; padding-top: 0.75rem; border-radius: 100%; border: 1px solid #000; background-color: #fff; font-size: 1.4rem; font-weight: 800; color: #000; line-height: 1; text-align: center; transform: translateY(-50%);
+        @include square(5rem);
+        overflow: visible; position: absolute; right: -8rem; top: 0; padding-top: 0.75rem; border-radius: 100%; border: 1px solid #000; background-color: #fff; font-size: 1.4rem; font-weight: 800; color: #000; line-height: 1; text-align: center; transform: translateY(-50%);
 
         &::before {@include icon(type3, "\EA78"); height: auto;}
         &::after {@include bg2(type2); border-radius: 100%; background-color: #000; opacity: 0;}
@@ -524,7 +526,8 @@ History     : 2023-03-14 ㅈㅁㅈ
 
         a 
         {
-            display: inline-block; overflow: hidden; width: 2rem; height: 2rem; font-size: 2rem; text-align: center; line-height: 2rem; vertical-align: middle;
+            @include square(2rem);
+            font-size: 2rem;
 
             &::before {min-height: 200%; transition: $time2;}
 

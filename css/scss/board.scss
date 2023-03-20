@@ -100,7 +100,8 @@ Create date : 2023-01-01
         .btn_del
         {
             @include hover(before);
-            display: inline-block; overflow: hidden; position: relative; top: -0.2rem; width: 2rem; height: 2rem; margin-left: 0.25rem; border-radius: 100%; background-color: #999; text-indent: -0.1rem ; color: #fff; text-align: center; line-height: 2rem; vertical-align: middle;
+            @include square(2rem);
+            position: relative; top: -0.2rem; margin-left: 0.25rem; border-radius: 100%; background-color: #999; text-indent: -0.1rem ; color: #fff;
 
             &::before {@include icon(type3, '\EB98');}
         }
@@ -391,7 +392,7 @@ Create date : 2023-01-01
     {
         position: absolute; left: -4rem; top: 5rem; width: calc(100% + 8rem); color: #999; transform: translateY(-50%);
 
-        button {overflow: hidden; position: relative; z-index: 999; width: 4rem; height: 4rem; font-size: 3rem; line-height: 4rem;}
+        button {@include square(4rem); position: relative; z-index: 999; font-size: 3rem;}
 
         $arrow: 
         (
