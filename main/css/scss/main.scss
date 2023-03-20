@@ -95,7 +95,7 @@ History     : 2023-03-14 ㅈㅁㅈ
 .section1
 {
     @include width($width1, $width2); 
-    margin: 8rem 0;
+    margin: 7rem 0 5rem;
 
     &::after {display: inline-block; width: 100%; height: 0; content: ''; vertical-align: top;}
 }
@@ -278,7 +278,7 @@ History     : 2023-03-14 ㅈㅁㅈ
     }
 
     .more,
-    .control button {overflow: hidden; position: absolute; left: 50%; top: 8rem; width: 5rem; height: 5rem; margin-left: calc($width1 / 2); border-radius: 0.5rem; border: 1px solid #ddd; background-color: #fff; font-size: 2rem; color: #000; text-align: center; line-height: 5rem; transition: $time2;}
+    .control button {overflow: hidden; position: absolute; left: 50%; top: 8rem; width: 5rem; height: 5rem; margin-left: calc($width1 / 2); border-radius: 0.5rem; border: 1px solid #ddd; background-color: #fff; font-size: 2rem; color: #000; text-align: center; line-height: 5rem; transition: background 0.2s;}
 
     $translateXs : (more: -100%, prev: calc(-100% - 17rem), next: calc(-100% - 6rem), play: calc(-100% - 11.5rem), pause: calc(-100% - 11.5rem));
 

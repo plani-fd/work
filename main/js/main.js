@@ -9,39 +9,8 @@ $(function()
     // 비주얼, 팝업, 갤러리 컨트롤러 장착
     $('#visual, .popup, .gallery').find('.list').after('<div class="control"><button class="prev">이전</button><button class="next">다음</button><button class="play">재생</button><button class="pause active">정지</button><div class="pager"></div></div>');
 
-    // 비주얼, 팝업 재생/정지
-    $('#visual, .popup').find('.play, .pause').on('click', function()
-    {
-        $(this).removeClass('active');
-        $(this).siblings('.play, .pause').addClass('active');
+    /*------------------------------------------------- 비주얼 -------------------------------------------------*/
 
-        if ( $(this).hasClass('play') == true )
-        {
-            // 비주얼
-            if ( $(this).parents('#visual').length == 1 )
-            {
-                visual.autoplay.start();
-            }
-            else if ( $(this).parents('.popup').length == 1 )
-            {
-                visual.autoplay.start();
-            }
-        }
-        else
-        {
-            // 비주얼
-            if ( $(this).parents('#visual').length == 1 )
-            {
-                popup.autoplay.stop();
-            }
-            else if ( $(this).parents('.popup').length == 1 )
-            {
-                popup.autoplay.stop();
-            }
-        }
-    });
-
-    // 비주얼
     var visual = new Swiper("#visual", 
     {
         autoplay                : 
@@ -70,6 +39,10 @@ $(function()
         }
     });
 
+    swiperoption('#visual', visual, '');
+
+    /*------------------------------------------------- //비주얼 -------------------------------------------------*/
+
     // 최근게시물
     $('.latest .group').classtoggle
     ({
@@ -80,7 +53,6 @@ $(function()
 
     /*------------------------------------------------- 팝업 -------------------------------------------------*/
 
-    // 스와이퍼
     var popup = new Swiper(".popup", 
     {
         autoplay                : 
@@ -103,32 +75,12 @@ $(function()
             clickable           : true
         }
     });
-    
-    // 스와이퍼 안에 초점 있을 때 자동재생 정지(접근성)
-    $('.popup').find('.list *').on({
-        focusin         : function()
-        {
-            popup.autoplay.stop();
-        },
-        mouseover   : function()
-        {
-            popup.autoplay.stop();
-        },
-        focusout    : function()
-        {
-            popup.autoplay.start();
-        },
-        mouseleave  : function()
-        {
-            popup.autoplay.start();
-        },
-    });
+
+    swiperoption('.popup', popup, '');
 
     /*------------------------------------------------- //팝업 -------------------------------------------------*/
 
     /*------------------------------------------------- 갤러리 -------------------------------------------------*/
-
-    // 스와이퍼
     var gallery = new Swiper(".gallery .group", 
     {
         autoplay                : 
@@ -158,43 +110,8 @@ $(function()
             el                  : ".gallery .scroll",
         },
     });
-    
-    // 스와이퍼 안에 초점 있을 때 자동재생 정지(접근성)
-    $('.gallery').find('.list *').on({
-        focusin         : function()
-        {
-            gallery.autoplay.stop();
-        },
-        mouseover   : function()
-        {
-            gallery.autoplay.stop();
-        },
-        focusout    : function()
-        {
-            gallery.autoplay.start();
-        },
-        mouseleave  : function()
-        {
-            gallery.autoplay.start();
-        },
-    });
 
-    // 갤러리 게시물이 4개 이하일 때
-    $(window).on('load resize', function()
-    {
-        setTimeout(function()
-        {
-            if ( $('.gallery').find('.prev, next').hasClass('swiper-button-lock') == true )
-            {
-                $('.gallery').addClass('type1');
-            }
-            else
-            {
-                $('.gallery').removeClass('type1');
-            }  
-            
-        }, 100);  
-    });
+    swiperoption('.gallery', gallery, '');
 
     /*------------------------------------------------- //갤러리 -------------------------------------------------*/
 });

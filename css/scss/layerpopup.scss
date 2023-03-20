@@ -11,7 +11,7 @@ Create date : 2023-01-01
 
 [id*="layerPopup"]
 {
-    height: auto !important; max-width: calc(100% - 4rem); box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
+    height: auto !important; max-width: calc(100% - 6rem); box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
 
     .popup_cont 
     {
@@ -58,4 +58,9 @@ Create date : 2023-01-01
             }
         }
     }
+}
+
+@media (max-width: 768px)
+{
+    [id*="layerPopup"] {@include position(center); left: 50% !important; top: 50% !important;}
 }

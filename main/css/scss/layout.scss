@@ -255,7 +255,7 @@ History     : 2023-03-14 ㅈㅁㅈ
         @include hidden(0, 0);
         @include position(center);
         @include table;
-        position: fixed; z-index: 99999999; color: #fff; text-align: left;
+        position: fixed !important; z-index: 99999999; color: #fff; text-align: left;
 
         & > li 
         {
@@ -387,13 +387,13 @@ History     : 2023-03-14 ㅈㅁㅈ
 .footbanner
 {
     @include width($width1, $width2);
-    position: relative; padding: 2rem 0 2rem 14.5rem;
+    position: relative; padding: 2rem 0 2rem 145px;
 
     .control 
     {
-        display: block; position: absolute; left: 0; top: 2rem; width: 12rem; height: 4rem; border: 1px solid #ddd; background-color: #fff;
+        display: block; position: absolute; left: 0; top: 2rem; width: 120px; height: 40px; border: 1px solid #ddd; background-color: #fff;
 
-        button {display: block; float: left; overflow: hidden; width: 4rem; height: 100%; text-align: center; line-height: 4rem;}
+        button {display: block; float: left; overflow: hidden; width: 40px; height: 100%; text-align: center; line-height: 40px;}
         
         .play,
         .pause

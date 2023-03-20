@@ -4,5 +4,16 @@ title       : 메인 반응형
 Author      : PLAN I
 Create date : 2023-01-01
 
-History     : 2023-01-16 ㅈㅁㅈ
+History     : 2023-03-17 ㅈㅁㅈ
 -------------------------------------------------*/
+@media (max-width: 1210px) {
+  #visual {
+    height: 50rem;
+  }
+  .gallery .more,
+  .gallery .control button {
+    left: auto;
+    right: -2rem;
+    margin-left: 0;
+  }
+}
