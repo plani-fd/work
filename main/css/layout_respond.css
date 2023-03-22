@@ -185,6 +185,9 @@ History     : 2023-03-17 ㅈㅁㅈ
   #hnb .lang {
     margin-left: 0;
   }
+  .footbanner {
+    padding-left: 130px;
+  }
   #footer .related {
     display: table;
     width: 100%;

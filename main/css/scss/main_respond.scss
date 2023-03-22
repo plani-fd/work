@@ -24,3 +24,67 @@ History     : 2023-03-17 ㅈㅁㅈ
         .control button {left: auto; right: -2rem; margin-left: 0;}
     }
 }
+
+@media (max-width: 768px)
+{
+    // 비주얼
+    #visual
+    {
+        height: 40rem;
+
+        .title {font-size: 4rem; line-height: 1.2;}
+        .list img {min-width: inherit;}
+    }
+
+    // 최근게시물
+    .latest 
+    {
+        float: none; width: 100%;
+
+        .label a {width: 10rem;}
+
+        @for $i from 1 to 4
+        {
+            $j: $i - 1;
+    
+            .group#{$i} .label a {left: calc(10rem * #{$j});}
+        }
+    }
+
+    // 팝업
+    .popup 
+    {
+        float: none; width: 100%; margin-top: 4rem;
+
+        .list li {justify-content: center;}
+    }
+
+    // 갤러리
+    .gallery
+    {
+        padding: 4rem 3rem;
+
+        h2.title {font-size: 3.5rem;}
+
+        .more {@include square(4rem); top: 4rem;}
+
+        .control
+        {
+            display: block; margin-top: 1rem; text-align: center;
+
+            .prev,
+            .next {@include position(top); margin-top: -4rem; border-radius: 100%; border: 0 none; background: rgba(0, 0, 0, 0.5); color: #fff;}
+
+            .prev {left: 1rem;}
+            .next {right: 1rem;}
+
+            .play,
+            .pause
+            {
+                position: static; bottom: 4.5rem; width: 2rem; height: 2rem; margin-right: 2rem; border: 0 none; background: none; line-height: 2rem; transform: translate(0);
+            }
+
+            .pager {display: inline;}
+        }
+    }
+}

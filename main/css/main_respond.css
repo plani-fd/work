@@ -20,3 +20,96 @@ History     : 2023-03-17 ㅈㅁㅈ
     margin-left: 0;
   }
 }
+@media (max-width: 768px) {
+  #visual {
+    height: 40rem;
+  }
+  #visual .title {
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+  #visual .list img {
+    min-width: inherit;
+  }
+  .latest {
+    float: none;
+    width: 100%;
+  }
+  .latest .label a {
+    width: 10rem;
+  }
+  .latest .group1 .label a {
+    left: calc(10rem * 0);
+  }
+  .latest .group2 .label a {
+    left: calc(10rem * 1);
+  }
+  .latest .group3 .label a {
+    left: calc(10rem * 2);
+  }
+  .popup {
+    float: none;
+    width: 100%;
+    margin-top: 4rem;
+  }
+  .popup .list li {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .gallery {
+    padding: 4rem 3rem;
+  }
+  .gallery h2.title {
+    font-size: 3.5rem;
+  }
+  .gallery .more {
+    display: inline-block;
+    overflow: hidden;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    vertical-align: middle;
+    top: 4rem;
+  }
+  .gallery .control {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .gallery .control .prev,
+  .gallery .control .next {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute;
+    margin-top: -4rem;
+    border-radius: 100%;
+    border: 0 none;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  .gallery .control .prev {
+    left: 1rem;
+  }
+  .gallery .control .next {
+    right: 1rem;
+  }
+  .gallery .control .play,
+  .gallery .control .pause {
+    position: static;
+    bottom: 4.5rem;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 2rem;
+    border: 0 none;
+    background: none;
+    line-height: 2rem;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  .gallery .control .pager {
+    display: inline;
+  }
+}

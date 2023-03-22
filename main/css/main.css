@@ -112,8 +112,16 @@ History     : 2023-03-14 ㅈㅁㅈ
   color: #fff;
   text-align: left;
 }
+#visual .list {
+  height: 100%;
+}
+#visual .list li {
+  height: 100%;
+}
 #visual .list img {
-  width: 100%;
+  max-width: initial;
+  min-width: 100%;
+  min-height: 100%;
   -webkit-transition: all 20s;
   transition: all 20s;
 }
@@ -247,6 +255,11 @@ History     : 2023-03-14 ㅈㅁㅈ
   left: calc(12rem * 2);
 }
 .latest .list a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 2rem;
+  line-height: 2rem;
   display: block;
   position: relative;
   margin-top: 0.5rem;
@@ -302,6 +315,7 @@ History     : 2023-03-14 ㅈㅁㅈ
 }
 .latest .list li:first-child a {
   height: 10rem;
+  max-height: initial;
   margin: 0 0 1.5rem;
   padding: 0 0 1rem 10rem;
   border-bottom: 1px solid #ddd;
@@ -312,7 +326,7 @@ History     : 2023-03-14 ㅈㅁㅈ
   top: 0;
   width: 8rem;
   height: 8rem;
-  padding-top: 4rem;
+  padding-top: 4.5rem;
   border: 0.3rem solid #ddd;
   font-size: 1.4rem;
   text-align: center;
@@ -320,7 +334,7 @@ History     : 2023-03-14 ㅈㅁㅈ
 .latest .list li:first-child a .date strong {
   position: absolute;
   left: 0;
-  top: 1rem;
+  top: 1.5rem;
   width: 100%;
   font-size: 2.5rem;
   font-weight: 800;

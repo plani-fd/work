@@ -49,7 +49,10 @@ History     : 2023-03-14 ㅈㅁㅈ
 
     .list
     {
-        img {width: 100%; transition: all 20s;}
+        height: 100%;
+
+        li {height: 100%;}
+        img {max-width: initial; min-width: 100%; min-height: 100%; transition: all 20s;}
         
         [class*="active"] img {transform: scale(1.2);}
     }
@@ -124,6 +127,7 @@ History     : 2023-03-14 ㅈㅁㅈ
     {
         a 
         {
+            @include ellipsis(type1, 2rem);
             display: block; position: relative; margin-top: 0.5rem; padding-right: 10rem;
 
             .desc {font-size: 0;}
@@ -153,13 +157,13 @@ History     : 2023-03-14 ㅈㅁㅈ
 
         li:first-child a
         {
-            height: 10rem; margin: 0 0 1.5rem; padding: 0 0 1rem 10rem; border-bottom: 1px solid #ddd;
+            height: 10rem; max-height: initial; margin: 0 0 1.5rem; padding: 0 0 1rem 10rem; border-bottom: 1px solid #ddd;
 
             .date 
             {
-                position: absolute; left: 0; top: 0; width: 8rem; height: 8rem; padding-top: 4rem; border: 0.3rem solid #ddd; font-size: 1.4rem; text-align: center;
+                position: absolute; left: 0; top: 0; width: 8rem; height: 8rem; padding-top: 4.5rem; border: 0.3rem solid #ddd; font-size: 1.4rem; text-align: center;
 
-                strong {position: absolute; left: 0; top: 1rem; width: 100%; font-size: 2.5rem; font-weight: 800; color: #000;}
+                strong {position: absolute; left: 0; top: 1.5rem; width: 100%; font-size: 2.5rem; font-weight: 800; color: #000;}
             }
 
             .title 
