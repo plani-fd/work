@@ -24,6 +24,7 @@ Create date : 2023-01-01
   vertical-align: middle;
   position: relative;
   top: -0.1rem;
+  font-size: 1.6rem;
   font-weight: 400;
 }
 .topbanner .open::after {
@@ -248,4 +249,13 @@ Create date : 2023-01-01
 .topbanner.active .close {
   visibility: visible;
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .topbanner .open {
+    font-size: 0;
+  }
+  .topbanner.active .open::before {
+    content: "\ef99";
+  }
 }

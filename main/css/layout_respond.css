@@ -107,4 +107,134 @@ History     : 2023-03-17 ㅈㅁㅈ
     width: 100%;
     height: 100%;
   }
+  #footer .mark {
+    display: none;
+  }
+  #footer .btn_top {
+    top: auto;
+    bottom: 2rem;
+    margin-top: 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  #siteinfo {
+    padding-left: 0;
+  }
+  #siteinfo .logo {
+    display: inline-block;
+    position: static;
+    height: 4.5rem;
+    margin-bottom: 1rem;
+  }
+  #siteinfo .logo img {
+    max-width: initial;
+    height: 100%;
+  }
+}
+@media (max-width: 768px) {
+  #hnb {
+    padding-right: 3.5rem;
+    font-size: 1.5rem;
+  }
+  #hnb .hnb1 {
+    position: relative;
+    z-index: 1;
+  }
+  #hnb .hnb1 .label {
+    display: block;
+    padding: 0 0 0 1.5rem;
+  }
+  #hnb .hnb1 .label::after {
+    font-family: "remixicon";
+    content: "\ea4d";
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  #hnb .hnb1 .list {
+    visibility: hidden;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: -1px;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  #hnb .hnb1 .list li {
+    float: none;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  #hnb .hnb1.active .label::after {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  #hnb .hnb1.active .list {
+    visibility: visible;
+    overflow: visible;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  #hnb .lang {
+    margin-left: 0;
+  }
+  #footer .related {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    left: -3rem;
+    top: 10rem;
+    width: calc(100% + 6rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  #footer .related > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  #footer .related .label {
+    padding-left: 3rem;
+    border: 0 none;
+  }
+  #footer .related .group + .group {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  #footer .btn_top {
+    bottom: auto;
+    top: 16rem;
+  }
+  #fnb {
+    height: auto;
+    margin-bottom: 7rem;
+    text-align: center;
+  }
+  #fnb .fnb1 {
+    float: none;
+    position: relative;
+  }
+  #fnb .fnb1::after {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    content: "";
+    left: 50%;
+    width: 10000%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  #fnb .fnb2 {
+    float: none;
+  }
+  #fnb .fnb2 a {
+    position: relative;
+    top: -0.2rem;
+  }
 }

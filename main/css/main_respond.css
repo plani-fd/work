@@ -10,6 +10,9 @@ History     : 2023-03-17 ㅈㅁㅈ
   #visual {
     height: 50rem;
   }
+  .section1 {
+    margin: 5rem 0 3rem;
+  }
   .gallery .more,
   .gallery .control button {
     left: auto;

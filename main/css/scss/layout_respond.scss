@@ -68,4 +68,98 @@ History     : 2023-03-17 ㅈㅁㅈ
 
         &.active > ul {overflow-y: auto; width: 100%; height: 100%;}
     }
+
+    // 하단
+    #footer
+    {
+        .mark {display: none;}
+        .btn_top {top: auto; bottom: 2rem; margin-top: 0; transform: translate(0);}
+    }
+    
+    // 사이트정보
+    #siteinfo
+    {
+        padding-left: 0;
+
+        .logo 
+        {
+            display: inline-block; position: static; height: 4.5rem; margin-bottom: 1rem;
+
+            img {max-width: initial; height: 100%;}
+        }
+    }
+}
+
+@media (max-width: 768px)
+{
+    // 상단메뉴
+    #hnb 
+    {
+        padding-right: 3.5rem; font-size: 1.5rem;
+
+        .hnb1 
+        {
+            position: relative; z-index: 1;
+
+            .label 
+            {
+                display: block; padding: 0 0 0 1.5rem;
+
+                &::after {@include icon(type1, "\EA4D"); transition: $time2;}
+            }
+            
+            .list 
+            {
+                @include hidden(100%, 0);
+                position: absolute; left: 0; top: 100%; margin-top: -1px; background-color: rgba(0, 0, 0, 0.75);
+
+                li {float: none; margin: 0; border-top: 1px solid rgba(255, 255, 255, 0.2);}
+            }
+
+            &.active
+            {
+                .label::after {transform: rotate(180deg);}
+                .list {@include visible(100%, auto); transition: $time2;}
+            }
+        }
+
+        .lang {margin-left: 0;}
+    }
+
+    // 하단
+    #footer
+    {
+        // 관련사이트
+        .related
+        {
+            @include table;
+            left: -3rem; top: 10rem; width: calc(100% + 6rem); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            .label {padding-left: 3rem; border: 0 none;}
+            .group + .group {border-left: 1px solid rgba(255, 255, 255, 0.1);}
+        }
+
+        // 위로가기
+        .btn_top {bottom: auto; top: 16rem;}
+    }
+
+    // 하단메뉴
+    #fnb 
+    {
+        height: auto; margin-bottom: 7rem; text-align: center;
+
+        .fnb1 
+        {
+            float: none; position: relative;
+
+            &::after {@include bg2(type1); border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
+        }
+        
+        .fnb2 
+        {
+            float: none;
+
+            a {position: relative; top: -0.2rem;}
+        }
+    }
 }

@@ -15,7 +15,7 @@ Create date : 2023-01-01
     {
         position: absolute; right: 0; top: 100%; z-index: 999; padding: 0 1rem; font-weight: 700; color: #fff; line-height: 3.9rem;
 
-        &::before {@include icon(type1, "\EF9A"); position: relative; top: -0.1rem; font-weight: 400;}
+        &::before {@include icon(type1, "\EF9A"); position: relative; top: -0.1rem; font-size: $size; font-weight: 400;}
         &::after {@include icon(type1, "\EA78"); position: relative; top: -0.15rem; transition: $time2 0.2s;}
 
         span.count {margin-left: 0.5rem; font-weight: 400;}
@@ -97,5 +97,15 @@ Create date : 2023-01-01
         .open::after {transform: rotate(180deg);}
         .group {visibility: visible; height: 15rem;}
         .close {visibility: visible; opacity: 1;}
+    }
+}
+
+@media (max-width: 768px)
+{
+    .topbanner
+    {
+        .open {font-size: 0;}
+
+        &.active .open::before {content: "\EF99";}
     }
 }
