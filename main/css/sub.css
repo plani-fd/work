@@ -14,10 +14,30 @@ Create date : 2023-01-01
 
 History     : 2023-03-20 ㅈㅁㅈ
 -------------------------------------------------*/
+#hnb {
+  padding-right: 0;
+}
+
+.main_wrap {
+  width: 128rem;
+  max-width: calc(100% - 6rem);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 10rem;
+}
+.main_wrap::after {
+  display: block;
+  clear: both;
+  width: 100%;
+  height: 0;
+  content: "";
+}
+
 #visual {
-  overflow: hidden;
   position: relative;
+  z-index: 0;
   height: 25rem;
+  margin-bottom: 10rem;
 }
 #visual .title {
   top: 50%;
@@ -27,6 +47,16 @@ History     : 2023-03-20 ㅈㅁㅈ
   position: absolute;
   font-size: 4rem;
   color: #fff;
+}
+#visual .img {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
 }
 #visual .img img {
   min-width: 100%;
@@ -70,4 +100,511 @@ History     : 2023-03-20 ㅈㅁㅈ
   width: 100%;
   height: 100%;
   line-height: inherit;
+}
+
+#snb {
+  float: left;
+  width: 20rem;
+}
+#snb .title {
+  height: 10rem;
+  border: 0.3rem solid #000;
+  font-size: 2rem;
+  color: #000;
+  text-align: center;
+  line-height: 10rem;
+}
+#snb .list > ul > li > a {
+  display: block;
+  position: relative;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#snb .list > ul > li > a::after {
+  font-family: "remixicon";
+  content: "\ea6e";
+  position: absolute;
+  right: 1rem;
+}
+#snb .list > ul > li ul {
+  visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  padding: 0 2rem;
+  background-color: #f8f8f8;
+  font-size: 1.5rem;
+  color: #888;
+}
+#snb .list > ul > li ul a {
+  position: relative;
+  padding-left: 1.25rem;
+  text-align: left;
+}
+#snb .list > ul > li ul a::before {
+  position: absolute;
+  left: 0;
+  top: auto;
+  content: "";
+}
+#snb .list > ul > li ul a::before {
+  content: "-";
+}
+#snb .list > ul > li ul a::after {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 0;
+  width: 0;
+  max-width: calc(100% - 1.25rem);
+  height: 1px;
+  background-color: #888;
+  content: "";
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#snb .list > ul > li ul a:hover::after, #snb .list > ul > li ul a:focus::after {
+  width: 100%;
+}
+#snb .list > ul > li.type1 > a::after {
+  content: "\ea13";
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#snb .list > ul > li.type1 > a:hover::after, #snb .list > ul > li.type1 > a:focus::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#snb .list > ul > li.active > a {
+  font-weight: 600;
+  color: #000;
+}
+#snb .list > ul > li.active ul {
+  visibility: visible;
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #ddd;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#contents {
+  float: right;
+  width: calc(100% - 28rem);
+}
+
+#contents_title {
+  font-size: 2.5rem;
+  color: #000;
+}
+
+#contents_body {
+  margin-bottom: 10rem;
+}
+
+.location > .list {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  width: 128rem;
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  top: 39rem;
+  height: 5rem;
+  padding-left: 5rem;
+  color: #fff;
+}
+.location > .list::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5rem;
+  height: 5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: "remixicon";
+  content: "\ee1d";
+  text-align: center;
+  line-height: 5rem;
+}
+.location > .list::after {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  content: "";
+  left: 50%;
+  width: 10000%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #000;
+}
+.location > .list > li {
+  float: left;
+  position: relative;
+  width: 20rem;
+  max-width: 20%;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.location > .list > li .label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 5rem;
+  line-height: 5rem;
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0 4rem 0 2rem;
+  text-align: left;
+}
+.location > .list > li .label::after {
+  font-family: "remixicon";
+  content: "\ea4e";
+  position: absolute;
+  right: 2rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.location > .list > li > ul {
+  visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  border: 1px solid #000;
+  border-top: 0 none;
+  background-color: #fff;
+  color: #000;
+  line-height: 2.5rem;
+}
+.location > .list > li > ul a {
+  display: block;
+  padding: 0 2rem;
+}
+.location > .list > li.active .label::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.location > .list > li.active > ul {
+  visibility: visible;
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  padding: 1rem 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.location .path li {
+  display: inline;
+}
+.location .path li + li::before {
+  font-family: "remixicon";
+  content: "\ea6e";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.contents_util {
+  height: 8rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #ddd;
+}
+.contents_util::after {
+  display: block;
+  clear: both;
+  width: 100%;
+  height: 0;
+  content: "";
+}
+.contents_util .util {
+  float: right;
+  height: 0;
+  margin-top: -6rem;
+  text-align: right;
+}
+.contents_util .util .btn {
+  display: inline-block;
+  overflow: hidden;
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  line-height: 3.5rem;
+  vertical-align: middle;
+  min-width: 0;
+  border-radius: 100%;
+  border: 1px solid #ddd;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #000;
+  vertical-align: top;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.contents_util .util .btn.up::before {
+  font-family: "remixicon";
+  content: "\ea13";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.contents_util .util .btn.down::before {
+  font-family: "remixicon";
+  content: "\f1af";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.contents_util .util .btn.open::before {
+  font-family: "remixicon";
+  content: "\f0fe";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.contents_util .util .btn.print::before {
+  font-family: "remixicon";
+  content: "\f029";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.contents_util .util .btn:hover, .contents_util .util .btn:focus {
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+}
+.contents_util .share {
+  display: inline;
+  position: relative;
+  z-index: 1;
+}
+.contents_util .share .title {
+  display: inline;
+}
+.contents_util .share .item {
+  visibility: hidden;
+  overflow: hidden;
+  width: 5rem;
+  height: 0;
+  opacity: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  top: 100%;
+  margin: 0 0 0 -0.25rem;
+  border-radius: 5rem;
+  background-color: #efefef;
+  text-align: center;
+}
+.contents_util .share .item::before {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  top: -0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #efefef;
+  content: "";
+  -webkit-transform: translateX(-50%) scaleX(0.5) rotate(45deg);
+          transform: translateX(-50%) scaleX(0.5) rotate(45deg);
+}
+.contents_util .share .close {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  line-height: 3rem;
+  vertical-align: middle;
+  margin-top: -1.5rem;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.contents_util .share .close::before {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.contents_util .share .close:hover::before, .contents_util .share .close:focus::before {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.contents_util .share .close::before {
+  font-family: "remixicon";
+  content: "\eb99";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.contents_util .share .list {
+  padding: 1.5rem 0;
+}
+.contents_util .share .list a {
+  display: inline-block;
+  overflow: hidden;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: middle;
+  margin-bottom: 1rem;
+}
+.contents_util .share .list a::before {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.contents_util .share .list a:hover::before, .contents_util .share .list a:focus::before {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+.contents_util .share .list .facebook a::before {
+  font-family: "remixicon";
+  content: "\ecbc  \ecbc";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.contents_util .share .list .twitter a::before {
+  font-family: "remixicon";
+  content: "\f23a  \f23a";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.contents_util .share .list .kakaostory a::before {
+  font-family: "remixicon";
+  content: "\f13c  \f13c";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.contents_util .share .list .kakaotalk a::before {
+  font-family: "remixicon";
+  content: "\ee6c  \ee6c";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+.contents_util .share .list .band a::before {
+  display: block;
+  font-weight: 800;
+  content: "B";
+}
+.contents_util .share.active .label {
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+}
+.contents_util .share.active .item {
+  visibility: visible;
+  overflow: visible;
+  width: 5rem;
+  height: auto;
+  opacity: 1;
+  margin-top: 1.5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.depth4_tab ul {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  height: 5rem;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+.depth4_tab ul > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.depth4_tab ul a {
+  display: block;
+  padding: 0.5rem 1rem;
+  line-height: 1.2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.depth4_tab ul a::before {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  background-color: #fff;
+  content: "";
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.depth4_tab ul a:hover, .depth4_tab ul a:focus {
+  color: #000;
+}
+.depth4_tab ul a:hover::before, .depth4_tab ul a:focus::before {
+  width: 1000%;
+  height: 1000%;
+}
+.depth4_tab ul li {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+.depth4_tab ul li + li {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+.depth4_tab ul li.active {
+  background-color: #fff;
+}
+.depth4_tab ul li.active a {
+  color: #000;
+}
+
+.depth5_tab ul {
+  overflow: hidden;
+  overflow-x: auto;
+  border-bottom: 1px solid #000;
+  line-height: 5rem;
+  white-space: nowrap;
+}
+.depth5_tab ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+.depth5_tab ul .active a {
+  font-weight: 800;
+  color: #000;
 }

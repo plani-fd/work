@@ -40,14 +40,14 @@ Create date : 2023-01-01
         }
     }
 
-    #satisfy {padding: 2.5rem 3rem; background-color: #f8f8f8;}
+    #satisfy {padding: 2.5rem 3rem; background-color: #f8f8f8; word-break: keep-all;}
 }
 
 // 만족도 조사 중 공공누리
 .kogl 
 {
     @include table;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; word-break: keep-all;
 
     .img {width: 25rem; padding: 1rem; border-right: 1px solid #ddd; text-align: center;}
     .txt {padding: 1rem 2rem;}
@@ -122,5 +122,48 @@ Create date : 2023-01-01
                 &::after {width: 100%;}
             }
         }
+    }
+}
+
+@media (max-width: 660px)
+{
+    // 만족도 조사
+    .contents_info
+    {
+        .group
+        {
+            .title .txt {position: static;}
+            .qr {display: none;}
+        }
+
+        #satisfy {padding: 2rem;}
+        .form_radio {display: block;}
+    }
+
+    // 만족도 조사 중 공공누리
+    .kogl
+    {
+        display: block; padding: 1rem 0 0; text-align: center;
+
+        .img {display: block; width: 100%; border: 0 none;}
+        .txt {display: block; padding-top: 0;}
+    }
+
+    // 만족도 조사 중 콘텐츠 정보책임자
+    .duty
+    {
+        position: relative; padding: 0;
+
+        .title {position: absolute; left: 1rem; top: 1.5rem;}
+        .list {display: block; padding: 1.5rem 2rem 1.5rem 5rem; line-height: 1.5;}
+
+        li 
+        {
+            display: block;
+
+            &::after {display: none;}
+        }
+
+        .date {position: static; margin: 0 2rem; padding: 1rem 0; border-top: 1px dashed #ddd; text-align: right;}
     }
 }

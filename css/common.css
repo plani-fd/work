@@ -55,6 +55,7 @@ Create date : 2023-01-01
 .contents_info #satisfy {
   padding: 2.5rem 3rem;
   background-color: #f8f8f8;
+  word-break: keep-all;
 }
 
 .kogl {
@@ -62,6 +63,7 @@ Create date : 2023-01-01
   width: 100%;
   table-layout: fixed;
   border: 1px solid #ddd;
+  word-break: keep-all;
 }
 .kogl > * {
   display: table-cell;
@@ -225,4 +227,60 @@ Create date : 2023-01-01
 }
 .sitemap .depth3 a:hover::after, .sitemap .depth3 a:focus::after {
   width: 100%;
+}
+
+@media (max-width: 660px) {
+  .contents_info .group .title .txt {
+    position: static;
+  }
+  .contents_info .group .qr {
+    display: none;
+  }
+  .contents_info #satisfy {
+    padding: 2rem;
+  }
+  .contents_info .form_radio {
+    display: block;
+  }
+  .kogl {
+    display: block;
+    padding: 1rem 0 0;
+    text-align: center;
+  }
+  .kogl .img {
+    display: block;
+    width: 100%;
+    border: 0 none;
+  }
+  .kogl .txt {
+    display: block;
+    padding-top: 0;
+  }
+  .duty {
+    position: relative;
+    padding: 0;
+  }
+  .duty .title {
+    position: absolute;
+    left: 1rem;
+    top: 1.5rem;
+  }
+  .duty .list {
+    display: block;
+    padding: 1.5rem 2rem 1.5rem 5rem;
+    line-height: 1.5;
+  }
+  .duty li {
+    display: block;
+  }
+  .duty li::after {
+    display: none;
+  }
+  .duty .date {
+    position: static;
+    margin: 0 2rem;
+    padding: 1rem 0;
+    border-top: 1px dashed #ddd;
+    text-align: right;
+  }
 }

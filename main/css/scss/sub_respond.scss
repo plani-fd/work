@@ -6,5 +6,79 @@ title       : 서브 반응형
 Author      : PLAN I
 Create date : 2023-01-01
 
-History     : 2023-01-16 ㅈㅁㅈ
+History     : 2023-03-23 ㅈㅁㅈ
 -------------------------------------------------*/
+
+@media (max-width: 1280px)
+{
+    // 비주얼
+    #visual img {height: 100%;}
+
+    // 서브메뉴
+    #snb {display: none;}
+
+    // 콘텐츠
+    #contents {float: none; width: 100%;}
+}
+
+@media (max-width: 768px)
+{
+    // 현재위치
+    .location > .list 
+    {
+        padding-left: 0;
+
+        &::before {display: none;}
+
+        & > li .label 
+        {
+            padding: 0 3rem 0 1rem;
+
+            &::after {right: 1rem;}
+        }
+    }
+
+    // 탭메뉴1
+    .depth4_tab
+    {
+        ul
+        {
+            display: block; height: auto; border: 1px solid #000;
+
+            li 
+            {
+                @include hidden(100%, 0);
+                display: block; border: 0 none;
+
+                & + li a {border-top: 1px solid #fff;}
+
+                &.active 
+                {
+                    @include visible(100%, auto); 
+                    overflow: hidden; background-color: #000;
+
+                    a {color: #fff;}
+                }
+            }
+            
+            a 
+            {
+                padding: 1.5rem 1rem; color: inherit;
+
+                &::before {display: none;}
+            }
+        }
+
+        &.active ul
+        {
+            li {@include visible(100%, auto); overflow: hidden;}
+
+            .active
+            {
+                background-color: #fff;
+
+                a {color: #000;}
+            }
+        }
+    }
+}

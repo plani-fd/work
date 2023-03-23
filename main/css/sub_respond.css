@@ -4,5 +4,81 @@ title       : 서브 반응형
 Author      : PLAN I
 Create date : 2023-01-01
 
-History     : 2023-01-16 ㅈㅁㅈ
+History     : 2023-03-23 ㅈㅁㅈ
 -------------------------------------------------*/
+@media (max-width: 1280px) {
+  #visual img {
+    height: 100%;
+  }
+  #snb {
+    display: none;
+  }
+  #contents {
+    float: none;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .location > .list {
+    padding-left: 0;
+  }
+  .location > .list::before {
+    display: none;
+  }
+  .location > .list > li .label {
+    padding: 0 3rem 0 1rem;
+  }
+  .location > .list > li .label::after {
+    right: 1rem;
+  }
+  .depth4_tab ul {
+    display: block;
+    height: auto;
+    border: 1px solid #000;
+  }
+  .depth4_tab ul li {
+    visibility: hidden;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    display: block;
+    border: 0 none;
+  }
+  .depth4_tab ul li + li a {
+    border-top: 1px solid #fff;
+  }
+  .depth4_tab ul li.active {
+    visibility: visible;
+    overflow: visible;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    overflow: hidden;
+    background-color: #000;
+  }
+  .depth4_tab ul li.active a {
+    color: #fff;
+  }
+  .depth4_tab ul a {
+    padding: 1.5rem 1rem;
+    color: inherit;
+  }
+  .depth4_tab ul a::before {
+    display: none;
+  }
+  .depth4_tab.active ul li {
+    visibility: visible;
+    overflow: visible;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    overflow: hidden;
+  }
+  .depth4_tab.active ul .active {
+    background-color: #fff;
+  }
+  .depth4_tab.active ul .active a {
+    color: #000;
+  }
+}

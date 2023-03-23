@@ -12,12 +12,33 @@ Create date : 2023-01-01
 History     : 2023-03-20 ㅈㅁㅈ
 -------------------------------------------------*/
 
+// 상단 메뉴
+#hnb {padding-right: 0;}
+
+// 서브 레이아웃
+.main_wrap 
+{
+    @include width($width1, $width2);
+    margin-bottom: 10rem;
+
+    &::after {display: block; clear: both; width: 100%; height: 0; content: '';}
+}
+
+// 비주얼
 #visual 
 {
-    overflow: hidden; position: relative; height: 25rem;
+    @include bg1;
+    height: 25rem; margin-bottom: 10rem;
 
     .title {@include position(center); font-size: 4rem; color: #fff;}
-    .img img {min-width: 100%; max-width: initial; min-height: 100%;}
+    
+    .img
+    {
+        @include position(left); 
+        overflow: hidden; z-index: -1; width: 100vw; height: 100%;
+
+        img {min-width: 100%; max-width: initial; min-height: 100%;}
+    }
 
     .control a
     {
@@ -41,4 +62,254 @@ History     : 2023-03-20 ㅈㅁㅈ
             }
         }
     }
+}
+
+// 서브메뉴
+#snb 
+{
+    float: left; width: 20rem;
+
+    .title {height: 10rem; border: 0.3rem solid #000; font-size: 2rem; color: #000; text-align: center; line-height: 10rem;}
+    
+    .list > ul > li
+    {
+        & > a 
+        {
+            display: block; position: relative; padding: 1.5rem 1rem; border-bottom: 1px solid #ddd; transition: $time2;
+    
+            &::after {@include icon(type2, "\EA6E"); right: 1rem;}
+        }
+
+        ul 
+        {
+            @include hidden(100%, 0); 
+            padding: 0 2rem; background-color: #f8f8f8; font-size: 1.5rem; color: #888;
+
+            a 
+            {
+                @include bul(1.25rem);
+
+                &::before {content: '-';}
+                &::after {position: absolute; left: 1.25rem; bottom: 0; width: 0; max-width: calc(100% - 1.25rem); height: 1px; background-color: #888; content: ''; transition: $time2;}
+
+                &:hover,
+                &:focus
+                {
+                    &::after {width: 100%;}
+                }
+            }
+        }
+
+        &.type1 > a
+        {
+            &::after {content: "\EA13"; transition: $time2;}
+
+            &:hover,
+            &:focus
+            {
+                &::after {transform: rotate(180deg);}
+            }
+        }
+
+        &.active
+        {
+            & > a {font-weight: 600; color: #000;}
+
+            ul {@include visible(100%, auto); padding: 1.5rem 2rem; border-bottom: 1px solid #ddd; transition: $time2;}
+        }
+    }
+}
+
+// 콘텐츠
+#contents {float: right; width: calc(100% - 28rem);}
+#contents_title {font-size: 2.5rem; color: #000;}
+#contents_body {margin-bottom: 10rem;}
+
+// 현재위치
+.location
+{
+    // 메뉴
+    & > .list 
+    {
+        @include position(left); 
+        @include width($width1, 100%);
+        top: 39rem; height: 5rem; padding-left: 5rem; color: #fff;
+    
+        &::before {position: absolute; left: 0; top: 0; width: 5rem; height: 5rem; border-right: 1px solid rgba(255, 255, 255, 0.2); border-left: 1px solid rgba(255, 255, 255, 0.2); font-family: $icon; content: "\EE1D"; text-align: center; line-height: 5rem;}
+        &::after {@include bg2(type1); background-color: #000;}
+    
+        & > li 
+        {
+            float: left; position: relative; width: 20rem; max-width: 20%; border-right: 1px solid rgba(255, 255, 255, 0.2);
+    
+            .label 
+            {
+                @include ellipsis(type1, 5rem);
+                display: block; position: relative; width: 100%; padding: 0 4rem 0 2rem; text-align: left;
+    
+                &::after {@include icon(type2, "\EA4E"); right: 2rem; transition: $time2;}
+            }
+    
+            & > ul 
+            {
+                @include hidden(100%, 0);
+                position: absolute; left: 0; top: 100%; border: 1px solid #000; border-top: 0 none; background-color: #fff; color: #000; line-height: 2.5rem;
+    
+                a {display: block; padding: 0 2rem;}
+            }
+    
+            &.active
+            {
+                .label::after {transform: rotate(180deg);}
+    
+                & > ul {@include visible(100%, auto); padding: 1rem 0; transition: $time2;}
+            }
+        }
+    }
+
+    // 위치 표시
+    .path li
+    {
+        display: inline;
+
+        & + li::before {@include icon(type1, "\EA6E"); margin-right: 0.5rem;}
+    }
+}
+
+// 콘텐츠 유틸
+.contents_util 
+{
+    height: 8rem; margin-bottom: 4rem; border-bottom: 1px solid #ddd;
+
+    &::after {display: block; clear: both; width: 100%; height: 0; content: '';}
+
+    // 유틸
+    .util 
+    {
+        float: right; height: 0; margin-top: -6rem; text-align: right;
+
+        .btn 
+        {
+            @include square(3.5rem); 
+            min-width: 0; border-radius: 100%; border: 1px solid #ddd; font-size: $size; font-weight: 400; color: #000; vertical-align: top; transition: $time2;
+
+            $icons: (up: "\EA13", down: "\F1AF", open: "\F0FE", print: "\F029");
+
+            @each$keys, $icon in $icons
+            {
+                &.#{$keys}::before {@include icon(type3, $icon);}
+            }
+
+            &:hover,
+            &:focus {border-color: #000; background-color: #000; color: #fff;}
+        }
+    }
+
+    // 공유하기
+    .share
+    {
+        display: inline; position: relative; z-index: 1;
+
+        .title {display: inline;}
+        
+        .item 
+        {
+            @include hidden(5rem, 0);
+            @include position(left); 
+            top: 100%; margin: 0 0 0 -0.25rem; border-radius: 5rem; background-color: #efefef; text-align: center;
+
+            &::before {@include position(left); top: -0.5rem; width: 1rem; height: 1rem; background-color: #efefef; content: ''; transform: translateX(-50%) scaleX(0.5) rotate(45deg);}
+        }
+
+        .close 
+        {
+            @include position(left); 
+            @include square(3rem); 
+            @include hover(before);
+            margin-top: -1.5rem; border-radius: 100%; background-color: rgba(0, 0, 0, 0.5); color: #fff;
+
+            &::before {@include icon(type3, "\EB99");}
+        }
+
+        .list
+        {
+            padding: 1.5rem 0;
+
+            a 
+            {
+                @include square(2rem);
+                margin-bottom: 1rem;
+
+                &::before {transition: $time2;}
+
+                &:hover,
+                &:focus
+                {
+                    &::before {transform: translateY(-100%);}
+                }
+            }
+
+            $icons: (facebook: "\ECBC  \ECBC", twitter: "\F23A  \F23A", kakaostory: "\F13C  \F13C", kakaotalk: "\EE6C  \EE6C");
+
+            @each$keys, $icon in $icons
+            {
+                .#{$keys} a::before {@include icon(type3, $icon);}
+            }
+
+            .band a::before {display: block; font-weight: 800; content: 'B';}
+        }
+
+        &.active
+        {
+            .label {border-color: #000; background-color: #000; color: #fff;}
+            .item {@include visible(5rem, auto); margin-top: 1.5rem; transition: $time2;}
+        }
+    }
+}
+
+// 탭메뉴1
+.depth4_tab ul
+{
+    @include table;
+    height: 5rem; background-color: #000; color: #fff; text-align: center;
+
+    a 
+    {
+        display: block; padding: 0.5rem 1rem; line-height: 1.2; transition: $time2;
+
+        &::before {@include position(center); z-index: -1; width: 0; height: 0; background-color: #fff; content: ''; transition: $time2;}
+
+        &:hover,
+        &:focus 
+        {
+            color: #000;
+
+            &::before {width: 1000%; height: 1000%;}
+        }
+    }
+
+    li
+    {
+        @include bg1; 
+        overflow: hidden; border: 1px solid #000;
+        
+        & + li {border-left: 1px solid rgba(255, 255, 255, 0.2);}
+
+        &.active 
+        {
+            background-color: #fff;
+
+            a {color: #000;}
+        }
+    }
+}
+
+// 탭메뉴2
+.depth5_tab ul
+{
+    overflow: hidden; overflow-x: auto; border-bottom: 1px solid #000; line-height: 5rem; white-space: nowrap;
+
+    li {display: inline; margin: 0 1rem;}
+
+    .active a {font-weight: 800; color: #000;}
 }
