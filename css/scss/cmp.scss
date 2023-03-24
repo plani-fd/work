@@ -293,6 +293,7 @@ $xeicons: (download: '\EC54', search: '\F0D1', sitemap: '\EF59', external-link: 
 }
 
 // 페이징
+* + .board_pager { margin-top: 4rem; }
 .board_pager
 {
     text-align: center;
