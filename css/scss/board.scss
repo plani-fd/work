@@ -499,7 +499,7 @@ Create date : 2023-01-01
 // 이전글 다음글
 .prevnext
 {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; margin-top:4rem;
 
     li {overflow: hidden; position: relative; padding: 1.5rem; border-top: 1px solid #ddd;}
     span {float: left; width: 15rem; color: #000; text-align: center;}
@@ -516,6 +516,7 @@ Create date : 2023-01-01
 // 코멘트
 .comment
 {
+    &.box{margin-top: 4rem;}
     .form
     {
         position: relative; border: 1px solid #ddd; background-color: #f8f8f8; text-align: right;

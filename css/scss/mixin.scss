@@ -70,6 +70,16 @@ $time2  : all 0.2s;             // transition 기본
     } 
 }
 
+@mixin ellip($lines: 1, $line-height) {
+    line-height: $line-height;
+
+    @if ($lines==1) {
+        overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-height: $line-height;
+    } @else {
+        display: -webkit-box; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: $lines; -webkit-box-orient: vertical; max-height: calc($line-height * $lines);
+    }
+}
+
 // 배경
 @mixin bg1 {position: relative; z-index: 0;}
 
