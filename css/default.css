@@ -17,6 +17,8 @@ Create date : 2023-01-01
 html {
   overflow: hidden;
   overflow-y: auto;
+  margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 10px;
@@ -24,6 +26,9 @@ html {
 
 body {
   overflow: hidden;
+  position: relative;
+  left: 0;
+  top: 0;
   margin: 0;
   padding: 0;
   line-height: 1.5625;

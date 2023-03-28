@@ -26,10 +26,16 @@ History     : 2023-03-23 ㅈㅁㅈ
     display: none;
   }
   .location > .list > li .label {
-    padding: 0 3rem 0 1rem;
+    padding: 0 1rem;
   }
   .location > .list > li .label::after {
-    right: 1rem;
+    display: none;
+  }
+  .location > .list > li > ul a {
+    padding: 0 1rem;
+  }
+  .location > .list > li.active > ul {
+    padding: 0.5rem 0;
   }
   .depth4_tab ul {
     display: block;

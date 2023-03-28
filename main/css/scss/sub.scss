@@ -75,7 +75,7 @@ History     : 2023-03-20 ㅈㅁㅈ
     {
         & > a 
         {
-            display: block; position: relative; padding: 1.5rem 1rem; border-bottom: 1px solid #ddd; transition: $time2;
+            display: block; position: relative; padding: 1.5rem 1rem; border-bottom: 1px solid #ddd; transition: font 0.2s;
     
             &::after {@include icon(type2, "\EA6E"); right: 1rem;}
         }
@@ -133,7 +133,7 @@ History     : 2023-03-20 ㅈㅁㅈ
     {
         @include position(left); 
         @include width($width1, 100%);
-        top: 39rem; height: 5rem; padding-left: 5rem; color: #fff;
+        top: 39rem; z-index: 2; height: 5rem; padding-left: 5rem; color: #fff;
     
         &::before {position: absolute; left: 0; top: 0; width: 5rem; height: 5rem; border-right: 1px solid rgba(255, 255, 255, 0.2); border-left: 1px solid rgba(255, 255, 255, 0.2); font-family: $icon; content: "\EE1D"; text-align: center; line-height: 5rem;}
         &::after {@include bg2(type1); background-color: #000;}
@@ -144,8 +144,8 @@ History     : 2023-03-20 ㅈㅁㅈ
     
             .label 
             {
-                @include ellipsis(type1, 5rem);
-                display: block; position: relative; width: 100%; padding: 0 4rem 0 2rem; text-align: left;
+                @include ellipsis(type1, calc(5rem - 1px));
+                display: block; position: relative; width: 100%; padding: 0 4rem 0 2rem; border: 1px solid #000; border-bottom: 0 none; text-align: left; transition: $time2;
     
                 &::after {@include icon(type2, "\EA4E"); right: 2rem; transition: $time2;}
             }
@@ -155,14 +155,20 @@ History     : 2023-03-20 ㅈㅁㅈ
                 @include hidden(100%, 0);
                 position: absolute; left: 0; top: 100%; border: 1px solid #000; border-top: 0 none; background-color: #fff; color: #000; line-height: 2.5rem;
     
-                a {display: block; padding: 0 2rem;}
+                a {display: block; padding: 0 2rem; white-space: nowrap;}
+                li + li {margin-top: 0.5rem;}
             }
     
             &.active
             {
-                .label::after {transform: rotate(180deg);}
+                .label
+                {
+                    background-color: #fff; font-weight: 800; color: #000;
+
+                    &::after {transform: rotate(180deg);}
+                }
     
-                & > ul {@include visible(100%, auto); padding: 1rem 0; transition: $time2;}
+                & > ul {@include visible(auto, auto); min-width: 100%; padding: 1rem 0; transition: $time2;}
             }
         }
     }

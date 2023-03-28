@@ -119,8 +119,8 @@ History     : 2023-03-20 ㅈㅁㅈ
   position: relative;
   padding: 1.5rem 1rem;
   border-bottom: 1px solid #ddd;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: font 0.2s;
+  transition: font 0.2s;
 }
 #snb .list > ul > li > a::after {
   font-family: "remixicon";
@@ -217,6 +217,7 @@ History     : 2023-03-20 ㅈㅁㅈ
   margin-left: auto !important;
   margin-right: auto !important;
   top: 39rem;
+  z-index: 2;
   height: 5rem;
   padding-left: 5rem;
   color: #fff;
@@ -257,13 +258,17 @@ History     : 2023-03-20 ㅈㅁㅈ
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  min-height: 5rem;
-  line-height: 5rem;
+  min-height: calc(5rem - 1px);
+  line-height: calc(5rem - 1px);
   display: block;
   position: relative;
   width: 100%;
   padding: 0 4rem 0 2rem;
+  border: 1px solid #000;
+  border-bottom: 0 none;
   text-align: left;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 .location > .list > li .label::after {
   font-family: "remixicon";
@@ -291,6 +296,15 @@ History     : 2023-03-20 ㅈㅁㅈ
 .location > .list > li > ul a {
   display: block;
   padding: 0 2rem;
+  white-space: nowrap;
+}
+.location > .list > li > ul li + li {
+  margin-top: 0.5rem;
+}
+.location > .list > li.active .label {
+  background-color: #fff;
+  font-weight: 800;
+  color: #000;
 }
 .location > .list > li.active .label::after {
   -webkit-transform: rotate(180deg);
@@ -299,9 +313,10 @@ History     : 2023-03-20 ㅈㅁㅈ
 .location > .list > li.active > ul {
   visibility: visible;
   overflow: visible;
-  width: 100%;
+  width: auto;
   height: auto;
   opacity: 1;
+  min-width: 100%;
   padding: 1rem 0;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;

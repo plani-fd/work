@@ -227,12 +227,12 @@ History     : 2023-03-14 ㅈㅁㅈ
 }
 #hnb .lang {
   position: relative;
-  height: 4rem;
   margin-left: 1.5rem;
   padding: 0 1rem;
   border: 1px solid #000;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  line-height: 3.8rem;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 #hnb .lang a {
   visibility: hidden;
@@ -247,9 +247,8 @@ History     : 2023-03-14 ㅈㅁㅈ
   visibility: visible;
   overflow: visible;
   width: 100%;
-  height: 4rem;
+  height: 3.8rem;
   opacity: 1;
-  line-height: 3.8rem !important;
 }
 #hnb .lang .active::before {
   font-family: "remixicon";
@@ -258,7 +257,6 @@ History     : 2023-03-14 ㅈㅁㅈ
   left: 1rem;
 }
 #hnb .lang.active {
-  height: 8rem;
   background-color: #fff;
   color: #000;
 }
@@ -266,7 +264,7 @@ History     : 2023-03-14 ㅈㅁㅈ
   visibility: visible;
   overflow: visible;
   width: 100%;
-  height: 4rem;
+  height: 3.8rem;
   opacity: 1;
   line-height: 3.5rem;
 }

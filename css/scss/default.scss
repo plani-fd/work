@@ -15,8 +15,8 @@ Create date : 2023-01-01
 *::before,
 *::after {box-sizing: inherit;}
 
-html {overflow: hidden; overflow-y: auto; box-sizing: border-box; font-size: 10px;}
-body {overflow: hidden; margin: 0; padding: 0; @include font($font, $size, $color, 2.5rem);}
+html {overflow: hidden; overflow-y: auto; margin: 0; padding: 0; box-sizing: border-box; font-size: 10px;}
+body {overflow: hidden; position: relative; left: 0; top: 0; margin: 0; padding: 0; @include font($font, $size, $color, 2.5rem);}
 
 header, footer, main, section, article, nav, aside {display: block;}
 ul, ol, li, dl, dt, dd {margin: 0; padding: 0; list-style: none;}
