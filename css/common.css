@@ -229,6 +229,26 @@ Create date : 2023-01-01
   width: 100%;
 }
 
+@media (max-width: 980px) {
+  .sitemap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(100% + 2rem);
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .sitemap > * {
+    width: calc(50% - 2rem);
+    margin-right: 2rem;
+  }
+  .sitemap > *:nth-child(n+2) {
+    margin-top: initial;
+  }
+  .sitemap > *:nth-child(n+3) {
+    margin-top: 2rem;
+  }
+}
 @media (max-width: 660px) {
   .contents_info .group .title .txt {
     position: static;
@@ -282,5 +302,25 @@ Create date : 2023-01-01
     padding: 1rem 0;
     border-top: 1px dashed #ddd;
     text-align: right;
+  }
+}
+@media (max-width: 480px) {
+  .sitemap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(100% + 0rem);
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .sitemap > * {
+    width: calc(100% - 0rem);
+    margin-right: 0rem;
+  }
+  .sitemap > *:nth-child(n+1) {
+    margin-top: initial;
+  }
+  .sitemap > *:nth-child(n+2) {
+    margin-top: 4rem;
   }
 }
