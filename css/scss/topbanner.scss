@@ -9,7 +9,7 @@ Create date : 2023-01-01
 
 .topbanner
 {
-    position: relative;
+    position: relative; max-height: 15rem;
 
     .open 
     {
@@ -20,44 +20,71 @@ Create date : 2023-01-01
 
         span.count {margin-left: 0.5rem; font-weight: 400;}
         strong.count {color: #f00;}
+
+        &:hover,
+        &:focus
+        {
+            &::before {content: '\EF99';}
+        }
     }
 
     .close 
     {
         @include hover(before);
         @include square(4rem);
-        display: block; visibility: hidden; overflow: hidden !important; position: absolute; right: 2rem; top: 2rem; font-size: 4rem; color: #fff; opacity: 0; transition: $time2;
+        display: block; visibility: hidden; overflow: hidden !important; position: absolute; right: 2rem; top: 2rem; color: #000; opacity: 0;
 
-        &::before {@include icon(type3, "\EB99");}
+        &::before {@include icon(type3, "\EB99"); font-size: 4rem; transition: transform 0.2s !important;}
 
         &.oneday 
         {
-            top: auto; bottom: 2rem; overflow: visible; width: auto; height: auto; font-size: $size; line-height: initial;
+            top: auto; bottom: 2rem; overflow: visible; width: auto; height: auto; font-size: $size; line-height: initial; transition: color 0.2s;
 
-            &::before {@include icon(type1, "\EB7B"); width: 1.75rem; height: 1.75rem; margin-right: 0.75rem; border-radius: 0.25rem; border: 1px solid #fff; color: transparent; transform: translate(0, -1px);}
+            &::before {@include icon(type1, "\EB7B"); width: 1.75rem; height: 1.75rem; margin-right: 0.75rem; border-radius: 0.25rem; border: 1px solid #000; font-size: inherit; color: transparent; transform: translate(0, -1px);}
 
             &:hover,
             &:focus
             {
-                &::before {color: #fff;}
+                &::before {color: #000;}
             }
         }
     }
 
     .group
     { 
-        overflow: hidden; visibility: hidden; height: 0; background-color: #efeff1; transition: $time2;
+        overflow: hidden; visibility: hidden; height: 0; background-color: #efeff1; color: #000; transition: $time2;
 
         span {display: inline;}
+
+        a
+        {
+            transition: $time2;
+
+            &:hover,
+            &:focus {opacity: 0.5;}
+        }
     }
 
     div.control
     {
-        display: inline-block; position: absolute; left: 1rem; bottom: 1rem; z-index: 0; height: 4rem; color: #fff; line-height: 4rem; white-space: nowrap; vertical-align: middle;
+        display: inline-block; overflow: hidden !important; position: absolute; left: 1rem; bottom: 1rem; z-index: 0; height: 4rem; color: #fff; line-height: 4rem; white-space: nowrap; vertical-align: middle;
 
         &::before {position: absolute; left: 0; top: 0; z-index: -1; width: 10rem; height: 100%; border-radius: 4rem; background-color: rgba(0, 0, 0, 0.5); content: '';}
 
-        button {@include square(4rem); display: block; float: left; padding-left: 1rem; border: 0 none; line-height: inherit;}
+        button 
+        {
+            @include bg1;
+            @include square(4rem); 
+            display: block; overflow: visible; float: left; padding-left: 1rem; border: 0 none; line-height: inherit;
+
+            &::after {@include position(center); z-index: -1; width: 0; height: 0; margin-left: 0.5rem; border-radius: 100%; background-color: #000; content: ''; transition: $time2;}
+
+            &:hover,
+            &:focus
+            {
+                &::after {width: 3rem; height: 3rem;}
+            }
+        }
 
         $icons: (prev: "\EA60", next: "\EA6C", play: "\F00A", pause: "\EFD7");
 
@@ -66,12 +93,19 @@ Create date : 2023-01-01
             .#{$keys}::before {@include icon(type3, $icon);}
         }
 
-        .next {margin-left: 2rem; padding: 0 1rem 0 0;}
+        .next 
+        {
+            margin-left: 2rem; padding: 0 1rem 0 0;
+
+            &::after {margin-left: -0.5rem;}
+        }
 
         .play,
         .pause
         {
             display: none; position: absolute; left: 4rem; top: 0; width: 2rem; padding: 0;
+
+            &::after {margin: 0;}
 
             &.active {display: block;}
         }
@@ -82,7 +116,7 @@ Create date : 2023-01-01
 
             span 
             {
-                display: inline-block !important; position: relative; top: -0.1rem; width: 1.2rem; height: 1.2rem; margin: 0 0.5rem !important; border: 1px solid #fff; background: none; opacity: 1; vertical-align: middle; transition: $time2;
+                display: inline-block !important; position: relative; top: -0.1rem; width: 1.2rem; height: 1.2rem; margin: 0 0.5rem !important; border: 1px solid #fff; background: none; opacity: 1; vertical-align: middle; transition: background 0.2s;
 
                 &:hover,
                 &:focus {background-color: rgba(255, 255, 255, 0.5);}

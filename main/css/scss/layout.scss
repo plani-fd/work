@@ -57,13 +57,13 @@ History     : 2023-03-14 ㅈㅁㅈ
         .form 
         {
             @include width(50rem, 100%);
-            position: relative;
+            position: relative; color: #000;
 
             label {overflow: hidden; position: absolute; left: 0; height: 0;}
 
             input 
             {
-                width: 100%; height: 6rem; padding: 1rem 6rem 1rem 2rem; border: 0.3rem solid transparent; border-bottom-color: #555; outline: 0 none; transition: $time2;
+                width: 100%; height: 6rem; padding: 1rem 6rem 1rem 2rem; border: 0.3rem solid transparent; border-bottom-color: #000; outline: 0 none; transition: $time2;
 
                 &:hover,
                 &:focus {border-color: #000;}
@@ -88,10 +88,11 @@ History     : 2023-03-14 ㅈㅁㅈ
                 &::before {height: 100000%;}
             }
 
-            .open {display: none;}
+            .open {visibility: hidden;}
 
             .close 
             {
+                @include hover(before);
                 @include visible(4rem, 4rem);
                 overflow: hidden;
 
@@ -110,6 +111,14 @@ History     : 2023-03-14 ㅈㅁㅈ
 
     li {float: left; margin-left: 1rem;}
 
+    a
+    {
+        position: relative; background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(to right, #fff, #fff, #fff); background-size: 100% 0.1rem, 0 0.1rem; background-position: 100% 100%, 0 100%; background-repeat: no-repeat; transition: background-size 0.2s;
+
+        &:hover,
+        &:focus {background-size: 0 0.1rem, 100% 0.1rem;}
+    }
+
     .hnb1 
     {
         float: left;
@@ -123,7 +132,19 @@ History     : 2023-03-14 ㅈㅁㅈ
     {
         position: relative; margin-left: 1.5rem; padding: 0 1rem; border: 1px solid #000; line-height: 3.8rem; transition: background 0.2s, color 0.2s;
 
-        a {@include hidden(100%, 0); display: block; padding-left: 2.25rem;}
+        a 
+        {
+            @include hidden(100%, 0); 
+            display: block; position: static; padding-left: 2.25rem;
+
+            &::after {display: none;}
+
+            &:hover,
+            &:focus
+            {
+                &::before {animation: rotate 2s linear infinite;}
+            }
+        }
 
         .active 
         {
@@ -141,11 +162,17 @@ History     : 2023-03-14 ㅈㅁㅈ
     }
 }
 
+@keyframes rotate
+{
+    0%      {transform: rotate(0deg);}
+    100%    {transform: rotate(360deg);}
+}
+
 // 로고
 #logo
 {
-    a {float: left;}
-    img {height: 3.5rem; vertical-align: top;}
+    a {float: left; height: 3.5rem;}
+    img {display: inline-block; max-width: initial; height: 100%; vertical-align: top;}
 }
 
 // 주메뉴
@@ -266,7 +293,18 @@ History     : 2023-03-14 ㅈㅁㅈ
             &:first-child::before {@include position(top); left: 0; width: 1px; height: 10000%; background-color: #fff; content: ''; opacity: 0.2;}
             &:last-child::before {@include bg2(type1); @include position(center); height: 1000%; background-color: #000;}
 
-            & > a {display: block; margin-bottom: 2rem; font-size: 2rem; font-weight: 800;}
+            & > a 
+            {
+                display: block; margin-bottom: 2rem; font-size: 2rem; font-weight: 800;
+
+                &::after {position: absolute; left: auto; top: auto; width: 0; height: 0; margin-left: 1rem; border-radius: 100%; background-color: #fff; content: ''; transition: $time2;}
+
+                &:hover,
+                &:focus
+                {
+                    &::after {width: 1rem; height: 1rem;}
+                }
+            }
         }
 
         .submenu > ul

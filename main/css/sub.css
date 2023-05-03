@@ -168,6 +168,9 @@ History     : 2023-03-20 ㅈㅁㅈ
 #snb .list > ul > li ul a:hover::after, #snb .list > ul > li ul a:focus::after {
   width: 100%;
 }
+#snb .list > ul > li ul .active a {
+  color: #000;
+}
 #snb .list > ul > li.type1 > a::after {
   content: "\ea13";
   -webkit-transition: all 0.2s;

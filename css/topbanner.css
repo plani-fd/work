@@ -6,6 +6,7 @@ Create date : 2023-01-01
 -------------------------------------------------*/
 .topbanner {
   position: relative;
+  max-height: 15rem;
 }
 .topbanner .open {
   position: absolute;
@@ -44,6 +45,9 @@ Create date : 2023-01-01
 .topbanner .open strong.count {
   color: #f00;
 }
+.topbanner .open:hover::before, .topbanner .open:focus::before {
+  content: "\ef99";
+}
 .topbanner .close {
   display: inline-block;
   overflow: hidden;
@@ -58,11 +62,8 @@ Create date : 2023-01-01
   position: absolute;
   right: 2rem;
   top: 2rem;
-  font-size: 4rem;
-  color: #fff;
+  color: #000;
   opacity: 0;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
 }
 .topbanner .close::before {
   -webkit-transform: rotate(0);
@@ -81,6 +82,11 @@ Create date : 2023-01-01
   width: 100%;
   height: 100%;
   line-height: inherit;
+  font-size: 4rem;
+  -webkit-transition: -webkit-transform 0.2s !important;
+  transition: -webkit-transform 0.2s !important;
+  transition: transform 0.2s !important;
+  transition: transform 0.2s, -webkit-transform 0.2s !important;
 }
 .topbanner .close.oneday {
   top: auto;
@@ -90,6 +96,8 @@ Create date : 2023-01-01
   height: auto;
   font-size: 1.6rem;
   line-height: initial;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 .topbanner .close.oneday::before {
   font-family: "remixicon";
@@ -100,27 +108,37 @@ Create date : 2023-01-01
   height: 1.75rem;
   margin-right: 0.75rem;
   border-radius: 0.25rem;
-  border: 1px solid #fff;
+  border: 1px solid #000;
+  font-size: inherit;
   color: transparent;
   -webkit-transform: translate(0, -1px);
           transform: translate(0, -1px);
 }
 .topbanner .close.oneday:hover::before, .topbanner .close.oneday:focus::before {
-  color: #fff;
+  color: #000;
 }
 .topbanner .group {
   overflow: hidden;
   visibility: hidden;
   height: 0;
   background-color: #efeff1;
+  color: #000;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 .topbanner .group span {
   display: inline;
 }
+.topbanner .group a {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.topbanner .group a:hover, .topbanner .group a:focus {
+  opacity: 0.5;
+}
 .topbanner div.control {
   display: inline-block;
+  overflow: hidden !important;
   position: absolute;
   left: 1rem;
   bottom: 1rem;
@@ -143,6 +161,8 @@ Create date : 2023-01-01
   content: "";
 }
 .topbanner div.control button {
+  position: relative;
+  z-index: 0;
   display: inline-block;
   overflow: hidden;
   width: 4rem;
@@ -151,10 +171,31 @@ Create date : 2023-01-01
   line-height: 4rem;
   vertical-align: middle;
   display: block;
+  overflow: visible;
   float: left;
   padding-left: 1rem;
   border: 0 none;
   line-height: inherit;
+}
+.topbanner div.control button::after {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  margin-left: 0.5rem;
+  border-radius: 100%;
+  background-color: #000;
+  content: "";
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.topbanner div.control button:hover::after, .topbanner div.control button:focus::after {
+  width: 3rem;
+  height: 3rem;
 }
 .topbanner div.control .prev::before {
   font-family: "remixicon";
@@ -192,6 +233,9 @@ Create date : 2023-01-01
   margin-left: 2rem;
   padding: 0 1rem 0 0;
 }
+.topbanner div.control .next::after {
+  margin-left: -0.5rem;
+}
 .topbanner div.control .play,
 .topbanner div.control .pause {
   display: none;
@@ -200,6 +244,10 @@ Create date : 2023-01-01
   top: 0;
   width: 2rem;
   padding: 0;
+}
+.topbanner div.control .play::after,
+.topbanner div.control .pause::after {
+  margin: 0;
 }
 .topbanner div.control .play.active,
 .topbanner div.control .pause.active {
@@ -229,8 +277,8 @@ Create date : 2023-01-01
   background: none;
   opacity: 1;
   vertical-align: middle;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
 }
 .topbanner div.control .pager span:hover, .topbanner div.control .pager span:focus {
   background-color: rgba(255, 255, 255, 0.5);

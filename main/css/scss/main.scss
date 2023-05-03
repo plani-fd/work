@@ -78,7 +78,7 @@ History     : 2023-03-14 ㅈㅁㅈ
 
         button 
         {
-            position: relative; width: auto; height: auto; border-radius: 0; border: 0 none; background: none; opacity: 0.5; transition: $time2;
+            position: relative; width: auto; height: auto; border-radius: 0; border: 0 none; background: none !important; opacity: 0.5; transition: $time2;
 
             &::before {@include position(top); left: 3rem; width: 0; height: 0.3rem; background-color: #fff; content: '';}
             &::after {display: inline-block; width: 0; height: 0.3rem; background-color: rgba(255, 255, 255, 0.1); content: ''; vertical-align: middle;}
@@ -125,6 +125,13 @@ History     : 2023-03-14 ㅈㅁㅈ
 
     .list
     {
+        li
+        {
+            @include bul(1.5rem); 
+
+            &::before {top: 0.75rem; width: 0.5rem; height: 0.5rem; border-radius: 100%; background-color: #999;}
+        }
+
         a 
         {
             @include ellipsis(type1, 2rem);
@@ -132,14 +139,7 @@ History     : 2023-03-14 ㅈㅁㅈ
 
             .desc {font-size: 0;}
 
-            .title 
-            {
-                @include bul(1.5rem); 
-                font-size: $size; font-weight: normal;
-
-                &::before {top: 0.75rem; width: 0.5rem; height: 0.5rem; border-radius: 100%; background-color: #999;}
-                &::after {position: absolute; left: 1.5rem; bottom: 0; width: 0; max-width: calc(100% - 1.5rem); height: 1px; background-color: #555; content: ''; transition: $time2;}
-            }
+            .title {background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(to right, #555, #555, #555); background-size: 100% 0.1rem, 0 0.1rem !important; background-position: 100% 100%, 0 100% !important; background-repeat: no-repeat !important; transition: background-size 0.4s; font-size: $size; font-weight: normal;}
 
             .date
             {
@@ -151,36 +151,36 @@ History     : 2023-03-14 ㅈㅁㅈ
             &:hover,
             &:focus
             {
-                .title::after {width: 100%;}
+                .title {background-size: 0 0.1rem, 100% 0.1rem !important;}
             }
         }
 
-        li:first-child a
+        li:first-child
         {
-            height: 10rem; max-height: initial; margin: 0 0 1.5rem; padding: 0 0 1rem 10rem; border-bottom: 1px solid #ddd;
+            padding-left: 0;
 
-            .date 
+            &::before {display: block;}
+
+            a
             {
-                position: absolute; left: 0; top: 0; width: 8rem; height: 8rem; padding-top: 4.5rem; border: 0.3rem solid #ddd; font-size: 1.4rem; text-align: center;
+                height: 10rem; max-height: initial; margin: 0 0 1.5rem; padding: 0 0 1rem 10rem; border-bottom: 1px solid #ddd;
 
-                strong {position: absolute; left: 0; top: 1.5rem; width: 100%; font-size: 2.5rem; font-weight: 800; color: #000;}
-            }
+                .date 
+                {
+                    position: absolute; left: 0; top: 0; width: 8rem; height: 8rem; padding-top: 4.5rem; border: 0.3rem solid #ddd; font-size: 1.4rem; text-align: center;
 
-            .title 
-            {
-                @include ellipsis(type1, 2.25rem);
-                display: block; margin-bottom: 0.5rem; padding-left: 0; font-size: 1.8rem; font-weight: 600; color: #000;
+                    strong {position: absolute; left: 0; top: 1.5rem; width: 100%; font-size: 2.5rem; font-weight: 800; color: #000;}
+                }
 
-                &::before,
-                &::after {display: none;}
-            }
+                .title 
+                {
+                    @include ellipsis(type1, 2.25rem);
+                    margin-bottom: 0.5rem; background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(to right, #000, #000, #000); font-size: 1.8rem; font-weight: 600; color: #000;
 
-            .desc {font-size: $size;}
+                    &::after {display: block; width: 100%; height: 0; content: '';}
+                }
 
-            &:hover,
-            &:focus
-            {
-                .title {text-decoration: underline;}
+                .desc {font-size: $size;}
             }
         }
     }
