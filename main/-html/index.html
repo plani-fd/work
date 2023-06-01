@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>프로젝트</title>
+
+<script src="../../jquery/js/jquery-1.11.2.min.js"></script>
+<script src="../../jquery/js/jquery.cookie.min.js"></script>
+<script src="../../jquery/js/swiper-bundle.min.js"></script>
+
+<script type="text/javascript" src="../../jquery/js/fn.js"></script>
+<script type="text/javascript" src="../../jquery/js/default.js"></script>
+<script type="text/javascript" src="../js/layout.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+
+<link rel="stylesheet" href="../css/default.css" />
+<link rel="stylesheet" href="../css/layout.css" />
+<link rel="stylesheet" href="../css/layout_respond.css" />	
+<link rel="stylesheet" href="../css/main.css" />
+<link rel="stylesheet" href="../css/main_respond.css" />
+</head>
+
+<body>
+<!-- Accessibility -->
+<p id="skip_nav">
+    <a href="#contents">본문 바로가기</a>
+</p>
+
+<div id="wrap">
+    
+    <!-- 레이어팝업이 있을 때 -->    
+    <link href="../../css/layerpopup.css" rel="stylesheet" type="text/css" />
+    <div id="layerPopup0" style="width:420px; height:400px; top:0;left:0; position:absolute; z-index:999999;">
+        <div class="popup_cont" style="width:420px; height:400px; ">
+            <a href=""><img src="../img/main/popup.jpg" width="420" height="400"></a>
+        </div>
+        <div class="close">
+            <span class="form_check">
+                <input type="checkbox" style="cursor:hand;" name="join" id="join0" onclick="check_close('join0', 'layerPopup0');"> 
+                <label for="join0" class="font_c4">오늘 하루 열지 않습니다.</label>
+            </span>
+            
+            <a href="" onclick="closeLayer('layerPopup0'); return false;">닫기</a>
+        </div>
+    </div>    
+    <!-- //레이어팝업이 있을 때 -->
+
+    <!-- 모달팝업이 있을 때 -->
+    <link rel="stylesheet" href="../../css/modalpopup.css" />
+    <section id="issue">  
+        <a href="" class="control open">
+            POPUP
+            <span class="count"><strong class="count">0</strong>건</span>
+        </a>
+
+        <article class="group">
+            <h2 class="title">POPUP</h2>
+            <!-- <p class="blank">등록된 팝업이 없습니다.</p> -->
+            <ul class="list modalpopup">
+                <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
+                <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
+            </ul>
+            <div class="item">
+                <p class="label">팝업건수 : 총 <span class="count">0</span>건</p>
+                
+                <a href="" class="control close">닫기</a>
+                <a href="" class="control close oneday">오늘하루열지않기</a>
+            </div>       
+        </article>
+    </section>
+    <!-- //모달팝업이 있을 때 -->
+
+    <!-- 최상단배너가 있을 때 -->
+    <link rel="stylesheet" href="../../css/topbanner.css" />
+    <div class="topbanner active">
+        <a href="" class="control open">
+            상단배너
+            <span class="count"><strong class="count">0</strong>건</span>
+        </a>
+        
+        <div class="group">
+            <ul class="list">             
+                <li><a href=""><img src="../../img/noimage.jpg" alt="상단배너1 링크 없음" /></a></li>
+                <li>상단배너3 이미지 없이 텍스트로만.</li>        
+            </ul>
+            <a href="" class="control close">닫기</a>
+            <a href="" class="control close oneday">오늘하루열지않기</a>
+        </div>
+    </div>
+    <!-- //최상단배너가 있을 때 -->
+
+    <!-- 상단 -->
+    <header id="header"><script>$("#header").load("-inc/header.html");</script></header>
+    <!-- //상단 -->
+
+    <main id="main">
+        <div class="main_wrap">
+
+            <div id="visual">
+                <strong class="title">A goal without a plan is just a wish</strong>
+                
+                <ul class="list">                         
+                    <li><img src="../img/main/visual1.jpg" alt="" /></li>
+                    <li><img src="../img/main/visual2.jpg" alt="" /></li>
+                </ul>
+            </div>
+
+            <div id="contents">
+                <div class="section section1">
+                    <div class="latest">
+                        <article class="group group1 active">
+                            <h2 class="label"><a href="">공지사항</a></h2>
+                            <ul class="list">
+                                <li>
+                                    <a href="">
+                                        <span class="desc">
+                                            <strong class="title"><i class="xi-new" aria-hidden="true"></i><span class="sr_only">새글</span> test2</strong>                        
+                                        </span>
+                                        <span class="date">2020.04.<strong>07</strong></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="desc">
+                                            <strong class="title"><i class="xi-new" aria-hidden="true"></i><span class="sr_only">새글</span> test1</strong>                        
+                                        </span>
+                                        <span class="date">2020.04.<strong>07</strong></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="desc">
+                                            <strong class="title"><i class="xi-new" aria-hidden="true"></i><span class="sr_only">새글</span> test1</strong>                        
+                                        </span>
+                                        <span class="date">2020.04.<strong>07</strong></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="desc">
+                                            <strong class="title"> 111111111111</strong>
+                                            11111111
+                                        </span>
+                                        <span class="date">2020.03.<strong>06</strong></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="desc">
+                                            <strong class="title"> testtesttesttesttesttesttesttesttesttesttesttesttest</strong>
+                                            1
+                                        </span>
+                                        <span class="date">2020.03.<strong>06</strong></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="" class="more">MORE</a>
+                        </article>
+
+                        <article class="group group2">
+                            <h2 class="label"><a href="">뉴스</a></h2>
+                            <ul class="list">
+                                <li>
+                                    <a href="">
+                                        <span class="desc">
+                                            <strong class="title"> asdasdasd</strong>
+                                            신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..
+                                        </span>
+                                        <span class="date">2020.03.<strong>10</strong></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="" class="more">MORE</a>
+                        </article>
+
+                        <article class="group group3">
+                            <h2 class="label"><a href="">채용공고</a></h2>
+                            <p class="blank">등록된 게시물이 없습니다.</p>
+                            <a href="" class="more">MORE</a>
+                        </article>
+                    </div>
+
+                    <div class="popup">                
+                        <ul class="list">
+                            <li><a href=""><img src="../img/main/popup.jpg" alt="" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section section2">
+                    <article class="gallery">
+                        <h2 class="title">PHOTO NEWS</h2>
+                        <div class="group">
+                            <ul class="list">
+                                <li>
+                                    <a href="">
+                                        <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
+                                        <p class="desc">
+                                            <strong class="title">test</strong>
+                                            <span class="txt">test</span>
+                                            <span class="date">2020.05.28</span>
+                                        </p>			
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
+                                        <p class="desc">
+                                            <strong class="title">앨범형 게시판 등록 테스트 30</strong>
+                                            <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
+                                            <span class="date"></span>
+                                        </p>			
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
+                                        <p class="desc">
+                                            <strong class="title">앨범형 게시판 등록 테스트 29</strong>
+                                            <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
+                                            <span class="date"></span>
+                                        </p>			
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="img"><img src="../../img/noimage.jpg" alt="이미지 없음" /></span>
+                                        <p class="desc">
+                                            <strong class="title">정렬 테스트 이미지3개</strong>
+                                            <span class="txt">신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주..</span>
+                                            <span class="date">2020.03.02</span>
+                                        </p>			
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="scroll"></div>
+                        </div>
+                        <a href="" class="more">MORE</a>
+                    </article>
+
+                    <div class="link">
+                        <ul class="list">
+                            <li>
+                                <a href="">
+                                    <span class="icon"><img src="../img/main/icon1.png" alt=""></span>
+                                    <strong class="txt">아이콘1</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="icon"><img src="../img/main/icon2.png" alt=""></span>
+                                    <strong class="txt">아이콘2</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="icon"><img src="../img/main/icon3.png" alt=""></span>
+                                    <strong class="txt">아이콘3</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="icon"><img src="../img/main/icon4.png" alt=""></span>
+                                    <strong class="txt">아이콘4</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="icon"><img src="../img/main/icon5.png" alt=""></span>
+                                    <strong class="txt">아이콘5</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 하단 -->        
+    <div id="quick">
+        <a href="" class="control open">QUICK MENU</a>
+
+        <article class="group">
+            <h2 class="title">
+                <strong>QUICK MENU</strong>
+                <span>원하시는 서비스를 클릭하세요!</span>
+            </h2>
+
+            <ul class="list">
+                <li><a href="" target="_blank">퀵메뉴1</a></li>
+                <li><a href="">퀵메뉴2</a></li>
+
+            </ul>
+        </article>
+    </div>
+
+    <div class="footbanner">
+        <ul class="list">
+            <li><a href=""><img src="../img/layout/footbanner1.gif" alt="대한민국 법원" /></a></li>
+            <li><a href=""><img src="../img/layout/footbanner2.gif" alt="청와대" /></a></li>
+            <li><a href=""><img src="../img/layout/footbanner3.gif" alt="SGIS" /></a></li>
+            <li><a href=""><img src="../img/layout/footbanner4.gif" alt="국가주요지표" /></a></li>
+            <li><a href=""><img src="../img/layout/footbanner5.gif" alt="안전신문고" /></a></li>
+            <li><a href=""><img src="../img/layout/footbanner6.gif" alt="경찰청" /></a></li>
+        </ul>
+    </div>
+
+    <footer id="footer"><script>$("#footer").load("-inc/footer.html");</script></footer>
+    <!-- //하단 -->
+
+</div>
+</body>
+</html>

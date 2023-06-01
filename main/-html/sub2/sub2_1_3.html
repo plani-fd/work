@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script src="../../../jquery/js/jquery-1.11.2.min.js"></script>
+<script>$("head").load("../-inc/head.html");</script>
+</head>
+<body>
+<!-- Accessibility -->
+<p id="skip_nav">
+    <a href="#contents">본문 바로가기</a>
+</p>
+
+<div id="wrap">
+	<header id="header"><script>$("#header").load("../-inc/header.html");</script></header>
+
+	<main id="main">
+		<div class="main_wrap">
+			<div id="visual" class="visual2"><script>$("#visual").load("../-inc/visual.html");</script></div>			
+			<div id="snb" class="snb2"><script>$("#snb").load("../-inc/snb2.html");</script></div>	
+				
+			<div id="contents">
+				<div class="contents_util"><script>$(".contents_util").load("../-inc/contents_util.html");</script></div>
+
+  				<div id="contents_body">
+                    
+                    <!-- 콘텐츠 -->
+                    <script src="../../../jquery/js/board.js"></script>
+                    <link rel="stylesheet" href="../../../css/board.css" />
+                    
+                    <div class="board_list">
+                        <table class="tstyle_write">
+                            <caption>일반게시판(BOD) 게시글 쓰기</caption>
+                            <colgroup><col width="20%"><col></colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="title">제목<span class="point1" title="필수입력 항목"> *</span></label></th>
+                                    <td><input class="form_textbox" type="text" name="title" id="title" value="" maxlength="100" placeholder="제목을 입력하세요."></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="m_name">작성자<span class="point1" title="필수입력 항목"> *</span></label></th>
+                                    <td><input type="text" class="form_textbox" name="m_name" id="m_name" value="" maxlength="12"></td>
+                                </tr>
+                                <tr>                                            
+                                    <th scope="row"><label for="tel">연락처</label><span class="point1" title="필수입력 항목"> *</span></th>
+                                    <td colspan="3"><input type="text" name="tel" id="tel" value="" class="form_textbox"></td>                                            
+                                </tr>                                    
+                                <tr>
+                                    <th scope="row">공개/비공개</th>
+                                    <td colspan="3">
+                                        <span class="form_radio">
+                                            <input type="radio" name="open_yn" id="open_ynY" value="Y" checked="checked"> <label for="open_ynY">공개</label>
+                                        </span>                                                
+                                        <span class="form_radio">
+                                            <input type="radio" name="open_yn" id="open_ynN" value="N"> <label for="open_ynN">비공개</label>
+                                        </span>
+                                    </td>
+                                </tr>       
+                                <tr>
+                                    <th scope="row"><label for="passwd">비밀번호<span class="point1" title="필수입력 항목"> *</span></label></th>
+                                    <td><input type="password" autocomplete="off" class="form_textbox" name="passwd" id="passwd" value="" maxlength="12"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">발행년월</th>
+                                    <td colspan="3">
+                                        <span class="form_select">
+                                            <select name="" title="발행년월 중 년">
+                                                <option value="2020">2020년</option>   
+                                            </select>
+                                        </span>
+                                        <span class="form_select">
+                                            <select name="" title="발행년월 중 월">
+                                                <option value="1">1월</option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="cg_code">분류<span class="point1" title="필수입력 항목"> *</span></label></th>
+                                    <td>
+                                        <span class="form_select">
+                                            <select class="" id="cg_code" name="cg_code">
+                                                <option value="">선택하세요</option>
+                                                <option value="C01">분류1</option>                                                        
+                                                <option value="C02">분류2</option>
+                                            </select>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>담당부서</th>
+                                    <td colspan="3">
+                                        <input type="hidden" name="dept_code" id="dept_code" value="">
+                                        <span id="dept_name" style="vertical-align:-2px;"> </span>
+                                        <span id="dest" style="color:#ff6600;"> </span>
+                                        <a href="#" class="btn_line">부서변경<i class="xi-sitemap" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <th scope="row">행사일자</th>
+                                    <td colspan="3">
+                                        <input class="form_textbox hasDatepicker" type="text" title="행사 시작일" id="view_sdate" name="view_sdate" value="" size="10" maxlength="10"><button type="button" class="ui-datepicker-trigger"><i class="ri-calendar-todo-fill"><span class="sr_only">달력 보기</span></i></button> ~
+                                        <input class="form_textbox hasDatepicker" type="text" title="행사 마지막일" id="view_edate" name="view_edate" value="" size="10" maxlength="10"><button type="button" class="ui-datepicker-trigger"><i class="ri-calendar-todo-fill"><span class="sr_only">달력 보기</span></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="data01">행사기간</label></th>
+                                    <td colspan="3"><input class="form_textbox hasDatepicker" type="text" name="data01" id="data01" value="" maxlength="100"><button type="button" class="ui-datepicker-trigger"><i class="ri-calendar-todo-fill"><span class="sr_only">달력 보기</span></i></button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="data02">행사장소</label></th>
+                                    <td colspan="3"><input class="form_textbox" type="text" name="data02" id="data02" value="" maxlength="100"></td>
+                                </tr>                                    
+                                <tr>
+                                    <th scope="row">내용</th>
+                                    <td class="contents">에디터</td>
+                                </tr>
+                                <tr class="file active">
+                                    <th scope="row">첨부파일</th>
+                                    <td>
+                                        <img src="../../../upload/skin/board/basic/pdf.png" alt="첨부파일"><!--파일명--> 테스트test1234.pdf
+                                        <a href="" class="btn_del"> [파일삭제]</a>
+                                    </td>
+                                </tr>
+                                <tr class="file">
+                                    <th scope="row"><label for="filename0">첨부파일</label></th>
+                                    <td>
+                                        <span class="form_file">
+                                            <input class="file" type="file" name="filename0" id="filename0" title="첨부파일0">
+                                            <span class="txt">hwp,xls,doc,ppt,pdf,zip,jpg,gif,png 파일만, 5MB까지 업로드가 가능합니다.</span>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     
+                    <div class="board_btns">  
+                        <button class="btn type2" type="button">수정</button>                                        
+                        <button class="btn type2" type="button">삭제</button>                                        
+                        <button class="btn type2" type="button">답변</button>
+                        <button class="btn type1" type="button" onclick="location.href='sub2_1_1.html'">목록</button>
+                    </div>
+                    <!-- //콘텐츠 -->
+
+                </div>
+
+				<div class="contents_info"><script>$(".contents_info").load("../-inc/contents_info.html");</script></div>
+			</div>
+		</div>
+	</main>
+	
+    <footer id="footer"><script>$("#footer").load("../-inc/footer.html");</script></footer>
+</div>
+</body>
+
+</html>

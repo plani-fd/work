@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script src="../../../jquery/js/jquery-1.11.2.min.js"></script>
+<script>$("head").load("../-inc/head.html");</script>
+</head>
+<body>
+<!-- Accessibility -->
+<p id="skip_nav">
+    <a href="#contents">본문 바로가기</a>
+</p>
+
+<div id="wrap">
+	<header id="header"><script>$("#header").load("../-inc/header.html");</script></header>
+
+	<main id="main">
+		<div class="main_wrap">
+			<div id="visual" class="visual2"><script>$("#visual").load("../-inc/visual.html");</script></div>			
+			<div id="snb" class="snb2"><script>$("#snb").load("../-inc/snb2.html");</script></div>	
+				
+			<div id="contents">
+				<div class="contents_util"><script>$(".contents_util").load("../-inc/contents_util.html");</script></div>
+
+  				<div id="contents_body">
+                    
+                    <!-- 콘텐츠 -->
+                    <script src="../../../jquery/js/board.js"></script>
+                    <link rel="stylesheet" href="../../../css/board.css" />
+
+                    <article class="board_view">
+                        <h2 class="title">
+                            일반게시판 등록 테스트 30
+                        </h2>
+                        <ul class="info">
+                            <li class="date"><strong>작성일</strong><span>2020/03/02 16:26</span></li>
+                            <li class="cate"><strong>분류</strong><span>분류2</span></li>
+                            <li class="hit"><strong>조회수</strong><span>235</span></li>
+                            <li class="period"><strong>공지기간</strong><span>2000/01/01 ~ 3000/12/31</span></li>
+                        </ul>
+                        <div class="contents">
+                            <!-- 동영상 내용 -->
+                            <div class="video">
+                                <div class="player">
+                                    <video id="video2" width="100%" controls="controls">
+                                        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">                                                    
+                                    </video>
+                                </div>
+                    
+                                <!-- 유투브 일 때 -->
+                                <div class="youtube">
+                                    <iframe title="test" width="100%" height="100%" src="https://www.youtube.com/embed/a9JoHtHly-w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                </div>
+                                <!-- //유투브 일 때 -->
+                                
+                                <div class="txt_center">
+                                    <a href="" target="_blank" title="이미지 원본크기 보기(새창)">
+                                        <img id="viewImg1" src="../../../img/noimage.jpg" alt="동영상 게시판 등록 테스트30 사진1">
+                                    </a>
+                                </div>
+                                
+                                <div class="desc" tabindex="0">                                    
+                                    <p>신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해</p>
+                                    <p>진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주시기 바랍니다.</p>
+                                    <p><br></p>
+                                    
+                                    <p>
+                                        ○ 일&nbsp;&nbsp;&nbsp; 시 : 2020. 2. 24(월) 09:00 ~<br>
+                                        ○ 대&nbsp;&nbsp;&nbsp; 상 : 보건소 진료업무 및 모든 민원업무<br>
+                                        ○ 내&nbsp;&nbsp;&nbsp; 용 : 보건소의 신종 코로바이러스감염증-19 적극 대처를 <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 위한 진료 및 민원업무 잠정중단<br>
+                                    </p>
+                                    
+                                    <p>○ 문 의 처 : 동구보건소 건강정책과(☎ 608-3261)</p>
+                                    <p><br></p>
+                                    <p>채용신체검사결과서(공무원, 일반), 각종 면허·자격 발급용 건강진단서, </p>
+                                    <p>운전면허 신체검사서 발급기관은 붙임파일을 참고하시기 바랍니다.</p>
+                                </div>
+                            </div>
+                            <!-- //동영상 내용 -->
+                        </div>
+                    </article>
+                    
+                    <div class="board_btns">  
+                        <button class="btn type2" type="button">수정</button>                                        
+                        <button class="btn type2" type="button">삭제</button>                                        
+                        <button class="btn type2" type="button">답변</button>
+                        <button class="btn type1" type="button">목록</button>
+                    </div>
+                    <!-- //콘텐츠 -->
+
+                </div>
+
+				<div class="contents_info"><script>$(".contents_info").load("../-inc/contents_info.html");</script></div>
+			</div>
+		</div>
+	</main>
+	
+    <footer id="footer"><script>$("#footer").load("../-inc/footer.html");</script></footer>
+</div>
+</body>
+
+</html>

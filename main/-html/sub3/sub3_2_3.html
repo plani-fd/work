@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script src="../../../jquery/js/jquery-1.11.2.min.js"></script>
+<script>$("head").load("../-inc/head.html");</script>
+</head>
+<body>
+<!-- Accessibility -->
+<p id="skip_nav">
+    <a href="#contents">본문 바로가기</a>
+</p>
+
+<div id="wrap">
+	<header id="header"><script>$("#header").load("../-inc/header.html");</script></header>
+
+	<main id="main">
+		<div class="main_wrap">
+			<div id="visual" class="visual3"><script>$("#visual").load("../-inc/visual.html");</script></div>			
+			<div id="snb" class="snb3"><script>$("#snb").load("../-inc/snb3.html");</script></div>	
+				
+			<div id="contents">
+				<div class="contents_util"><script>$(".contents_util").load("../-inc/contents_util.html");</script></div>
+
+  				<div id="contents_body">
+
+                    <!-- 콘텐츠 -->
+                    <link rel="stylesheet" href="../../../upload/skin/program/member.css" />
+                                        
+                    <ul class="member_step">
+                        <li>
+                            <span class="hidden">현재 절차</span>
+                            <small>01</small>
+                            <strong>약관동의</strong>
+                        </li>
+                        <li>
+                            <small>02</small>
+                            <strong>본인인증</strong>
+                        </li>
+                        <li class="active">
+                            <small>03</small>
+                            <strong>정보입력</strong>
+                        </li>
+                        <li>
+                            <small>04</small>
+                            <strong>가입완료</strong>
+                        </li>
+                    </ul>
+                    
+                    <div class="board_box type2">
+                        <span class="img"><i class="xi-file-text-o" aria-hidden="true"></i></span>
+                        <h2 class="title">정보입력</h2>
+                        <p class="desc">회원가입을 위해 정보를 입력해주세요.</p>
+                    </div>
+                     
+                    <div class="board_list">
+                        <table class="tstyle_write">
+                            <caption>회원가입 정보입력 테이블입니다.</caption>
+                            <colgroup><col width="20%"><col></colgroup>
+                            <tbody>
+                            <tr>
+                                <th><label for="m_id">아이디 <span class="point1" title="필수 입력 정보">*</span></label></th>
+                                <td>
+                                    <input type="text" name="m_id" id="m_id" class="form_textbox" maxlength="12" title="아이디를 입력하세요." placeholder="아이디를 입력하세요." style="width: 50%;">
+                                    <a href="/member/idCheck.es" target="_blank" title="새창" class="btn_line"><span>중복확인</span> <i class="xi-check"></i></a>
+                                    <p>5자리 이상, 영문자 1자 이상</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="passwd">비밀번호 <span class="point1" title="필수 입력 정보">*</span></label></th>
+                                <td>
+                                    <input type="password" name="passwd" id="passwd" maxlength="20" class="form_textbox" title="비밀번호를 입력하세요." autocomplete="off" placeholder="비밀번호를 입력하세요.">
+                                    <p>영문/숫자/특수문자 3가지 조합 9자리 이상 20자리 이하. <span class="point1">\|[]{}'";:/?.&gt;,&lt;,%,#,&amp; 제외</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="passwd2">비밀번호 확인 <span class="point1" title="필수 입력 정보">*</span></label></th>
+                                <td><input type="password" name="passwd2" id="passwd2" maxlength="20" class="form_textbox" title="비밀번호 확인을 위해 비밀번호를 한번더 입력하세요." autocomplete="off" placeholder="비밀번호를 입력하세요."></td>
+                            </tr>
+                            <tr>
+                                <th><label for="m_name">성명 <span class="point1" title="필수 입력 정보">*</span></label></th>
+                                <td class="bTop">
+                                    홍길동
+                                    <input type="hidden" name="m_name" id="m_name" value="홍길동">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="m_birth_y">생년월일 <span class="point1" title="필수 입력 정보">*</span></label></th>
+                                <td>
+                                    <span class="form_select">
+                                        <select name="m_birth_y" id="m_birth_y" title="생년">
+                                            <option value="">년</option>
+                                        </select>
+                                    </span>
+                                    <span class="form_select">
+                                        <select name="m_birth_m" id="m_birth_m" title="생월">
+                                            <option value="">월</option>                                           
+                                        </select>
+                                    </span>
+                                    <span class="form_select">
+                                        <select name="m_birth_d" id="m_birth_d" title="생일">
+                                            <option value="">일</option>
+                                        </select>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="m_sex_m">성별 <span class="point1" title="필수 입력 정보">*</span></label></th>
+                                <td>
+                                    <span class="form_radio">
+                                        <input type="radio" name="m_sex" id="m_sex_m" value="M"> <label for="m_sex_m"> 남자</label>
+                                    </span>
+                                    <span class="form_radio">
+                                        <input type="radio" name="m_sex" id="m_sex_f" value="F" checked="checked"> <label for="m_sex_f"> 여자</label>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="mobile_no">핸드폰번호 <span class="point1" title="필수 입력 정보">*</span></label></th>
+                                <td>
+                                    <span class="form_select">
+                                        <select name="m_phone01" id="member_mobile1" title="휴대번호 첫째자리를 선택하세요.">                                                
+                                            <option value="010">010</option>                                             
+                                        </select>
+                                    </span>
+                                    <input type="text" name="m_phone02" id="m_phone02" class="form_textbox number" maxlength="4" value="" title="핸드폰번호를 입력하세요.">
+                                    <input type="text" name="m_phone03" id="m_phone03" class="form_textbox number" maxlength="4" value="" title="핸드폰번호를 입력하세요.">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="m_email01">이메일 <span class="point1" title="필수 입력 정보">*</span></label></th>
+                                <td>
+                                    <div class="form_mail">
+                                        <input type="text" name="m_email01" id="m_email01" maxlength="30" class="form_textbox" value="" title="이메일 아이디를 입력하세요.">
+                                        @
+                                        <input type="text" name="m_email02" id="m_email02" maxlength="30" class="form_textbox" value="" title="이메일 도메인을 입력하세요.">
+                     
+                                        <div class="form_select">
+                                            <select title="이메일 도메인을 선택하세요.">
+                                                <option value="">직접입력</option>                                        
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     
+                    <div class="board_btns">
+                        <a href="sub3_1.html" class="btn type1"><span>취소</span></a>
+                        <a href="sub3_2_4.html" class="btn type2"><span>다음</span></a>
+                    </div>
+                    <!-- //콘텐츠 -->
+                    
+                </div>
+
+				<div class="contents_info"><script>$(".contents_info").load("../-inc/contents_info.html");</script></div>
+			</div>
+		</div>
+	</main>
+	
+    <footer id="footer"><script>$("#footer").load("../-inc/footer.html");</script></footer>
+</div>
+</body>
+
+</html>

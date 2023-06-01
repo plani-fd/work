@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script src="../../../jquery/js/jquery-1.11.2.min.js"></script>
+<script>$("head").load("../-inc/head.html");</script>
+</head>
+<body>
+<!-- Accessibility -->
+<p id="skip_nav">
+    <a href="#contents">본문 바로가기</a>
+</p>
+
+<div id="wrap">
+	<header id="header"><script>$("#header").load("../-inc/header.html");</script></header>
+
+	<main id="main">
+		<div class="main_wrap">
+			<div id="visual" class="visual2"><script>$("#visual").load("../-inc/visual.html");</script></div>			
+			<div id="snb" class="snb2"><script>$("#snb").load("../-inc/snb2.html");</script></div>	
+				
+			<div id="contents">
+				<div class="contents_util"><script>$(".contents_util").load("../-inc/contents_util.html");</script></div>
+
+  				<div id="contents_body">
+                    
+                    <!-- 콘텐츠 -->
+                    <script src="../../../jquery/js/board.js"></script>
+                    <link rel="stylesheet" href="../../../css/board.css" />
+
+                    <div class="board_info">
+                        <form name="" id="" method="post" action="">
+                            <fieldset>
+                                <legend class="blind">게시판 검색</legend>
+                                <div class="form">                                        
+                                    <p class="item">
+                                        <span class="form_select">
+                                            <select name="" title="게시물 분류를 선택하세요.">
+                                                <option value="">분류 전체</option>
+                                            </select>
+                                        </span>
+                                    </p>
+                                    
+                                    <p class="item">
+                                        <span class="form_select">
+                                            <select name="" id="" title="검색어 분류를 선택하세요.">
+                                                <option value="" selected="selected">전체</option>
+                                            </select>
+                                        </span>
+                                    </p>
+                        
+                                    <span class="item type1"><input type="text" name="" class="form_textbox" placeholder="검색어를 입력하세요" title="검색어" value=""></span>
+                                    <span class="item type1 btn"><button type="submit">검색</button></span>
+                                </div>                
+                            </fieldset>
+                        </form>
+                    
+                        <p class="page">
+                            <span class="total">전체 <b>8,897건</b> </span> <span class="current">페이지 <strong>1</strong>/<b>890</b></span>                                    
+                            <a class="icon_rss" href="" target="_blank" title="새창"><span class="IR">RSS</span></a>                                    
+                        </p>
+                    </div>
+                    
+                    <div class="board_list">
+                        <!-- gallery_list 한 줄에 3개, type1 추가 시 한 줄에 4개 노출 -->
+                        <ul class="gallery_list">           
+                            <li>
+                                <a href="sub2_3_view.html">      
+                                    <!-- 동영상의 경우 media 클래스 추가 -->                                      
+                                    <i class="thumb media" aria-hidden="true"><img src="../../../img/noimage.jpg" alt=""></i>
+                                    <p class="desc">
+                                        <strong class="title">
+                                            <i class="xi-new"><span class="sr_only">새글</span></i>
+                                            제목이 들어갑니다. 아주 긴 제목의 경우 이렇게 보입니다. 제목이 들어갑니다. 아주 긴 제목의 경우 이렇게 보입니다.
+                                        </strong>
+                                        <br>
+                                        <span class="name"><strong class="label">작성자</strong> 최고관리자</span>
+                                        <span class="date"><strong class="label">작성일</strong> 2020/03/02</span>
+                                        <span class="hit"><strong class="label">조회수</strong> 21</span>
+                                    </p>
+                                </a>
+                            </li>  
+                            <li>
+                                <a href="sub2_3_view.html">                                             
+                                    <i class="thumb media" aria-hidden="true"><img src="../../../img/noimage.jpg" alt=""></i>
+                                    <p class="desc">
+                                        <strong class="title">
+                                            <i class="xi-new"><span class="sr_only">새글</span></i>
+                                            제목이 들어갑니다. 아주 긴 제목의 경우 이렇게 보입니다. 제목이 들어갑니다. 아주 긴 제목의 경우 이렇게 보입니다.
+                                        </strong>
+                                        <br>
+                                        <span class="name"><strong class="label">작성자</strong> 최고관리자</span>
+                                        <span class="date"><strong class="label">작성일</strong> 2020/03/02</span>
+                                        <span class="hit"><strong class="label">조회수</strong> 21</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sub2_3_view.html">                                             
+                                    <i class="thumb media" aria-hidden="true"><img src="../../../img/noimage.jpg" alt=""></i>
+                                    <p class="desc">
+                                        <strong class="title">
+                                            제목이 들어갑니다. 아주 긴 제목의 경우 이렇게 보입니다. 제목이 들어갑니다. 아주 긴 제목의 경우 이렇게 보입니다.
+                                        </strong>
+                                        <br>
+                                        <span class="name"><strong class="label">작성자</strong> 최고관리자</span>
+                                        <span class="date"><strong class="label">작성일</strong> 2020/03/02</span>
+                                        <span class="hit"><strong class="label">조회수</strong> 21</span>
+                                    </p>
+                                </a>
+                            </li>                                  
+                            <li>
+                                <a href="sub2_3_view.html"> 
+                                    <i class="thumb media" aria-hidden="true"><img src="../../../img/noimage.jpg" alt=""></i>
+                                    <p class="desc">
+                                        <strong class="title">동영상 게시판 등록 테스트29 <span class="comment" aria-label="댓글"> (300)</span></strong>
+                                        <br>
+                                        <span class="name"><strong class="label">작성자</strong> 최고관리자</span>
+                                        <span class="date"><strong class="label">작성일</strong> 2020/03/02</span>
+                                        <span class="hit"><strong class="label">조회수</strong> 6</span>
+                                    </p>
+                                </a>
+                            </li>                                    
+                            <li>
+                                <a href="sub2_3_view.html">                                             
+                                    <i class="thumb media" aria-hidden="true"><img src="../../../img/noimage.jpg" alt=""></i>
+                                    <p class="desc">
+                                        <strong class="title">동영상 게시판 등록 테스트28</strong>
+                                        <br>
+                                        <span class="name"><strong class="label">작성자</strong> 최고관리자</span>
+                                        <span class="date"><strong class="label">작성일</strong> 2020/03/02</span>
+                                        <span class="hit"><strong class="label">조회수</strong> 4</span>
+                                    </p>
+                                </a>
+                            </li>                                    
+                            <li>
+                                <a href="sub2_3_view.html">                                             
+                                    <i class="thumb media" aria-hidden="true"><img src="../../../img/noimage.jpg" alt=""></i>
+                                    <p class="desc">
+                                        <strong class="title">동영상 게시판 등록 테스트27</strong>
+                                        <br>
+                                        <span class="name"><strong class="label">작성자</strong> 최고관리자</span>
+                                        <span class="date"><strong class="label">작성일</strong> 2020/03/02</span>
+                                        <span class="hit"><strong class="label">조회수</strong> 6</span>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="board_pager">
+                        <a href="" class="arr first">처음</a>
+                        <a href="" class="arr prev">이전</a>                                
+                        <span class="group">
+                            <a href="" class="active" title="현재 페이지"><strong>1</strong></a>
+                            <a href="">2</a>
+                            <a href="">3</a>
+                            <a href="">4</a>
+                            <a href="">5</a>
+                            <a href="">6</a>
+                            <a href="">7</a>
+                            <a href="">8</a>
+                            <a href="">9</a>
+                            <a href="">10</a>
+                        </span>                                
+                        <a href="" class="arr next">다음</a>
+                        <a href="" class="arr last">마지막</a>
+                    </div>
+                    <!-- //콘텐츠 -->
+
+                </div>
+
+				<div class="contents_info"><script>$(".contents_info").load("../-inc/contents_info.html");</script></div>
+			</div>
+		</div>
+	</main>
+	
+    <footer id="footer"><script>$("#footer").load("../-inc/footer.html");</script></footer>
+</div>
+</body>
+
+</html>

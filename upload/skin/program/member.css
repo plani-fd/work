@@ -314,6 +314,7 @@ Create date : 2023-01-01
   max-width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
+  margin-bottom: 3rem;
   text-align: center;
 }
 .member_step > * {
@@ -343,6 +344,8 @@ Create date : 2023-01-01
 }
 .member_step small {
   display: inline-block;
+  position: relative;
+  top: -0.1rem;
   width: 2rem;
   height: 2rem;
   margin-right: 0.5rem;
@@ -362,6 +365,15 @@ Create date : 2023-01-01
 .member_step .active strong {
   font-weight: 700;
   color: #000;
+}
+
+.board_btns {
+  margin-top: 4rem;
+}
+
+.board_box.type1 .title i {
+  display: block;
+  margin: 0 auto 1rem;
 }
 
 @media (max-width: 580px) {

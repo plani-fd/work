@@ -295,8 +295,8 @@
 
 	<main id="main">
 		<div class="main_wrap">
-			<div id="visual" class="visual_etc">
-                <strong class="title">기타</strong>
+			<div id="visual" class="visual2">
+                <strong class="title">게시판</strong>
             
                 <p class="control">
                     <a href="" class="prev"><span>이전</span></a>
@@ -304,61 +304,83 @@
                 </p>
             
                 <span class="img"><img src="../../img/sub/sub.jpg" alt=""></span>
-            </div>		
+            </div>
 
-			<div id="snb" class="snb_etc">
-                <h2 class="title">기타</h2>
+			<div id="snb" class="snb2">
+                <h2 class="title">게시판</h2>
 
                 <nav class="list">
                     <ul>
-                        <li class="active"><a href="policy.html">개인정보처리방침</a></li>
-                        <li><a href="sitemap.html">사이트맵</a></li>
-                        <li>
-                            <a href="search.html">검색</a>
+                        <li class="active">
+                            <a href="../sub2/sub2_1.html">기본</a>
                             <ul>
-                                <li><a href="search.html">기본</a></li>
-                                <li><a href="aivory.html">AIVORY</a></li>
+                                <li><a href="../sub2/sub2_1.html">목록</a></li>
+                                <li class="active"><a href="../sub2/sub2_1_2.html">내용</a></li>
+                                <li><a href="../sub2/sub2_1_3.html">작성</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="../sub2/sub2_2.html">갤러리</a>
+                            <ul>
+                                <li><a href="../sub2/sub2_2.html">목록</a></li>
+                                <li><a href="../sub2/sub2_2_2.html">내용</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../sub2/sub2_3.html">동영상</a>
+                            <ul>
+                                <li><a href="../sub2/sub2_3.html">목록</a></li>
+                                <li><a href="../sub2/sub2_3_2.html">내용</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../sub2/sub2_4.html">블로그형</a></li>
+                        <li><a href="../sub2/sub2_5.html">E-book형</a></li>
+                        <li><a href="../sub2/sub2_6.html">PDF형</a></li>
+                        <li><a href="../sub2/sub2_7.html">FAQ</a></li>
                     </ul>
                 </nav>
             </div>	
 				
 			<div id="contents">
 				<div class="contents_util">
-                    <h1 id="contents_title">기본</h1>
+                    <h1 id="contents_title">내용</h1>
 
                     <nav class="location">
                         <ul class="path">
                             <li class="icon"><a href="">홈</a></li>
-                            <li><a href="">기타</a></li>
-                            <li><a href="">검색</a></li>
-                            <li><a href="" class="active">기본</a></li>
+                            <li><a href="">게시판</a></li>
+                            <li><a href="">기본</a></li>
+                            <li><a href="" class="active">내용</a></li>
                         </ul>
 
                         <ul class="list">
                             <li>
-                                <button class="label">기타</button>
+                                <button class="label">게시판</button>
                                 <ul class="list depth1">
                                     <li><a href="../sub1/sub1_1.html">페이지준비중</a></li>
-                                    <li><a href="../sub2/sub2_1.html">게시판</a></li>
+                                    <li class="active"><a href="../sub2/sub2_1.html">게시판</a></li>
                                     <li><a href="../sub3/sub3_1.html">멤버십</a></li>
-                                    <li class="active"><a href="../etc/policy.html">기타</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <button class="label">검색</button>
-                                <ul class="list depth1">
-                                    <li><a href="../etc/policy.html">개인정보처리방침</a></li>
-                                    <li><a href="../etc/sitemap.html">사이트맵</a></li>
-                                    <li class="active"><a href="../etc/search.html">검색</a></li>
+                                    <li><a href="../etc/policy.html">기타</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <button class="label">기본</button>
                                 <ul class="list depth1">
-                                    <li><a href="../etc/search.html">기본</a></li>
-                                    <li class="active"><a href="../etc/aivory.html">AIVORY</a></li>
+                                    <li class="active"><a href="../sub2/sub2_1.html">기본</a></li>
+                                    <li><a href="../sub2/sub2_2.html">갤러리</a></li>
+                                    <li><a href="../sub2/sub2_3.html">동영상</a></li>
+                                    <li><a href="../sub2/sub2_4.html">블로그형</a></li>
+                                    <li><a href="../sub2/sub2_5.html">E-book형</a></li>
+                                    <li><a href="../sub2/sub2_6.html">PDF형</a></li>
+                                    <li><a href="../sub2/sub2_7.html">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button class="label">내용</button>
+                                <ul class="list depth1">
+                                    <li><a href="../sub2/sub2_1.html">목록</a></li>
+                                    <li class="active"><a href="../sub2/sub2_1_2.html">내용</a></li>
+                                    <li><a href="../sub2/sub2_1_3.html">작성</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -391,148 +413,181 @@
 
   				<div id="contents_body">
                     
-                    <!-- 콘텐츠 -->                    
-                    <link rel="stylesheet" href="../../../upload/skin/program/search.css" />
+                    <!-- 콘텐츠 -->
+                    <script src="../../../jquery/js/board.js"></script>
+                    <link rel="stylesheet" href="../../../css/board.css" />
 
-                    <div class="search_result">
-
-                        <div class="board_box type1 search_form">
-                            <form id="command" name="tForm" action="" method="post">
-                                <fieldset>
-                                    <legend class="blind">통합검색</legend>
-                                    <label for="allKeyWord">검색어</label>
-                                    <input type="text" name="allKeyWord" id="allKeyWord" class="form_textbox" value="건축" title="검색어 입력">
-                                    <button class="btn">검색</button>
-                                </fieldset>
-                            </form>
-                        </div>
-                    
-                        <p class="spot"><strong>'검색어'</strong>에 대한 총 <strong>721건</strong>의 결과를 찾았습니다.</p>
-                    
-                        <div class="depth4_tab">
-                            <ul>
-                                <li class="active"><a href="#" onclick="">전체 <span>(721)</span></a></li>
-                                <li><a href="#" onclick="">메뉴 <span>(18)</span></a></li>
-                                <li><a href="#" onclick="">콘텐츠 <span>(7)</span></a></li>
-                                <li><a href="#" onclick="">게시판 <span>(696)</span></a></li>                                
-                                <li><a href="#" onclick="">첨부파일 <span>(0)</span></a></li>
-                            </ul>
-                        </div>
-                        
-                        <article class="group">
-                            <h2 class="title">메뉴 <small>총 <span class="point1">18</span>건</small></h2>
-                            <ul class="board_list">                                            
-                                <li><a href=""><strong><span style="color:red">검색어</span> 메뉴명</strong></a></li>                                            
-                                <li><a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; <span style="color:red">검색어</span> 메뉴명</strong></a></li>
-                                <li><a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; <span style="color:red">검색어</span> 메뉴명 &gt; <span style="color:red">검색어</span> 메뉴명</strong></a></li>
-                            </ul>
-                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
-                        </article>
-                                
-                        <article class="group">
-                            <h2 class="title">콘텐츠 <small>총 <span class="point1">7</span>건</small></h2>
-                            <ul class="board_list">                                            
-                                <li>
-                                    <a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; 메뉴명</strong></a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다 길이 최대 200자</p>
-                                </li>
-                                <li>
-                                    <a href=""><strong>제목이 아닌 메뉴 뎁스가 나옵니다</strong></a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
-                                </li>                                            
-                                <li>
-                                    <a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; 메뉴명</strong></a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
-                                </li>
-                            </ul>
-                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
-                        </article>
-
-                        <article class="group">
-                            <h2 class="title">게시판 <small>총 <span class="point1">696</span>건</small></h2>
-                            <ul class="board_list">
-                                <li>
-                                    <a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; 메뉴명</strong></a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
-                                </li>
-                                <li>
-                                    <a href=""><strong>제목이 아닌 메뉴 뎁스가 나옵니다</strong></a>
-                                    <p class="txt">게시판 내용이 나옵니다.</p>
-                                </li>       
-                                <li>
-                                    <a href=""><strong>제목이 아닌 메뉴 뎁스가 나옵니다</strong></a>
-                                    <p class="txt">-</p>
-                                </li>
-                            </ul>
-                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
-                        </article>
-
-                        <article class="group">
-                            <h2 class="title">첨부파일 <small>총 <span class="point1">111</span>건</small></h2>
-                            <ul class="board_list">
-                                <li>
-                                    <a href="">
-                                        <strong>제목이 나옵니다.</strong>
-                                        <p class="info">
-                                            <span>게시판 : 메뉴명</span>
-                                            <span>등록일시 : 2022-12-19</span>
-                                        </p>
-                                    </a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <strong>제목이 나옵니다.</strong>
-                                        <p class="info">
-                                            <span>게시판 : 메뉴명</span>
-                                            <span>등록일시 : 2022-12-19</span>
-                                        </p>
-                                    </a>
-                                    <p class="txt">게시판 내용이 나옵니다.</p>
-                                </li>       
-                                <li>
-                                    <a href="">
-                                        <strong>제목이 나옵니다.</strong>
-                                        <p class="info">
-                                            <span>게시판 : 메뉴명</span>
-                                            <span>등록일시 : 2022-12-19</span>
-                                        </p>
-                                    </a>
-                                    <p class="txt">-</p>
-                                </li>
-                            </ul>
-                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
-                        </article>
-                    </div>
-                    
-                    <!-- 검색 결과가 없습니다 -->
-                    <div class="search_result">
-                        <div class="board_box type1 search_form">
-                            <form id="command" name="tForm" action="/search.es?mid=a10700000000" method="post">
-                                <input type="hidden" name="act" value="">
-                                <input type="hidden" name="nPage" value="1">
-                                <fieldset>
-                                    <legend class="blind">통합검색</legend>
-                                    <label for="allKeyWord">검색어</label>
-                                    <input type="text" name="allKeyWord" id="allKeyWord" class="form_textbox" value="검색어" title="검색어 입력">
-                                    <button class="btn">검색</button>
-                                </fieldset>
-                            </form>
-                        </div>
-
-                        <p class="label">
-                            <strong>'검색어'</strong>에 대한 검색 결과가 없습니다.
-                        </p>
-                        
-                        <ul class="bul depth1 blank">
-                            <li>단어와 철자가 정확한지 확인해 보세요.</li>
-                            <li>한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</li>
-                            <li>검색어의 단어 수를 줄이거나, 보다 일반적인 검색어로 다시 검색해 보세요.</li>
-                            <li>두 단어 이상의 검색어인 경우 띄어쓰기를 확인해 보세요.</li>
+                    <article class="board_view">
+                        <h2 class="title">
+                            <span class="category cateC01">휴무일</span>
+                            일반게시판 등록 테스트 30
+                        </h2>
+                        <ul class="info">
+                            <li class="date"><strong>작성일</strong><span>2020/03/02 16:26</span></li>
+                            <li class="cate"><strong>분류</strong><span>분류2</span></li>
+                            <li class="hit"><strong>조회수</strong><span>235</span></li>
+                            <li class="period"><strong>공지기간</strong><span>2000/01/01 ~ 3000/12/31</span></li>
                         </ul>
-                    </div>
-                    <!-- //검색 결과가 없습니다 -->
+                        <div class="contents">    
+                            <p>신종 코로나바이러스감염증-19 확진자 다수발생에 따라 보건소에서 현장의 적극적인 감염병 대처를 위해</p>
+                            <p>진료업무, 민원업무를 잠정중단 하오니 불편하시더라도 양해하여 주시기 바랍니다.</p>
+                             
+                            <p>
+                                ○ 일시 : 2020. 2. 24(월) 09:00 ~<br>
+                                ○ 대상 : 보건소 진료업무 및 모든 민원업무<br>
+                                ○ 내용 : 보건소의 신종 코로바이러스감염증-19 적극 대처를 위한 진료 및 민원업무 잠정중단<br>
+                            </p>
+                             
+                            <p>○ 문 의 처 : 동구보건소 건강정책과(☎ 608-3261)</p>
+                            <p><br></p>
+                            <p>채용신체검사결과서(공무원, 일반), 각종 면허·자격 발급용 건강진단서, </p>
+                            <p>운전면허 신체검사서 발급기관은 붙임파일을 참고하시기 바랍니다.</p>
+                     
+                            <p class="img"><img src="../../../img/noimage.jpg" alt=""></p>
+                        </div>
+                     
+                        <div class="file">
+                            <strong class="title">첨부파일</strong>
+                            <ul class="list">                                        
+                                <li class="type1">
+                                    <img src="../../../upload/skin/board/basic/pdf.png" alt="">
+                                    테스트test1234.pdf
+                                    <span class="txt">(11.67KB / 다운로드 4회)</span>                                            
+                                    <span class="link">
+                                        <a class="btn_line" href="">다운로드<i class="xi-download" aria-hidden="true"></i></a>                                                
+                                    </span>
+                                </li>
+                                 
+                                <li class="type1">
+                                    <img src="../../../upload/skin/board/basic/xls.png" alt="">
+                                    테스트test1234.xls
+                                    <span class="txt">(26KB / 다운로드 4회)</span>                                            
+                                    <span class="link">
+                                        <a class="btn_line" href="">다운로드<i class="xi-download" aria-hidden="true"></i></a>                                                
+                                    </span>
+                                </li>                                        
+                                <li class="type1">
+                                    <img src="../../../upload/skin/board/basic/jpg.png" alt="">
+                                    테스트사진2.jpg
+                                    <span class="txt">(36.72KB / 다운로드 231회)</span>                                            
+                                    <span class="link">
+                                        <a class="btn_line" href="">다운로드<i class="xi-download" aria-hidden="true"></i></a>                                                
+                                    </span>
+                                </li>                                        
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="board_reply">
+                        <h2 class="title">진행 상황</h2>
+                        <ul class="info">
+                            <li class="info1"><strong>담당부서</strong><span></span></li>
+                            <li class="info1"><strong>답변일시</strong><span>2020/03/20</span></li>
+                        </ul>
+                        <div class="contents">
+                            저의 답변은요
+                        </div>
+                         
+                        <div class="file">
+                            <strong class="label">첨부파일</strong>
+                            <ul class="list">                                
+                                <li class="type2">                                    
+                                    <img src="../../../upload/skin/board/basic/png.png" alt="">
+                                    KakaoTalk_Snapshot_20200228_165135.png
+                                    <span class="txt">(0Byte)</span>
+                                    <span class="link">
+                                        <a class="btn_line" href="">다운로드 <i class="xi-download" aria-hidden="true"></i></a>
+                                        <a class="btn_line" href="" target="_blank">미리보기 <i class="xi-search" aria-hidden="true"></i></a>
+                                    </span>
+                                </li>                                
+                                <li class="type2">
+                                    <img src="../../../upload/skin/board/basic/png.png" alt="">
+                                    KakaoTalk_Snapshot_20200228_165135.png
+                                    <span class="txt">(0Byte)</span>
+                                    <span class="link">
+                                        <a class="btn_line" href="">다운로드 <i class="xi-download" aria-hidden="true"></i></a>
+                                        <a class="btn_line" href="" target="_blank">미리보기 <i class="xi-search" aria-hidden="true"></i></a>
+                                    </span>
+                                </li>                            
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="comment box">
+                        <div class="form">
+                            <form name="cmtForm" method="post" action="">
+                            <fieldset>
+                                <legend class="blind">등록</legend>
+                                <div class="item">
+                                    <span class="length"><span id="">0</span> / 200</span>
+                                    <textarea title="댓글 내용" name="" rows="4" cols="76" placeholder="댓글을 남겨주세요."></textarea>
+                                    <button type="button" class="btn">등록</button>                                            
+                                </div>
+                            </fieldset>
+                            </form>
+                        </div>
+                     
+                        <h2 class="title">총 <span>3건</span>의 댓글</h2>
+                             
+                        <div class="list" id="">
+                            <ul>                        
+                                <li id="cmt2">
+                                    <span class="name">익명</span>                    
+                                    <p id="" class="txt">댓글등록ㅇㅇㅇㅇㅇ</p>                  
+                                    <span class="date" style="left: 32px;">2020/03/10 10:51</span>
+                                    <br>
+                                    <p class="btn">
+                                        <a href="">수정</a>
+                                        <a href="">삭제</a>
+                                    </p>
+                     
+                                    <div class="form" id="">
+                                        <form name="" method="post" action="">
+                                            <textarea name="" title="수정 내용">댓글등록ㅇㅇㅇㅇㅇ</textarea>
+                                            <button type="button">저장</button>                                                
+                                        </form>
+                                    </div>
+                                     
+                                    <div class="form" id="">
+                                        <form name="" method="post" action="">                                                    
+                                            <textarea name="" placeholder="답변을 남겨주세요." title="댓글의 답변 내용"></textarea>
+                                            <button type="button">등록</button>
+                                        </form>
+                                    </div>                                            
+                                </li>                                
+                                <li id="cmt4" class="re">
+                                    <span class="name">익명</span>                    
+                                    <p id="" class="txt">답변이고여</p>
+                                    <span class="date" style="left: 32px;">2020/03/10 10:59</span>
+                                    <br>
+                                    <p class="btn">                                            
+                                        <a href="">수정</a>
+                                        <a href="">삭제</a>                                            
+                                    </p>
+                     
+                                    <div class="form" id="">
+                                        <form name="" method="post" action="">                                                    
+                                            <textarea name="" title="수정 내용">답변이고여</textarea>
+                                            <button type="button" onclick="">저장</button>
+                                        </form>
+                                    </div>
+                                     
+                                </li>                                
+                            </ul>
+                        </div>
+                    </article>
                     
+                    <ul class="prevnext">
+                        <li class="prev"><span>이전글</span><a href="">강우시 억지말뚝으로 보강된 사면의 거동 및 안정성 변화</a></li>                                
+                        <li class="next"><span>다음글</span><a href="">일반게시판 등록 테스트 28</a></li>                                
+                    </ul>
+                     
+                    <div class="board_btns">  
+                        <button class="btn type2" type="button" onclick="location.href='sub2_1_3.html'">수정</button>                                        
+                        <button class="btn type2" type="button">삭제</button>                                        
+                        <button class="btn type2" type="button">답변</button>
+                        <button class="btn type1" type="button" onclick="location.href='sub2_1_1.html'">목록</button>
+                    </div>
                     <!-- //콘텐츠 -->
 
                 </div>

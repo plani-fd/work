@@ -193,6 +193,9 @@ Create date : 2023-01-01
 .search_result .board_list .filename img {
   margin-right: 0.5rem;
 }
+.search_result .gallery_list .label {
+  font-size: initial;
+}
 .search_result .inner {
   display: -webkit-box;
   display: -ms-flexbox;
