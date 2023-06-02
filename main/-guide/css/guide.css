@@ -67,27 +67,49 @@
   -webkit-transition: left 0.5s;
   transition: left 0.5s;
 }
+#_guide #gnb button {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 4.6rem;
+  text-align: left;
+}
+#_guide #gnb button::after {
+  font-family: "remixicon";
+  content: "\ea4e";
+  position: absolute;
+  right: 2rem;
+}
 #_guide #gnb a {
   display: block;
   position: relative;
 }
-#_guide #gnb > li {
+#_guide #gnb a[target=_blank]::after {
+  font-family: "remixicon";
+  content: "\ecaf";
+  position: absolute;
+  right: 2rem;
+}
+#_guide #gnb > ul > li > a, #_guide #gnb > ul > li > button {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 400;
   opacity: 0.5;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-#_guide #gnb > li > a {
-  padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  font-weight: 400;
-}
-#_guide #gnb > li.active {
+#_guide #gnb > ul > li > a:hover, #_guide #gnb > ul > li > a:focus, #_guide #gnb > ul > li > button:hover, #_guide #gnb > ul > li > button:focus {
   opacity: 1;
 }
-#_guide #gnb > li.active > a {
+#_guide #gnb > ul > li.active > a, #_guide #gnb > ul > li.active > button {
   font-weight: 600;
+  opacity: 1;
 }
-#_guide #gnb > li.active .depth2 {
+#_guide #gnb > ul > li.active button::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#_guide #gnb > ul > li.active .depth2 {
   visibility: visible;
   overflow: visible;
   width: 100%;
@@ -110,7 +132,29 @@
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-#_guide #gnb .depth2 a::after {
+#_guide #gnb .depth2 .active a {
+  color: #fff;
+}
+#_guide #gnb .depth2 .active a::after {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+#_guide #gnb .depth2 a[target=_blank] {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide #gnb .depth2 a[target=_blank]::after {
+  display: inline-block;
+  position: static;
+  width: auto;
+  height: auto;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+#_guide #gnb .depth2 a[target=_blank]:hover, #_guide #gnb .depth2 a[target=_blank]:focus {
+  color: #fff;
+}
+#_guide #gnb a + .depth2 a::after {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -125,13 +169,6 @@
   vertical-align: middle;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-}
-#_guide #gnb .depth2 .active a {
-  color: #fff;
-}
-#_guide #gnb .depth2 .active a::after {
-  width: 0.5rem;
-  height: 0.5rem;
 }
 #_guide main {
   position: relative;

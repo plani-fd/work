@@ -12,13 +12,15 @@ $(function()
         $('main > .section').eq(i).attr('id', 'section' + i);
 
         // 메뉴 생성
-        $('#gnb').append('<li><a href="#section' + i + '">' + $(this).find(' > h2').text() + '</a><ul class="depth2"></ul></li>');
+        $('.gnb1').append('<li><a href="#section' + i + '">' + $(this).find(' > h2').text() + '</a><ul class="depth2"></ul></li>');
 
         // 마크업 한 번 넣어도 소스 저절로 생성되게
         $('main > .section').eq(i).find('> .group').each(function(j)
         {
             $('main > .section').eq(i).find('> .group').eq(j).attr('id', 'group' + i + '_' + j);
-            $('#gnb').find('> li').eq(i).find('.depth2').append('<li><a href="#group' + i + '_' + j + '">' + $(this).find(' > h3').text() + '</a></li>');
+
+            // 하위메뉴 생성
+            $('.gnb1').find('> li').eq(i).find('.depth2').append('<li><a href="#group' + i + '_' + j + '">' + $(this).find(' > h3').text() + '</a></li>');
 
             $(this).find('> pre').text( $(this).find('> .item').html() );
 
@@ -27,6 +29,19 @@ $(function()
             $(this).find('> textarea').text( $(this).find('> .item').html() );
             $(this).find('> .item').after('<button>소스 복사하기</button>');
         });
+    });
+
+    // 통합검색
+    $('#gnb').find('button').on('click', function()
+    {
+        if ( $(this).parent('li').hasClass('active') == false )
+        {
+            $(this).parent('li').addClass('active');
+        }
+        else
+        {
+            $(this).parent('li').removeClass('active');
+        }
     });
 
     $('main > .section > .group > .item').each(function(i)

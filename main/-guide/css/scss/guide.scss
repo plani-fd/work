@@ -42,19 +42,37 @@
     {
         overflow: hidden; position: fixed; left: 0; top: 6rem; width: 20rem; height: calc(100% - 6rem); background-color: #222; color: #fff; transition: left 0.5s;
 
-        a {display: block; position: relative;}
-
-        & > li
+        button 
         {
-            opacity: 0.5; transition: $time2;
+            display: block; position: relative; width: 100%; min-height: 4.6rem; text-align: left;
 
-            & > a {padding: 1rem 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); font-weight: 400;}
+            &::after {@include icon(type2, '\EA4E'); right: 2rem;}
+        }
+
+        a 
+        {
+            display: block; position: relative;
+
+            &[target="_blank"]::after {@include icon(type2, '\ECAF'); right: 2rem;}
+        }
+
+        & > ul > li
+        {
+            & > a,
+            & > button 
+            {
+                padding: 1rem 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); font-weight: 400; opacity: 0.5; transition: $time2;
+
+                &:hover,
+                &:focus {opacity: 1;}
+            }
 
             &.active 
             {
-                opacity: 1;
+                & > a,
+                & > button {font-weight: 600; opacity: 1;}
 
-                & > a {font-weight: 600;}
+                button::after {transform: rotate(180deg);}
 
                 .depth2 {@include visible(100%, auto); padding: 1.5rem 2rem;}
             }
@@ -65,15 +83,25 @@
             @include hidden(100%, 0);
             margin: 0; padding: 0 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); background-color: rgba(255, 255, 255, 0.05); font-size: 1.4rem; color: rgba(255, 255, 255, 0.5); transition: $time2;
 
-            a::after {@include position(top); left: auto; width: 0; height: 0; margin: -0.1rem 0 0 0.5rem; border-radius: 100%; background-color: #fff; content: ''; vertical-align: middle; transition: $time2;}
-
             .active a
             {
                 color: #fff;
 
                 &::after {width: 0.5rem; height: 0.5rem;}
             }
+
+            a[target=_blank]
+            {
+                transition: $time2;
+
+                &::after {display: inline-block; position: static; width: auto; height: auto; margin-left: 0.25rem; vertical-align: middle;}
+
+                &:hover,
+                &:focus {color: #fff;}
+            }
         }
+
+        a + .depth2 a::after {@include position(top); left: auto; width: 0; height: 0; margin: -0.1rem 0 0 0.5rem; border-radius: 100%; background-color: #fff; content: ''; vertical-align: middle; transition: $time2;}
     }
 
     main 

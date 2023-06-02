@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script src="../../../jquery/js/jquery-1.11.2.min.js"></script>
+<script>$("head").load("../-inc/head.html");</script>
+</head>
+<body>
+<!-- Accessibility -->
+<p id="skip_nav">
+    <a href="#contents">본문 바로가기</a>
+</p>
+
+<div id="wrap">
+	<header id="header"><script>$("#header").load("../-inc/header.html");</script></header>
+
+	<main id="main">
+		<div class="main_wrap">
+			<div id="visual" class="visual_etc"><script>$("#visual").load("../-inc/visual.html");</script></div>			
+			<div id="snb" class="snb_etc"><script>$("#snb").load("../-inc/snb_etc.html");</script></div>	
+				
+			<div id="contents">
+				<div class="contents_util"><script>$(".contents_util").load("../-inc/contents_util.html");</script></div>
+
+  				<div id="contents_body">
+                    
+                    <!-- 콘텐츠 -->                    
+                    <link rel="stylesheet" href="../../../upload/skin/program/search.css" />
+
+                    <div class="search_result">
+                        <div class="board_box type1 search_form">
+                            <form id="command" name="tForm" action="/search.es?mid=a10700000000" method="post">
+                                <input type="hidden" name="act" value="">
+                                <input type="hidden" name="nPage" value="1">
+                                <fieldset>
+                                    <legend class="blind">통합검색</legend>
+                                    <label for="allKeyWord">검색어</label>
+                                    <input type="text" name="allKeyWord" id="allKeyWord" class="form_textbox" value="검색어" title="검색어 입력">
+                                    <button class="btn">검색</button>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <p class="label">
+                            <strong>'검색어'</strong>에 대한 검색 결과가 없습니다.
+                        </p>
+                        
+                        <ul class="bul depth1 blank">
+                            <li>단어와 철자가 정확한지 확인해 보세요.</li>
+                            <li>한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</li>
+                            <li>검색어의 단어 수를 줄이거나, 보다 일반적인 검색어로 다시 검색해 보세요.</li>
+                            <li>두 단어 이상의 검색어인 경우 띄어쓰기를 확인해 보세요.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- //콘텐츠 -->
+
+                </div>
+
+				<div class="contents_info"><script>$(".contents_info").load("../-inc/contents_info.html");</script></div>
+			</div>
+		</div>
+	</main>
+	
+    <footer id="footer"><script>$("#footer").load("../-inc/footer.html");</script></footer>
+</div>
+</body>
+
+</html>

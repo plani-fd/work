@@ -36,8 +36,21 @@
             <a href="guide4.html">기타</a>
             <a href="guide5.html">문서</a>
         </nav>
-
-        <ul id="gnb"></ul>
+        
+        <nav id="gnb">
+            <ul class="gnb1"></ul>
+            <ul class="gnb2">
+                <li><a href="../html/etc/policy.html" target="_blank">개인정보처리방침</a></li>
+                <li>
+                    <button>통합검색</button>
+                    <ul class="depth2">
+                        <li><a href="" target="_blank">검색결과 없음</a></li>
+                        <li><a href="" target="_blank">검색결과 있음</a></li>
+                        <li><a href="" target="_blank">AIVORY</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -280,175 +293,6 @@
                         </dl>
                     
                     </div>
-                </div>
-
-                <pre class="brush: html gutter: false;"></pre>
-            </article>
-        </section>
-
-        <section class="section">
-            <h2>통합검색</h2>
-
-            <!-- ============================== -->
-            <article class="group">
-                <h3>기본</h3>
-
-                <div class="item">
-                    <div class="search_result">
-
-                        <div class="board_box type1 search_form">
-                            <form id="command" name="tForm" action="" method="post">
-                                <fieldset>
-                                    <legend class="blind">통합검색</legend>
-                                    <label for="allKeyWord">검색어</label>
-                                    <input type="text" name="allKeyWord" id="allKeyWord" class="form_textbox" value="건축" title="검색어 입력">
-                                    <button class="btn">검색</button>
-                                </fieldset>
-                            </form>
-                        </div>
-                    
-                        <p class="spot"><strong>'검색어'</strong>에 대한 총 <strong>721건</strong>의 결과를 찾았습니다.</p>
-                    
-                        <div class="depth4_tab">
-                            <ul>
-                                <li class="active"><a href="#" onclick="">전체 <span>(721)</span></a></li>
-                                <li><a href="#" onclick="">메뉴 <span>(18)</span></a></li>
-                                <li><a href="#" onclick="">콘텐츠 <span>(7)</span></a></li>
-                                <li><a href="#" onclick="">게시판 <span>(696)</span></a></li>                                
-                                <li><a href="#" onclick="">첨부파일 <span>(0)</span></a></li>
-                            </ul>
-                        </div>
-                        
-                        <article class="group">
-                            <h2 class="title">메뉴 <small>총 <span class="point1">18</span>건</small></h2>
-                            <ul class="board_list">                                            
-                                <li><a href=""><strong><span style="color:red">검색어</span> 메뉴명</strong></a></li>                                            
-                                <li><a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; <span style="color:red">검색어</span> 메뉴명</strong></a></li>
-                                <li><a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; <span style="color:red">검색어</span> 메뉴명 &gt; <span style="color:red">검색어</span> 메뉴명</strong></a></li>
-                            </ul>
-                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
-                        </article>
-                               
-                        <article class="group">
-                            <h2 class="title">콘텐츠 <small>총 <span class="point1">7</span>건</small></h2>
-                            <ul class="board_list">                                            
-                                <li>
-                                    <a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; 메뉴명</strong></a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다 길이 최대 200자</p>
-                                </li>
-                                <li>
-                                    <a href=""><strong>제목이 아닌 메뉴 뎁스가 나옵니다</strong></a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
-                                </li>                                            
-                                <li>
-                                    <a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; 메뉴명</strong></a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
-                                </li>
-                            </ul>
-                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
-                        </article>
-
-                        <article class="group">
-                            <h2 class="title">게시판 <small>총 <span class="point1">696</span>건</small></h2>
-                            <ul class="board_list">
-                                <li>
-                                    <a href=""><strong><span style="color:red">검색어</span> 메뉴명 &gt; 메뉴명</strong></a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
-                                </li>
-                                <li>
-                                    <a href=""><strong>제목이 아닌 메뉴 뎁스가 나옵니다</strong></a>
-                                    <p class="txt">게시판 내용이 나옵니다.</p>
-                                </li>       
-                                <li>
-                                    <a href=""><strong>제목이 아닌 메뉴 뎁스가 나옵니다</strong></a>
-                                    <p class="txt">-</p>
-                                </li>
-                            </ul>
-                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
-                        </article>
-
-                        <article class="group">
-                            <h2 class="title">첨부파일 <small>총 <span class="point1">111</span>건</small></h2>
-                            <ul class="board_list">
-                                <li>
-                                    <a href="">
-                                        <strong>제목이 나옵니다.</strong>
-                                        <p class="info">
-                                            <span>게시판 : 메뉴명</span>
-                                            <span>등록일시 : 2022-12-19</span>
-                                        </p>
-                                    </a>
-                                    <p class="txt">내용 중에 <span style="color:red">검색어</span> 단어가 포함되는 경우 <span style="color:red">검색어</span> 단어에 포인트 색상이 추가됩니다</p>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <strong>제목이 나옵니다.</strong>
-                                        <p class="info">
-                                            <span>게시판 : 메뉴명</span>
-                                            <span>등록일시 : 2022-12-19</span>
-                                        </p>
-                                    </a>
-                                    <p class="txt">게시판 내용이 나옵니다.</p>
-                                </li>       
-                                <li>
-                                    <a href="">
-                                        <strong>제목이 나옵니다.</strong>
-                                        <p class="info">
-                                            <span>게시판 : 메뉴명</span>
-                                            <span>등록일시 : 2022-12-19</span>
-                                        </p>
-                                    </a>
-                                    <p class="txt">-</p>
-                                </li>
-                            </ul>
-                            <a href="#" onclick="" class="more">더보기 <i class="xi-plus-min"></i></a>
-                        </article>
-                    </div>
-                </div>
-
-                <pre class="brush: html gutter: false;"></pre>
-            </article>
-
-            <!-- ============================== -->
-            <article class="group">
-                <h3>결과없음</h3>
-
-                <div class="item">
-                    <div class="search_result">
-                        <div class="board_box type1 search_form">
-                            <form id="command" name="tForm" action="/search.es?mid=a10700000000" method="post">
-                                <input type="hidden" name="act" value="">
-                                <input type="hidden" name="nPage" value="1">
-                                <fieldset>
-                                    <legend class="blind">통합검색</legend>
-                                    <label for="allKeyWord">검색어</label>
-                                    <input type="text" name="allKeyWord" id="allKeyWord" class="form_textbox" value="검색어" title="검색어 입력">
-                                    <button class="btn">검색</button>
-                                </fieldset>
-                            </form>
-                        </div>
-
-                        <p class="label">
-                            <strong>'검색어'</strong>에 대한 검색 결과가 없습니다.
-                        </p>
-                        
-                        <ul class="bul depth1 blank">
-                            <li>단어와 철자가 정확한지 확인해 보세요.</li>
-                            <li>한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</li>
-                            <li>검색어의 단어 수를 줄이거나, 보다 일반적인 검색어로 다시 검색해 보세요.</li>
-                            <li>두 단어 이상의 검색어인 경우 띄어쓰기를 확인해 보세요.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <pre class="brush: html gutter: false;"></pre>
-            </article>
-
-            <!-- ============================== -->
-            <article class="group">
-                <h3>에이아이보리</h3>
-
-                <div class="item">
                 </div>
 
                 <pre class="brush: html gutter: false;"></pre>
