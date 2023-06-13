@@ -189,6 +189,114 @@
 
         &.disable {overflow-y: hidden !important; height: 0; padding: 0 1rem; border-color: transparent;}
     }
+
+    .markup
+    {
+        .box 
+        {
+            clear: both; position: relative; margin-top: 1rem; padding: 1rem 1.5rem; font-size: 1.4rem; font-weight: 300; color: #666;
+
+            &:last-child {margin-bottom: 0.5rem;}
+        }
+
+        .type1 {border: 1px dashed #ccc;}        
+        .type2 {border: 1px solid #ccc;}
+        .type3 {background-color: #f8f8f8;}
+        .type4 {border: 1px solid #efefef; background: linear-gradient(45deg, #fff, #fff 45%, #ddd 45%, #ddd 55%, #fff 55%, #fff); background-size: 0.5rem 0.5rem;}
+        .type6 {background-color: #eaeef3;}
+
+        .type5 
+        {
+            border: 1px dotted #ccc; background-color: #fff;
+
+            & + .type5 {margin-top: 0.5rem;}
+
+            & > ul .box {background-color: #f8f8f8;}
+            & + ul .box {background-color: #fff;}
+        }
+
+        small {font-size: 1.2rem; color: #999; text-decoration: line-through;}
+
+        button 
+        {
+            @include square(4rem);
+            position: absolute; right: 0; top: 0; z-index: 1; font-size: 1.8rem; transition: $time2;
+
+            &::before {@include icon(type3, '\EA4D');}
+
+            &.active {transform: rotate(180deg);}
+        }
+
+        .depth
+        {
+            display: flex; width: 100%; margin: 1rem 0 0.5rem;
+            
+            & > li {margin-top: 0 !important; margin-bottom: 0 !important; flex-basis: 100%;}            
+            & > li + li {margin-left: 1rem;}
+        }
+    }
+
+    .folder
+    {
+        overflow: hidden; padding-bottom: 0 !important; border: 1px solid #ccc; border-top: 0 none; font-weight: 300; line-height: 4.5rem;
+
+        ul {overflow: visible !important;}
+
+        li 
+        {
+            @include bg1;
+            padding: 0 4rem; background-color: #fff;
+
+            &::before {@include icon(type2, '\F309'); left: 1.5rem;}
+            &::after {@include position(left); top: 0; z-index: -1; width: 1000%; height: 100%; border-top: 1px solid #ccc; content: '';}
+        }
+
+        li li
+        {
+            &::after {background-color: #f8f8f8;}
+
+            button::after {right: -2rem;}
+        }
+
+        li li li
+        {
+            &::after {background-color: #efefef;}
+
+            button::after {right: -4.5rem;}
+        }
+
+        li li li li::after {background-color: #e6e6e6;}
+
+        button 
+        {
+            position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 4.5rem; font-size: 2rem;
+
+            &::after {@include icon(type2, '\EA4E'); right: 2rem; top: 0; line-height: 4.5rem; transition: $time2;}
+
+            &.active::after {transform: rotate(180deg);}
+        }
+
+        & > ul > li
+        {
+            font-weight: 500; color: #333;
+
+            &::before {content: '\ED61';}
+
+            li 
+            {
+                padding: 0 2.5rem; font-weight: 300; color: $color;
+
+                &::before {left: 0;}
+            }
+        }
+
+        $icons: (css: '\EDFC', js: '\F323', html: '\ED0F', img: '\EE4B');
+
+        @each $keys, $icon in $icons
+        {
+            .#{$keys}::before {content: $icon;}
+        }
+    }
 }
 
 @media (max-width: 1024px)

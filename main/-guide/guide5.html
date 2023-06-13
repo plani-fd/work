@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+<title>[기타] 스타일가이드</title>
+
+<script src="../../jquery/js/jquery-1.11.2.min.js"></script>
+<script src="../../jquery/js/jquery-ui.min.js"></script>
+<script src="../../jquery/js/swiper-bundle.min.js"></script>
+
+<script src="js/shCore.js"></script>
+<script src="js/shBrushXml.js"></script>
+
+<script src="js/guide.js"></script>
+
+<link rel="stylesheet" href="css/shCore.css" />
+<link rel="stylesheet" href="css/shThemeEclipse.css" />
+
+<link rel="stylesheet" href="css/guide.css">
+
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../upload/skin/program/member.css">
+</head>
+
+<body>
+<div id="_guide">
+    <header>
+        <h1><i><img src="../img/layout/logo.png" alt="PLAN I"></i><span>스타일가이드</span></h1>
+
+        <nav id="lnb">
+            <a href="guide1.html">콘텐츠</a>
+            <a href="guide2.html">게시판</a>
+            <a href="guide3.html">멤버십</a>
+            <a href="guide4.html">기타</a>
+            <a href="guide5.html">문서</a>
+        </nav>
+        
+        <nav id="gnb"><ul class="gnb1"></ul></nav>
+    </header>
+
+    <main>
+        
+        <section class="section">
+            <h2>믹스인 안내</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                <div class="item">
+
+                    <div class="syntaxhighlighter nogutter html">
+                        <div class="code">
+                            <div class="container">
+
+                                <div class="line alt2"><code class="html color1">@include</code> <code class="html keyword">width</code><code class="html plain">(</code><code class="html string">$width1, $width2</code><code class="html plain">);</code> </div>
+                                <div class="line alt1"><code class="html comments">// width1: 가로값, width2: 최대 가로값 (무조건 가운데정렬)</code></div>
+                                <div class="line alt2">&nbsp;</div>
+                                                            
+                                <div class="line alt1"><code class="html color1">@include</code> <code class="html keyword">height</code><code class="html plain">(</code><code class="html string">$height, $bdwidth, $bdcolor</code><code class="html plain">);</code> </div>
+                                <div class="line alt2"><code class="html comments">// height: 전체 세로값, bdwidth: 선 두께, bdcolor: 선 색</code></div>
+                                <div class="line alt1">&nbsp;</div>
+                                
+                                <div class="line alt2"><code class="html color1">@include</code> <code class="html keyword">ellipsis</code><code class="html plain">(</code><code class="html string">$lines: 1, $line-height</code><code class="html plain">);</code> </div>
+                                <div class="line alt1"><code class="html comments">// lines: 보일 라인 수, line-height: 글자 줄간격(세로값)</code></div>
+                                <div class="line alt2">&nbsp;</div>
+
+                                <div class="line alt1"><code class="html color1">@include</code> <code class="html keyword">bg2</code><code class="html plain">(</code><code class="html string">$type</code><code class="html plain">);</code> </div>
+                                <div class="line alt2"><code class="html comments">// type1: 넘치게, type2: 꽉 차게</code></div>
+                                <div class="line alt1">&nbsp;</div>
+                                
+                                <div class="line alt2"><code class="html color1">@include</code> <code class="html keyword">position</code><code class="html plain">(</code><code class="html string">$direction</code><code class="html plain">);</code> </div>
+                                <div class="line alt1"><code class="html comments">// left: 가로 가운데 정렬, top: 세로 가운데 정렬, center: 가로세로 가운데 정렬, none: 정렬 해제(position:relative)</code></div>
+                                <div class="line alt2">&nbsp;</div>
+
+                                <div class="line alt1"><code class="html color1">@include</code> <code class="html keyword">hidden</code><code class="html plain">(</code><code class="html string">$width, $height</code><code class="html plain">);</code> </div>
+                                <div class="line alt2"><code class="html comments">// width: 감춰질 요소의 가로값, height: 갑춰질 요소의 세로값</code></div>
+                                <div class="line alt1">&nbsp;</div>
+                                
+                                <div class="line alt2"><code class="html color1">@include</code> <code class="html keyword">visible</code><code class="html plain">(</code><code class="html string">$width, $height</code><code class="html plain">);</code> </div>
+                                <div class="line alt1"><code class="html comments">// width: 보여질 요소의 가로값, height: 보여질 요소의 세로값</code></div>
+                                <div class="line alt2">&nbsp;</div>
+
+                                <div class="line alt1"><code class="html color1">@include</code> <code class="html keyword">icon</code><code class="html plain">(</code><code class="html string">$type, $content</code><code class="html plain">);</code> </div>
+                                <div class="line alt2"><code class="html comments">// content: 아이콘의 유니코드, type1: inline-block, type2: absolute, type3: 영역 전체를 채움</code></div>
+                                <div class="line alt1">&nbsp;</div>
+                                
+                                <div class="line alt2"><code class="html color1">@include</code> <code class="html keyword">square</code><code class="html plain">(</code><code class="html string">$size</code><code class="html plain">);</code> </div>
+                                <div class="line alt1"><code class="html comments">// size: 가로 세로 사이즈 (정사각형)</code></div>
+                                <div class="line alt2">&nbsp;</div>
+
+                                <div class="line alt1"><code class="html color1">@include</code> <code class="html keyword">hover</code><code class="html plain">(</code><code class="html string">$target</code><code class="html plain">);</code> </div>
+                                <div class="line alt2"><code class="html comments">// before: 회전할 가상선택자가 before, after: 회전할 가상선택자가 after</code></div>
+                                <div class="line alt1">&nbsp;</div>
+                                
+                                <div class="line alt2"><code class="html color1">@include</code> <code class="html keyword">title</code><code class="html plain">(</code><code class="html string">$margin, $font, $color</code><code class="html plain">);</code> </div>
+                                <div class="line alt1"><code class="html comments">// margin: 요소의 전체 마진(위, 아래, 왼쪽, 오른쪽 모두), font: 글자 크기, color: 글자 색</code></div>
+                                <div class="line alt2">&nbsp;</div>
+
+                                <div class="line alt1"><code class="html color1">@include</code> <code class="html keyword">bul</code><code class="html plain">(</code><code class="html string">$padding</code><code class="html plain">);</code> </div>
+                                <div class="line alt2"><code class="html comments">// padding: 왼쪽 패딩값(블릿 모양은 before로 직접 지정해야 함)</code></div>
+                                <div class="line alt1">&nbsp;</div>
+                                
+                                <div class="line alt2"><code class="html color1">@include</code> <code class="html keyword">list</code><code class="html plain">(</code><code class="html string">$type, $mr, $mt, $ea</code><code class="html plain">);</code> </div>
+                                <div class="line alt1"><code class="html comments">// mr: 가로 마진, mt: 세로 마진, ea: 한 줄에 나올 갯수, type1: 리스트가 모두 한 줄로, type2: 리스트 줄바꿈</code></div>
+                                <div class="line alt2">&nbsp;</div>
+
+                                <div class="line alt1"><code class="html color1">@include</code> <code class="html keyword">btn</code><code class="html plain">(</code><code class="html string">$height, $padding, $bdwidth, $bdcolor, $bgcolor, $font, $color</code><code class="html plain">);</code> </div>
+                                <div class="line alt2"><code class="html comments">// height: 버튼 세로값, padding: 버튼 패딩, bdwidth: 선 두께, bdcolor: 선 색, bgcolor: 배경 색, font: 글자 크기, color: 글자 색 (오버시 스타일도 저장되어있음)</code></div>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+
+        <section class="section">
+            <h2>마크업 구조</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                
+                <div class="item markup">
+                    <p class="box type1">#skip_nav</p>
+
+                    <div class="box type2">
+                        #wrap
+
+                        <ul>
+                            <li class="box type1">
+                                #layerPopup<small>0~999</small>
+                                <ul class="depth">
+                                    <li class="box type4">.popup_cont</li>
+                                    <li class="box type5">.close</li>
+                                </ul>
+                            </li>
+                            <li class="box type1">
+                                #issue
+                                <ul>
+                                    <li class="box type5">.control.open</li>
+                                    <li class="box type4">
+                                        .group
+                                        <ul>
+                                            <li class="box type5">.title</li>
+                                            <li class="box type5">.list.modalpopup</li>
+                                            <li class="box type5">
+                                                .item
+                                                <ul class="depth">
+                                                    <li class="box">.label</li>
+                                                    <li class="box">.control.close</li>
+                                                    <li class="box">.control.close.oneday</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="box type1">
+                                .topbanner
+                                <ul>
+                                    <li class="box type5">.control.open</li>
+                                    <li class="box type4">
+                                        .group
+                                        <ul class="depth">
+                                            <li class="box type5">.list</li>
+                                            <li class="box type5">.control.close</li>
+                                            <li class="box type5">.control.close.oneday</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="box type3">
+                                #header
+                                <div class="box type2">
+                                    .header_wrap
+                                    <ul>
+                                        <li class="box type1">#logo</li>
+                                        <li class="box type1">
+                                            #hnb
+                                            <ul class="depth">
+                                                <li class="box type5">
+                                                    .hnb1
+                                                    <ul class="depth">
+                                                        <li class="box type4">.label</li>
+                                                        <li class="box type4">.list</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="box type5">
+                                                    .hnb2
+                                                    <p class="box type4">.lang</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                            
+                                        <li class="box type1">
+                                            .search
+                                            <ul>
+                                                <li class="box type4">.control.open</li>
+                                                <li class="box type5">
+                                                    .group
+                                                    <ul class="depth">
+                                                        <li class="box type4">.form</li>
+                                                        <li class="box type4">.control.close</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="box type1">#gnb1</li>
+                                        <li class="box type1">
+                                            #gnb2
+                                            <ul class="depth">
+                                                <li class="box type5">.control.open</li>
+                                                <li class="box type5">.control.close</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="box type3">
+                                #main
+                                <div class="box type2">
+                                    .main_wrap
+                                    <ul>
+                                        <li class="box type1">
+                                            #visual
+                                            <ul class="depth">
+                                                <li class="box type6">.title</li>
+                                                <li class="box type6">.control</li>
+                                                <li class="box type6">.img</li>
+                                            </ul>
+                                        </li>
+                                        <li class="box type6">
+                                            #snb
+                                            <ul class="depth">
+                                                <li class="box type2">.title</li>
+                                                <li class="box type2">.list</li>
+                                            </ul>
+                                        </li>
+                                        <li class="box type1">
+                                            #contents
+                                            <ul>
+                                                <li class="box type6">
+                                                    .contents_util
+                                                    <ul>
+                                                        <li class="box type2">#contents_title</li>
+                                                        <li class="box type2">
+                                                            .location
+                                                            <ul class="depth">
+                                                                <li class="box type1">.path</li>
+                                                                <li class="box type1">.list</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="box type2">
+                                                            .util
+                                                            <ul>
+                                                                <li class="box type1">.zoom</li>
+                                                                <li class="box type1">
+                                                                    <ul>
+                                                                        <li class="box type4">.title</li>
+                                                                        <li class="box type4">
+                                                                            item
+                                                                            <ul class="depth">
+                                                                                <li class="box type5">.list#share</li>
+                                                                                <li class="box type5">.close</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="box type1">.btn.print</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="box type6">
+                                                    #contents_body
+                                                    <ul class="depth">
+                                                        <li class="box type2">
+                                                            #depth4_menu_div.depth4_tab
+                                                            <p class="box type1">#depth4_menu_ul</p>
+                                                        </li>
+                                                        <li class="box type2">
+                                                            #depth5_menu_div.depth5_tab
+                                                            <p class="box type1">#depth5_menu_ul</p>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="box type6">
+                                                    .contents_info
+                                                    <ul>
+                                                        <li class="box type2">
+                                                            .kogl
+                                                            <ul class="depth">
+                                                                <li class="box type1">.img</li>
+                                                                <li class="box type1">.txt</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="box type2">
+                                                            .duty
+                                                            <ul class="depth">
+                                                                <li class="box type1">.title</li>
+                                                                <li class="box type1">.list</li>
+                                                                <li class="box type1">.date</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="box type2">
+                                                            .group
+                                                            <ul>
+                                                                <li class="box type1">
+                                                                    .item#satisfy
+                                                                    <ul class="depth">
+                                                                        <li class="box type4">
+                                                                            .title
+                                                                            <p class="box type5">txt</p>
+                                                                        </li>
+                                                                        <li class="box type4">
+                                                                            .cont
+                                                                            <p class="box type5">list</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="box type1">.item.qr</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                            <li class="box type1">
+                                #quick
+                                <ul>
+                                    <li class="box type5">.control.open</li>
+                                    <li class="box type4">
+                                        .group
+                                        <ul class="depth">
+                                            <li class="box type5">.title</li>
+                                            <li class="box type5">.list</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="box type1">
+                                .footbanner
+                                <p class="box type4">.list</p>
+                            </li>
+                            <li class="box type3">
+                                #footer
+                                <div class="box type2">
+                                    .footer_wrap
+                                    <ul>
+                                        <li class="box type1">
+                                            #fnb
+                            
+                                            <ul class="depth">
+                                                <li class="box type5">.fnb1</li>
+                                                <li class="box type5">.fnb2</li>
+                                            </ul>
+                                        </li>
+                                        <li class="box type1">
+                                            .related
+                            
+                                            <ul class="depth">
+                                                <li class="box type5">
+                                                    .group.group1
+                                                    <ul class="depth">
+                                                        <li class="box type4">.label</li>
+                                                        <li class="box type4">.list</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="box type5">
+                                                    .group.group2
+                                                    <ul class="depth">
+                                                        <li class="box type4">.label</li>
+                                                        <li class="box type4">.list</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="box type1">
+                                            #siteinfo
+                            
+                                            <ul class="depth">
+                                                <li class="box type5">.logo</li>
+                                                <li class="box type5">.copyright</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                            
+                                    <ul class="depth">
+                                        <li class="box type1">.mark</li>
+                                        <li class="box type1">.btn_top</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </article>
+        </section>
+        
+        <section class="section">
+            <h2>폴더 구조</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                
+                <div class="item folder">
+                    <ul>
+                        <li>
+                            css
+                            <ul>
+                                <li>scss</li>
+                                <li class="css">board.css</li>
+                                <li class="css">cmp.css</li>
+                                <li class="css">common.css</li>
+                                <li class="css">default.css</li>
+                                <li class="css">layerpopup.css</li>
+                                <li class="css">modalpopup.css</li>
+                                <li class="css">policy.css</li>
+                                <li class="css">printArea.css</li>
+                                <li class="css">topbanner.css</li>
+                            </ul>
+                        </li>
+                        <li>
+                            font
+                            <ul>
+                                <li>
+                                    pretendard
+                                    <ul>
+                                        <li>file</li>
+                                        <li class="css">font_pretendard.css</li>
+                                    </ul>
+                                </li>
+                                <li>remixicon</li>
+                            </ul>
+                        </li>
+                        <li>
+                            img
+                            <ul>
+                                <li>policy</li>
+                                <li class="img">attach.png</li>
+                                <li class="img">doc.png</li>
+                                <li class="img">docx.png</li>
+                                <li class="img">file.png</li>
+                                <li class="img">gif.png</li>
+                                <li class="img">hwp.png</li>
+                                <li class="img">img.png</li>
+                                <li class="img">img_preparing.jpg</li>
+                                <li class="img">jpg.png</li>
+                                <li class="img">noimage.jpg</li>
+                                <li class="img">pdf.png</li>
+                                <li class="img">png.png</li>
+                                <li class="img">ppt.png</li>
+                                <li class="img">pptx.png</li>
+                                <li class="img">xls.png</li>
+                                <li class="img">xlsx.png</li>
+                                <li class="img">zip.png</li>
+                            </ul>
+                        </li>
+                        <li>
+                            jquery
+                            <ul>
+                                <li>
+                                    css
+                                    <ul>
+                                        <li>images</li>
+                                        <li class="css">swiper-bundle.min.css</li>
+                                        <li class="css">ui.all.css</li>
+                                        <li class="css">ui.base.css</li>
+                                        <li class="css">ui.core.css</li>
+                                        <li class="css">ui.datepicker.css</li>
+                                        <li class="css">ui.theme.css</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    js
+                                    <ul>
+                                        <li class="js">board.js</li>
+                                        <li class="js">default.js</li>
+                                        <li class="js">fn.js</li>
+                                        <li class="js">jquery-1.11.2.min.js</li>
+                                        <li class="js">jquery-ui.min.js</li>
+                                        <li class="js">policy.js</li>
+                                        <li class="js">swiper-bundle.min.js</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            main
+                            <ul>
+                                <li>
+                                    -guide
+                                    <ul>
+                                        <li>
+                                            css
+                                            <ul>
+                                                <li>scss</li>
+                                                <li class="css">guide.css</li>
+                                                <li class="css">shCore.css</li>
+                                                <li class="css">shThemeEclipse.css</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            js
+                                            <ul>
+                                                <li class="js">guide.js</li>
+                                                <li class="js">shBrushXml.js</li>
+                                                <li class="js">shCore.js</li>
+                                            </ul>
+                                        </li>
+                                        <li class="html">guide1.html</li>
+                                        <li class="html">guide2.html</li>
+                                        <li class="html">guide3.html</li>
+                                        <li class="html">guide4.html</li>
+                                        <li class="html">guide5.html</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    -html
+                                    <ul>
+                                        <li>-inc</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    css
+                                    <ul>
+                                        <li>scss</li>
+                                        <li class="css">contents.css</li>
+                                        <li class="css">contents_repond.css</li>
+                                        <li class="css">default.css</li>
+                                        <li class="css">layout.css</li>
+                                        <li class="css">layout_respond.css</li>
+                                        <li class="css">main.css</li>
+                                        <li class="css">main_respond.css</li>
+                                        <li class="css">sub.css</li>
+                                        <li class="css">sub_respond.css</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    html
+                                    <ul>
+                                        <li>
+                                            etc
+                                            <ul>
+                                                <li class="html">aivory.html</li>
+                                                <li class="html">policy.html</li>
+                                                <li class="html">search1.html</li>
+                                                <li class="html">search2.html</li>
+                                                <li class="html">sitemap.html</li>
+                                            </ul>
+                                        </li>
+                                        <li>sub1</li>
+                                        <li>sub2</li>
+                                        <li>sub3</li>
+                                        <li class="html">index.html</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    img
+                                    <ul>
+                                        <li>contents</li>
+                                        <li>layout</li>
+                                        <li>main</li>
+                                        <li>sub</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    js
+                                    <ul>
+                                        <li class="js">layout.js</li>
+                                        <li class="js">main.js</li>
+                                        <li class="js">sub.js</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            upload
+                            <ul>
+                                <li>
+                                    skin
+                                    <ul>
+                                        <li>
+                                            board
+                                            <ul>
+                                                <li>scss</li>
+                                                <li class="css">basic.css</li>
+                                                <li class="css">calendar.css</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            gallery
+                                            <ul>
+                                                <li>scss</li>
+                                                <li class="css">basic.css</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            program
+                                            <ul>
+                                                <li>scss</li>
+                                                <li class="css">member.css</li>
+                                                <li class="css">search.css</li>
+                                                <li class="css">survey.css</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </article>
+        </section>
+        
+        <section class="section">
+            <h2>작성 규칙</h2>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>네이밍 규칙</h3>
+                <div class="item">
+                    <ul class="bul depth1">
+                        <li>스네이크 표기법(underbar_nate), 한자리수 번호 (예 : .main_wrap, .section1)</li>
+                        <li>한 개의 단어로 구성된 경우 영문 소문자 작성을 기본으로 하며 숫자는 맨 앞에 나올 수 없다.</li>
+                        <li>언더바(_)는 2개 이상의 단어 조합시 사용한다. 예) header_wrap</li>
+                        <li>단어와 숫자 조합시 언더바(_)를 생략한다. 예) group1</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ============================== -->
+            <article class="group">
+                <h3>기타</h3>
+                <div class="item">
+                    <ul class="bul depth1">
+                        <li>스타일 작성 시 가상선택자에 텍스트 정보 제공하지 않는다. (접근성 문제)</li>
+                        <li>a 요소 안에 블록 요소 있을 경우 a에 무조건 display: block (접근성 문제)</li>
+                        <li>폼 요소를 커스텀 할 경우 :focus 스타일이 별도로 존재해야 한다. (접근성 문제)</li>
+                        <li>table caption에 position:absolute 속성 사용하지 않는다. (사파리에서 셀 가로값을 조정할 수 없어짐)</li>
+                        <li>콘텐츠 페이지 마크업 시 메뉴 넘버로 클래스명 주지 않는다. 예) sub010101 (메뉴 순서가 변경될 경우 혼란을 야기할 수 있음)</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer><p>COPYRIGHT &copy; 2022 <strong>Plan I.</strong> ALL RIGHTS RESERVED.</p><button>위로</button></footer>
+</div>
+</body>
+</html>

@@ -15,11 +15,13 @@ Create date : 2023-01-01
   height: 5rem;
   border: 1px solid #000;
   line-height: calc(5rem - 2px);
+  line-height: 5rem;
+  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  min-height: 5rem;
-  line-height: 5rem;
+  -webkit-line-clamp: type1;
+  -webkit-box-orient: vertical;
+  max-height: calc(5rem * type1);
   display: inline-block;
   padding: 0 2rem;
   background-color: #000;

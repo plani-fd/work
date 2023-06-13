@@ -12,21 +12,17 @@ $color  : #555;               // 기본 폰트 색
 $time1  : all 0s;               // transition 원복
 $time2  : all 0.2s;             // transition 기본
 
-// 가로
-@mixin width($width1, $width2) {width: $width1; max-width: $width2; margin-left: auto !important; margin-right: auto !important;}
-
-// 줄간격
-@mixin lh($lh, $fs) {line-height: calc($lh / $fs);}
-
 // 폰트 기본설정
 @mixin font($font, $size, $color, $lh)
 {
-    @include lh($lh, $size);
-
     font-family : $font;  // 영문폰트(구글)의 경우 따옴표 추가
     font-size   : $size;
     color       : $color;
+    line-height : calc($lh / $size);
 }
+
+// 가로
+@mixin width($width1, $width2) {width: $width1; max-width: $width2; margin-left: auto !important; margin-right: auto !important;}
 
 // 라인이 있는 요소의 세로값
 @mixin height($height, $bdwidth, $bdcolor)
@@ -37,40 +33,7 @@ $time2  : all 0.2s;             // transition 기본
 }
 
 // 한줄 줄임
-@mixin ellipsis($type, $height)
-{
-    overflow: hidden; text-overflow: ellipsis;
-
-    @if $type == type1
-    {
-        white-space : nowrap;
-        min-height  : $height;
-        line-height : $height;
-    }
-
-    @if $type != type1
-    {
-        display             : -webkit-box;
-        max-height          : $height;
-        -webkit-box-orient  : vertical;
-    }
-
-    @if $type == type2
-    {
-        -webkit-line-clamp  : 2;
-        line-clamp          : 2;
-        line-height         : calc($height / 2);
-    } 
-
-    @if $type == type3
-    {
-        -webkit-line-clamp  : 3;
-        line-clamp          : 3;
-        line-height         : calc($height / 3);
-    } 
-}
-
-@mixin ellip($lines: 1, $line-height) {
+@mixin ellipsis($lines: 1, $line-height) {
     line-height: $line-height;
 
     @if ($lines==1) {
@@ -156,7 +119,6 @@ $time2  : all 0.2s;             // transition 기본
 
 // 정사각형
 @mixin square($size) {display: inline-block; overflow: hidden; width: $size; height: $size; text-align: center; line-height: $size; vertical-align: middle;}
- 
 
 // 오버 시 회전
 @mixin hover($target)

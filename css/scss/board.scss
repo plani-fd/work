@@ -43,7 +43,7 @@ Create date : 2023-01-01
     .title 
     {
         @include title(1rem 0 1rem, 1.8rem, #000);
-        @include ellipsis(type2, 5rem);
+        @include ellipsis(2, 2.5rem);
         font-weight: 700;
 
         & + br {display: none;}
@@ -85,7 +85,7 @@ Create date : 2023-01-01
         {
             li 
             {
-                @include ellipsis(type1, 2.8rem);
+                @include ellipsis(1, 2.8rem);
                 position: relative; padding-right: 19rem;
 
                 & + li {margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #efefef;}
@@ -173,7 +173,7 @@ Create date : 2023-01-01
     {
         display: flex; position: relative; min-height: 6rem; padding: 1.5rem 5.5rem; font-size: 1.8rem; font-weight: 600; color: #000; word-break: keep-all; align-items: center; transition: $time2;
 
-        span {@include ellipsis(type1, 3rem); min-height: 0; line-height: 1.25;}
+        span {@include ellipsis(1, 3rem); min-height: 0; line-height: 1.25;}
 
         &::before {position: absolute; left: 1rem; top: 1.5rem; width: 3rem; height: 3rem; border-radius: 0.5rem; background-color: #000; color: #fff; content: 'Q'; text-align: center; line-height: 3rem;}
         &::after {@include icon(type2, '\EA4E'); right: 2rem; top: 1.5rem; font-weight: 300; line-height: 3rem; transition: $time2;}
@@ -240,7 +240,7 @@ Create date : 2023-01-01
         & + .desc {display: inline-block; width: calc(100% - 30.5rem); padding-left: 4rem; vertical-align: middle;}
     }
     
-    .txt {@include ellipsis(type3, 7.5rem); display: block; margin-bottom: 1rem;}
+    .txt {@include ellipsis(3, 2.5rem); display: block; margin-bottom: 1rem;}
 }
 
 // 이북
@@ -265,7 +265,7 @@ Create date : 2023-01-01
     }
 
     .group {position: relative; padding: 2rem 4rem 5rem 4rem; vertical-align: top;}
-    .desc {@include ellipsis(type3, 7.5rem); display: block; margin-bottom: 1rem;}
+    .desc {@include ellipsis(3, 2.5rem); display: block; margin-bottom: 1rem;}
     .btn {position: absolute; left: 4rem; bottom: 0; width: 30rem; max-width: calc(100% - 7rem);}
 }
 
@@ -275,7 +275,7 @@ Create date : 2023-01-01
 {
     .btn_line 
     {
-        @include ellipsis(type1, 4rem);
+        @include ellipsis(1, 4rem);
         position: relative; width: 100%; min-width: 0; height: 4rem; padding: 0 4rem 0 2rem; font-size: $size; text-align: left;
 
         i {position: absolute; right: 2rem; top: 0; line-height: 3.8rem;}
@@ -503,7 +503,7 @@ Create date : 2023-01-01
 
     li {overflow: hidden; position: relative; padding: 1.5rem; border-top: 1px solid #ddd;}
     span {float: left; width: 15rem; color: #000; text-align: center;}
-    a {@include ellipsis(type1, 2rem); float: left; max-width: calc(100% - 15rem);}
+    a {@include ellipsis(1, 2rem); float: left; max-width: calc(100% - 15rem);}
 
     $icons: (prev: '\EA78', next: '\EA4E');
 

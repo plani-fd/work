@@ -146,7 +146,7 @@ History     : 2023-03-20 ㅈㅁㅈ
     
             .label 
             {
-                @include ellipsis(type1, calc(5rem - 1px));
+                @include ellipsis(1, calc(5rem - 1px));
                 display: block; position: relative; width: 100%; padding: 0 4rem 0 2rem; border: 1px solid #000; border-bottom: 0 none; text-align: left; transition: $time2;
     
                 &::after {@include icon(type2, "\EA4E"); right: 2rem; transition: $time2;}

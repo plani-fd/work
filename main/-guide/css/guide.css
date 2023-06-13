@@ -338,6 +338,197 @@
   padding: 0 1rem;
   border-color: transparent;
 }
+#_guide .markup .box {
+  clear: both;
+  position: relative;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #666;
+}
+#_guide .markup .box:last-child {
+  margin-bottom: 0.5rem;
+}
+#_guide .markup .type1 {
+  border: 1px dashed #ccc;
+}
+#_guide .markup .type2 {
+  border: 1px solid #ccc;
+}
+#_guide .markup .type3 {
+  background-color: #f8f8f8;
+}
+#_guide .markup .type4 {
+  border: 1px solid #efefef;
+  background: linear-gradient(45deg, #fff, #fff 45%, #ddd 45%, #ddd 55%, #fff 55%, #fff);
+  background-size: 0.5rem 0.5rem;
+}
+#_guide .markup .type6 {
+  background-color: #eaeef3;
+}
+#_guide .markup .type5 {
+  border: 1px dotted #ccc;
+  background-color: #fff;
+}
+#_guide .markup .type5 + .type5 {
+  margin-top: 0.5rem;
+}
+#_guide .markup .type5 > ul .box {
+  background-color: #f8f8f8;
+}
+#_guide .markup .type5 + ul .box {
+  background-color: #fff;
+}
+#_guide .markup small {
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
+}
+#_guide .markup button {
+  display: inline-block;
+  overflow: hidden;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  line-height: 4rem;
+  vertical-align: middle;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  font-size: 1.8rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide .markup button::before {
+  font-family: "remixicon";
+  content: "\ea4d";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+}
+#_guide .markup button.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#_guide .markup .depth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 1rem 0 0.5rem;
+}
+#_guide .markup .depth > li {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+#_guide .markup .depth > li + li {
+  margin-left: 1rem;
+}
+#_guide .folder {
+  overflow: hidden;
+  padding-bottom: 0 !important;
+  border: 1px solid #ccc;
+  border-top: 0 none;
+  font-weight: 300;
+  line-height: 4.5rem;
+}
+#_guide .folder ul {
+  overflow: visible !important;
+}
+#_guide .folder li {
+  position: relative;
+  z-index: 0;
+  padding: 0 4rem;
+  background-color: #fff;
+}
+#_guide .folder li::before {
+  font-family: "remixicon";
+  content: "\f309";
+  position: absolute;
+  left: 1.5rem;
+}
+#_guide .folder li::after {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 1000%;
+  height: 100%;
+  border-top: 1px solid #ccc;
+  content: "";
+}
+#_guide .folder li li::after {
+  background-color: #f8f8f8;
+}
+#_guide .folder li li button::after {
+  right: -2rem;
+}
+#_guide .folder li li li::after {
+  background-color: #efefef;
+}
+#_guide .folder li li li button::after {
+  right: -4.5rem;
+}
+#_guide .folder li li li li::after {
+  background-color: #e6e6e6;
+}
+#_guide .folder button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 4.5rem;
+  font-size: 2rem;
+}
+#_guide .folder button::after {
+  font-family: "remixicon";
+  content: "\ea4e";
+  position: absolute;
+  right: 2rem;
+  top: 0;
+  line-height: 4.5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#_guide .folder button.active::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#_guide .folder > ul > li {
+  font-weight: 500;
+  color: #333;
+}
+#_guide .folder > ul > li::before {
+  content: "\ed61";
+}
+#_guide .folder > ul > li li {
+  padding: 0 2.5rem;
+  font-weight: 300;
+  color: #555;
+}
+#_guide .folder > ul > li li::before {
+  left: 0;
+}
+#_guide .folder .css::before {
+  content: "\edfc";
+}
+#_guide .folder .js::before {
+  content: "\f323";
+}
+#_guide .folder .html::before {
+  content: "\ed0f";
+}
+#_guide .folder .img::before {
+  content: "\ee4b";
+}
 
 @media (max-width: 1024px) {
   #_guide #gnb {

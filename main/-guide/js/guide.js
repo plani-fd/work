@@ -12,7 +12,14 @@ $(function()
         $('main > .section').eq(i).attr('id', 'section' + i);
 
         // 메뉴 생성
-        $('.gnb1').append('<li><a href="#section' + i + '">' + $(this).find(' > h2').text() + '</a><ul class="depth2"></ul></li>');
+        if ( $(this).find(' > .group > h3').length > 0 )
+        {
+            $('.gnb1').append('<li><a href="#section' + i + '">' + $(this).find(' > h2').text() + '</a><ul class="depth2"></ul></li>');
+        }
+        else
+        {
+            $('.gnb1').append('<li><a href="#section' + i + '">' + $(this).find(' > h2').text() + '</a></li>');
+        }
 
         // 마크업 한 번 넣어도 소스 저절로 생성되게
         $('main > .section').eq(i).find('> .group').each(function(j)
@@ -20,15 +27,64 @@ $(function()
             $('main > .section').eq(i).find('> .group').eq(j).attr('id', 'group' + i + '_' + j);
 
             // 하위메뉴 생성
-            $('.gnb1').find('> li').eq(i).find('.depth2').append('<li><a href="#group' + i + '_' + j + '">' + $(this).find(' > h3').text() + '</a></li>');
-
-            $(this).find('> pre').text( $(this).find('> .item').html() );
+            if ( $(this).find(' > h3').length > 0 )
+            {
+                $('.gnb1').find('> li').eq(i).find('.depth2').append('<li><a href="#group' + i + '_' + j + '">' + $(this).find(' > h3').text() + '</a></li>');
+            }
 
             // 소스 복사 버튼 생성
-            $(this).find('> .item').after('<textarea></textarea>');
-            $(this).find('> textarea').text( $(this).find('> .item').html() );
-            $(this).find('> .item').after('<button>소스 복사하기</button>');
+            if ( $(this).find('> pre').length > 0 )
+            {
+                $(this).find('> pre').text( $(this).find('> .item').html() );
+                $(this).find('> .item').after('<textarea></textarea>');
+                $(this).find('> textarea').text( $(this).find('> .item').html() );
+                $(this).find('> .item').after('<button>소스 복사하기</button>');
+            }
         });
+    });
+    
+    // 스크롤 될 때 서브메뉴 따라서 활성화
+    $('main > .section > .group > .item').each(function(i)
+    {
+        if ( $(this).parent('.group').find('h3').length > 0 )
+        {
+            $(window).on('load scroll', function()
+            {
+                var sectionPosition1 = ($('main > .section > .group > .item').eq(i).offset() || { 'top': NaN }).top;
+
+                if ( $('html, body').scrollTop() >= (sectionPosition1 - 200) )
+                {
+                    if ( $('#gnb .depth2').find('> li').eq(i).hasClass('active') == false )
+                    {
+                        $('#gnb').find('li').removeClass('active');
+
+                        $('#gnb .depth2').find('> li').eq(i).parents('li').addClass('active');
+                        $('#gnb .depth2').find('> li').eq(i).addClass('active');
+                    }
+                }
+            });                
+        }
+    });
+    
+    // 스크롤 될 때 주메뉴 따라서 활성화
+    $('main > .section > .group').each(function(i)
+    {
+        if ( $(this).find('h3').length == 0 )
+        {
+            $(window).on('load scroll', function()
+            {
+                var sectionPosition2 = ($('main > .section > .group').eq(i).offset() || { 'top': NaN }).top;
+
+                if ( $('html, body').scrollTop() >= (sectionPosition2 - 300) )
+                {
+                    if ( $('#gnb > ul').find('> li').eq(i).hasClass('active') == false )
+                    {
+                        $('#gnb').find('li').removeClass('active');
+                        $('#gnb > ul').find('> li').eq(i).addClass('active');
+                    }
+                }
+            });                
+        }
     });
 
     // 통합검색
@@ -42,26 +98,6 @@ $(function()
         {
             $(this).parent('li').removeClass('active');
         }
-    });
-
-    $('main > .section > .group > .item').each(function(i)
-    {
-        // 스크롤
-        $(window).on('load scroll', function()
-        {
-            var sectionPosition = ($('main > .section > .group > .item').eq(i).offset() || { 'top': NaN }).top;
-
-            if ( $('html, body').scrollTop() >= (sectionPosition - 300) )
-            {
-                if ( $('#gnb .depth2').find('> li').eq(i).hasClass('active') == false )
-                {
-                    $('#gnb').find('li').removeClass('active');
-
-                    $('#gnb .depth2').find('> li').eq(i).parents('li').addClass('active');
-                    $('#gnb .depth2').find('> li').eq(i).addClass('active');
-                }
-            }
-        });
     });
 
     // 메뉴 눌렀을 때
@@ -81,6 +117,7 @@ $(function()
         }
     });
 
+    // 소스열기닫기
     $('.btn_control').on('click', function()
     {
         if ( $(this).hasClass('active') == false )
@@ -118,5 +155,23 @@ $(function()
     $('footer button').on('click', function()
     {
         $('html, body').animate({scrollTop: 0});
+    });
+
+    // 문서에 접기 버튼 추가
+    $('.item.markup, .item.folder > ul').find('ul').before('<button></button>');
+
+    // 문서 버튼 기능
+    $('.item.markup, .item.folder').find('button').on('click', function()
+    {
+        if ( $(this).hasClass('active') == false )
+        {
+            $(this).addClass('active');
+            $(this).next('ul').slideUp();
+        }
+        else
+        {
+            $(this).removeClass('active');
+            $(this).next('ul').slideDown();
+        }
     });
 });

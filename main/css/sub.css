@@ -258,11 +258,11 @@ History     : 2023-03-20 ㅈㅁㅈ
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 .location > .list > li .label {
+  line-height: calc(5rem - 1px);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  min-height: calc(5rem - 1px);
-  line-height: calc(5rem - 1px);
+  max-height: calc(5rem - 1px);
   display: block;
   position: relative;
   width: 100%;
