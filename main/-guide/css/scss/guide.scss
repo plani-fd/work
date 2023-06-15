@@ -276,6 +276,8 @@
             &.active::after {transform: rotate(180deg);}
         }
 
+        small {margin-left: 2rem; font-weight: 300; color: #999;}
+
         & > ul > li
         {
             font-weight: 500; color: #333;

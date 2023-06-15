@@ -502,6 +502,11 @@
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
+#_guide .folder small {
+  margin-left: 2rem;
+  font-weight: 300;
+  color: #999;
+}
 #_guide .folder > ul > li {
   font-weight: 500;
   color: #333;
