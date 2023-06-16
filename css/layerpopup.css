@@ -71,7 +71,28 @@ Create date : 2023-01-01
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     position: absolute;
+    position: fixed !important;
     left: 50% !important;
     top: 50% !important;
+  }
+  [id*=layerPopup]::before {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    content: "";
+    left: 50%;
+    width: 10000%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    position: absolute;
+    position: fixed;
+    height: 1000%;
+    background-color: #000;
+    opacity: 0.5;
   }
 }

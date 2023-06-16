@@ -161,6 +161,9 @@ History     : 2023-03-14 ㅈㅁㅈ
   height: 100%;
   line-height: inherit;
 }
+#header .search.type1 .group {
+  z-index: 1003;
+}
 #header .search.active .group {
   visibility: visible;
   overflow: visible;

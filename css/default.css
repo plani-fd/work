@@ -219,3 +219,8 @@ caption, legend,
     font-size: 8px;
   }
 }
+@media (max-width: 300px) {
+  html {
+    font-size: 7px;
+  }
+}

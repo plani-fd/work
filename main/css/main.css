@@ -314,7 +314,7 @@ History     : 2023-03-14 ㅈㅁㅈ
   padding-left: 0;
 }
 .latest .list li:first-child::before {
-  display: block;
+  display: none;
 }
 .latest .list li:first-child a {
   height: 10rem;

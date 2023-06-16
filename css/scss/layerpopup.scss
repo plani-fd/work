@@ -62,5 +62,11 @@ Create date : 2023-01-01
 
 @media (max-width: 768px)
 {
-    [id*="layerPopup"] {@include position(center); left: 50% !important; top: 50% !important;}
+    [id*="layerPopup"] 
+    {
+        @include position(center); 
+        position: fixed !important; left: 50% !important; top: 50% !important;
+
+        &::before {@include bg2(type1); @include position(center); position: fixed; height: 1000%; background-color: #000; opacity: 0.5;}
+    }
 }

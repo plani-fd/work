@@ -126,6 +126,7 @@ $.fn.gnb2 = function (options) {
         // 닫기
         if ($selecter.find(settings.btnClose).length > 0) {
             $selecter.find(settings.btnClose).on('click', function () {
+                $selecter.find('li').removeClass('active');
                 $(settings.classAdd).removeClass(settings.className);
 
                 return false;
@@ -316,15 +317,15 @@ function swiperoption(target, swiper, count) {
             focusin: function () {
                 swiperpause()
             },
-            mouseover: function () {
-                swiperpause();
-            },
+            // mouseover: function () {
+            //     swiperpause();
+            // },
             focusout: function () {
                 swiperplay();
             },
-            mouseleave: function () {
-                swiperplay();
-            },
+            // mouseleave: function () {
+            //     swiperplay();
+            // },
         });
 
     // 정지

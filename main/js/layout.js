@@ -17,7 +17,27 @@ $(function()
     // 언어
     $('.lang').classtoggle({'button' : '.active'});
 
+    // 검색
     $('.search').classtoggle({'tabout' : true});
+
+    // 메뉴 열려있는데 검색 눌렀을 때 검색이 더 위로
+    $('.search').find('.control').on('click', function()
+    {
+        if ( $(this).hasClass('open') == true )
+        {
+            if ( $('#header').hasClass('active') == true ) 
+            {
+                $('.search').addClass('type1');
+            }
+        }
+        else
+        {
+            if ( $('.search').hasClass('type1') == true )
+            {
+                $('.search').removeClass('type1');
+            }
+        }
+    });
 
     // 주메뉴
     $('#gnb1').gnb1();

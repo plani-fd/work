@@ -102,6 +102,10 @@ History     : 2023-03-17 ㅈㅁㅈ
   #gnb2 > ul .submenu > ul ul {
     color: inherit;
   }
+  #gnb2 > ul .submenu div a:hover, #gnb2 > ul .submenu div a:focus {
+    color: inherit !important;
+    text-decoration: underline;
+  }
   #gnb2.active > ul {
     overflow-y: auto;
     width: 100%;
