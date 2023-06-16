@@ -102,6 +102,8 @@ $.fn.gnb2 = function (options) {
         $selecter.find(settings.btnOpen).on('click', function () {
             if ($selecter.find(settings.btnClose).length > 0) {
                 $(settings.classAdd).addClass(settings.className);
+
+                $('html').css('overflow', 'hidden');
             }
             else {
                 if ($(settings.classAdd).hasClass(settings.className) == false) {
@@ -128,6 +130,8 @@ $.fn.gnb2 = function (options) {
             $selecter.find(settings.btnClose).on('click', function () {
                 $selecter.find('li').removeClass('active');
                 $(settings.classAdd).removeClass(settings.className);
+
+                $('html').css('overflow', '');
 
                 return false;
             });
